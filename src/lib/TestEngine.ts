@@ -1,32 +1,29 @@
-import questionsData from '../data/questions.json';
-import { Question, QuestionBank, TestResult } from '../types';
+import { Question, SupportedLocale, TestResult, VersionId } from '../types';
 import { LocalStorageManager } from './LocalStorageManager';
+import { getLocalizedQuestions } from './localeData';
 
 export class TestEngine {
   private questions: Question[];
   private questionMap: Map<number, Question>;
   private currentIndex: number;
   private answers: Map<number, 'A' | 'B'>;
-  private version: 'quick' | 'standard' | 'full';
+  private version: VersionId;
   private startTime: number;
 
-  constructor(version: 'quick' | 'standard' | 'full') {
+  constructor(version: VersionId, locale: SupportedLocale = LocalStorageManager.getLanguage()) {
     this.version = version;
-    this.questions = (questionsData as unknown as QuestionBank)[version];
-    this.questionMap = new Map(this.questions.map(q => [q.id, q]));
+    this.questions = getLocalizedQuestions(locale)[version];
+    this.questionMap = new Map(this.questions.map((question) => [question.id, question]));
     this.currentIndex = 0;
     this.answers = new Map();
     this.startTime = Date.now();
   }
 
-  /**
-   * Get all questions for the current test version
-   */
   public getQuestions(): Question[] {
     return this.questions;
   }
 
-  public getVersion(): 'quick' | 'standard' | 'full' {
+  public getVersion(): VersionId {
     return this.version;
   }
 
@@ -48,6 +45,7 @@ export class TestEngine {
       this.saveProgress();
       return true;
     }
+
     return false;
   }
 
@@ -57,6 +55,7 @@ export class TestEngine {
       this.saveProgress();
       return true;
     }
+
     return false;
   }
 
@@ -66,17 +65,18 @@ export class TestEngine {
       this.saveProgress();
       return true;
     }
+
     return false;
   }
 
   public getProgress(): number {
-    return Math.round(((this.answers.size) / this.questions.length) * 100);
+    return Math.round((this.answers.size / this.questions.length) * 100);
   }
-  
+
   public getAnswer(questionId: number): 'A' | 'B' | undefined {
     return this.answers.get(questionId);
   }
-  
+
   public isComplete(): boolean {
     return this.answers.size === this.questions.length;
   }
@@ -85,54 +85,54 @@ export class TestEngine {
     if (typeof crypto !== 'undefined' && crypto.randomUUID) {
       return crypto.randomUUID();
     }
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      const r = Math.random() * 16 | 0;
-      const v = c === 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
+
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (token) => {
+      const random = (Math.random() * 16) | 0;
+      const value = token === 'x' ? random : (random & 0x3) | 0x8;
+      return value.toString(16);
     });
   }
 
   public calculateScores(): TestResult {
     const scores = {
-      E: 0, I: 0,
-      S: 0, N: 0,
-      T: 0, F: 0,
-      J: 0, P: 0
+      E: 0,
+      I: 0,
+      S: 0,
+      N: 0,
+      T: 0,
+      F: 0,
+      J: 0,
+      P: 0,
     };
 
-    // O(N) scoring using the Map
     this.answers.forEach((choice, id) => {
-      const q = this.questionMap.get(id);
-      if (q) {
-        // Find option directly (small array of 2 items, find is fast enough)
-        const selectedOption = q.options.find(opt => opt.label === choice);
-        if (selectedOption) {
-           const val = selectedOption.value;
-           if (scores[val] !== undefined) {
-             scores[val]++;
-           }
-        }
+      const question = this.questionMap.get(id);
+      if (!question) return;
+
+      const selectedOption = question.options.find((option) => option.label === choice);
+      if (!selectedOption) return;
+
+      const value = selectedOption.value;
+      if (scores[value] !== undefined) {
+        scores[value]++;
       }
     });
 
-    // Determine Result Type
-    const type = [
+    const resultType = [
       scores.E >= scores.I ? 'E' : 'I',
       scores.S >= scores.N ? 'S' : 'N',
       scores.T >= scores.F ? 'T' : 'F',
-      scores.J >= scores.P ? 'J' : 'P'
+      scores.J >= scores.P ? 'J' : 'P',
     ].join('');
 
-    // Determine Dimensions with 'X'
-    // Thresholds: Quick=1, Standard=3, Full=5
-    const thresholds = { quick: 1, standard: 3, full: 5 };
-    const threshold = thresholds[this.version] || 1;
+    const thresholds = { quick: 1, standard: 3, full: 5 } as const;
+    const threshold = thresholds[this.version];
 
     const dimensions = {
-      EI: Math.abs(scores.E - scores.I) <= threshold ? 'X' : (scores.E > scores.I ? 'E' : 'I'),
-      SN: Math.abs(scores.S - scores.N) <= threshold ? 'X' : (scores.S > scores.N ? 'S' : 'N'),
-      TF: Math.abs(scores.T - scores.F) <= threshold ? 'X' : (scores.T > scores.F ? 'T' : 'F'),
-      JP: Math.abs(scores.J - scores.P) <= threshold ? 'X' : (scores.J > scores.P ? 'J' : 'P')
+      EI: Math.abs(scores.E - scores.I) <= threshold ? 'X' : scores.E > scores.I ? 'E' : 'I',
+      SN: Math.abs(scores.S - scores.N) <= threshold ? 'X' : scores.S > scores.N ? 'S' : 'N',
+      TF: Math.abs(scores.T - scores.F) <= threshold ? 'X' : scores.T > scores.F ? 'T' : 'F',
+      JP: Math.abs(scores.J - scores.P) <= threshold ? 'X' : scores.J > scores.P ? 'J' : 'P',
     } as TestResult['dimensions'];
 
     return {
@@ -140,21 +140,23 @@ export class TestEngine {
       timestamp: Date.now(),
       version: this.version,
       scores,
-      resultType: type,
-      dimensions
+      resultType,
+      dimensions,
     };
   }
 
   public saveProgress(): void {
     const answersObj: Record<number, 'A' | 'B'> = {};
-    this.answers.forEach((v, k) => answersObj[k] = v);
-    
+    this.answers.forEach((value, key) => {
+      answersObj[key] = value;
+    });
+
     LocalStorageManager.saveCurrentTest(this.version, {
       version: this.version,
       answers: answersObj,
       currentIndex: this.currentIndex,
       startTime: this.startTime,
-      lastUpdate: Date.now()
+      lastUpdate: Date.now(),
     });
   }
 
@@ -164,8 +166,8 @@ export class TestEngine {
       this.currentIndex = data.currentIndex;
       this.startTime = data.startTime;
       this.answers = new Map();
-      Object.entries(data.answers).forEach(([k, v]) => {
-        this.answers.set(Number(k), v as 'A' | 'B');
+      Object.entries(data.answers).forEach(([key, value]) => {
+        this.answers.set(Number(key), value);
       });
     }
   }

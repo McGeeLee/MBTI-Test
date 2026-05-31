@@ -1,0 +1,15 @@
+# Template cho cấu hình ký APP release (Android).
+# Cách dùng:
+#   1. Tạo keystore production (chạy 1 lần, giữ file .jks an toàn, KHÔNG commit):
+#        keytool -genkey -v -keystore upload-keystore.jks ^
+#          -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+#   2. Sao chép file này thành "key.properties" cùng thư mục (android/).
+#   3. Điền các giá trị thật bên dưới và trỏ storeFile tới đường dẫn keystore.
+#
+# LƯU Ý: key.properties và *.jks/*.keystore đã được .gitignore — tuyệt đối không
+# chia sẻ công khai keystore hoặc mật khẩu.
+
+storePassword=YOUR_STORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=upload
+storeFile=C:\\path\\to\\upload-keystore.jks

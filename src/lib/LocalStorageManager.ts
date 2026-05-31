@@ -1,7 +1,8 @@
-import { TestResult } from '../types';
+import { SupportedLocale, TestResult, VersionId } from '../types';
+import { normalizeLocale } from './localeData';
 
-interface TestProgress {
-  version: 'quick' | 'standard' | 'full';
+export interface TestProgress {
+  version: VersionId;
   answers: Record<number, 'A' | 'B'>;
   currentIndex: number;
   startTime: number;
@@ -10,60 +11,70 @@ interface TestProgress {
 
 interface LocalStorageData {
   savedTests: Record<string, TestProgress>;
-  
   testHistory: TestResult[];
-  
   userPreferences: {
-    theme: 'light' | 'dark';
-    shortcuts: boolean;
-    animations: boolean;
-    language: 'zh-CN' | 'en';
+    language: SupportedLocale;
   };
-  
-  favorites: string[]; // 收藏的MBTI类型
 }
 
 export class LocalStorageManager {
   private static readonly KEY = 'mbti-app-data';
-  
+
   static save(data: Partial<LocalStorageData>): void {
     const existing = this.load();
-    const updated = { ...existing, ...data };
+    const updated: LocalStorageData = {
+      ...existing,
+      ...data,
+      userPreferences: {
+        ...existing.userPreferences,
+        ...data.userPreferences,
+      },
+    };
     localStorage.setItem(this.KEY, JSON.stringify(updated));
   }
-  
+
   static load(): LocalStorageData {
     const raw = localStorage.getItem(this.KEY);
     if (!raw) return this.getDefaultData();
+
     try {
       return this.normalize(JSON.parse(raw));
     } catch {
       return this.getDefaultData();
     }
   }
-  
+
   static clear(): void {
     localStorage.removeItem(this.KEY);
   }
-  
-  static saveCurrentTest(version: string, testData: TestProgress): void {
+
+  static getLanguage(): SupportedLocale {
+    return this.load().userPreferences.language;
+  }
+
+  static saveLanguage(language: SupportedLocale): void {
+    this.save({
+      userPreferences: {
+        language: normalizeLocale(language),
+      },
+    });
+  }
+
+  static saveCurrentTest(version: VersionId, testData: TestProgress): void {
     const data = this.load();
-    data.savedTests = data.savedTests || {};
     data.savedTests[version] = testData;
     this.save({ savedTests: data.savedTests });
   }
 
-  static getSavedTest(version: string): TestProgress | undefined {
+  static getSavedTest(version: VersionId): TestProgress | undefined {
     const data = this.load();
-    return data.savedTests ? data.savedTests[version] : undefined;
+    return data.savedTests[version];
   }
 
-  static clearCurrentTest(version: string): void {
+  static clearCurrentTest(version: VersionId): void {
     const data = this.load();
-    if (data.savedTests) {
-      delete data.savedTests[version];
-      this.save({ savedTests: data.savedTests });
-    }
+    delete data.savedTests[version];
+    this.save({ savedTests: data.savedTests });
   }
 
   static addTestResult(result: TestResult): void {
@@ -78,71 +89,71 @@ export class LocalStorageManager {
 
   static deleteTestResult(id: string): void {
     const data = this.load();
-    data.testHistory = data.testHistory.filter(h => h.id !== id);
+    data.testHistory = data.testHistory.filter((historyItem) => historyItem.id !== id);
     this.save({ testHistory: data.testHistory });
   }
 
   private static normalize(input: unknown): LocalStorageData {
     const defaults = this.getDefaultData();
-    const isRecord = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
+    const isRecord = (value: unknown): value is Record<string, unknown> =>
+      typeof value === 'object' && value !== null && !Array.isArray(value);
 
     if (!isRecord(input)) return defaults;
 
-    const out: LocalStorageData = { ...defaults };
+    const out: LocalStorageData = {
+      ...defaults,
+    };
 
     if (isRecord(input.userPreferences)) {
-      const theme = input.userPreferences.theme;
-      const shortcuts = input.userPreferences.shortcuts;
-      const animations = input.userPreferences.animations;
-      const language = input.userPreferences.language;
-
       out.userPreferences = {
-        theme: theme === 'dark' ? 'dark' : 'light',
-        shortcuts: typeof shortcuts === 'boolean' ? shortcuts : defaults.userPreferences.shortcuts,
-        animations: typeof animations === 'boolean' ? animations : defaults.userPreferences.animations,
-        language: language === 'en' ? 'en' : 'zh-CN'
+        language: normalizeLocale(input.userPreferences.language),
       };
     }
 
-    if (Array.isArray(input.favorites)) {
-      out.favorites = input.favorites.filter((x): x is string => typeof x === 'string');
-    }
-
-    const isTestProgress = (v: unknown): v is TestProgress => {
-      if (!isRecord(v)) return false;
-      const version = v.version;
-      const answers = v.answers;
-      const currentIndex = v.currentIndex;
-      const startTime = v.startTime;
-      const lastUpdate = v.lastUpdate;
+    const isTestProgress = (value: unknown): value is TestProgress => {
+      if (!isRecord(value)) return false;
+      const version = value.version;
+      const answers = value.answers;
+      const currentIndex = value.currentIndex;
+      const startTime = value.startTime;
+      const lastUpdate = value.lastUpdate;
 
       const validVersion = version === 'quick' || version === 'standard' || version === 'full';
       if (!validVersion) return false;
       if (!isRecord(answers)) return false;
-      if (typeof currentIndex !== 'number' || typeof startTime !== 'number' || typeof lastUpdate !== 'number') return false;
-
-      for (const val of Object.values(answers)) {
-        if (val !== 'A' && val !== 'B') return false;
+      if (
+        typeof currentIndex !== 'number' ||
+        typeof startTime !== 'number' ||
+        typeof lastUpdate !== 'number'
+      ) {
+        return false;
       }
+
+      for (const answer of Object.values(answers)) {
+        if (answer !== 'A' && answer !== 'B') return false;
+      }
+
       return true;
     };
 
     if (isRecord(input.savedTests)) {
-      const saved: Record<string, TestProgress> = {};
-      for (const [k, v] of Object.entries(input.savedTests)) {
-        if (isTestProgress(v)) saved[k] = v;
+      const savedTests: Record<string, TestProgress> = {};
+      for (const [key, value] of Object.entries(input.savedTests)) {
+        if (isTestProgress(value)) {
+          savedTests[key] = value;
+        }
       }
-      out.savedTests = saved;
+      out.savedTests = savedTests;
     }
 
-    const isTestResult = (v: unknown): v is TestResult => {
-      if (!isRecord(v)) return false;
-      const id = v.id;
-      const timestamp = v.timestamp;
-      const version = v.version;
-      const scores = v.scores;
-      const resultType = v.resultType;
-      const dimensions = v.dimensions;
+    const isTestResult = (value: unknown): value is TestResult => {
+      if (!isRecord(value)) return false;
+      const id = value.id;
+      const timestamp = value.timestamp;
+      const version = value.version;
+      const scores = value.scores;
+      const resultType = value.resultType;
+      const dimensions = value.dimensions;
 
       const validVersion = version === 'quick' || version === 'standard' || version === 'full';
       if (typeof id !== 'string' || typeof timestamp !== 'number' || !validVersion) return false;
@@ -154,10 +165,9 @@ export class LocalStorageManager {
         if (typeof scores[key] !== 'number') return false;
       }
 
-      const dimKeys = ['EI', 'SN', 'TF', 'JP'] as const;
-      for (const key of dimKeys) {
-        const val = dimensions[key];
-        if (typeof val !== 'string') return false;
+      const dimensionKeys = ['EI', 'SN', 'TF', 'JP'] as const;
+      for (const key of dimensionKeys) {
+        if (typeof dimensions[key] !== 'string') return false;
       }
 
       return true;
@@ -169,18 +179,14 @@ export class LocalStorageManager {
 
     return out;
   }
-  
+
   private static getDefaultData(): LocalStorageData {
     return {
       savedTests: {},
       testHistory: [],
       userPreferences: {
-        theme: 'light',
-        shortcuts: true,
-        animations: true,
-        language: 'zh-CN'
+        language: 'zh',
       },
-      favorites: []
     };
   }
 }

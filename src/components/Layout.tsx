@@ -11,28 +11,35 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-transparent">
-      <header className="fixed top-0 left-0 right-0 z-50 glass-panel shadow-sm transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-blue-200 transition-all duration-300 transform group-hover:scale-105">
+    <div className="flex min-h-screen flex-col bg-transparent">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-[var(--clay-border)] bg-[rgba(250,249,247,0.92)] backdrop-blur-sm transition-all duration-300">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link to="/" className="group flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-black clay-swatch-lemon text-xl font-black text-black shadow-[var(--clay-shadow)] transition-all duration-300 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:shadow-[var(--clay-shadow-hard)]">
               M
             </div>
-            <span className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 uppercase tracking-wider">MBTI Master</span>
+            <div className="flex flex-col leading-none">
+              <span className="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-[var(--clay-muted)]">
+                Personality Lab
+              </span>
+              <span className="text-xl font-extrabold uppercase tracking-[0.08em] text-[var(--clay-text)]">
+                MBTI Master
+              </span>
+            </div>
           </Link>
-          
-          <nav className="hidden md:flex items-center space-x-8">
-            <NavLink to="/" icon={Home} label="首页" isActive={location.pathname === '/'} />
-            <NavLink to="/types" icon={BookOpen} label="性格库" isActive={location.pathname === '/types'} />
-            <NavLink to="/profile" icon={User} label="我的" isActive={location.pathname === '/profile'} />
+
+          <nav className="hidden items-center space-x-4 md:flex">
+            <NavLink to="/" icon={Home} label="Home" isActive={location.pathname === '/'} />
+            <NavLink to="/types" icon={BookOpen} label="Types" isActive={location.pathname === '/types'} />
+            <NavLink to="/profile" icon={User} label="Profile" isActive={location.pathname === '/profile'} />
           </nav>
 
           <div className="flex items-center md:hidden">
             <button
               type="button"
-              aria-label={mobileOpen ? '关闭菜单' : '打开菜单'}
-              className="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-gray-50/50 text-gray-700 transition-colors"
-              onClick={() => setMobileOpen(v => !v)}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--clay-border)] bg-white text-[var(--clay-text)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:-rotate-3 hover:shadow-[var(--clay-shadow-hard)]"
+              onClick={() => setMobileOpen((open) => !open)}
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -40,38 +47,60 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden border-t border-gray-100/70">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+          <div className="border-t border-[var(--clay-border)] bg-[rgba(255,253,248,0.96)] md:hidden">
+            <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
               <div className="flex flex-col gap-2">
-                <MobileNavLink to="/" icon={Home} label="首页" isActive={location.pathname === '/'} onClick={() => setMobileOpen(false)} />
-                <MobileNavLink to="/types" icon={BookOpen} label="性格库" isActive={location.pathname === '/types'} onClick={() => setMobileOpen(false)} />
-                <MobileNavLink to="/profile" icon={User} label="我的" isActive={location.pathname === '/profile'} onClick={() => setMobileOpen(false)} />
+                <MobileNavLink
+                  to="/"
+                  icon={Home}
+                  label="Home"
+                  isActive={location.pathname === '/'}
+                  onClick={() => setMobileOpen(false)}
+                />
+                <MobileNavLink
+                  to="/types"
+                  icon={BookOpen}
+                  label="Types"
+                  isActive={location.pathname === '/types'}
+                  onClick={() => setMobileOpen(false)}
+                />
+                <MobileNavLink
+                  to="/profile"
+                  icon={User}
+                  label="Profile"
+                  isActive={location.pathname === '/profile'}
+                  onClick={() => setMobileOpen(false)}
+                />
               </div>
             </div>
           </div>
         )}
       </header>
 
-      <main className="flex-grow pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {children}
-        </div>
+      <main className="flex-grow pt-24">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">{children}</div>
       </main>
 
-      <footer className="glass-panel border-t border-gray-100 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0 text-center md:text-left">
-              <span className="text-lg font-bold text-gray-900">MBTI Master</span>
-              <p className="text-sm text-gray-500 mt-1">探索真实的自己，发现潜能</p>
+      <footer className="mt-auto px-4 pb-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-[2.5rem] clay-shell px-6 py-8 sm:px-8">
+          <div className="flex flex-col items-center justify-between gap-5 md:flex-row">
+            <div className="text-center md:text-left">
+              <span className="text-lg font-bold text-[var(--clay-text)]">MBTI Master</span>
+              <p className="mt-1 text-sm clay-muted">Know yourself. Spot the pattern.</p>
             </div>
-            <div className="flex space-x-6 text-sm text-gray-500">
-              <Link to="/about" className="hover:text-blue-600 transition-colors">关于MBTI</Link>
-              <Link to="/types" className="hover:text-blue-600 transition-colors">性格类型</Link>
-              <a href="#" className="hover:text-blue-600 transition-colors">隐私政策</a>
+            <div className="flex space-x-6 text-sm clay-muted">
+              <Link to="/about" className="transition-colors hover:text-[var(--clay-text)]">
+                Language
+              </Link>
+              <Link to="/types" className="transition-colors hover:text-[var(--clay-text)]">
+                Types
+              </Link>
+              <Link to="/privacy" className="transition-colors hover:text-[var(--clay-text)]">
+                Privacy
+              </Link>
             </div>
           </div>
-          <div className="mt-8 text-center text-xs text-gray-400">
+          <div className="mt-8 text-center text-xs clay-muted">
             © {new Date().getFullYear()} MBTI Master. Based on Jungian Psychology.
           </div>
         </div>
@@ -80,13 +109,23 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   );
 };
 
-const NavLink = ({ to, icon: Icon, label, isActive }: { to: string, icon: React.ElementType, label: string, isActive: boolean }) => (
-  <Link 
-    to={to} 
-    className={`flex items-center space-x-1.5 px-3 py-2 rounded-lg transition-all duration-200 ${
-      isActive 
-        ? 'bg-blue-50 text-blue-600 font-semibold shadow-sm' 
-        : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50/50'
+const NavLink = ({
+  to,
+  icon: Icon,
+  label,
+  isActive,
+}: {
+  to: string;
+  icon: React.ElementType;
+  label: string;
+  isActive: boolean;
+}) => (
+  <Link
+    to={to}
+    className={`flex items-center space-x-1.5 rounded-full border px-4 py-2.5 transition-all duration-200 ${
+      isActive
+        ? 'border-black bg-[var(--clay-matcha)] font-semibold text-[var(--clay-text)] shadow-[var(--clay-shadow)]'
+        : 'border-transparent text-[var(--clay-muted)] hover:-translate-y-1 hover:-rotate-3 hover:border-[var(--clay-border)] hover:bg-white hover:text-[var(--clay-text)] hover:shadow-[var(--clay-shadow-hard)]'
     }`}
   >
     <Icon size={18} strokeWidth={isActive ? 2.5 : 2} />
@@ -94,14 +133,26 @@ const NavLink = ({ to, icon: Icon, label, isActive }: { to: string, icon: React.
   </Link>
 );
 
-const MobileNavLink = ({ to, icon: Icon, label, isActive, onClick }: { to: string, icon: React.ElementType, label: string, isActive: boolean, onClick: () => void }) => (
-  <Link 
-    to={to} 
+const MobileNavLink = ({
+  to,
+  icon: Icon,
+  label,
+  isActive,
+  onClick,
+}: {
+  to: string;
+  icon: React.ElementType;
+  label: string;
+  isActive: boolean;
+  onClick: () => void;
+}) => (
+  <Link
+    to={to}
     onClick={onClick}
-    className={`flex items-center space-x-3 px-4 py-3.5 rounded-xl transition-all duration-200 ${
-      isActive 
-        ? 'bg-blue-50 text-blue-600 font-bold shadow-sm' 
-        : 'text-gray-600 hover:bg-gray-50'
+    className={`flex items-center space-x-3 rounded-2xl border px-4 py-3.5 transition-all duration-200 ${
+      isActive
+        ? 'border-black bg-[var(--clay-slushie)] font-bold text-[var(--clay-text)] shadow-[var(--clay-shadow)]'
+        : 'border-[var(--clay-border)] bg-white text-[var(--clay-muted)] hover:-translate-y-1 hover:-rotate-2 hover:text-[var(--clay-text)] hover:shadow-[var(--clay-shadow-hard)]'
     }`}
   >
     <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />

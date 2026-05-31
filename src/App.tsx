@@ -6,6 +6,7 @@ import { PersonalityDetail } from './pages/PersonalityDetail';
 import { TypeLibrary } from './pages/TypeLibrary';
 import { Profile } from './pages/Profile';
 import { About } from './pages/About';
+import { Privacy } from './pages/Privacy';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/types" element={<TypeLibrary />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </Router>
   );

@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Layout } from '../components/Layout';
-import { LocalStorageManager } from '../lib/LocalStorageManager';
-import { TestResult, PersonalityType } from '../types';
-import typesData from '../data/types.json';
-import { TypeIcon } from '../components/icons/TypeIcons';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import {
   Chart as ChartJS,
-  RadialLinearScale,
-  PointElement,
-  LineElement,
   Filler,
-  Tooltip,
   Legend,
+  LineElement,
+  PointElement,
+  RadialLinearScale,
+  Tooltip,
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
-import { Share2, RefreshCw, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { BookOpen, RefreshCw, Share2 } from 'lucide-react';
 
-ChartJS.register(
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend
-);
+import { Layout } from '../components/Layout';
+import { TypeIcon } from '../components/icons/TypeIcons';
+import { useLocale } from '../context/LocaleContext';
+import { LocalStorageManager } from '../lib/LocalStorageManager';
+import { getLocalizedType } from '../lib/localeData';
+import { resolveResultFromHistory } from '../lib/resultLookup';
+import { buildDimensionRows } from '../lib/typePresentation';
+import { PersonalityType, TestResult } from '../types';
+
+ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 export const Result: React.FC = () => {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
+  const { locale } = useLocale();
   const [result, setResult] = useState<TestResult | null>(null);
   const [typeData, setTypeData] = useState<PersonalityType | null>(null);
+  const [shareState, setShareState] = useState<'idle' | 'copied' | 'unsupported' | 'error'>('idle');
 
   useEffect(() => {
     if (!type) {
@@ -39,44 +39,94 @@ export const Result: React.FC = () => {
       return;
     }
 
-    const tData = (typesData as PersonalityType[]).find(t => t.id === type.toUpperCase());
-    if (!tData) {
+    const localizedType = getLocalizedType(locale, type);
+    if (!localizedType) {
       navigate('/');
       return;
     }
-    setTypeData(tData);
 
-    // Try to find the latest result for this type
+    setTypeData(localizedType);
+
     const history = LocalStorageManager.load().testHistory;
-    const latest = history.find(r => r.resultType === type.toUpperCase());
-    if (latest) {
-      setResult(latest);
+    const stateResultId = (location.state as { resultId?: string } | null)?.resultId ?? null;
+    const searchParams = new URLSearchParams(location.search);
+    const queryResultId = searchParams.get('resultId');
+    const resolvedResult = resolveResultFromHistory(
+      history,
+      type,
+      queryResultId ?? stateResultId ?? undefined,
+    );
+
+    setResult(resolvedResult ?? null);
+  }, [locale, location.search, location.state, navigate, type]);
+
+  const handleShare = async () => {
+    if (!typeData) return;
+
+    const shareUrl = new URL(window.location.href);
+    if (result?.id) {
+      shareUrl.searchParams.set('resultId', result.id);
     }
-  }, [type, navigate]);
 
-  if (!typeData) return <Layout><div>Loading...</div></Layout>;
+    const title = `${typeData.id} - ${typeData.name}`;
 
-  // Use lucky color for theme
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title,
+          text: typeData.summary,
+          url: shareUrl.toString(),
+        });
+        setShareState('idle');
+        return;
+      }
+
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(shareUrl.toString());
+        setShareState('copied');
+        return;
+      }
+
+      setShareState('unsupported');
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        return;
+      }
+
+      setShareState('error');
+    }
+  };
+
+  if (!typeData) {
+    return (
+      <Layout>
+        <div>Loading...</div>
+      </Layout>
+    );
+  }
+
   const themeColor = typeData.luckyColors?.primary || '#2563eb';
   const categoryName = typeData.category || 'MBTI Personality';
+  const dimensionRows = buildDimensionRows(result);
 
-  // Prepare Chart Data
   const chartData = {
-    labels: ['外向 (E)', '感觉 (S)', '思考 (T)', '判断 (J)', '内向 (I)', '直觉 (N)', '情感 (F)', '知觉 (P)'],
+    labels: ['Extraversion', 'Sensing', 'Thinking', 'Judging', 'Introversion', 'Intuition', 'Feeling', 'Perceiving'],
     datasets: [
       {
-        label: '性格维度得分',
-        data: result ? [
-          result.scores.E,
-          result.scores.S,
-          result.scores.T,
-          result.scores.J,
-          result.scores.I,
-          result.scores.N,
-          result.scores.F,
-          result.scores.P,
-        ] : [50, 50, 50, 50, 50, 50, 50, 50],
-        backgroundColor: `${themeColor}33`, // 20% opacity
+        label: 'Dimension scores',
+        data: result
+          ? [
+              result.scores.E,
+              result.scores.S,
+              result.scores.T,
+              result.scores.J,
+              result.scores.I,
+              result.scores.N,
+              result.scores.F,
+              result.scores.P,
+            ]
+          : [50, 50, 50, 50, 50, 50, 50, 50],
+        backgroundColor: `${themeColor}33`,
         borderColor: themeColor,
         borderWidth: 2,
         pointBackgroundColor: themeColor,
@@ -92,149 +142,183 @@ export const Result: React.FC = () => {
       r: {
         angleLines: {
           display: true,
-          color: 'rgba(0, 0, 0, 0.1)'
+          color: 'rgba(0, 0, 0, 0.1)',
         },
         suggestedMin: 0,
         grid: {
-          color: 'rgba(0, 0, 0, 0.05)'
+          color: 'rgba(0, 0, 0, 0.05)',
         },
         pointLabels: {
           font: {
-            size: 12
-          }
-        }
+            size: 12,
+          },
+        },
       },
     },
     plugins: {
       legend: {
-        display: false
-      }
-    }
+        display: false,
+      },
+    },
   };
 
   return (
     <Layout>
-      {/* Background Blobs */}
-      <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-blue-50/50 via-purple-50/50 to-pink-50/50"></div>
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-20 left-1/4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="fixed left-0 top-0 -z-10 h-full w-full overflow-hidden pointer-events-none">
+        <div className="absolute right-0 top-0 h-full w-full bg-[linear-gradient(180deg,rgba(255,255,255,0.45),transparent)]"></div>
+        <div className="absolute right-1/4 top-20 h-96 w-96 rounded-full clay-swatch-slushie opacity-20 blur-3xl animate-blob"></div>
+        <div className="absolute bottom-20 left-1/4 h-96 w-96 rounded-full clay-swatch-ube opacity-20 blur-3xl animate-blob animation-delay-2000"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto py-8 px-4">
-        <motion.div 
+      <div className="mx-auto max-w-5xl px-4 py-8">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="glass-card rounded-3xl shadow-xl overflow-hidden border border-white/60"
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="glass-card overflow-hidden rounded-[2.25rem]"
         >
-          {/* Header */}
-          <div 
-            className="p-8 md:p-12 text-center text-white relative overflow-hidden"
-            style={{ background: `linear-gradient(135deg, ${themeColor}, ${themeColor}dd)` }}
+          <div
+            className="relative overflow-hidden p-8 text-center md:p-12"
+            style={{ backgroundColor: themeColor }}
           >
-            <div className="absolute top-0 left-0 w-full h-full opacity-10">
-               <TypeIcon type={typeData.id} size={400} className="absolute -top-20 -right-20" color="white" />
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22),transparent_60%)]"></div>
+            <div className="absolute right-[-3rem] top-[-4rem] opacity-20">
+              <TypeIcon type={typeData.id} size={360} color="white" />
             </div>
-            
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
+
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               className="relative z-10"
             >
-              <div className="inline-block bg-white/20 backdrop-blur-md rounded-full px-5 py-1.5 mb-6 text-sm font-bold tracking-wide border border-white/30 shadow-sm">
+              <div className="inline-flex rounded-full border border-black bg-white/85 px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-[var(--clay-text)] shadow-[var(--clay-shadow)]">
                 {categoryName}
               </div>
-              <h1 className="text-6xl md:text-8xl font-extrabold mb-4 tracking-tighter drop-shadow-sm">{typeData.id}</h1>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white/95">{typeData.name}</h2>
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed font-light">
+              <h1 className="mt-6 text-6xl font-black tracking-[-0.06em] text-white md:text-8xl">
+                {typeData.id}
+              </h1>
+              <h2 className="mt-3 text-2xl font-black text-white/95 md:text-3xl">{typeData.name}</h2>
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/90">
                 {typeData.summary}
               </p>
             </motion.div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12 bg-white/40 backdrop-blur-sm">
-            {/* Chart */}
-            <motion.div 
+          <div className="grid gap-8 bg-[rgba(255,253,248,0.78)] p-8 md:grid-cols-2 md:p-12">
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-col items-center justify-center bg-white/50 rounded-2xl p-6 shadow-sm border border-white/50"
+              transition={{ delay: 0.35 }}
+              className="rounded-[2rem] border border-[var(--clay-border)] bg-white p-6 shadow-[var(--clay-shadow)]"
             >
-              <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center">
-                <span className="w-1.5 h-6 rounded-full mr-2" style={{ backgroundColor: themeColor }}></span>
-                维度得分分析
+              <h3 className="mb-6 flex items-center text-lg font-black text-[var(--clay-text)]">
+                <span
+                  className="mr-3 h-7 w-2 rounded-full"
+                  style={{ backgroundColor: themeColor }}
+                ></span>
+                Score radar
               </h3>
-              <div className="w-full max-w-md aspect-square relative">
+              <div className="relative mx-auto aspect-square w-full max-w-md">
                 <Radar data={chartData} options={chartOptions} />
               </div>
             </motion.div>
 
-            {/* Actions & Brief */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.5 }}
               className="flex flex-col justify-center space-y-6"
             >
-              <div className="glass-panel rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-gray-900 mb-4 flex items-center">
-                  <BookOpen size={20} className="mr-2" style={{ color: themeColor }}/> 
-                  核心特征
+              <div className="rounded-[2rem] border border-[var(--clay-border)] bg-white p-6 shadow-[var(--clay-shadow)]">
+                <h3 className="font-black text-[var(--clay-text)]">Dimension verdict</h3>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {dimensionRows.map(({ label, value }) => (
+                    <div
+                      key={label}
+                      className="rounded-2xl border border-[var(--clay-border)] bg-[var(--clay-bg)] p-4"
+                    >
+                      <div className="text-xs uppercase tracking-[0.18em] clay-muted">{label}</div>
+                      <div className="mt-2 text-2xl font-black text-[var(--clay-text)]">
+                        {value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[2rem] border border-[var(--clay-border)] bg-white p-6 shadow-[var(--clay-shadow)]">
+                <h3 className="mb-4 flex items-center font-black text-[var(--clay-text)]">
+                  <BookOpen size={20} className="mr-2" style={{ color: themeColor }} />
+                  Core traits
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {typeData.description.traits.map((trait, idx) => (
-                    <span key={idx} className="bg-white/80 border border-gray-200/60 px-3 py-1.5 rounded-xl text-sm text-gray-700 shadow-sm">
+                  {typeData.description.traits.map((trait, index) => (
+                    <span
+                      key={index}
+                      className="rounded-full border border-[var(--clay-border)] bg-[var(--clay-bg)] px-3 py-1.5 text-sm text-[var(--clay-text)] shadow-[var(--clay-shadow)]"
+                    >
                       {trait}
                     </span>
                   ))}
                 </div>
               </div>
 
-              {/* Famous People Teaser */}
               {typeData.famousPeople && typeData.famousPeople.length > 0 && (
-                <div className="glass-panel rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                  <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider flex items-center">
-                    <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: themeColor }}></span>
-                    代表人物
+                <div className="rounded-[2rem] border border-[var(--clay-border)] bg-white p-6 shadow-[var(--clay-shadow)]">
+                  <h3 className="mb-4 flex items-center text-sm font-black uppercase tracking-[0.18em] text-[var(--clay-text)]">
+                    <span
+                      className="mr-2 h-2.5 w-2.5 rounded-full"
+                      style={{ backgroundColor: themeColor }}
+                    ></span>
+                    Notable people
                   </h3>
-                  <div className="flex items-center space-x-4">
-                     {typeData.famousPeople.slice(0, 3).map((person, idx) => (
-                        <div key={idx} className="text-center group">
-                          <div 
-                            className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm mb-1 mx-auto shadow-sm group-hover:scale-110 transition-transform"
-                            style={{ backgroundColor: themeColor }}
-                          >
-                            {person.name.charAt(0)}
-                          </div>
-                          <div className="text-xs text-gray-600 truncate w-16 font-medium">{person.name}</div>
+                  <div className="flex items-center gap-4">
+                    {typeData.famousPeople.slice(0, 3).map((person, index) => (
+                      <div key={index} className="text-center">
+                        <div
+                          className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full border border-black text-sm font-black text-white shadow-[var(--clay-shadow)]"
+                          style={{ backgroundColor: themeColor }}
+                        >
+                          {person.name.charAt(0)}
                         </div>
-                     ))}
+                        <div className="w-16 truncate text-xs clay-muted">{person.name}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
 
-              <div className="grid grid-cols-2 gap-4 mt-2">
-                <Link 
+              <div className="grid grid-cols-2 gap-4">
+                <Link
                   to={`/type/${typeData.id}`}
-                  className="col-span-2 text-white py-4 rounded-xl font-bold text-center hover:opacity-90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center"
-                  style={{ backgroundColor: themeColor, boxShadow: `0 10px 20px -5px ${themeColor}66` }}
+                  className="col-span-2 flex items-center justify-center rounded-full border border-black px-5 py-4 text-sm font-black uppercase tracking-[0.14em] text-[var(--clay-text)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:-rotate-2 hover:shadow-[var(--clay-shadow-hard)]"
+                  style={{ backgroundColor: themeColor }}
                 >
-                  查看详细分析报告
+                  Open full profile
                 </Link>
-                <button 
+                <button
+                  className="clay-button clay-button-secondary !w-full !justify-center !px-4 !py-3"
                   onClick={() => navigate('/')}
-                  className="bg-white border border-gray-200 text-gray-700 py-3 rounded-xl font-medium hover:bg-gray-50 hover:border-gray-300 transition-all flex items-center justify-center shadow-sm"
                 >
-                  <RefreshCw size={18} className="mr-2"/> 重测
+                  <RefreshCw size={18} className="mr-1" /> Retake
                 </button>
-                <button 
-                  className="bg-white border border-gray-200 text-gray-700 py-3 rounded-xl font-medium hover:bg-gray-50 hover:border-gray-300 transition-all flex items-center justify-center shadow-sm"
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  className="clay-button clay-button-ghost !w-full !justify-center !px-4 !py-3"
                 >
-                  <Share2 size={18} className="mr-2"/> 分享
+                  <Share2 size={18} className="mr-1" /> Share
                 </button>
               </div>
+              {shareState !== 'idle' && (
+                <p className="text-sm clay-muted">
+                  {shareState === 'copied' && 'Share link copied to clipboard.'}
+                  {shareState === 'unsupported' &&
+                    'Sharing is unavailable here. Copy the URL from your browser bar.'}
+                  {shareState === 'error' && 'Could not share this result. Please try again.'}
+                </p>
+              )}
             </motion.div>
           </div>
         </motion.div>

@@ -1,0 +1,5163 @@
+{
+  "meta": {
+    "quick": {
+      "title": "Quick",
+      "duration": "About 5 minutes",
+      "description": "A fast read on your core personality tendencies when time is limited."
+    },
+    "standard": {
+      "title": "Standard",
+      "duration": "About 15 minutes",
+      "description": "The most balanced version for depth and pacing, suitable for most users."
+    },
+    "full": {
+      "title": "Full",
+      "duration": "About 30 minutes",
+      "description": "A deeper and more detailed analysis when you want a fuller personality picture."
+    }
+  },
+  "questions": {
+    "quick": [
+      {
+        "id": 1,
+        "text": "How do you typically behave at social gatherings?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Take the initiative to introduce yourself to strangers and make new friends",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Wait for others to come and talk to you, or just chat with people you know",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "When you feel happy or sad, do you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Share it with friends immediately and the expression will be obvious",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Hidden in the heart, not much change can be seen on the outside",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "What type of party do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A lively large party, the more people the better",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "A small gathering with just a few close friends",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "When faced with a new task, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Start doing it first and think about it while doing it",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Think through the steps first before taking action",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "What do you usually do when a discussion is heated?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The loudest and most excited person",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Someone who listens quietly and occasionally interjects a word",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "Do you pay more attention to things?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Specific details and actual composition",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Overall patterns and underlying meanings",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "Do you think you're more inclined to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Be down to earth and pay attention to reality",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Unbridled and imaginative",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Do you prefer to study?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practical skills that can be used immediately (e.g. cooking, repairing cars)",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Theoretical knowledge that can enhance cognition (such as psychology, economics)",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "text": "What do you need to be sure of something?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Have personal experience or have conclusive evidence",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Makes sense logically or conforms to theoretical derivation",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Follow traditions and customs and remain stable",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Break the routine and pursue novelty and change",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "text": "What do you value more when making decisions?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reasonable logic and clear analysis of pros and cons",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Comply with values ​​and take care of others’ feelings",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "text": "When dealing with conflict, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Be reasonable and present the facts",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Talk about feelings and give face",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "text": "In team discussions, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ask questions and look for loopholes",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Seek consensus and promote harmony",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "text": "When evaluating a movie, what do you tend to do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Analyze its advantages and disadvantages and point out its shortcomings",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Enjoy the feelings it brings and see the good side",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "text": "What do you think leaders should do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tough, decisive and deterrent",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Moderate, democratic and approachable",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "text": "What is your typical living environment?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Well organized, everything has its place",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Arrange randomly, orderly in chaos",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "text": "What about you for the next year?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Have clear goals and plans",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Take it step by step and let nature take its course",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "text": "When faced with deadlines, do you usually?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Start long in advance and finish early",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Put it off until the last moment and explode under pressure",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "text": "What kind of schedule do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It’s fully booked and feels very fulfilling.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Leaves plenty of white space, ready to insert new arrangements",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "text": "How do you solve complex problems?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Break it down into small steps and defeat them one by one.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Start from the whole and look for breakthroughs",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "text": "What do you do when you need to contact a stranger?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Call or send a message directly, no pressure",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Feeling hesitant and need to do some mental construction",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "text": "How do you usually explain things to others?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Combined with rich gestures and facial expressions",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Smooth tone and less body language",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "text": "When describing something, do you tend to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "List facts, figures and steps",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Use metaphors, analogies and generalizations",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "text": "What do you value more when solving problems?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practical, low-risk solutions",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Novel, unique and creative solutions",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "text": "What do you do when your friends make mistakes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Point out the mistake directly and help him correct it",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Soothe your emotions first and remind them tactfully",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "text": "What is your first reaction when you see a beggar?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thinking about why he doesn't work, is he a liar?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "I feel sorry for him and want to give him some money",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "text": "What do you do before going on a trip?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Make a list and pack neatly",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Just grab a few clothes, grab the necessities and go",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "text": "On weekends, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Arrange activities in advance",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sleep until you wake up naturally and do whatever you want.",
+            "value": "P"
+          }
+        ]
+      }
+    ],
+    "standard": [
+      {
+        "id": 1,
+        "text": "How do you typically behave at social gatherings?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Take the initiative to introduce yourself to strangers and make new friends",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Wait for others to come and talk to you, or just chat with people you know",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "What do you do when you need to contact a stranger?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Call or send a message directly, no pressure",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Feeling hesitant and need to do some mental construction",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "What do you usually do when waiting in line?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Take the initiative to chat with people around you to pass the time",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Play with your phone or be in a daze, keep quiet",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "When you arrive in a new environment (such as a new school, a new company), what will you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Get to know people around you quickly and get to know each other",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Keep a low profile and slowly observe the people around you",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "When you feel happy or sad, do you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Share it with friends immediately and the expression will be obvious",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Hidden in the heart, not much change can be seen on the outside",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "How do you usually explain things to others?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Combined with rich gestures and facial expressions",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Smooth tone and less body language",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "What kind of person do you think you are?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Transparent, emotions, anger, sorrows and joys are all written on the face",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "It’s so deep that it’s hard for others to guess your thoughts.",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "What would you do if something unfair happened?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Immediately protest loudly and express dissatisfaction",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Observe calmly and find the right time to solve the problem",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "text": "What type of party do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A lively large party, the more people the better",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "A small gathering with just a few close friends",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "text": "In Moments or on social media, who do you tend to be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Interact frequently and have a large number of friends/fans",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Only follow close friends and interact less",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "text": "What is your ideal weekend?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Go out with a group of friends to sing and have dinner together",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Read a book, watch a movie at home, or spend some time alone with your partner",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "text": "Do you value your friends more?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Quantity, the more friends, the easier the journey",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Quality, it is enough to have a confidant in life",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "text": "When faced with a new task, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Start doing it first and think about it while doing it",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Think through the steps first before taking action",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "text": "What do you prefer when learning something new in a class or conference?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Learn through discussion and practice",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Learn by reading, listening, and reflecting",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "text": "What is your first reaction when you encounter a problem?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Try various solutions now",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Stop and analyze the root of the problem",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "text": "What is your speaking habit?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thinking and speaking at the same time, speaking faster",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Think carefully before speaking, speak slowly",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "text": "What do you usually do when a discussion is heated?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The loudest and most excited person",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Someone who listens quietly and occasionally interjects a word",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "text": "What topics are you usually interested in?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Talk endlessly, hoping to infect others",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Click until you finish, or just feel excited in your heart",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "text": "What is usually the first impression others have of you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Energetic and fun",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Quiet, well-behaved or aloof",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "text": "Would you rather be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The focus of the stage, enjoy the applause",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "The hero behind the scenes contributes silently",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "text": "Do you pay more attention to things?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Specific details and actual composition",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Overall patterns and underlying meanings",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "text": "When describing something, do you tend to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "List facts, figures and steps",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Use metaphors, analogies and generalizations",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "text": "Are you better at memorizing?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Specific information such as name, place, date, etc.",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Abstract concepts such as theories, opinions, connections, etc.",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "text": "For \"Apple\", what's the first thing you think of?",
+        "options": [
+          {
+            "label": "A",
+            "text": "red, round, fruity, sweet",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "newton, allure, health, technology companies",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "text": "Do you think you're more inclined to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Be down to earth and pay attention to reality",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Unbridled and imaginative",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "text": "What do you value more when solving problems?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practical, low-risk solutions",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Novel, unique and creative solutions",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "text": "What is your attitude towards the future?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Live in the moment and enjoy every day",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Looking forward to the future, always thinking \"what if...\"",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "text": "What kind of job content do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Maintain existing systems to ensure stability",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Design a new system from scratch",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "text": "Do you prefer to study?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practical skills that can be used immediately (e.g. cooking, repairing cars)",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Theoretical knowledge that can enhance cognition (such as psychology, economics)",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "text": "What do you pay more attention to when reading the manual?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Operation steps and precautions",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Working principle and design concept",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "text": "What do you think a good idea must be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Can be put into practice and has application value",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Deep and able to explain phenomena",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "text": "Which do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "manufacturing tools",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "blueprint",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "text": "What do you need to be sure of something?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Have personal experience or have conclusive evidence",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Makes sense logically or conforms to theoretical derivation",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "text": "Do you prefer to believe it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Experienced veteran",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Experts who have learned a lot about five cars",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "text": "When learning new software, what do you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Get started with trial and error and explore the functions",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Watch the tutorial first and understand the logic before proceeding.",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "text": "Where do you think the truth comes from?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practice test",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "rational thinking",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Follow traditions and customs and remain stable",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Break the routine and pursue novelty and change",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "text": "What do you prefer when it comes to dressing up?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Classic style, decent and generous",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Design style, personality",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "text": "What is your typical workflow?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Strictly adhere to established norms",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Always look for ways to optimize or change it",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "text": "Which review do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "You are a stable and reliable person",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "you are a different person",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "text": "What do you value more when making decisions?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reasonable logic and clear analysis of pros and cons",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Comply with values ​​and take care of others’ feelings",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "text": "What do you do when your friends make mistakes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Point out the mistake directly and help him correct it",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Soothe your emotions first and remind them tactfully",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "text": "What do you think is fair?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Treat everyone equally and act according to the rules",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Analyze specific situations and consider human factors",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "text": "In the debate, what do you pay more attention to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Whose arguments are more complete and logic is more rigorous?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Whose point of view is more humane and touching?",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "text": "When dealing with conflict, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Be reasonable and present the facts",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Talk about feelings and give face",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "text": "What is your first reaction when you see a beggar?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thinking about why he doesn't work, is he a liar?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "I feel sorry for him and want to give him some money",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "text": "What do you think charity should be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Operate efficiently to ensure that funds are used effectively",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Full of love, help everyone in need",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "text": "What do you prefer when educating children?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Strict requirements, clear rewards and punishments",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Gentle guidance and tolerance for mistakes",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "text": "In team discussions, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ask questions and look for loopholes",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Seek consensus and promote harmony",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "text": "What do you do when someone else makes a point?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Think about the counter-opinion first",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Find points of agreement first",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "text": "Which do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Discover the truth through debate",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Maintain relationships through compromise",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "text": "What do you think of \"harmony\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "If it's based on falsehood, don't do it",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Very important, worth the compromise",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "text": "When evaluating a movie, what do you tend to do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Analyze its advantages and disadvantages and point out its shortcomings",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Enjoy the feelings it brings and see the good side",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "text": "To yourself, do you usually?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Strict requirements and frequent reflection",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Accept yourself, including your flaws",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "text": "To others, do you usually?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sharp vision, easy to see other people's faults",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tolerant and generous, easy to find the shining points of others",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "text": "What do you do when things go wrong?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Investigate responsibility and analyze reasons",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Accept reality and find solutions",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "text": "What do you think leaders should do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tough, decisive and deterrent",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Moderate, democratic and approachable",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "text": "In negotiations, would you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Stick to the bottom line and never give in",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Seek a win-win situation and make appropriate concessions",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "text": "Which do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Speak with strength",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Exchange sincerity for sincerity",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "text": "What do you do when you need to say no to someone?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reject directly and give no hope",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Reject politely for fear of hurting feelings",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "text": "What is your typical living environment?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Well organized, everything has its place",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Arrange randomly, orderly in chaos",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 62,
+        "text": "What do you do before going on a trip?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Make a list and pack neatly",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Just grab a few clothes, grab the necessities and go",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "text": "Which way of working do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Establish processes and systems step by step",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Respond flexibly and adapt to circumstances",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 64,
+        "text": "What are you used to when it comes to computer desktops?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Organize into folders",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Spread all over the screen, or pile them all in a folder",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "text": "What about you for the next year?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Have clear goals and plans",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Take it step by step and let nature take its course",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "text": "On weekends, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Arrange activities in advance",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sleep until you wake up naturally and do whatever you want.",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 67,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "definite result",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "unknown surprise",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 68,
+        "text": "In the project, what do you pay more attention to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Milestones and deadlines",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Discoveries and experiences in the process",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "text": "When faced with deadlines, do you usually?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Start long in advance and finish early",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Put it off until the last moment and explode under pressure",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Run at a steady pace and maintain the rhythm",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Run at variable speeds, alternating sprints and rests",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "text": "When given a task, what do you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Finish it first and then play, it will make you feel at ease",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Have fun first, do it last",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "text": "What do you think of the pressure?",
+        "options": [
+          {
+            "label": "A",
+            "text": "is harmful, try to avoid it",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "It is motivation and can stimulate potential",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "text": "What kind of schedule do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It’s fully booked and feels very fulfilling.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Leaves plenty of white space, ready to insert new arrangements",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "text": "If a friend suddenly invites you to dinner, what would you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "If it is not in the plan, it may be rejected",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Very happy, agreed immediately",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "text": "What do you consider \"routine\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Can improve efficiency and save energy",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Boredom kills creativity",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "text": "Are you more used to it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "reserve",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Just go with the flow",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "text": "How do you solve complex problems?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Break it down into small steps and defeat them one by one.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Start from the whole and look for breakthroughs",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "prepared speech",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "improvise",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "text": "What do you tend to do when learning new skills?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Study systematically and lay a solid foundation",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "What to learn when encountering problems, pragmatism",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "text": "Where do you think efficiency comes from?",
+        "options": [
+          {
+            "label": "A",
+            "text": "standardized process",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "burst of inspiration",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "text": "How would you describe your role in society?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Initiator, likes to organize events and topics",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Participants are more willing to cooperate with other people's arrangements",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "text": "What do you usually do in front of good friends?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chatting endlessly, sharing trivial matters in life",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Listen mainly and express opinions occasionally",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "text": "How would you feel in a crowded place?",
+        "options": [
+          {
+            "label": "A",
+            "text": "excited, full of energy",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Tired and want to escape as soon as possible",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "text": "Which type of movies do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Documentary films, action films, life films",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Science fiction films, suspense films, brain-burning films",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "text": "What do you think of whimsical ideas?",
+        "options": [
+          {
+            "label": "A",
+            "text": "I feel it is unrealistic and a waste of time.",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "I find it interesting and would like to think deeply about it",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "text": "What do you prefer at work?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Handle specific transactional work",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Conduct strategic planning and conceptual design",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Analyze the problem and find the optimal solution",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Understand people's hearts and establish harmonious relationships",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "text": "What do you value more?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bottom line of principle",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Compassion",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "text": "Who do you prefer to spend time with?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Smart but a bit prickly person",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Ordinary but easy-going person",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "text": "What do you think of order?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Make people feel comfortable and in control",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Makes you feel depressed and constrained",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "text": "What would you do if your plans were disrupted?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Feeling irritable and anxious to get back on track",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "It doesn’t matter, I just want to experience the new changes",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "text": "When reviewing for an exam, are you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "I usually accumulate",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Pre-exam surprise",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "text": "At work do you enjoy?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Fixed work stations and times",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Flexible working system, freedom to choose location",
+            "value": "P"
+          }
+        ]
+      }
+    ],
+    "full": [
+      {
+        "id": 1,
+        "text": "How do you typically behave at social gatherings?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Take the initiative to introduce yourself to strangers and make new friends",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Wait for others to come and talk to you, or just chat with people you know",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "What do you do when you need to contact a stranger?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Call or send a message directly, no pressure",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Feeling hesitant and need to do some mental construction",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "What do you usually do when waiting in line?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Take the initiative to chat with people around you to pass the time",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Play with your phone or be in a daze, keep quiet",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "When you arrive in a new environment (such as a new school, a new company), what will you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Get to know people around you quickly and get to know each other",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Keep a low profile and slowly observe the people around you",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "How would you describe your role in society?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Initiator, likes to organize events and topics",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Participants are more willing to cooperate with other people's arrangements",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "What would you do when you meet a friend you haven’t seen for a long time?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Say hello warmly and loudly and walk over",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Smile and wait for the other person to see you",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "What do you do when you encounter a cold spot in a team meeting?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Take the initiative to speak to break the silence",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Waiting for someone else to break the silence",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Which social style do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cast a wide net and meet all kinds of people",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Select carefully and only have deep friendship with a few people",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "text": "At a dinner party, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Liven up the atmosphere and take care of everyone’s emotions",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Eat quietly and occasionally engage in conversation",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "text": "What would you do if a friend invited you to a party full of strangers?",
+        "options": [
+          {
+            "label": "A",
+            "text": "I happily went there and found it very interesting.",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Make excuses to shirk, or ask to bring an acquaintance with you",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "text": "When you feel happy or sad, do you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Share it with friends immediately and the expression will be obvious",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Hidden in the heart, not much change can be seen on the outside",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "text": "How do you usually explain things to others?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Combined with rich gestures and facial expressions",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Smooth tone and less body language",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "text": "What kind of person do you think you are?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Transparent, emotions, anger, sorrows and joys are all written on the face",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "It’s so deep that it’s hard for others to guess your thoughts.",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "text": "What would you do if something unfair happened?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Immediately protest loudly and express dissatisfaction",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Observe calmly and find the right time to solve the problem",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "text": "What do you usually do in front of good friends?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chatting endlessly, sharing trivial matters in life",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Listen mainly and express opinions occasionally",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "text": "When you more than agree with someone's point of view, do you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nod directly or agree loudly",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "I agree silently in my heart without necessarily showing it.",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "text": "How are you more comfortable handling emotions?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It feels better to let it out and say it.",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Digest alone and clear your mind",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "text": "How do others usually describe you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Enthusiastic and energetic",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Calm and restrained, emotionally stable",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "text": "How do you usually react when receiving a surprise gift?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Scream, laugh, and act very excited",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Thank you with a smile, feeling moved but restrained",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "text": "Is it easy for you to let others know your privacy?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It's easier, I feel like I have nothing to hide",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "It’s very difficult. We attach great importance to protecting personal privacy.",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "text": "What type of party do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A lively large party, the more people the better",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "A small gathering with just a few close friends",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "text": "In Moments or on social media, who do you tend to be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Interact frequently and have a large number of friends/fans",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Only follow close friends and interact less",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "text": "What is your ideal weekend?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Go out with a group of friends to sing and have dinner together",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Read a book, watch a movie at home, or spend some time alone with your partner",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "text": "Do you value your friends more?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Quantity, the more friends, the easier the journey",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Quality, it is enough to have a confidant in life",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "text": "How would you feel in a crowded place?",
+        "options": [
+          {
+            "label": "A",
+            "text": "excited, full of energy",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Tired and want to escape as soon as possible",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "text": "Which communication method are you better at?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Give a speech or host in front of a crowd",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "one-on-one in-depth conversation",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "text": "Which group do you usually belong to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Be an active member of many circles",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Only belongs to one or two core small circles",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "text": "What would you prefer if you need to travel for a long time?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Living with colleagues, we can chat at night",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Have a room to yourself and enjoy solitude",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "text": "How do you feel about loneliness?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Unbearable, always looking for someone to accompany me",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Enjoying solitude is a time to recharge yourself",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "text": "Which team building activities do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A large-scale ice-breaking game for everyone to participate in",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "In-depth group discussions in groups",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "text": "When faced with a new task, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Start doing it first and think about it while doing it",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Think through the steps first before taking action",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "text": "What do you prefer when learning something new in a class or conference?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Learn through discussion and practice",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Learn by reading, listening, and reflecting",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "text": "What is your first reaction when you encounter a problem?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Try various solutions now",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Stop and analyze the root of the problem",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "text": "What is your speaking habit?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thinking and speaking at the same time, speaking faster",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Think carefully before speaking, speak slowly",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "text": "Which work status do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Busy and fulfilling, switching between the ups and downs of affairs",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Focus deeply and deal with one thing for a long time",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "text": "What do you do when others make suggestions?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Try it now and see the effect",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Simulate the feasibility in your mind",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "text": "What do you think is the best way to take a break?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Go exercise, go shopping, do something concrete",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Sit still, meditate, daze",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "text": "When resolving conflicts, what do you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Actively intervene to resolve matters",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Take a step back and watch the situation unfold",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "text": "Which person do you admire more?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A person who is strong in action and resolute",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Deep-thinking, thoughtful person",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "text": "For instructions, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Don’t look at it much, just try it out",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Read it carefully before starting the operation",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "text": "What do you usually do when a discussion is heated?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The loudest and most excited person",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Someone who listens quietly and occasionally interjects a word",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "text": "What topics are you usually interested in?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Talk endlessly, hoping to infect others",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Click until you finish, or just feel excited in your heart",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "text": "What is usually the first impression others have of you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Energetic and fun",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Quiet, well-behaved or aloof",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "text": "Would you rather be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The focus of the stage, enjoy the applause",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "The hero behind the scenes contributes silently",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "text": "What would you do when recommending something to others?",
+        "options": [
+          {
+            "label": "A",
+            "text": "I am trying my best to be safe and I wish the other party would accept it right away.",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Provide an objective introduction and let the other party decide for themselves",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "text": "What is your usual laugh?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hearty laugh, very contagious",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "A subtle smile, relatively restrained",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "text": "Which atmosphere do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Full of passion, competition and challenges",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Peaceful, quiet and warm",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "text": "What do you do when there is good news?",
+        "options": [
+          {
+            "label": "A",
+            "text": "I wish I could use a big loudspeaker to broadcast",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Only tell the closest people",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "text": "In a team, what do you usually play?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cheerleader, boost morale",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Military advisor, calm analysis",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "text": "What do you think life should be like?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Vibrant and full of surprises",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "The water flows slowly, calmly and calmly",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "text": "Do you pay more attention to things?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Specific details and actual composition",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Overall patterns and underlying meanings",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "text": "When describing something, do you tend to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "List facts, figures and steps",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Use metaphors, analogies and generalizations",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "text": "Are you better at memorizing?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Specific information such as name, place, date, etc.",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Abstract concepts such as theories, opinions, connections, etc.",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "text": "For \"Apple\", what's the first thing you think of?",
+        "options": [
+          {
+            "label": "A",
+            "text": "red, round, fruity, sweet",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "newton, allure, health, technology companies",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "text": "Which type of movies do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Documentary films, action films, life films",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Science fiction films, suspense films, brain-burning films",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "text": "Do you care more when listening to other people's stories?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The authenticity and details of the story",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "The moral and inspiration behind the story",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "text": "What do you think is true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The visible and tangible material world",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Mind, Spirit and Future Possibilities",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "text": "Do you prefer discussing with people?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Specific recent news and gossip",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Grand topics such as philosophy, life, and the universe",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "text": "What do you pay more attention to when studying history?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Specific battles, eras and characters",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Laws and trends of historical development",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "text": "Are you more trusting?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Facts seen with one's own eyes",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "intuition and inspiration",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "text": "Do you think you're more inclined to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Be down to earth and pay attention to reality",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Unbridled and imaginative",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 62,
+        "text": "What do you value more when solving problems?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practical, low-risk solutions",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Novel, unique and creative solutions",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "text": "What is your attitude towards the future?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Live in the moment and enjoy every day",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Looking forward to the future, always thinking \"what if...\"",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 64,
+        "text": "What kind of job content do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Maintain existing systems to ensure stability",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Design a new system from scratch",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "text": "What do you think of whimsical ideas?",
+        "options": [
+          {
+            "label": "A",
+            "text": "I feel it is unrealistic and a waste of time.",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "I find it interesting and would like to think deeply about it",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "text": "Which person do you admire more?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Pragmatic, reliable and capable person",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "A person with vision, talent and aura",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 67,
+        "text": "What do you pay more attention to when decorating your house?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practicality, durability and value for money",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Design, style and atmosphere",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 68,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Execute the established plan",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Conceive a new vision",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "text": "What do you consider \"common sense\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Very important, the cornerstone of life",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Sometimes it’s the shackles that hinder innovation",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "text": "If you were given a sum of money, what would you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Save or buy real estate and other physical objects",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Invest in a business or travel around the world",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "text": "Do you prefer to study?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practical skills that can be used immediately (e.g. cooking, repairing cars)",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Theoretical knowledge that can enhance cognition (such as psychology, economics)",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "text": "What do you pay more attention to when reading the manual?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Operation steps and precautions",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Working principle and design concept",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "text": "What do you think a good idea must be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Can be put into practice and has application value",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Deep and able to explain phenomena",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "text": "Which do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "manufacturing tools",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "blueprint",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "text": "What do you prefer at work?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Handle specific transactional work",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Conduct strategic planning and conceptual design",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "text": "What are you more interested in?",
+        "options": [
+          {
+            "label": "A",
+            "text": "specific uses of things",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "principles of construction of things",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hands-on",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Use your brain to think",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "text": "When discussing issues, do you tend to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Discuss matters and solve immediate problems",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Draw inferences from one instance and discuss essential issues",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "text": "What do you think is the purpose of education?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Develop survival skills",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Enlighten wisdom",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "text": "What type of books do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practical guides and reference books",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Theoretical monographs, prose poems",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "text": "What do you need to be sure of something?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Have personal experience or have conclusive evidence",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Makes sense logically or conforms to theoretical derivation",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "text": "Do you prefer to believe it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Experienced veteran",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Experts who have learned a lot about five cars",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "text": "When learning new software, what do you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Get started with trial and error and explore the functions",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Watch the tutorial first and understand the logic before proceeding.",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "text": "Where do you think the truth comes from?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Practice test",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "rational thinking",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "text": "What will you do when encountering unknown territory?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Seek advice from someone who has experienced it",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Check out relevant books and information",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "text": "Which teaching method do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Experimental classes, field trips",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Lectures and theoretical seminars",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "text": "What do you usually base your decisions on?",
+        "options": [
+          {
+            "label": "A",
+            "text": "past experiences and lessons",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Forecasting models for the future",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "text": "What do you think of traditional experiences?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Worthy of respect and reference",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "May be outdated and needs to be looked at critically",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "imitation and improvement",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "derivation and deduction",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "text": "What do you think \"gut feeling\" is?",
+        "options": [
+          {
+            "label": "A",
+            "text": "accumulation of experience",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "flash of inspiration",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Follow traditions and customs and remain stable",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Break the routine and pursue novelty and change",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "text": "What do you prefer when it comes to dressing up?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Classic style, decent and generous",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Design style, personality",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "text": "What is your typical workflow?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Strictly adhere to established norms",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Always look for ways to optimize or change it",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 94,
+        "text": "Which review do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "You are a stable and reliable person",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "you are a different person",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "text": "During the holidays, will you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Celebrate the New Year according to traditional customs",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Want to do something new and not stick to the formality",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "text": "What do you think are the rules?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It is a necessary means to maintain order",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "It’s a restriction on freedom",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 97,
+        "text": "Are you more supportive?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Maintain vested interests and stability",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Reform and innovation, even with risks",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 98,
+        "text": "What do you refer to when making decisions?",
+        "options": [
+          {
+            "label": "A",
+            "text": "What most people do",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Your own unique thoughts",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "text": "Which art style do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "realism, classicism",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Abstraction, Surrealism",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "text": "What do you think success is?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gain social recognition and status",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Realize your unique value",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 101,
+        "text": "What do you value more when making decisions?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reasonable logic and clear analysis of pros and cons",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Comply with values ​​and take care of others’ feelings",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "text": "What do you do when your friends make mistakes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Point out the mistake directly and help him correct it",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Soothe your emotions first and remind them tactfully",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "text": "What do you think is fair?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Treat everyone equally and act according to the rules",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Analyze specific situations and consider human factors",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "text": "In the debate, what do you pay more attention to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Whose arguments are more complete and logic is more rigorous?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Whose point of view is more humane and touching?",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 105,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Analyze the problem and find the optimal solution",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Understand people's hearts and establish harmonious relationships",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 106,
+        "text": "If you had to lay off employees, what would you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Based on performance appraisal, retain people with strong abilities",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Consider employees’ family difficulties and try to retain those who need to work",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 107,
+        "text": "Which do you think is more important, truth or emotion?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Truth, facts speak louder than words",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Emotions and human hearts are made of flesh",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 108,
+        "text": "What are your principles for doing things?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Not right for people",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "People-oriented",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 109,
+        "text": "When evaluating a person, what do you value more?",
+        "options": [
+          {
+            "label": "A",
+            "text": "his abilities and achievements",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "His moral character and treatment of others",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 110,
+        "text": "What would you rather be rated as?",
+        "options": [
+          {
+            "label": "A",
+            "text": "a smart and capable person",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "A kind and easy-going person",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 111,
+        "text": "When dealing with conflict, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Be reasonable and present the facts",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Talk about feelings and give face",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 112,
+        "text": "What is your first reaction when you see a beggar?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thinking about why he doesn't work, is he a liar?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "I feel sorry for him and want to give him some money",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 113,
+        "text": "What do you think charity should be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Operate efficiently to ensure that funds are used effectively",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Full of love, help everyone in need",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 114,
+        "text": "What do you prefer when educating children?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Strict requirements, clear rewards and punishments",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Gentle guidance and tolerance for mistakes",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 115,
+        "text": "What do you value more?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bottom line of principle",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Compassion",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 116,
+        "text": "What do you do when others complain to you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Help him analyze the reasons and provide solutions",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Be there to grieve with him and give him emotional support.",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 117,
+        "text": "Do you think the law should be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Punish criminals severely and uphold justice",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Give criminals a chance to rehabilitate and embody humanity",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 118,
+        "text": "When making decisions, do you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Stay calm and objective and don’t be swayed by emotions",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Listen to your inner calling and obey your emotions",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 119,
+        "text": "Which kind of leadership do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Official business is done with clear rewards and punishments",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Humane, caring about subordinates",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 120,
+        "text": "Do you think the world needs more of this?",
+        "options": [
+          {
+            "label": "A",
+            "text": "rational thinking",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "love and care",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 121,
+        "text": "In team discussions, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ask questions and look for loopholes",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Seek consensus and promote harmony",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 122,
+        "text": "What do you do when someone else makes a point?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Think about the counter-opinion first",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Find points of agreement first",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 123,
+        "text": "Which do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Discover the truth through debate",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Maintain relationships through compromise",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 124,
+        "text": "What do you think of \"harmony\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "If it's based on falsehood, don't do it",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Very important, worth the compromise",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 125,
+        "text": "Who do you prefer to spend time with?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Smart but a bit prickly person",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Ordinary but easy-going person",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 126,
+        "text": "When shopping, what do you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Compare shopping and be picky about defects",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "I think it's almost ok, I don't want to bother you",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 127,
+        "text": "What do you think of skepticism?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It is the driving force for progress",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Will destroy trust",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 128,
+        "text": "What do you do when you disagree with someone else?",
+        "options": [
+          {
+            "label": "A",
+            "text": "say it outright",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "remain silent or express tactfully",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 129,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "critical thinking",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Empathy",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 130,
+        "text": "What do you think a good team should be?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Encourage the collision of ideas, even if there is conflict",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "United as a family",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 131,
+        "text": "When evaluating a movie, what do you tend to do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Analyze its advantages and disadvantages and point out its shortcomings",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Enjoy the feelings it brings and see the good side",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 132,
+        "text": "To yourself, do you usually?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Strict requirements and frequent reflection",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Accept yourself, including your flaws",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 133,
+        "text": "To others, do you usually?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sharp vision, easy to see other people's faults",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tolerant and generous, easy to find the shining points of others",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 134,
+        "text": "What do you do when things go wrong?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Investigate responsibility and analyze reasons",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Accept reality and find solutions",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 135,
+        "text": "What do you think of the criticism?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It is a necessary nutrient for growth",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Will damage people's self-confidence",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 136,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "fix errors",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "affirmative value",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 137,
+        "text": "What do you value more in interpersonal communication?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Is the other party excellent?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Is the other party sincere?",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 138,
+        "text": "Where do you think satisfaction comes from?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Keep surpassing and becoming better",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Be content and always happy, cherish the present moment",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 139,
+        "text": "What do you do when someone else makes a small mistake?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Point it out so you don’t do it again next time",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Pretend not to see it to avoid embarrassment",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 140,
+        "text": "What is your attitude toward life?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Keep improving",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "It's rare to be confused",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 141,
+        "text": "What do you think leaders should do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tough, decisive and deterrent",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Moderate, democratic and approachable",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 142,
+        "text": "In negotiations, would you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Stick to the bottom line and never give in",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Seek a win-win situation and make appropriate concessions",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 143,
+        "text": "Which do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Speak with strength",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Exchange sincerity for sincerity",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 144,
+        "text": "What do you do when you need to say no to someone?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Reject directly and give no hope",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Reject politely for fear of hurting feelings",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 145,
+        "text": "What do you think about competition?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It is the natural law of survival of the fittest.",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "It’s so cruel, I hope we can cooperate",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "text": "Do you appreciate it more?",
+        "options": [
+          {
+            "label": "A",
+            "text": "iron will",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "tenderness like water",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 147,
+        "text": "In order to achieve your goals, are you willing?",
+        "options": [
+          {
+            "label": "A",
+            "text": "sacrifice some relationships",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Sacrifice some efficiency or benefit",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "text": "What do you think \"strong\" means?",
+        "options": [
+          {
+            "label": "A",
+            "text": "control",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tolerance",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 149,
+        "text": "What do you do when faced with stress?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Face difficulties and become more courageous with every setback.",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Seek support and gather together for warmth",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 150,
+        "text": "Which style do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tough, concise and cold",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Soft, warm, complex",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 151,
+        "text": "What is your typical living environment?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Well organized, everything has its place",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Arrange randomly, orderly in chaos",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 152,
+        "text": "What do you do before going on a trip?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Make a list and pack neatly",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Just grab a few clothes, grab the necessities and go",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 153,
+        "text": "Which way of working do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Establish processes and systems step by step",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Respond flexibly and adapt to circumstances",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 154,
+        "text": "What are you used to when it comes to computer desktops?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Organize into folders",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Spread all over the screen, or pile them all in a folder",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 155,
+        "text": "What do you think of order?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Make people feel comfortable and in control",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Makes you feel depressed and constrained",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 156,
+        "text": "When cooking, do you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Prepare all the ingredients and follow the steps",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Watch it, taste it and adjust it later",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 157,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Organize and summarize",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "divergent associations",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 158,
+        "text": "What kind of plan do you like?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Detailed and thorough, accurate to the minute",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "There is only one general direction",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 159,
+        "text": "What do you think \"casual\" means?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lazy, irresponsible",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "freedom and comfort",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 160,
+        "text": "What would you do if you couldn't find something?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It’s crazy, I must find it",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "It doesn't matter, it will show up sooner or later anyway",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 161,
+        "text": "What about you for the next year?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Have clear goals and plans",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Take it step by step and let nature take its course",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 162,
+        "text": "On weekends, what do you usually do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Arrange activities in advance",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sleep until you wake up naturally and do whatever you want.",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 163,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "definite result",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "unknown surprise",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 164,
+        "text": "In the project, what do you pay more attention to?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Milestones and deadlines",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Discoveries and experiences in the process",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 165,
+        "text": "What would you do if your plans were disrupted?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Feeling irritable and anxious to get back on track",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "It doesn’t matter, I just want to experience the new changes",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 166,
+        "text": "What do you think life should be like?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It's a blueprint",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "It's an unknown adventure",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 167,
+        "text": "When you buy something?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Go straight to the target, buy and leave",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "I like shopping, and I buy what I like when I see it.",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 168,
+        "text": "Which do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Make plans early and be prepared for a rainy day",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Live in the moment and enjoy yourself",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 169,
+        "text": "What about commitment?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Be very cautious and do what you say you will do",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "It depends on the situation. If the conditions change, it can be changed.",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 170,
+        "text": "Do you feel \"settled\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "reassuring",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Makes you feel locked in",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 171,
+        "text": "When faced with deadlines, do you usually?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Start long in advance and finish early",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Put it off until the last moment and explode under pressure",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 172,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Run at a steady pace and maintain the rhythm",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Run at variable speeds, alternating sprints and rests",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 173,
+        "text": "When given a task, what do you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Finish it first and then play, it will make you feel at ease",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Have fun first, do it last",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 174,
+        "text": "What do you think of the pressure?",
+        "options": [
+          {
+            "label": "A",
+            "text": "is harmful, try to avoid it",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "It is motivation and can stimulate potential",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 175,
+        "text": "When reviewing for an exam, are you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "I usually accumulate",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Pre-exam surprise",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 176,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "protracted war",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Blitzkrieg",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 177,
+        "text": "What would you do if the task was completed ahead of schedule?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Check and improve, or do the next task",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Relax and celebrate, or do nothing",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 178,
+        "text": "Do you feel \"procrastinated\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "This is a bad habit, we need to change it",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "It's a way of life, it's harmless",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 179,
+        "text": "What is your usual state at work?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Smooth advancement",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "ups and downs",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 180,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "plenty of time",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Time is tight",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 181,
+        "text": "What kind of schedule do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It’s fully booked and feels very fulfilling.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Leaves plenty of white space, ready to insert new arrangements",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 182,
+        "text": "If a friend suddenly invites you to dinner, what would you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "If it is not in the plan, it may be rejected",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Very happy, agreed immediately",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 183,
+        "text": "What do you consider \"routine\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Can improve efficiency and save energy",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Boredom kills creativity",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 184,
+        "text": "Are you more used to it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "reserve",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Just go with the flow",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 185,
+        "text": "At work do you enjoy?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Fixed work stations and times",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Flexible working system, freedom to choose location",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 186,
+        "text": "Do you feel like doing the same thing every day?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Very safe",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "will go crazy",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 187,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Step by step",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "do whatever you want",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 188,
+        "text": "For emergencies, you?",
+        "options": [
+          {
+            "label": "A",
+            "text": "regarded as interference",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "regarded as opportunity",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 189,
+        "text": "What do you think freedom is?",
+        "options": [
+          {
+            "label": "A",
+            "text": "freedom within rules",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "freedom to break rules",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 190,
+        "text": "Are you more like one?",
+        "options": [
+          {
+            "label": "A",
+            "text": "guardian",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "explorer",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 191,
+        "text": "How do you solve complex problems?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Break it down into small steps and defeat them one by one.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Start from the whole and look for breakthroughs",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 192,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "prepared speech",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "improvise",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 193,
+        "text": "What do you tend to do when learning new skills?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Study systematically and lay a solid foundation",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "What to learn when encountering problems, pragmatism",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 194,
+        "text": "Where do you think efficiency comes from?",
+        "options": [
+          {
+            "label": "A",
+            "text": "standardized process",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "burst of inspiration",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 195,
+        "text": "When packing your luggage, what do you do?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Make a list, check",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Dress by feeling",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 196,
+        "text": "Are you better at it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "implement",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "strain",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 197,
+        "text": "What do you think of \"process\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Very important to ensure quality",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Very cumbersome, not only slow but also rigid",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 198,
+        "text": "What do you do when faced with a crisis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Startup plan",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Dispose of tricks at a glance",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 199,
+        "text": "What do you prefer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "step by step",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Reach the sky in one step",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 200,
+        "text": "What do you think is the best plan?",
+        "options": [
+          {
+            "label": "A",
+            "text": "exhaustive",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "There is only one general direction",
+            "value": "P"
+          }
+        ]
+      }
+    ]
+  }
+}

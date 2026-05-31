@@ -1,14 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import {
+  AlertCircle,
+  ArrowLeft,
+  Briefcase,
+  Heart,
+  Palette,
+  Star,
+  TrendingUp,
+} from 'lucide-react';
+
 import { Layout } from '../components/Layout';
-import typesData from '../data/types.json';
 import { TypeIcon } from '../components/icons/TypeIcons';
+import { useLocale } from '../context/LocaleContext';
+import { getLocalizedType } from '../lib/localeData';
+import { buildLuckyColorPalette } from '../lib/typePresentation';
 import { PersonalityType } from '../types';
-import { Briefcase, Star, AlertCircle, Heart, Palette, TrendingUp, ArrowLeft } from 'lucide-react';
 
 export const PersonalityDetail: React.FC = () => {
   const { typeId } = useParams<{ typeId: string }>();
   const navigate = useNavigate();
+  const { locale } = useLocale();
   const [typeData, setTypeData] = useState<PersonalityType | null>(null);
 
   useEffect(() => {
@@ -16,16 +28,35 @@ export const PersonalityDetail: React.FC = () => {
       navigate('/types');
       return;
     }
-    const data = (typesData as PersonalityType[]).find(t => t.id === typeId.toUpperCase());
-    if (data) setTypeData(data);
-    else navigate('/types');
-  }, [typeId, navigate]);
 
-  if (!typeData) return <Layout><div>Loading...</div></Layout>;
+    const localizedType = getLocalizedType(locale, typeId);
+    if (localizedType) {
+      setTypeData(localizedType);
+      return;
+    }
 
-  const SectionTitle = ({ icon: Icon, title }: { icon: React.ElementType, title: string }) => (
-    <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-      <div className="p-2.5 bg-blue-100/50 rounded-xl mr-3 shadow-sm">
+    navigate('/types');
+  }, [locale, navigate, typeId]);
+
+  if (!typeData) {
+    return (
+      <Layout>
+        <div>Loading...</div>
+      </Layout>
+    );
+  }
+
+  const luckyPalette = buildLuckyColorPalette(typeData);
+
+  const SectionTitle = ({
+    icon: Icon,
+    title,
+  }: {
+    icon: React.ElementType;
+    title: string;
+  }) => (
+    <h3 className="mb-4 flex items-center text-xl font-bold text-gray-900">
+      <div className="mr-3 rounded-xl bg-blue-100/50 p-2.5 shadow-sm">
         <Icon size={20} className="text-blue-600" />
       </div>
       {title}
@@ -34,198 +65,248 @@ export const PersonalityDetail: React.FC = () => {
 
   return (
     <Layout>
-      {/* Background Blobs */}
-      <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-blue-50/30 via-purple-50/30 to-pink-50/30"></div>
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="fixed left-0 top-0 -z-10 h-full w-full overflow-hidden pointer-events-none">
+        <div className="absolute right-0 top-0 h-full w-full bg-gradient-to-br from-blue-50/30 via-purple-50/30 to-pink-50/30"></div>
+        <div className="absolute left-1/4 top-20 h-96 w-96 rounded-full bg-blue-200 opacity-20 blur-3xl mix-blend-multiply animate-blob"></div>
+        <div className="absolute bottom-20 right-1/4 h-96 w-96 rounded-full bg-purple-200 opacity-20 blur-3xl mix-blend-multiply animate-blob animation-delay-2000"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto space-y-8 py-8 px-4">
-        <button 
+      <div className="mx-auto max-w-4xl space-y-8 px-4 py-8">
+        <button
           onClick={() => navigate('/types')}
-          className="flex items-center text-gray-500 hover:text-blue-600 transition-colors group"
+          className="group flex items-center text-gray-500 transition-colors hover:text-blue-600"
         >
-          <div className="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center mr-2 group-hover:bg-blue-100 transition-colors shadow-sm">
-            <ArrowLeft size={16} className="group-hover:-translate-x-0.5 transition-transform" />
+          <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/50 shadow-sm transition-colors group-hover:bg-blue-100">
+            <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-0.5" />
           </div>
-          <span className="font-medium">返回性格库</span>
+          <span className="font-medium">Back to library</span>
         </button>
 
-        {/* Header */}
-        <div className="glass-card rounded-3xl shadow-lg p-8 md:p-12 flex flex-col md:flex-row items-center border border-white/60 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"></div>
-          <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-12 relative group w-48 h-48 md:w-60 md:h-60">
-            <div className="absolute inset-0 bg-blue-400/20 blur-3xl rounded-full group-hover:bg-blue-400/30 transition-colors duration-500"></div>
-            <TypeIcon type={typeData.id} size="100%" className="text-blue-600 relative z-10 drop-shadow-xl hover:scale-105 transition-transform duration-500" />
+        <div className="glass-card relative flex flex-col items-center overflow-hidden rounded-3xl border border-white/60 p-8 shadow-lg md:flex-row md:p-12">
+          <div className="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"></div>
+          <div className="group relative mb-8 h-48 w-48 flex-shrink-0 md:mb-0 md:mr-12 md:h-60 md:w-60">
+            <div className="absolute inset-0 rounded-full bg-blue-400/20 blur-3xl transition-colors duration-500 group-hover:bg-blue-400/30"></div>
+            <TypeIcon
+              type={typeData.id}
+              size="100%"
+              className="relative z-10 text-blue-600 drop-shadow-xl transition-transform duration-500 hover:scale-105"
+            />
           </div>
-          <div className="text-center md:text-left relative z-10">
-            <div className="inline-block bg-blue-50/80 backdrop-blur-sm text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm mb-5 shadow-sm border border-blue-100">
-              {typeData.category || 'MBTI 类型'}
+          <div className="relative z-10 text-center md:text-left">
+            <div className="mb-5 inline-block rounded-full border border-blue-100 bg-blue-50/80 px-4 py-1.5 text-sm font-bold text-blue-700 shadow-sm backdrop-blur-sm">
+              {typeData.category || 'MBTI Type'}
             </div>
-            <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-3 tracking-tight">{typeData.id}</h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-700 mb-5">{typeData.name}</h2>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
-              {typeData.summary}
-            </p>
+            <h1 className="mb-3 text-5xl font-extrabold tracking-tight text-gray-900 md:text-6xl">
+              {typeData.id}
+            </h1>
+            <h2 className="mb-5 text-2xl font-bold text-gray-700 md:text-3xl">{typeData.name}</h2>
+            <p className="max-w-2xl text-lg leading-relaxed text-gray-600">{typeData.summary}</p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-          {/* Traits */}
-          <div className="glass-panel rounded-2xl shadow-sm p-8 border border-white/50 hover:shadow-md transition-shadow">
-            <SectionTitle icon={Star} title="核心特征" />
+        <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+          <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md">
+            <SectionTitle icon={Star} title="Core traits" />
             <div className="flex flex-wrap gap-2.5">
-              {typeData.description.traits.map((trait, idx) => (
-                <span key={idx} className="bg-white/80 border border-gray-200/60 px-3 py-1.5 rounded-xl text-gray-700 shadow-sm text-sm font-medium">
+              {typeData.description.traits.map((trait, index) => (
+                <span
+                  key={index}
+                  className="rounded-xl border border-gray-200/60 bg-white/80 px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm"
+                >
                   {trait}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Lucky Colors */}
-          <div className="glass-panel rounded-2xl shadow-sm p-8 border border-white/50 hover:shadow-md transition-shadow">
-            <SectionTitle icon={Palette} title="幸运色彩" />
-            <div className="flex items-center space-x-5 mb-4">
-              <div 
-                className="w-20 h-20 rounded-2xl shadow-lg border-4 border-white rotate-3 hover:rotate-6 transition-transform"
+          <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md">
+            <SectionTitle icon={Palette} title="Lucky colors" />
+            <div className="mb-4 flex items-center space-x-5">
+              <div
+                className="h-20 w-20 rotate-3 rounded-2xl border-4 border-white shadow-lg transition-transform hover:rotate-6"
                 style={{ backgroundColor: typeData.luckyColors.primary }}
               ></div>
               <div>
-                <span className="block font-bold text-gray-900 text-lg">主要幸运色</span>
-                <span className="text-sm text-gray-500 font-mono bg-white/50 px-2 py-0.5 rounded border border-gray-100">{typeData.luckyColors.primary}</span>
+                <span className="block text-lg font-bold text-gray-900">Primary color</span>
+                <span className="rounded border border-gray-100 bg-white/50 px-2 py-0.5 text-sm font-mono text-gray-500">
+                  {typeData.luckyColors.primary}
+                </span>
               </div>
             </div>
-            <p className="text-gray-600 text-sm italic bg-white/40 p-3 rounded-lg border border-white/40">
+            <div className="mb-4 flex flex-wrap gap-3">
+              {luckyPalette.map((color) => (
+                <div
+                  key={color}
+                  className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white/70 px-3 py-2 shadow-sm"
+                >
+                  <span
+                    className="h-6 w-6 rounded-lg border border-black/10"
+                    style={{ backgroundColor: color }}
+                  ></span>
+                  <span className="text-xs font-mono text-gray-600">{color}</span>
+                </div>
+              ))}
+            </div>
+            <p className="rounded-lg border border-white/40 bg-white/40 p-3 text-sm italic text-gray-600">
               “{typeData.luckyColors.meaning}”
             </p>
           </div>
 
-          {/* Careers */}
-          <div className="glass-panel rounded-2xl shadow-sm p-8 border border-white/50 md:col-span-2 hover:shadow-md transition-shadow">
-            <SectionTitle icon={Briefcase} title="职业发展" />
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {typeData.description.careers.map((career, idx) => (
-                <div key={idx} className="flex items-center p-3.5 bg-white/60 rounded-xl border border-white/60 shadow-sm hover:scale-105 transition-transform">
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500 mr-3 shadow-sm shadow-green-200"></div>
-                  <span className="text-gray-700 font-medium">{career}</span>
+          <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-2">
+            <SectionTitle icon={Briefcase} title="Career directions" />
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+              {typeData.description.careers.map((career, index) => (
+                <div
+                  key={index}
+                  className="flex items-center rounded-xl bg-white/60 p-3.5 shadow-sm transition-transform hover:scale-105"
+                >
+                  <div className="mr-3 h-2.5 w-2.5 rounded-full bg-green-500 shadow-sm shadow-green-200"></div>
+                  <span className="font-medium text-gray-700">{career}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Strengths */}
-          <div className="glass-panel rounded-2xl shadow-sm p-8 border border-white/50 hover:shadow-md transition-shadow">
-            <SectionTitle icon={TrendingUp} title="优势能力" />
+          <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md">
+            <SectionTitle icon={TrendingUp} title="Strengths" />
             <ul className="space-y-3">
-              {typeData.description.strengths.map((item, idx) => (
-                <li key={idx} className="flex items-start bg-green-50/50 p-3 rounded-xl border border-green-100/50">
-                  <span className="text-green-600 mr-2.5 font-bold">✓</span>
-                  <span className="text-gray-700 text-sm">{item}</span>
+              {typeData.description.strengths.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex items-start rounded-xl border border-green-100/50 bg-green-50/50 p-3"
+                >
+                  <span className="mr-2.5 font-bold text-green-600">✓</span>
+                  <span className="text-sm text-gray-700">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Weaknesses */}
-          <div className="glass-panel rounded-2xl shadow-sm p-8 border border-white/50 hover:shadow-md transition-shadow">
-            <SectionTitle icon={AlertCircle} title="潜在盲点" />
+          <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md">
+            <SectionTitle icon={AlertCircle} title="Blind spots" />
             <ul className="space-y-3">
-              {typeData.description.weaknesses.map((item, idx) => (
-                <li key={idx} className="flex items-start bg-red-50/50 p-3 rounded-xl border border-red-100/50">
-                  <span className="text-red-500 mr-2.5 font-bold">!</span>
-                  <span className="text-gray-700 text-sm">{item}</span>
+              {typeData.description.weaknesses.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex items-start rounded-xl border border-red-100/50 bg-red-50/50 p-3"
+                >
+                  <span className="mr-2.5 font-bold text-red-500">!</span>
+                  <span className="text-sm text-gray-700">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Relationships */}
-          <div className="glass-panel rounded-2xl shadow-sm p-8 border border-white/50 md:col-span-2 hover:shadow-md transition-shadow">
-            <SectionTitle icon={Heart} title="人际关系" />
-            <div className="grid md:grid-cols-2 gap-8">
+          <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-2">
+            <SectionTitle icon={Heart} title="Relationships" />
+            <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <h4 className="font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-1.5 h-5 bg-pink-500 rounded-full mr-2"></span>
-                  最佳拍档
+                <h4 className="mb-3 flex items-center font-bold text-gray-900">
+                  <span className="mr-2 h-5 w-1.5 rounded-full bg-pink-500"></span>
+                  Best matches
                 </h4>
-                <div className="flex gap-3 mb-6 flex-wrap">
-                  {typeData.relationships.compatible.map((t) => (
-                    <Link key={t} to={`/type/${t}`} className="bg-pink-50 text-pink-700 px-4 py-1.5 rounded-full hover:bg-pink-100 transition-colors font-bold shadow-sm border border-pink-100">
-                      {t}
+                <div className="mb-6 flex flex-wrap gap-3">
+                  {typeData.relationships.compatible.map((relatedType) => (
+                    <Link
+                      key={relatedType}
+                      to={`/type/${relatedType}`}
+                      className="rounded-full border border-pink-100 bg-pink-50 px-4 py-1.5 font-bold text-pink-700 shadow-sm transition-colors hover:bg-pink-100"
+                    >
+                      {relatedType}
                     </Link>
                   ))}
                 </div>
               </div>
               <div>
-                <h4 className="font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-1.5 h-5 bg-purple-500 rounded-full mr-2"></span>
-                  相处建议
+                <h4 className="mb-3 flex items-center font-bold text-gray-900">
+                  <span className="mr-2 h-5 w-1.5 rounded-full bg-purple-500"></span>
+                  Getting along
                 </h4>
-                <p className="text-gray-600 bg-white/60 p-5 rounded-2xl border border-white/60 shadow-inner leading-relaxed">
+                <p className="rounded-2xl border border-white/60 bg-white/60 p-5 leading-relaxed text-gray-600 shadow-inner">
                   {typeData.relationships.advice}
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Development Advice */}
-          <div className="glass-panel rounded-2xl shadow-sm p-8 border border-white/50 md:col-span-2 hover:shadow-md transition-shadow">
-            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-              <div className="p-2.5 bg-green-100/50 rounded-xl mr-3 shadow-sm">
-                <TrendingUp size={20} className="text-green-600" />
+            <div className="mt-8">
+              <h4 className="mb-3 flex items-center font-bold text-gray-900">
+                <span className="mr-2 h-5 w-1.5 rounded-full bg-amber-500"></span>
+                Potential friction
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {typeData.relationships.challenging.map((relatedType) => (
+                  <Link
+                    key={relatedType}
+                    to={`/type/${relatedType}`}
+                    className="rounded-full border border-amber-100 bg-amber-50 px-4 py-1.5 font-bold text-amber-700 shadow-sm transition-colors hover:bg-amber-100"
+                  >
+                    {relatedType}
+                  </Link>
+                ))}
               </div>
-              个人成长建议
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-               <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-100">
-                 <h4 className="font-bold text-green-800 mb-4 flex items-center text-lg">
-                    <span className="bg-green-200 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">1</span>
-                    成长路径
-                 </h4>
-                 <ul className="space-y-3">
-                   {typeData.development.growthPath.map((path, idx) => (
-                     <li key={idx} className="flex items-start text-green-800 text-sm">
-                       <span className="mr-2.5 mt-1 w-1.5 h-1.5 bg-green-400 rounded-full flex-shrink-0"></span>
-                       <span className="leading-relaxed">{path}</span>
-                     </li>
-                   ))}
-                 </ul>
-               </div>
-               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-100">
-                 <h4 className="font-bold text-blue-800 mb-4 flex items-center text-lg">
-                    <span className="bg-blue-200 w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">2</span>
-                    实用技巧
-                 </h4>
-                 <ul className="space-y-3">
-                   {typeData.development.tips.map((tip, idx) => (
-                     <li key={idx} className="flex items-start text-blue-800 text-sm">
-                       <span className="mr-2.5 mt-1 w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0"></span>
-                       <span className="leading-relaxed">{tip}</span>
-                     </li>
-                   ))}
-                 </ul>
-               </div>
             </div>
           </div>
 
-          {/* Famous People */}
-          <div className="glass-panel rounded-2xl shadow-sm p-8 border border-white/50 md:col-span-2 hover:shadow-md transition-shadow">
-             <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-              <div className="p-2.5 bg-purple-100/50 rounded-xl mr-3 shadow-sm">
+          <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-2">
+            <h3 className="mb-6 flex items-center text-xl font-bold text-gray-900">
+              <div className="mr-3 rounded-xl bg-green-100/50 p-2.5 shadow-sm">
+                <TrendingUp size={20} className="text-green-600" />
+              </div>
+              Growth guide
+            </h3>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-emerald-50 p-6">
+                <h4 className="mb-4 flex items-center text-lg font-bold text-green-800">
+                  <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-200 text-xs">
+                    1
+                  </span>
+                  Growth path
+                </h4>
+                <ul className="space-y-3">
+                  {typeData.development.growthPath.map((path, index) => (
+                    <li key={index} className="flex items-start text-sm text-green-800">
+                      <span className="mr-2.5 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green-400"></span>
+                      <span className="leading-relaxed">{path}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-indigo-50 p-6">
+                <h4 className="mb-4 flex items-center text-lg font-bold text-blue-800">
+                  <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-blue-200 text-xs">
+                    2
+                  </span>
+                  Practical tips
+                </h4>
+                <ul className="space-y-3">
+                  {typeData.development.tips.map((tip, index) => (
+                    <li key={index} className="flex items-start text-sm text-blue-800">
+                      <span className="mr-2.5 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-400"></span>
+                      <span className="leading-relaxed">{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-2">
+            <h3 className="mb-6 flex items-center text-xl font-bold text-gray-900">
+              <div className="mr-3 rounded-xl bg-purple-100/50 p-2.5 shadow-sm">
                 <Star size={20} className="text-purple-600" />
               </div>
-              该性格特征的名人代表
+              Notable people with this type
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {typeData.famousPeople?.map((person, idx) => (
-                <div key={idx} className="text-center p-5 bg-white/60 rounded-2xl hover:bg-white transition-all hover:shadow-md border border-white/60 group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-full mx-auto mb-3 flex items-center justify-center text-purple-700 font-bold text-xl shadow-sm group-hover:scale-110 transition-transform">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+              {typeData.famousPeople?.map((person, index) => (
+                <div
+                  key={index}
+                  className="group rounded-2xl border border-white/60 bg-white/60 p-5 text-center transition-all hover:bg-white hover:shadow-md"
+                >
+                  <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-100 to-indigo-100 text-xl font-bold text-purple-700 shadow-sm transition-transform group-hover:scale-110">
                     {person.name.charAt(0)}
                   </div>
                   <h4 className="font-bold text-gray-900">{person.name}</h4>
-                  <p className="text-xs text-gray-500 mt-1">{person.title}</p>
+                  <p className="mt-1 text-xs text-gray-500">{person.title}</p>
                 </div>
               ))}
             </div>

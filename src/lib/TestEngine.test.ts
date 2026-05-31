@@ -1,7 +1,7 @@
 
 import { describe, it, expect, beforeEach } from 'vitest';
 import { TestEngine } from './TestEngine';
-import typesData from '../data/types.json';
+import { getLocalizedTypes } from './localeData';
 
 // Mock localStorage
 const localStorageMock = (() => {
@@ -97,7 +97,7 @@ describe('TestEngine', () => {
 
   describe('Types Data Validation', () => {
     it('should contain 16 unique MBTI types with required fields', () => {
-      const types = typesData as unknown as Array<Record<string, unknown>>;
+      const types = getLocalizedTypes('zh') as unknown as Array<Record<string, unknown>>;
       expect(Array.isArray(types)).toBe(true);
       expect(types.length).toBe(16);
 
@@ -136,6 +136,15 @@ describe('TestEngine', () => {
       expect(result.version).toBe('quick');
       // Just ensure we have a result
       expect(result.resultType.length).toBe(4);
+    });
+  });
+
+  describe('Localized question sources', () => {
+    it('loads the requested locale question bank', () => {
+      const viEngine = new TestEngine('quick', 'vi');
+      const zhEngine = new TestEngine('quick', 'zh');
+
+      expect(viEngine.getQuestions()[0]?.text).not.toBe(zhEngine.getQuestions()[0]?.text);
     });
   });
 

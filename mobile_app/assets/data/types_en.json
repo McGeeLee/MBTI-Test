@@ -1,0 +1,1330 @@
+[
+  {
+    "id": "INTJ",
+    "name": "architect type",
+    "category": "Analysts",
+    "summary": "Imaginative and strategic thinker, everything is planned.",
+    "description": {
+      "traits": [
+        "Rational, independent, strong-willed, with a strong desire for knowledge",
+        "Skilled at identifying flaws in systems and designing innovative solutions",
+        "Pursue perfection and have extremely high standards for yourself and others",
+        "Like to be alone and can be most creative in a quiet environment"
+      ],
+      "strengths": [
+        "Strategic thinking: good at making long-term plans and able to foresee potential problems",
+        "Innovation ability: always come up with unique insights and solutions",
+        "Independent: not dependent on others and able to complete complex tasks independently",
+        "Lifelong learning: constantly pursue new knowledge and improve yourself",
+        "High standards: extremely high requirements for work quality and pursuit of excellence"
+      ],
+      "weaknesses": [
+        "Arrogance: Sometimes looking down on others due to a sense of intellectual superiority",
+        "Overanalyzing: Easily getting bogged down in details, resulting in slow action",
+        "Emotional detachment: Not good at expressing emotions, may be seen as aloof",
+        "Highly critical: low tolerance for others’ mistakes, prone to conflicts"
+      ],
+      "careers": [
+        "System Architect/Software Engineer",
+        "Strategic Planner/Investment Banker",
+        "Scientist/Researcher",
+        "Surgeon / Neurologist",
+        "Judge/Senior Counsel"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#581c87",
+      "secondary": [
+        "#000000",
+        "#94a3b8"
+      ],
+      "meaning": "Dark purple represents wisdom, mystery and nobility, while black represents independence and authority."
+    },
+    "relationships": {
+      "compatible": [
+        "ENFP",
+        "ENTP"
+      ],
+      "challenging": [
+        "ESFP",
+        "ISFP"
+      ],
+      "advice": "In a relationship, try to put aside logical analysis and feel more about your partner's emotions. Learn to express your appreciation rather than just making suggestions for improvements."
+    },
+    "development": {
+      "growthPath": [
+        "Learn social skills and understand irrational human behavior",
+        "Practice mindfulness, live in the present moment, and reduce excessive anxiety",
+        "Learn to compromise and accept that not everything can be perfect"
+      ],
+      "tips": [
+        "Spend 10 minutes every day recording a gratitude journal and cultivating positive emotions",
+        "Play team sports and learn to work with others",
+        "Before criticizing, name the other person’s three strengths."
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Elon Musk",
+        "title": "Tesla and SpaceX founders"
+      },
+      {
+        "name": "Friedrich Nietzsche",
+        "title": "philosopher"
+      },
+      {
+        "name": "Christopher Nolan",
+        "title": "film director"
+      },
+      {
+        "name": "Mark Zuckerberg",
+        "title": "Founder of Facebook"
+      }
+    ]
+  },
+  {
+    "id": "INTP",
+    "name": "logician type",
+    "category": "Analysts",
+    "summary": "A creative inventor with an insatiable thirst for knowledge.",
+    "description": {
+      "traits": [
+        "Quiet, introverted, quick thinking, strict logic",
+        "Passionate about analyzing abstract concepts and theories and looking for the patterns behind things",
+        "Flexible and open-minded, but intolerant of things that violate logic",
+        "Skeptics, accustomed to questioning everything"
+      ],
+      "strengths": [
+        "Analytical skills: able to quickly see through the essence of complex problems",
+        "Originality: thinking is not bound by tradition and often has amazing creativity",
+        "Objectivity and impartiality: Decisions are based on logic and facts and are not interfered with by emotions.",
+        "Adaptable: open to new ideas and willing to try",
+        "Focus: Ability to maintain a high degree of concentration in areas of interest"
+      ],
+      "weaknesses": [
+        "Emotional blunting: difficulty understanding and meeting the emotional needs of others",
+        "Dislike of rules: tired of cumbersome administrative procedures and social etiquette",
+        "Self-doubt: Fear of making mistakes, prone to analysis paralysis",
+        "Unpredictable: Thinking jumps around, making it difficult for others to keep up."
+      ],
+      "careers": [
+        "Computer Programmer/Data Scientist",
+        "Mathematician / Physicist",
+        "University professor/researcher",
+        "Forensic/Detective",
+        "Financial Analyst/Economist"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#3b82f6",
+      "secondary": [
+        "#e5e7eb",
+        "#1e3a8a"
+      ],
+      "meaning": "Blue represents rationality, calmness and profundity, while silver represents technology and the future."
+    },
+    "relationships": {
+      "compatible": [
+        "ENTJ",
+        "ESTJ"
+      ],
+      "challenging": [
+        "ESFJ",
+        "ISFJ"
+      ],
+      "advice": "Don't always try to use logic to deconstruct feelings. Learn to provide emotional support when your partner needs it, not just solutions."
+    },
+    "development": {
+      "growthPath": [
+        "Translate theory into practical action and avoid fantasy",
+        "Improve interpersonal skills and build emotional connections",
+        "Increase self-confidence and trust your own judgment"
+      ],
+      "tips": [
+        "Set clear deadlines for each project",
+        "Take the initiative to participate in social activities and practice small talk",
+        "Learn to manage emotions, identify and express your feelings"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "albert einstein",
+        "title": "physicist"
+      },
+      {
+        "name": "bill gates",
+        "title": "Microsoft founder"
+      },
+      {
+        "name": "Isaac Newton",
+        "title": "physicist"
+      },
+      {
+        "name": "René Descartes",
+        "title": "philosopher"
+      }
+    ]
+  },
+  {
+    "id": "ENTJ",
+    "name": "Commander type",
+    "category": "Analysts",
+    "summary": "Bold, imaginative and strong-willed leaders always find or create solutions.",
+    "description": {
+      "traits": [
+        "Confident, decisive, natural leader, full of charisma",
+        "Have a strategic vision and be able to quickly identify inefficiencies and implement reforms",
+        "Enjoy challenges and enjoy winning in competition",
+        "Rational, objective and result-oriented"
+      ],
+      "strengths": [
+        "Efficient execution: able to quickly turn plans into actions",
+        "Strategic planning: good at macro layout and formulating long-term goals",
+        "Confidence and firmness: Believe in your own abilities and never shrink back in the face of difficulties",
+        "Motivating others: able to lead the team to achieve seemingly impossible goals",
+        "Strong will: strong ability to withstand pressure, becoming more courageous with setbacks"
+      ],
+      "weaknesses": [
+        "Opinionated: Sometimes it’s hard to listen to other people’s opinions",
+        "Impatient: Very low tolerance for inefficiency and errors",
+        "Emotional indifference: easily ignore the feelings of others and appear inhumane",
+        "Arrogance: May look down upon others because of superior abilities"
+      ],
+      "careers": [
+        "Corporate Executive Officer (CEO/COO)",
+        "Management Consultant/Strategy Consulting",
+        "lawyer/judge",
+        "Entrepreneur",
+        "university administrator"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#dc2626",
+      "secondary": [
+        "#000000",
+        "#7c3aed"
+      ],
+      "meaning": "Red represents strength, passion and aggressiveness, while black represents authority and control."
+    },
+    "relationships": {
+      "compatible": [
+        "INTP",
+        "INFP"
+      ],
+      "challenging": [
+        "ISFJ",
+        "ESFJ"
+      ],
+      "advice": "While pursuing efficiency, don’t forget the human factor. Learn to be vulnerable and listen. This will not weaken your authority, but will increase your charm."
+    },
+    "development": {
+      "growthPath": [
+        "Develop empathy and pay attention to the emotional needs of others",
+        "Learn to appreciate the process, not just the results",
+        "Practice patience and accept the imperfections of others"
+      ],
+      "tips": [
+        "Force yourself to speak last in meetings and listen to others’ opinions first",
+        "Schedule time each week for non-work relaxation",
+        "Participate in volunteer activities and cultivate service awareness"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Steve Jobs",
+        "title": "co-founder of apple inc."
+      },
+      {
+        "name": "Gordon Ramsay",
+        "title": "celebrity chef"
+      },
+      {
+        "name": "Margaret Thatcher",
+        "title": "former british prime minister"
+      },
+      {
+        "name": "franklin roosevelt",
+        "title": "former president of the united states"
+      }
+    ]
+  },
+  {
+    "id": "ENTP",
+    "name": "debater type",
+    "category": "Analysts",
+    "summary": "Smart and curious thinker, although not immune to intellectual challenges.",
+    "description": {
+      "traits": [
+        "Quick response, excellent eloquence, and likes to discover the truth through debate",
+        "Full of innovative ideas and aversion to routine and repetition",
+        "Good at analyzing problems from multiple angles and jumping in thinking",
+        "Energetic and likes to try new things"
+      ],
+      "strengths": [
+        "Knowledgeable: involved in various fields and strong learning ability",
+        "Quick thinking: able to quickly respond to emergencies and humorous",
+        "Innovation ability: good at breaking conventions and coming up with revolutionary ideas",
+        "Charming: good at communicating and able to persuade others easily",
+        "Adaptable: able to thrive in changing environments"
+      ],
+      "weaknesses": [
+        "Argumentative: sometimes arguing just for the sake of arguing, causing others to feel disgusted",
+        "Lack of focus: easily distracted and difficult to complete boring tasks",
+        "Unrealistic: Although the idea is good, it is sometimes difficult to implement it",
+        "Ignore details: Focus too much on the big picture and easily make mistakes in details"
+      ],
+      "careers": [
+        "Entrepreneur / Entrepreneur",
+        "Lawyer/Legal Advisor",
+        "Marketing Director",
+        "venture capitalist",
+        "Talk show actor/host"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#c026d3",
+      "secondary": [
+        "#0ea5e9",
+        "#facc15"
+      ],
+      "meaning": "Magenta represents uniqueness, innovation and extraordinary, while yellow represents vitality and wisdom."
+    },
+    "relationships": {
+      "compatible": [
+        "INFJ",
+        "INTJ"
+      ],
+      "challenging": [
+        "ISFJ",
+        "ISTJ"
+      ],
+      "advice": "Debating is fun, but don't bring it into an emotional relationship. Learn to offer your partner emotional support, not just solutions."
+    },
+    "development": {
+      "growthPath": [
+        "Develop self-discipline to turn ideas into results",
+        "Learn to put yourself in someone else’s shoes and take care of others’ emotions",
+        "Pay attention to commitment and responsibility and do what you say"
+      ],
+      "tips": [
+        "Learn time management techniques like the Pomodoro Technique",
+        "Before criticizing others, take three deep breaths",
+        "Practice meditation to quiet your brain"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "thomas edison",
+        "title": "inventor"
+      },
+      {
+        "name": "mark twain",
+        "title": "writer"
+      },
+      {
+        "name": "Robert Downey Jr.",
+        "title": "actor"
+      },
+      {
+        "name": "Céline Dion",
+        "title": "singer"
+      }
+    ]
+  },
+  {
+    "id": "INFJ",
+    "name": "Advocate",
+    "category": "Diplomats",
+    "summary": "Quiet and mysterious, yet inspiring and tireless idealist.",
+    "description": {
+      "traits": [
+        "Introverted, intuitive, emotional, with deep insights",
+        "Have a strong sense of morality and idealism and are committed to making the world a better place",
+        "Good at understanding the emotions and motivations of others and a natural listener",
+        "Pursue your beliefs firmly and never give up easily"
+      ],
+      "strengths": [
+        "Creative: Rich in imagination and able to see problems from a unique perspective",
+        "Strong insight: able to see through the essence of things and people’s hearts",
+        "Principled: stay true to your own values ​​and be consistent in your words and deeds",
+        "Altruism: Helping others sincerely without expecting anything in return",
+        "Persistence: making great efforts for your ideals"
+      ],
+      "weaknesses": [
+        "Perfectionism: Having too high demands on yourself and others, making it difficult to be satisfied",
+        "Extremely sensitive: Feeling very distressed by criticism and conflict from others",
+        "Easily burnt out: Overcommitment leads to physical and mental exhaustion",
+        "Difficulty opening up: Protect your inner world and don’t show it to others easily"
+      ],
+      "careers": [
+        "Psychological Counselor/Therapist",
+        "Writer/Editor",
+        "Nonprofit organization worker",
+        "human resources manager",
+        "special education teacher"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#7c3aed",
+      "secondary": [
+        "#10b981",
+        "#f3f4f6"
+      ],
+      "meaning": "Purple represents spirituality, intuition and nobility, green represents healing and harmony"
+    },
+    "relationships": {
+      "compatible": [
+        "ENTP",
+        "ENFP"
+      ],
+      "challenging": [
+        "ESTP",
+        "ISTP"
+      ],
+      "advice": "Find a partner who understands your deep thoughts and respects your values. Don't always try to change the other person, accept them for who they are."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to deal with conflict without taking criticism personally",
+        "Balance ideals and reality, accept imperfection",
+        "Take care of your body and emotions and learn to say no"
+      ],
+      "tips": [
+        "Set aside time alone every day to recharge and restore energy",
+        "Engage in concrete, realistic activities such as gardening or cooking",
+        "Share your feelings with a trusted friend rather than taking it upon yourself"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "martin luther king",
+        "title": "civil rights leader"
+      },
+      {
+        "name": "nelson mandela",
+        "title": "former president of south africa"
+      },
+      {
+        "name": "mother teresa",
+        "title": "philanthropist"
+      },
+      {
+        "name": "Lady Gaga",
+        "title": "singer"
+      }
+    ]
+  },
+  {
+    "id": "INFP",
+    "name": "mediator type",
+    "category": "Diplomats",
+    "summary": "Poetic, kind-hearted altruist, always enthusiastic to help for the right cause.",
+    "description": {
+      "traits": [
+        "Introverted, idealistic, with a rich emotional world",
+        "Pursue inner harmony and truth, and be loyal to your own values",
+        "Very sensitive to the emotions of others and highly empathetic",
+        "Adaptable, but can become very determined if the bottom line is touched"
+      ],
+      "strengths": [
+        "Empathetic: Able to deeply understand the pain and happiness of others",
+        "Generosity: willing to share and willing to pay for others",
+        "Open-minded: Tolerant of different viewpoints and not easy to judge",
+        "Creative: often gifted in art and literature",
+        "Full of passion: able to devote all his energy to the cause he believes in"
+      ],
+      "weaknesses": [
+        "Unrealistic: easily immersed in fantasy and ignore reality",
+        "Self-isolation: It is easy to close yourself off under pressure and refuse to communicate",
+        "Lack of concentration: easily distracted and difficult to complete boring tasks",
+        "Overly idealistic: Expecting too much from partners and friends and being easily disappointed"
+      ],
+      "careers": [
+        "Writer/Poet/Screenwriter",
+        "Psychologist / Counselor",
+        "Graphic Designer/Illustrator",
+        "Human Resources/Recruitment Specialist",
+        "physical therapist"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#10b981",
+      "secondary": [
+        "#0ea5e9",
+        "#f0f9ff"
+      ],
+      "meaning": "Green represents inner harmony, growth and healing, while sky blue represents freedom and dreams."
+    },
+    "relationships": {
+      "compatible": [
+        "ENFJ",
+        "ENTJ"
+      ],
+      "challenging": [
+        "ESTJ",
+        "ISTJ"
+      ],
+      "advice": "Don't idealize your partner, everyone has flaws. Learn to express your needs instead of expecting the other person to read your mind."
+    },
+    "development": {
+      "growthPath": [
+        "Improve mobility and turn dreams into reality",
+        "Enhance your ability to withstand stress and learn to face criticism",
+        "Establish a structured lifestyle to improve efficiency"
+      ],
+      "tips": [
+        "Break down big goals into small daily tasks and complete them step by step",
+        "Practice public speaking or expressing ideas to build your confidence",
+        "Maintain a regular schedule and diet, and take good care of your body"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "J.R.R. Tolkien",
+        "title": "Author of \"Lord of the Rings\""
+      },
+      {
+        "name": "william shakespeare",
+        "title": "playwright"
+      },
+      {
+        "name": "Johnny Depp",
+        "title": "actor"
+      },
+      {
+        "name": "julia roberts",
+        "title": "actor"
+      }
+    ]
+  },
+  {
+    "id": "ENFJ",
+    "name": "Protagonist",
+    "category": "Diplomats",
+    "summary": "A charismatic and inspiring leader with the ability to captivate his audience.",
+    "description": {
+      "traits": [
+        "Enthusiastic, outgoing, charismatic, and a natural leader",
+        "Pay close attention to the emotions and needs of others and be willing to help others",
+        "Have a strong sense of responsibility and be committed to promoting team harmony",
+        "Good at communication and able to clearly express one's views and vision"
+      ],
+      "strengths": [
+        "Strong empathy: can be keenly aware of the emotional changes of others",
+        "Leadership: Good at motivating and uniting others to achieve common goals",
+        "Dependable and Tolerant: trustworthy and open to different viewpoints",
+        "Communication skills: excellent eloquence and social skills",
+        "Altruistic spirit: sincerely hope that everyone will become better"
+      ],
+      "weaknesses": [
+        "Too idealistic: unprepared for the cruelty of reality",
+        "Too selfless: easily sacrificing one's own needs for others",
+        "Overly sensitive: Care deeply about other people’s evaluations and criticisms",
+        "Indecision: Tend to hesitate when faced with difficult decisions"
+      ],
+      "careers": [
+        "Teacher/Principal/Educational Administrator",
+        "Public Relations Manager/Spokesperson",
+        "Nonprofit organization leader",
+        "Sales Director/Account Manager",
+        "wedding planner"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#16a34a",
+      "secondary": [
+        "#7c3aed",
+        "#ffffff"
+      ],
+      "meaning": "Green represents growth and hope, purple represents nobility and spiritual pursuit."
+    },
+    "relationships": {
+      "compatible": [
+        "INFP",
+        "ISFP"
+      ],
+      "challenging": [
+        "ISTP",
+        "ESTP"
+      ],
+      "advice": "Don't try to save everyone, including your partner. Give each other some space, and give yourself some time alone."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to accept imperfections in reality and lower expectations",
+        "Establish emotional boundaries and not become overly involved in other people’s lives",
+        "Analyze problems rationally and do not rely entirely on emotional decision-making"
+      ],
+      "tips": [
+        "When you feel tired, decisively refuse other people’s requests",
+        "Document your needs and prioritize meeting them",
+        "Learn logical analysis tools to assist decision-making"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "barack obama",
+        "title": "former president of the united states"
+      },
+      {
+        "name": "Oprah Winfrey",
+        "title": "talk show host"
+      },
+      {
+        "name": "Jennifer Lawrence",
+        "title": "actor"
+      },
+      {
+        "name": "Sean Connery",
+        "title": "actor"
+      }
+    ]
+  },
+  {
+    "id": "ENFP",
+    "name": "candidate type",
+    "category": "Diplomats",
+    "summary": "Enthusiastic, creative and social free spirit who always finds a reason to smile.",
+    "description": {
+      "traits": [
+        "Passionate, imaginative and a true free spirit",
+        "Believe that life is full of possibilities and can quickly establish connections between things",
+        "Extremely approachable and able to quickly establish connections with strangers",
+        "Dislike repetition and boringness, pursue freshness and meaning"
+      ],
+      "strengths": [
+        "Strong curiosity: full of desire to explore new things",
+        "Keen observation: able to detect small emotional changes in others",
+        "Passionate: Contagious and able to lift the atmosphere around you",
+        "Communication skills: Excellent presenter, good at telling stories",
+        "Well-liked: Friendly and easy-going, easy to win the favor of others"
+      ],
+      "weaknesses": [
+        "Lack of focus: It takes three minutes to do something, but it’s difficult to stick to it.",
+        "Overthinking: prone to over-interpreting simple details",
+        "Emotional: Emotional swings, easy to feel stressed",
+        "Poor independence: sometimes overly dependent on others for approval"
+      ],
+      "careers": [
+        "Journalist/Columnist",
+        "Creative Director/Advertising Planner",
+        "activist / philanthropist",
+        "Consultant/Corporate Trainer",
+        "musician/actor"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#f97316",
+      "secondary": [
+        "#06b6d4",
+        "#facc15"
+      ],
+      "meaning": "Orange represents vitality, enthusiasm and creativity, while cyan represents freedom and agility."
+    },
+    "relationships": {
+      "compatible": [
+        "INTJ",
+        "INFJ"
+      ],
+      "challenging": [
+        "ISTJ",
+        "ESTJ"
+      ],
+      "advice": "It's important to keep things fresh in a relationship, but you also need to learn to be normal. Give your partner more certainty and reduce the recurrence of emotions."
+    },
+    "development": {
+      "growthPath": [
+        "Develop focus and delve deeper into a field",
+        "Learn to control emotions and maintain inner peace",
+        "Accept necessary rules and constraints and improve execution ability"
+      ],
+      "tips": [
+        "Use the Pomodoro Technique to Improve Focus",
+        "Before making a decision, make a list of pros and cons",
+        "Organize your living environment regularly and cultivate a sense of order"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Robert Downey Jr.",
+        "title": "actor"
+      },
+      {
+        "name": "will smith",
+        "title": "actor"
+      },
+      {
+        "name": "Robin Williams",
+        "title": "comedian"
+      },
+      {
+        "name": "quentin tarantino",
+        "title": "director"
+      }
+    ]
+  },
+  {
+    "id": "ISTJ",
+    "name": "Logistics type",
+    "category": "Sentinels",
+    "summary": "An individual who seeks truth from facts and whose reliability cannot be doubted.",
+    "description": {
+      "traits": [
+        "Quiet, serious and pragmatic, they are the cornerstone of society",
+        "Pays great attention to commitment, tradition and rules and is trustworthy",
+        "Be methodical and pay attention to details and accuracy",
+        "Strong logic and make decisions based on facts"
+      ],
+      "strengths": [
+        "Honesty and integrity: never lie and stick to principles",
+        "Extremely Reliable: Do what you say and never shirk responsibility",
+        "Strong will: never give up in the face of difficulties",
+        "Encyclopedia: Has a wealth of knowledge reserves and memory",
+        "Organizational skills: good at creating and maintaining order"
+      ],
+      "weaknesses": [
+        "Stubbornness: Difficulty accepting new methods and perspectives",
+        "Emotional retardation: poor expression of emotions and difficulty understanding others",
+        "Self-blame: It’s easy to blame yourself for mistakes and be under too much pressure",
+        "Dogmatism: Too rigid in rules and lack of flexibility"
+      ],
+      "careers": [
+        "Accountant / Auditor / Financial Director",
+        "System Administrator/Database Administration",
+        "civil servant/military officer",
+        "judge/lawyer",
+        "supply chain manager"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#1e3a8a",
+      "secondary": [
+        "#9ca3af",
+        "#1f2937"
+      ],
+      "meaning": "Dark blue represents reason, calmness and professionalism, while gray represents stability and neutrality."
+    },
+    "relationships": {
+      "compatible": [
+        "ESTP",
+        "ESFP"
+      ],
+      "challenging": [
+        "ENFP",
+        "INFP"
+      ],
+      "advice": "Try to express your feelings, not just the facts. Be open to changes in others and don't always judge the present based on past experiences."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to adapt to changes and embrace new things",
+        "Develop emotional intelligence and understand the irrational behavior of others",
+        "Learn to be tolerant of yourself and others and reduce self-criticism"
+      ],
+      "tips": [
+        "Try one little thing every week that you’ve never done before",
+        "When you feel like criticizing, take a deep breath and look for the other person’s motivations",
+        "Learn some relaxation techniques such as yoga or meditation"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Warren Buffett",
+        "title": "investor"
+      },
+      {
+        "name": "george washington",
+        "title": "first president of the united states"
+      },
+      {
+        "name": "Angela Merkel",
+        "title": "former chancellor of germany"
+      },
+      {
+        "name": "Natalie Portman",
+        "title": "actor"
+      }
+    ]
+  },
+  {
+    "id": "ISFJ",
+    "name": "Guardian type",
+    "category": "Sentinels",
+    "summary": "A very dedicated and warm guardian, always ready to protect those he loves.",
+    "description": {
+      "traits": [
+        "Quiet, friendly, responsible, with a strong sense of dedication",
+        "Committed to fulfilling obligations, not only to oneself but also to others",
+        "Loyal, considerate, and able to remember the smallest details about others",
+        "Pay attention to stability and security, and maintain traditions"
+      ],
+      "strengths": [
+        "Support others: willing to share knowledge and experience to help others",
+        "Dependable and patient: not only complete tasks, but also exceed expectations",
+        "Strong observation skills: pay attention to details and can find problems that others ignore",
+        "Enthusiasm: Although introverted, he is very enthusiastic towards people close to him",
+        "Practical: Keep your feet on the ground and make sure things are in order"
+      ],
+      "weaknesses": [
+        "Too modest: easily overlooked and credit taken away by others",
+        "Emotional suppression: hiding emotions in your heart until they explode",
+        "Overload: Don’t know how to say no, take on too much responsibility",
+        "Resistance to change: Uneasy with new situations and methods"
+      ],
+      "careers": [
+        "Dentist/Nurse/Doctor",
+        "Primary school teacher/kindergarten teacher",
+        "Administrative Assistant/Secretary",
+        "interior designer",
+        "Customer Service Manager"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#60a5fa",
+      "secondary": [
+        "#f3f4f6",
+        "#d1d5db"
+      ],
+      "meaning": "Light blue represents gentleness, tranquility and protection, while beige represents comfort and home."
+    },
+    "relationships": {
+      "compatible": [
+        "ESFP",
+        "ESTP"
+      ],
+      "challenging": [
+        "ENTP",
+        "INTJ"
+      ],
+      "advice": "Don’t be afraid of conflict, your needs are equally important. Find a partner who appreciates your efforts and is willing to reciprocate."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to express dissatisfaction and safeguard your rights and interests",
+        "Accept new ideas and changes and take risks",
+        "Focus on your own growth, not just taking care of others"
+      ],
+      "tips": [
+        "Practice saying “no” and start with small things",
+        "Try a new hobby, just for yourself",
+        "Reflect regularly on whether you feel you are being taken advantage of"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "elizabeth ii",
+        "title": "queen of england"
+      },
+      {
+        "name": "beyonce",
+        "title": "singer"
+      },
+      {
+        "name": "Vin Diesel",
+        "title": "actor"
+      },
+      {
+        "name": "kate middleton",
+        "title": "princess of wales"
+      }
+    ]
+  },
+  {
+    "id": "ESTJ",
+    "name": "General manager type",
+    "category": "Sentinels",
+    "summary": "A great manager is unparalleled in his ability to manage things or people.",
+    "description": {
+      "traits": [
+        "Pragmatic, decisive, results-oriented, a natural manager",
+        "Value tradition, rules and order, and like clear hierarchies",
+        "Be straightforward and honest, do not believe in abstract theories, only look at the facts",
+        "Be diligent and believe that character can be built through work"
+      ],
+      "strengths": [
+        "Honesty and integrity: adhere to principles and be trustworthy",
+        "Organizational skills: Ability to allocate resources and personnel efficiently",
+        "Firm will: Don’t flinch in the face of difficulties and persevere to the end",
+        "Loyalty and patience: a stabilizer for the team and family",
+        "Leadership: Able to convey instructions clearly and lead the team forward"
+      ],
+      "weaknesses": [
+        "Rigid and stubborn: Difficulty adapting to unexpected situations and unconventional perspectives",
+        "Emotional detachment: Insensitivity to the emotional needs of others",
+        "Difficulty relaxing: Always working and not enjoying life",
+        "Good at teaching others: Likes to impose one's own values ​​on others"
+      ],
+      "careers": [
+        "Corporate Executive / General Manager",
+        "Project Manager/Operations Director",
+        "judge/lawyer",
+        "police officer / officer",
+        "Banker/Financial Advisor"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#1e40af",
+      "secondary": [
+        "#ffffff",
+        "#4b5563"
+      ],
+      "meaning": "Navy blue represents authority, professionalism and order, while white represents clarity and integrity."
+    },
+    "relationships": {
+      "compatible": [
+        "ISTP",
+        "ISFP"
+      ],
+      "challenging": [
+        "INFP",
+        "ENFP"
+      ],
+      "advice": "Try to listen to your partner's emotional needs and don't always try to solve the problem. Remember, sometimes understanding and companionship are more important than being right."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to be flexible and open to new possibilities",
+        "Develop empathy and pay attention to the feelings of others",
+        "Balance work and life and learn to relax"
+      ],
+      "tips": [
+        "Before making a decision, stop and listen to different opinions",
+        "Try some unstructured activities like making art",
+        "Appreciate more and criticize less your subordinates or family members"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "John D. Rockefeller",
+        "title": "industrialist"
+      },
+      {
+        "name": "Sonia Sotomayor",
+        "title": "U.S. Supreme Court Justice"
+      },
+      {
+        "name": "frank sinatra",
+        "title": "singer"
+      },
+      {
+        "name": "Lyndon Johnson",
+        "title": "former president of the united states"
+      }
+    ]
+  },
+  {
+    "id": "ESFJ",
+    "name": "archon type",
+    "category": "Sentinels",
+    "summary": "Extremely compassionate, social and popular people, always eager to help.",
+    "description": {
+      "traits": [
+        "Outgoing, enthusiastic and responsible, at the heart of social situations",
+        "Attach great importance to interpersonal harmony and are willing to sacrifice themselves for the team",
+        "Value tradition and loyalty and like to take care of others",
+        "Pragmatic and concrete, paying attention to details in daily life"
+      ],
+      "strengths": [
+        "Practical ability: good at handling daily affairs and logistical work",
+        "Strong sense of responsibility: attach great importance to commitments and never break promises",
+        "Loyal and reliable: the most solid backing for friends and family",
+        "Sensitivity and warmth: Ability to keenly perceive the needs of others and provide help",
+        "Social master: able to make everyone feel comfortable easily"
+      ],
+      "weaknesses": [
+        "Dependence on evaluation: caring too much about other people’s opinions and social status",
+        "Inflexible: critical of unconventional behaviors and perspectives",
+        "Self-sacrifice: Tend to neglect oneself in order to please others",
+        "Conflict avoidance: covering up real issues for the sake of superficial harmony"
+      ],
+      "careers": [
+        "Elementary Teacher/Special Education",
+        "Nurse/Healthcare",
+        "Administration/Public Relations",
+        "social worker",
+        "Catering/Hotel Management"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#ec4899",
+      "secondary": [
+        "#fef3c7",
+        "#6b7280"
+      ],
+      "meaning": "Pink represents care, warmth and love, beige represents peace and comfort"
+    },
+    "relationships": {
+      "compatible": [
+        "ISFP",
+        "ISTP"
+      ],
+      "challenging": [
+        "INTJ",
+        "INTP"
+      ],
+      "advice": "Don't always take all the responsibility on yourself. Learn to express your own needs in relationships rather than just meet the needs of the other person."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to think independently and not blindly follow social evaluations",
+        "Establish personal boundaries and learn to say no",
+        "Accept that conflict is part of relationships and don’t avoid issues"
+      ],
+      "tips": [
+        "Set aside time every day to be alone and pay attention to your inner feelings",
+        "Before helping others, make sure you have the energy to spare",
+        "Try to accept different perspectives and lifestyles"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "taylor swift",
+        "title": "singer"
+      },
+      {
+        "name": "bill clinton",
+        "title": "former president of the united states"
+      },
+      {
+        "name": "jennifer lopez",
+        "title": "singer/actor"
+      },
+      {
+        "name": "Steve Harvey",
+        "title": "host"
+      }
+    ]
+  },
+  {
+    "id": "ISTP",
+    "name": "Connoisseur type",
+    "category": "Explorers",
+    "summary": "Bold and practical experimentalist, adept at using tools of all kinds.",
+    "description": {
+      "traits": [
+        "Calm, rational and curious, he is a natural craftsman and maker",
+        "Likes to learn how things work through hands-on experience",
+        "Flexible and adaptable, live in the moment, like adventure and excitement",
+        "Not many words, but very powerful in action"
+      ],
+      "strengths": [
+        "Optimism and vitality: full of energy and little anxiety",
+        "Creative: good at turning theory into practical applications",
+        "Crisis handling: able to stay calm under pressure and solve problems quickly",
+        "Casual and rational: flexible thinking, able to adapt to various changes",
+        "Hands-on ability: proficient in using tools and skilled in technology"
+      ],
+      "weaknesses": [
+        "Stubbornness: Once a decision is made, it is difficult to change it",
+        "Emotional shut-down: difficulty understanding and expressing emotions",
+        "Easily bored: needs constant stimulation and novelty",
+        "Difficult to Commit: Doesn’t like to be tied down by long-term plans"
+      ],
+      "careers": [
+        "Mechanical Engineer/Technician",
+        "pilot / racing driver",
+        "Forensic/Detective",
+        "software developer",
+        "emergency doctor/firefighter"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#4b5563",
+      "secondary": [
+        "#ef4444",
+        "#000000"
+      ],
+      "meaning": "Gray represents practicality and calmness, while red represents hidden passion and action."
+    },
+    "relationships": {
+      "compatible": [
+        "ESFJ",
+        "ESTJ"
+      ],
+      "challenging": [
+        "ENFJ",
+        "INFJ"
+      ],
+      "advice": "Your partner needs a sense of security, so try to express more of your plans and feelings. Don't value independence more than relationship. Appropriate dependence is also a kind of trust."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to make long-term plans, not just focus on the immediate",
+        "Cultivate emotional expression skills and build deep connections",
+        "Consider the impact of your behavior on others and reduce recklessness"
+      ],
+      "tips": [
+        "Keep a diary and sort out your emotions",
+        "Consider the feelings of at least two people before making a decision",
+        "Prepare a surprise gift for someone important"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "michael jordan",
+        "title": "basketball player"
+      },
+      {
+        "name": "tom cruise",
+        "title": "actor"
+      },
+      {
+        "name": "Clint Eastwood",
+        "title": "Director/Actor"
+      },
+      {
+        "name": "Putin",
+        "title": "president of russia"
+      }
+    ]
+  },
+  {
+    "id": "ISFP",
+    "name": "explorer type",
+    "category": "Explorers",
+    "summary": "Flexible and charming artist, always ready to explore and experience new things.",
+    "description": {
+      "traits": [
+        "Quiet, sensitive, friendly, with extremely high aesthetic talent",
+        "Live in the moment and enjoy every moment of life",
+        "Have an open mind and don’t like to control others or be controlled",
+        "Express emotions through actions rather than words"
+      ],
+      "strengths": [
+        "Very attractive: warm, relaxed and comfortable",
+        "Sensitive and meticulous: can keenly perceive the emotions of others",
+        "Rich imagination: gifted in artistic creation",
+        "Passionate: devote yourself wholeheartedly to the things that interest you",
+        "Curiosity: willing to explore unknown areas"
+      ],
+      "weaknesses": [
+        "Extremely independent: elusive and doesn’t like to be tied down",
+        "Unpredictable: mood swings, erratic behavior",
+        "Stress-prone: prone to breakdown in the face of conflict and criticism",
+        "Lack of planning: Not good at long-term planning and financial management"
+      ],
+      "careers": [
+        "fashion designer/artist",
+        "musician/photographer",
+        "psychological counselor",
+        "Veterinarian / Animal Trainer",
+        "Chef/Gardener"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#84cc16",
+      "secondary": [
+        "#f472b6",
+        "#fef08a"
+      ],
+      "meaning": "Grass green represents nature and vitality, pink represents tenderness and artistic sense"
+    },
+    "relationships": {
+      "compatible": [
+        "ESFJ",
+        "ESTJ"
+      ],
+      "challenging": [
+        "ENTJ",
+        "INTJ"
+      ],
+      "advice": "Be willing to share your inner world and let your partner come into your life. Learn to face conflicts instead of avoiding them. Communication is the key to solving problems."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to make plans and execute them to improve self-discipline",
+        "Enhance stress tolerance and learn to manage emotions",
+        "Improve logical thinking ability and assist decision-making"
+      ],
+      "tips": [
+        "Learn financial management knowledge and plan for the future",
+        "When you feel stressed, try writing it down to analyze why.",
+        "Take some logical thinking training courses"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "michael jackson",
+        "title": "singer"
+      },
+      {
+        "name": "Kevin Costner",
+        "title": "actor"
+      },
+      {
+        "name": "Avril Lavigne",
+        "title": "singer"
+      },
+      {
+        "name": "brad pitt",
+        "title": "actor"
+      }
+    ]
+  },
+  {
+    "id": "ESTP",
+    "name": "Entrepreneurial",
+    "category": "Explorers",
+    "summary": "Smart, energetic and perceptive people who truly enjoy living on the edge.",
+    "description": {
+      "traits": [
+        "Outgoing, pragmatic, bold, and a born adventurer",
+        "Likes to be the center of attention and is good at influencing others through actions",
+        "Live in the present, hate abstract theories, and like to solve practical problems",
+        "Keen sense of observation and able to quickly capture the motivations of others"
+      ],
+      "strengths": [
+        "Bold and direct: dare to take risks and never be afraid of challenges",
+        "Rational and practical: focus on results, extremely efficient",
+        "Strong insight: able to see through lies and recognize people very accurately",
+        "Social Skills: Funny and charming",
+        "Energetic: tireless, always full of energy"
+      ],
+      "weaknesses": [
+        "Impatient: impulsive and reckless",
+        "Unruly: Likes to break rules and may get into trouble",
+        "Ignoring emotions: Sometimes appearing cold and inconsiderate of other people's feelings",
+        "Lack of planning: only looking at the present and lacking a long-term vision"
+      ],
+      "careers": [
+        "Entrepreneur/Sales Director",
+        "Stockbroker/Trader",
+        "first responder/firefighter",
+        "Professional athlete/coach",
+        "Entertainer/Host"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#dc2626",
+      "secondary": [
+        "#f59e0b",
+        "#000000"
+      ],
+      "meaning": "Red represents passion, action and adventure, gold represents success and vitality"
+    },
+    "relationships": {
+      "compatible": [
+        "ISFJ",
+        "ISTJ"
+      ],
+      "challenging": [
+        "INFJ",
+        "INTJ"
+      ],
+      "advice": "Not only do you need to pursue passion in a relationship, but you also need to learn to commit and plan for the future. Pay more attention to your partner's inner world and learn to communicate deeply."
+    },
+    "development": {
+      "growthPath": [
+        "Learn to think before you act and consider the long-term consequences of your actions",
+        "Develop patience and persist in completing tasks you start",
+        "Focus on abstract concepts and improve strategic thinking"
+      ],
+      "tips": [
+        "Set long-term goals and break them down into short-term plans for execution",
+        "Force yourself to think calmly for a few minutes before acting impulsively.",
+        "Try reading some philosophy books to expand the depth of your thinking"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Donald Trump",
+        "title": "former president of the united states"
+      },
+      {
+        "name": "Madonna",
+        "title": "singer"
+      },
+      {
+        "name": "Hemingway",
+        "title": "writer"
+      },
+      {
+        "name": "Jack Nicholson",
+        "title": "actor"
+      }
+    ]
+  },
+  {
+    "id": "ESFP",
+    "name": "performer type",
+    "category": "Explorers",
+    "summary": "Spontaneous, energetic and enthusiastic performers, living around them is never boring.",
+    "description": {
+      "traits": [
+        "Outgoing, optimistic and enthusiastic, he is the life and soul of the party",
+        "Love life and pursue material enjoyment and sensory experience",
+        "Likes to interact with people and is good at encouraging and comforting others",
+        "Be spontaneous and don't like to be bound by plans and rules"
+      ],
+      "strengths": [
+        "Bold and confident: never have stage fright, enjoy the stage",
+        "Originality: unique aesthetic and fashion sense",
+        "Observation: good at observing words and colors, paying attention to details",
+        "Interpersonal Skills: Being able to get along quickly with anyone",
+        "Pragmatism: Although I love to play, I also pay attention to practical results."
+      ],
+      "weaknesses": [
+        "Easily bored: Difficulty concentrating on the same thing for long periods of time",
+        "Emotional: Easily affected by the environment, with large mood swings",
+        "Conflict avoidance: Ignoring reality in order to avoid problems",
+        "Lack of planning: If you have wine today, you will be drunk today and don’t worry about tomorrow."
+      ],
+      "careers": [
+        "Actor/Singer/Entertainer",
+        "Event Planning/Public Relations Manager",
+        "Sales Representative / Tour Guide",
+        "Fashion designer/stylist",
+        "preschool teacher"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#f59e0b",
+      "secondary": [
+        "#fbbf24",
+        "#c084fc"
+      ],
+      "meaning": "Gold represents sparkle, attention and success, orange represents vitality and happiness"
+    },
+    "relationships": {
+      "compatible": [
+        "ISFJ",
+        "ISTJ"
+      ],
+      "challenging": [
+        "INTJ",
+        "INFJ"
+      ],
+      "advice": "While enjoying the present, you should also make plans for the future. Bring more depth to your relationship, not just fun."
+    },
+    "development": {
+      "growthPath": [
+        "Develop self-discipline and overcome procrastination habits",
+        "Learn to face difficulties and conflicts without escaping",
+        "Think about the long-term effects of your behavior and make a plan"
+      ],
+      "tips": [
+        "Use calendars to manage time and ensure important tasks are completed on time",
+        "Try meditation or deep breathing to calm fluctuating emotions",
+        "Set a goal that requires long-term effort to achieve"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "marilyn monroe",
+        "title": "actor"
+      },
+      {
+        "name": "Adele",
+        "title": "singer"
+      },
+      {
+        "name": "Jamie Oliver",
+        "title": "celebrity chef"
+      },
+      {
+        "name": "Elton John",
+        "title": "singer"
+      }
+    ]
+  }
+]

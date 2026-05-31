@@ -1,0 +1,1330 @@
+[
+  {
+    "id": "INTJ",
+    "name": "kiểu kiến ​​trúc sư",
+    "category": "Nhà phân tích",
+    "summary": "Nhà tư tưởng giàu trí tưởng tượng và chiến lược, mọi thứ đều được lên kế hoạch.",
+    "description": {
+      "traits": [
+        "Lý trí, độc lập, có ý chí mạnh mẽ, có khát vọng tri thức mạnh mẽ",
+        "Có kỹ năng xác định các lỗ hổng trong hệ thống và thiết kế các giải pháp sáng tạo",
+        "Theo đuổi sự hoàn hảo và có những tiêu chuẩn cực kỳ cao cho bản thân và người khác",
+        "Thích ở một mình và có thể sáng tạo nhất trong môi trường yên tĩnh"
+      ],
+      "strengths": [
+        "Tư duy chiến lược: giỏi lập kế hoạch dài hạn và có thể thấy trước các vấn đề tiềm ẩn",
+        "Khả năng đổi mới: luôn đưa ra những hiểu biết và giải pháp độc đáo",
+        "Độc lập: không phụ thuộc vào người khác và có thể hoàn thành các nhiệm vụ phức tạp một cách độc lập",
+        "Học tập suốt đời: không ngừng theo đuổi kiến ​​thức mới và hoàn thiện bản thân",
+        "Tiêu chuẩn cao: yêu cầu cực kỳ cao về chất lượng công việc và theo đuổi sự xuất sắc"
+      ],
+      "weaknesses": [
+        "Kiêu ngạo: Đôi khi coi thường người khác do cảm giác mình vượt trội về trí tuệ",
+        "Phân tích quá mức: Dễ bị sa lầy vào chi tiết, dẫn đến hành động chậm chạp",
+        "Tách biệt cảm xúc: Không giỏi thể hiện cảm xúc, có thể bị coi là xa cách",
+        "Rất phê phán: ít khoan dung với lỗi lầm của người khác, dễ xảy ra xung đột"
+      ],
+      "careers": [
+        "Kiến trúc sư hệ thống/Kỹ sư phần mềm",
+        "Nhà hoạch định chiến lược/Nhân viên ngân hàng đầu tư",
+        "Nhà khoa học/Nhà nghiên cứu",
+        "Bác sĩ phẫu thuật / Nhà thần kinh học",
+        "Thẩm phán/Luật sư cấp cao"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#581c87",
+      "secondary": [
+        "#000000",
+        "#94a3b8"
+      ],
+      "meaning": "Màu tím đậm tượng trưng cho sự khôn ngoan, bí ẩn và cao quý, trong khi màu đen tượng trưng cho sự độc lập và uy quyền."
+    },
+    "relationships": {
+      "compatible": [
+        "ENFP",
+        "ENTP"
+      ],
+      "challenging": [
+        "ESFP",
+        "ISFP"
+      ],
+      "advice": "Trong một mối quan hệ, hãy cố gắng gác lại những phân tích logic và cảm nhận nhiều hơn về cảm xúc của đối tác. Học cách bày tỏ sự đánh giá cao của bạn thay vì chỉ đưa ra đề xuất cải tiến."
+    },
+    "development": {
+      "growthPath": [
+        "Học các kỹ năng xã hội và hiểu hành vi phi lý của con người",
+        "Thực hành chánh niệm, sống trong thời điểm hiện tại và giảm bớt lo lắng quá mức",
+        "Học cách thỏa hiệp và chấp nhận rằng không phải mọi thứ đều có thể hoàn hảo"
+      ],
+      "tips": [
+        "Dành 10 phút mỗi ngày để viết nhật ký biết ơn và nuôi dưỡng những cảm xúc tích cực",
+        "Chơi các môn thể thao đồng đội và học cách làm việc với người khác",
+        "Trước khi chỉ trích, hãy nêu ra ba điểm mạnh của người khác."
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Elon Musk",
+        "title": "Người sáng lập Tesla và SpaceX"
+      },
+      {
+        "name": "Friedrich Nietzsche",
+        "title": "triết gia"
+      },
+      {
+        "name": "Christopher Nolan",
+        "title": "đạo diễn phim"
+      },
+      {
+        "name": "Mark Zuckerberg",
+        "title": "Người sáng lập Facebook"
+      }
+    ]
+  },
+  {
+    "id": "INTP",
+    "name": "kiểu nhà logic",
+    "category": "Nhà phân tích",
+    "summary": "Một nhà phát minh sáng tạo với niềm khao khát kiến ​​thức vô tận.",
+    "description": {
+      "traits": [
+        "Ít nói, sống nội tâm, tư duy nhanh, logic chặt chẽ",
+        "Đam mê phân tích các khái niệm và lý thuyết trừu tượng cũng như tìm kiếm các mô hình đằng sau sự vật",
+        "Linh hoạt, cởi mở nhưng không khoan dung với những điều vi phạm logic",
+        "Những người hoài nghi, quen đặt câu hỏi về mọi thứ"
+      ],
+      "strengths": [
+        "Kỹ năng phân tích: có thể nhanh chóng nhìn thấu bản chất của các vấn đề phức tạp",
+        "Độc đáo: tư duy không bị ràng buộc bởi truyền thống và thường có khả năng sáng tạo đáng kinh ngạc",
+        "Khách quan và vô tư: Các quyết định đều dựa trên logic và sự thật, không bị cảm xúc can thiệp.",
+        "Thích nghi: cởi mở với những ý tưởng mới và sẵn sàng thử",
+        "Trọng tâm: Khả năng duy trì mức độ tập trung cao trong các lĩnh vực quan tâm"
+      ],
+      "weaknesses": [
+        "Sự cùn mòn về mặt cảm xúc: khó hiểu và đáp ứng nhu cầu tình cảm của người khác",
+        "Không thích các quy tắc: mệt mỏi với các thủ tục hành chính rườm rà và nghi thức xã hội",
+        "Nghi ngờ bản thân: Sợ phạm sai lầm, dễ bị tê liệt trong phân tích",
+        "Không thể đoán trước: Suy nghĩ cứ nhảy lung tung, khiến người khác khó theo kịp."
+      ],
+      "careers": [
+        "Lập trình viên máy tính/Nhà khoa học dữ liệu",
+        "Nhà toán học / nhà vật lý",
+        "Giáo sư/nhà nghiên cứu đại học",
+        "Pháp y/Thám tử",
+        "Nhà phân tích tài chính/Nhà kinh tế học"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#3b82f6",
+      "secondary": [
+        "#e5e7eb",
+        "#1e3a8a"
+      ],
+      "meaning": "Màu xanh tượng trưng cho sự hợp lý, điềm tĩnh và sâu sắc, trong khi màu bạc tượng trưng cho công nghệ và tương lai."
+    },
+    "relationships": {
+      "compatible": [
+        "ENTJ",
+        "ESTJ"
+      ],
+      "challenging": [
+        "ESFJ",
+        "ISFJ"
+      ],
+      "advice": "Đừng luôn cố gắng sử dụng logic để giải mã cảm xúc. Học cách cung cấp sự hỗ trợ về mặt tinh thần khi đối tác của bạn cần, không chỉ là giải pháp."
+    },
+    "development": {
+      "growthPath": [
+        "Biến lý thuyết thành hành động thực tế và tránh ảo tưởng",
+        "Cải thiện kỹ năng giao tiếp và xây dựng kết nối cảm xúc",
+        "Tăng sự tự tin và tin tưởng vào phán đoán của chính bạn"
+      ],
+      "tips": [
+        "Đặt deadline rõ ràng cho từng dự án",
+        "Chủ động tham gia các hoạt động xã hội và luyện nói chuyện nhỏ",
+        "Học cách quản lý cảm xúc, xác định và thể hiện cảm xúc của bạn"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "albert einstein",
+        "title": "nhà vật lý"
+      },
+      {
+        "name": "cổng hóa đơn",
+        "title": "người sáng lập Microsoft"
+      },
+      {
+        "name": "Isaac Newton",
+        "title": "nhà vật lý"
+      },
+      {
+        "name": "René Descartes",
+        "title": "triết gia"
+      }
+    ]
+  },
+  {
+    "id": "ENTJ",
+    "name": "loại chỉ huy",
+    "category": "Nhà phân tích",
+    "summary": "Những nhà lãnh đạo táo bạo, giàu trí tưởng tượng và ý chí mạnh mẽ luôn tìm ra hoặc tạo ra giải pháp.",
+    "description": {
+      "traits": [
+        "Người lãnh đạo tự tin, quyết đoán, bẩm sinh, đầy lôi cuốn",
+        "Có tầm nhìn chiến lược và có thể nhanh chóng xác định những điểm kém hiệu quả và thực hiện cải cách",
+        "Tận hưởng thử thách và tận hưởng chiến thắng trong cuộc thi",
+        "Hợp lý, khách quan và hướng đến kết quả"
+      ],
+      "strengths": [
+        "Thực hiện hiệu quả: có thể nhanh chóng biến kế hoạch thành hành động",
+        "Lập kế hoạch chiến lược: giỏi bố trí vĩ mô và xây dựng mục tiêu dài hạn",
+        "Sự tự tin và vững vàng: Tin vào khả năng của chính mình và không bao giờ lùi bước trước khó khăn",
+        "Tạo động lực cho người khác: có khả năng lãnh đạo nhóm đạt được những mục tiêu dường như không thể",
+        "Ý chí mạnh mẽ: khả năng chịu đựng áp lực mạnh mẽ, dũng cảm hơn trước những thất bại"
+      ],
+      "weaknesses": [
+        "Ý kiến: Đôi khi thật khó để lắng nghe ý kiến ​​​​của người khác",
+        "Thiếu kiên nhẫn: Khả năng chịu đựng rất thấp đối với sự kém hiệu quả và sai sót",
+        "Sự thờ ơ về mặt cảm xúc: dễ dàng bỏ qua cảm xúc của người khác và tỏ ra vô nhân đạo",
+        "Kiêu ngạo: Có thể coi thường người khác vì khả năng vượt trội"
+      ],
+      "careers": [
+        "Giám đốc điều hành doanh nghiệp (CEO/COO)",
+        "Tư vấn quản lý/Tư vấn chiến lược",
+        "luật sư/thẩm phán",
+        "doanh nhân",
+        "quản trị viên đại học"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#dc2626",
+      "secondary": [
+        "#000000",
+        "#7c3aed"
+      ],
+      "meaning": "Màu đỏ tượng trưng cho sức mạnh, niềm đam mê và sự hung hãn, trong khi màu đen tượng trưng cho uy quyền và sự kiểm soát."
+    },
+    "relationships": {
+      "compatible": [
+        "INTP",
+        "INFP"
+      ],
+      "challenging": [
+        "ISFJ",
+        "ESFJ"
+      ],
+      "advice": "Trong khi theo đuổi hiệu quả, đừng quên yếu tố con người. Học cách dễ bị tổn thương và lắng nghe. Điều này sẽ không làm suy yếu quyền lực của bạn mà còn làm tăng sự quyến rũ của bạn."
+    },
+    "development": {
+      "growthPath": [
+        "Phát triển sự đồng cảm và chú ý đến nhu cầu tình cảm của người khác",
+        "Học cách trân trọng quá trình chứ không chỉ kết quả",
+        "Rèn luyện tính kiên nhẫn và chấp nhận sự không hoàn hảo của người khác"
+      ],
+      "tips": [
+        "Buộc mình phải nói sau cùng trong cuộc họp và lắng nghe ý kiến ​​của người khác trước",
+        "Lên lịch thời gian mỗi tuần để thư giãn ngoài công việc",
+        "Tham gia các hoạt động tình nguyện và nâng cao nhận thức về dịch vụ"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Steve Jobs",
+        "title": "đồng sáng lập của Apple Inc."
+      },
+      {
+        "name": "Gordon Ramsay",
+        "title": "đầu bếp nổi tiếng"
+      },
+      {
+        "name": "Margaret Thatcher",
+        "title": "cựu thủ tướng Anh"
+      },
+      {
+        "name": "Franklin Roosevelt",
+        "title": "cựu tổng thống Hoa Kỳ"
+      }
+    ]
+  },
+  {
+    "id": "ENTP",
+    "name": "kiểu người tranh luận",
+    "category": "Nhà phân tích",
+    "summary": "Nhà tư tưởng thông minh và tò mò, mặc dù không tránh khỏi những thách thức về trí tuệ.",
+    "description": {
+      "traits": [
+        "Phản ứng nhanh, có tài hùng biện và thích khám phá sự thật thông qua tranh luận",
+        "Đầy những ý tưởng sáng tạo và ác cảm với thói quen và sự lặp lại",
+        "Giỏi phân tích vấn đề từ nhiều góc độ và nhanh chóng suy nghĩ",
+        "Năng động và thích thử những điều mới"
+      ],
+      "strengths": [
+        "Có kiến ​​thức: tham gia vào nhiều lĩnh vực khác nhau và khả năng học tập mạnh mẽ",
+        "Tư duy nhanh: có khả năng ứng phó nhanh với các tình huống khẩn cấp và hài hước",
+        "Khả năng đổi mới: giỏi phá vỡ các quy ước và đưa ra những ý tưởng mang tính cách mạng",
+        "Duyên dáng: giỏi giao tiếp và có khả năng thuyết phục người khác dễ dàng",
+        "Thích nghi: có thể phát triển mạnh trong môi trường thay đổi"
+      ],
+      "weaknesses": [
+        "Tranh cãi: đôi khi tranh cãi chỉ vì mục đích tranh luận, khiến người khác cảm thấy chán ghét",
+        "Thiếu tập trung: dễ bị phân tâm và khó hoàn thành những công việc nhàm chán",
+        "Không thực tế: Dù ý tưởng hay nhưng đôi khi khó thực hiện được",
+        "Bỏ qua chi tiết: Tập trung quá nhiều vào bức tranh tổng thể và dễ mắc sai lầm trong chi tiết"
+      ],
+      "careers": [
+        "Doanh nhân/doanh nhân",
+        "Luật sư/Cố vấn pháp lý",
+        "Giám đốc tiếp thị",
+        "nhà đầu tư mạo hiểm",
+        "Diễn viên/người dẫn chương trình trò chuyện"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#c026d3",
+      "secondary": [
+        "#0ea5e9",
+        "#facc15"
+      ],
+      "meaning": "Màu đỏ tươi tượng trưng cho sự độc đáo, đổi mới và phi thường, trong khi màu vàng tượng trưng cho sức sống và trí tuệ."
+    },
+    "relationships": {
+      "compatible": [
+        "INFJ",
+        "INTJ"
+      ],
+      "challenging": [
+        "ISFJ",
+        "ISTJ"
+      ],
+      "advice": "Tranh luận rất thú vị nhưng đừng biến nó thành một mối quan hệ tình cảm. Học cách hỗ trợ tinh thần cho đối tác của bạn, không chỉ là giải pháp."
+    },
+    "development": {
+      "growthPath": [
+        "Phát triển kỷ luật tự giác để biến ý tưởng thành kết quả",
+        "Học cách đặt mình vào vị trí của người khác và quan tâm đến cảm xúc của người khác",
+        "Hãy chú ý đến sự cam kết và trách nhiệm và làm những gì bạn nói"
+      ],
+      "tips": [
+        "Tìm hiểu các kỹ thuật quản lý thời gian như Kỹ thuật Pomodoro",
+        "Trước khi chỉ trích người khác, hãy hít thở sâu ba lần",
+        "Thực hành thiền để làm dịu tâm trí của bạn"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "thomas edison",
+        "title": "nhà phát minh"
+      },
+      {
+        "name": "đánh dấu đôi",
+        "title": "nhà văn"
+      },
+      {
+        "name": "Robert Downey Jr.",
+        "title": "diễn viên"
+      },
+      {
+        "name": "Céline Dion",
+        "title": "ca sĩ"
+      }
+    ]
+  },
+  {
+    "id": "INFJ",
+    "name": "Người biện hộ",
+    "category": "Nhà ngoại giao",
+    "summary": "Im lặng và bí ẩn, nhưng đầy cảm hứng và lý tưởng không mệt mỏi.",
+    "description": {
+      "traits": [
+        "Hướng nội, trực quan, giàu cảm xúc và có hiểu biết sâu sắc",
+        "Có ý thức đạo đức và lý tưởng mạnh mẽ và cam kết biến thế giới thành một nơi tốt đẹp hơn",
+        "Giỏi hiểu cảm xúc và động lực của người khác và là một người biết lắng nghe tự nhiên",
+        "Hãy kiên định theo đuổi niềm tin của mình và không bao giờ dễ dàng bỏ cuộc"
+      ],
+      "strengths": [
+        "Sáng tạo: Giàu trí tưởng tượng và có thể nhìn nhận vấn đề từ một góc nhìn độc đáo",
+        "Sáng suốt sâu sắc: có thể nhìn thấu bản chất của sự vật và lòng người",
+        "Nguyên tắc: trung thực với giá trị của chính mình và nhất quán trong lời nói và hành động của mình",
+        "Lòng vị tha: Giúp đỡ người khác một cách chân thành mà không mong nhận lại bất cứ điều gì",
+        "Kiên trì: nỗ lực rất nhiều cho lý tưởng của bạn"
+      ],
+      "weaknesses": [
+        "Cầu toàn: Có yêu cầu quá cao đối với bản thân và người khác, khó có thể hài lòng",
+        "Cực kỳ nhạy cảm: Cảm thấy rất đau khổ trước những lời chỉ trích và xung đột từ người khác",
+        "Dễ dàng kiệt sức: Cam kết quá mức dẫn đến kiệt sức về thể chất và tinh thần",
+        "Khó khăn trong việc cởi mở: Bảo vệ thế giới nội tâm của bạn và không dễ dàng thể hiện nó với người khác"
+      ],
+      "careers": [
+        "Cố vấn tâm lý/Nhà trị liệu",
+        "Nhà văn/Biên tập viên",
+        "Nhân viên tổ chức phi lợi nhuận",
+        "quản lý nhân sự",
+        "giáo viên giáo dục đặc biệt"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#7c3aed",
+      "secondary": [
+        "#10b981",
+        "#f3f4f6"
+      ],
+      "meaning": "Màu tím tượng trưng cho tâm linh, trực giác và sự cao quý, màu xanh lá cây tượng trưng cho sự chữa lành và hòa hợp"
+    },
+    "relationships": {
+      "compatible": [
+        "ENTP",
+        "ENFP"
+      ],
+      "challenging": [
+        "ESTP",
+        "ISTP"
+      ],
+      "advice": "Hãy tìm một người hiểu được suy nghĩ sâu sắc của bạn và tôn trọng giá trị của bạn. Đừng luôn cố gắng thay đổi người khác, hãy chấp nhận con người thật của họ."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách giải quyết xung đột mà không nhận những lời chỉ trích cá nhân",
+        "Cân bằng giữa lý tưởng và hiện thực, chấp nhận sự không hoàn hảo",
+        "Hãy chăm sóc cơ thể và cảm xúc của bạn và học cách nói không"
+      ],
+      "tips": [
+        "Dành thời gian một mình mỗi ngày để nạp lại năng lượng và phục hồi năng lượng",
+        "Tham gia vào các hoạt động cụ thể, thực tế như làm vườn hoặc nấu ăn",
+        "Chia sẻ cảm xúc của bạn với một người bạn đáng tin cậy thay vì tự mình gánh chịu"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "vua martin luther",
+        "title": "lãnh đạo dân quyền"
+      },
+      {
+        "name": "nelson mandela",
+        "title": "cựu tổng thống Nam Phi"
+      },
+      {
+        "name": "mẹ Teresa",
+        "title": "nhà từ thiện"
+      },
+      {
+        "name": "Lady Gaga",
+        "title": "ca sĩ"
+      }
+    ]
+  },
+  {
+    "id": "INFP",
+    "name": "loại hòa giải",
+    "category": "Nhà ngoại giao",
+    "summary": "Thơ mộng, nhân hậu, vị tha, luôn nhiệt tình giúp đỡ vì chính nghĩa.",
+    "description": {
+      "traits": [
+        "Sống nội tâm, lý tưởng, có thế giới cảm xúc phong phú",
+        "Theo đuổi sự hài hòa và sự thật bên trong, đồng thời trung thành với các giá trị của chính bạn",
+        "Rất nhạy cảm với cảm xúc của người khác và rất đồng cảm",
+        "Có thể thích nghi, nhưng có thể trở nên rất kiên quyết nếu chạm đến điểm mấu chốt"
+      ],
+      "strengths": [
+        "Đồng cảm: Có thể hiểu sâu sắc nỗi đau và hạnh phúc của người khác",
+        "Sự hào phóng: sẵn sàng chia sẻ và sẵn sàng trả tiền cho người khác",
+        "Cởi mở: Khoan dung với các quan điểm khác nhau và không dễ phán xét",
+        "Sáng tạo: thường có năng khiếu về nghệ thuật và văn học",
+        "Đầy đam mê: có thể cống hiến hết sức lực cho sự nghiệp mà mình tin tưởng"
+      ],
+      "weaknesses": [
+        "Không thực tế: dễ đắm chìm trong tưởng tượng và bỏ qua thực tế",
+        "Tự cô lập: Bạn dễ dàng khép mình lại trước áp lực và từ chối giao tiếp",
+        "Thiếu tập trung: dễ bị phân tâm và khó hoàn thành những công việc nhàm chán",
+        "Quá lý tưởng hóa: Kỳ vọng quá nhiều vào đối tác, bạn bè và dễ thất vọng"
+      ],
+      "careers": [
+        "Nhà văn/Nhà thơ/Nhà biên kịch",
+        "Nhà tâm lý học / Cố vấn",
+        "Nhà thiết kế đồ họa/họa sĩ minh họa",
+        "Chuyên viên nhân sự/tuyển dụng",
+        "nhà trị liệu vật lý"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#10b981",
+      "secondary": [
+        "#0ea5e9",
+        "#f0f9ff"
+      ],
+      "meaning": "Màu xanh lá cây tượng trưng cho sự hài hòa nội tâm, tăng trưởng và chữa lành, trong khi màu xanh da trời tượng trưng cho tự do và ước mơ."
+    },
+    "relationships": {
+      "compatible": [
+        "ENFJ",
+        "ENTJ"
+      ],
+      "challenging": [
+        "ESTJ",
+        "ISTJ"
+      ],
+      "advice": "Đừng lý tưởng hóa đối tác của bạn, ai cũng có khuyết điểm. Học cách bày tỏ nhu cầu của bạn thay vì mong đợi người khác đọc được suy nghĩ của bạn."
+    },
+    "development": {
+      "growthPath": [
+        "Cải thiện khả năng vận động và biến giấc mơ thành hiện thực",
+        "Nâng cao khả năng chịu đựng căng thẳng và học cách đối mặt với những lời chỉ trích",
+        "Thiết lập lối sống có cấu trúc để nâng cao hiệu quả"
+      ],
+      "tips": [
+        "Chia các mục tiêu lớn thành các nhiệm vụ nhỏ hàng ngày và hoàn thành chúng từng bước một",
+        "Thực hành nói trước công chúng hoặc bày tỏ ý tưởng để xây dựng sự tự tin của bạn",
+        "Duy trì một lịch trình và chế độ ăn uống đều đặn, đồng thời chăm sóc cơ thể thật tốt"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "J.R.R. Tolkien",
+        "title": "Tác giả cuốn \"Chúa tể những chiếc nhẫn\""
+      },
+      {
+        "name": "William Shakespeare",
+        "title": "nhà viết kịch"
+      },
+      {
+        "name": "Johnny Depp",
+        "title": "diễn viên"
+      },
+      {
+        "name": "Julia Roberts",
+        "title": "diễn viên"
+      }
+    ]
+  },
+  {
+    "id": "ENFJ",
+    "name": "nhân vật chính",
+    "category": "Nhà ngoại giao",
+    "summary": "Một nhà lãnh đạo lôi cuốn và truyền cảm hứng với khả năng thu hút khán giả của mình.",
+    "description": {
+      "traits": [
+        "Nhiệt tình, hướng ngoại, lôi cuốn và là một nhà lãnh đạo bẩm sinh",
+        "Hãy chú ý đến cảm xúc và nhu cầu của người khác và sẵn sàng giúp đỡ người khác",
+        "Có tinh thần trách nhiệm cao và cam kết thúc đẩy sự hòa hợp trong nhóm",
+        "Có khả năng giao tiếp tốt và có thể bày tỏ rõ ràng quan điểm và tầm nhìn của mình"
+      ],
+      "strengths": [
+        "Đồng cảm mạnh mẽ: có thể nhận thức sâu sắc những thay đổi cảm xúc của người khác",
+        "Khả năng lãnh đạo: Giỏi động viên và đoàn kết người khác để đạt được mục tiêu chung",
+        "Đáng tin cậy và khoan dung: đáng tin cậy và cởi mở với các quan điểm khác nhau",
+        "Kỹ năng giao tiếp: tài hùng biện và kỹ năng xã hội xuất sắc",
+        "Tinh thần vị tha: chân thành mong mọi người sẽ trở nên tốt đẹp hơn"
+      ],
+      "weaknesses": [
+        "Quá duy tâm: không chuẩn bị cho sự tàn khốc của thực tế",
+        "Quá vị tha: dễ dàng hy sinh nhu cầu của mình cho người khác",
+        "Quá nhạy cảm: Quan tâm sâu sắc đến những đánh giá và phê bình của người khác",
+        "Sự thiếu quyết đoán: Có xu hướng do dự khi phải đối mặt với những quyết định khó khăn"
+      ],
+      "careers": [
+        "Giáo viên/Hiệu trưởng/Quản trị viên giáo dục",
+        "Giám đốc quan hệ công chúng/Người phát ngôn",
+        "Lãnh đạo tổ chức phi lợi nhuận",
+        "Giám đốc bán hàng/Quản lý tài khoản",
+        "người tổ chức đám cưới"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#16a34a",
+      "secondary": [
+        "#7c3aed",
+        "#ffffff"
+      ],
+      "meaning": "Màu xanh lá cây tượng trưng cho sự phát triển và hy vọng, màu tím tượng trưng cho sự cao quý và theo đuổi tâm linh."
+    },
+    "relationships": {
+      "compatible": [
+        "INFP",
+        "ISFP"
+      ],
+      "challenging": [
+        "ISTP",
+        "ESTP"
+      ],
+      "advice": "Đừng cố gắng cứu tất cả mọi người, kể cả đối tác của bạn. Hãy cho nhau chút không gian và dành cho bản thân chút thời gian riêng tư."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách chấp nhận sự không hoàn hảo trong thực tế và hạ thấp kỳ vọng",
+        "Thiết lập ranh giới cảm xúc và không tham gia quá nhiều vào cuộc sống của người khác",
+        "Phân tích vấn đề một cách hợp lý và không dựa hoàn toàn vào việc ra quyết định theo cảm xúc"
+      ],
+      "tips": [
+        "Khi bạn cảm thấy mệt mỏi, hãy dứt khoát từ chối yêu cầu của người khác",
+        "Ghi lại nhu cầu của bạn và ưu tiên đáp ứng chúng",
+        "Tìm hiểu các công cụ phân tích logic để hỗ trợ việc ra quyết định"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Barack Obama",
+        "title": "cựu tổng thống Hoa Kỳ"
+      },
+      {
+        "name": "Oprah Winfrey",
+        "title": "người dẫn chương trình trò chuyện"
+      },
+      {
+        "name": "Jennifer Lawrence",
+        "title": "diễn viên"
+      },
+      {
+        "name": "Sean Connery",
+        "title": "diễn viên"
+      }
+    ]
+  },
+  {
+    "id": "ENFP",
+    "name": "loại ứng viên",
+    "category": "Nhà ngoại giao",
+    "summary": "Tinh thần nhiệt tình, sáng tạo và tự do xã hội, luôn tìm lý do để mỉm cười.",
+    "description": {
+      "traits": [
+        "Đam mê, giàu trí tưởng tượng và tinh thần tự do thực sự",
+        "Tin rằng cuộc sống có rất nhiều khả năng và có thể nhanh chóng thiết lập mối liên hệ giữa mọi thứ",
+        "Cực kỳ dễ gần và có thể nhanh chóng thiết lập kết nối với người lạ",
+        "Không thích sự lặp lại và nhàm chán, theo đuổi sự mới mẻ và ý nghĩa"
+      ],
+      "strengths": [
+        "Tính tò mò mạnh mẽ: đầy khao khát khám phá những điều mới",
+        "Quan sát nhạy bén: có thể phát hiện những thay đổi cảm xúc nhỏ ở người khác",
+        "Đam mê: Có khả năng lây lan và có thể nâng cao bầu không khí xung quanh bạn",
+        "Kỹ năng giao tiếp: Người dẫn chương trình xuất sắc, giỏi kể chuyện",
+        "- Dễ mến: Thân thiện và dễ gần, dễ chiếm được cảm tình của người khác"
+      ],
+      "weaknesses": [
+        "Thiếu tập trung: Phải mất ba phút để làm một việc gì đó nhưng rất khó để duy trì nó.",
+        "Suy nghĩ quá mức: dễ diễn giải quá mức các chi tiết đơn giản",
+        "Tình cảm: Cảm xúc thất thường, dễ căng thẳng",
+        "Tính độc lập kém: đôi khi quá phụ thuộc vào sự chấp thuận của người khác"
+      ],
+      "careers": [
+        "Nhà báo/cộng tác viên",
+        "Giám đốc sáng tạo/Người lập kế hoạch quảng cáo",
+        "nhà hoạt động/nhà từ thiện",
+        "Nhà tư vấn/Đào tạo doanh nghiệp",
+        "nhạc sĩ/diễn viên"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#f97316",
+      "secondary": [
+        "#06b6d4",
+        "#facc15"
+      ],
+      "meaning": "Màu cam tượng trưng cho sức sống, sự nhiệt tình và sáng tạo, trong khi màu lục lam tượng trưng cho sự tự do và nhanh nhẹn."
+    },
+    "relationships": {
+      "compatible": [
+        "INTJ",
+        "INFJ"
+      ],
+      "challenging": [
+        "ISTJ",
+        "ESTJ"
+      ],
+      "advice": "Điều quan trọng là giữ cho mọi thứ luôn mới mẻ trong một mối quan hệ, nhưng bạn cũng cần học cách cư xử bình thường. Mang lại cho đối tác của bạn sự chắc chắn hơn và giảm bớt sự tái phát của cảm xúc."
+    },
+    "development": {
+      "growthPath": [
+        "Phát triển sự tập trung và nghiên cứu sâu hơn về một lĩnh vực",
+        "Học cách kiểm soát cảm xúc và duy trì sự bình yên nội tâm",
+        "Chấp nhận các quy tắc và ràng buộc cần thiết và cải thiện khả năng thực thi"
+      ],
+      "tips": [
+        "Sử dụng kỹ thuật Pomodoro để cải thiện sự tập trung",
+        "Trước khi đưa ra quyết định, hãy lập danh sách những ưu và nhược điểm",
+        "Tổ chức môi trường sống của bạn thường xuyên và nuôi dưỡng ý thức trật tự"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Robert Downey Jr.",
+        "title": "diễn viên"
+      },
+      {
+        "name": "sẽ thợ rèn",
+        "title": "diễn viên"
+      },
+      {
+        "name": "Robin Williams",
+        "title": "diễn viên hài"
+      },
+      {
+        "name": "quentin tarantino",
+        "title": "giám đốc"
+      }
+    ]
+  },
+  {
+    "id": "ISTJ",
+    "name": "Loại hình hậu cần",
+    "category": "Người bảo hộ",
+    "summary": "Một cá nhân tìm kiếm sự thật từ sự thật và có độ tin cậy không thể nghi ngờ.",
+    "description": {
+      "traits": [
+        "Im lặng, nghiêm túc và thực dụng, họ là nền tảng của xã hội",
+        "Rất chú ý đến cam kết, truyền thống và các quy tắc và đáng tin cậy",
+        "Có phương pháp và chú ý đến chi tiết và độ chính xác",
+        "Logic mạnh mẽ và đưa ra quyết định dựa trên thực tế"
+      ],
+      "strengths": [
+        "Trung thực và chính trực: không bao giờ nói dối và tuân thủ các nguyên tắc",
+        "Cực kỳ đáng tin cậy: Hãy làm những gì bạn nói và không bao giờ trốn tránh trách nhiệm",
+        "Ý chí kiên cường: Không bao giờ bỏ cuộc trước khó khăn",
+        "Bách khoa toàn thư: Có kho kiến ​​thức và trí nhớ dồi dào",
+        "Kỹ năng tổ chức: giỏi tạo lập và duy trì trật tự"
+      ],
+      "weaknesses": [
+        "Sự bướng bỉnh: Khó chấp nhận các phương pháp và quan điểm mới",
+        "Chậm phát triển cảm xúc: biểu hiện cảm xúc kém và khó hiểu người khác",
+        "Tự trách mình: Dễ đổ lỗi cho bản thân khi mắc sai lầm và chịu quá nhiều áp lực",
+        "Chủ nghĩa giáo điều: Quy tắc quá cứng nhắc và thiếu linh hoạt"
+      ],
+      "careers": [
+        "Kế toán/Kiểm toán viên/Giám đốc tài chính",
+        "Quản trị viên hệ thống/Quản trị cơ sở dữ liệu",
+        "công chức/sĩ quan quân đội",
+        "thẩm phán/luật sư",
+        "người quản lý chuỗi cung ứng"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#1e3a8a",
+      "secondary": [
+        "#9ca3af",
+        "#1f2937"
+      ],
+      "meaning": "Màu xanh đậm tượng trưng cho lý trí, sự điềm tĩnh và chuyên nghiệp, trong khi màu xám tượng trưng cho sự ổn định và trung lập."
+    },
+    "relationships": {
+      "compatible": [
+        "ESTP",
+        "ESFP"
+      ],
+      "challenging": [
+        "ENFP",
+        "INFP"
+      ],
+      "advice": "Cố gắng bày tỏ cảm xúc của bạn, không chỉ là sự thật. Hãy cởi mở với những thay đổi ở người khác và đừng luôn đánh giá hiện tại dựa trên kinh nghiệm trong quá khứ."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách thích ứng với những thay đổi và đón nhận những điều mới",
+        "Phát triển trí tuệ cảm xúc và hiểu hành vi phi lý của người khác",
+        "Học cách bao dung với bản thân và người khác và giảm bớt sự tự phê bình"
+      ],
+      "tips": [
+        "Hãy thử một việc nhỏ mỗi tuần mà bạn chưa từng làm trước đây",
+        "Khi bạn cảm thấy muốn chỉ trích, hãy hít một hơi thật sâu và tìm hiểu động cơ của người khác",
+        "Tìm hiểu một số kỹ thuật thư giãn như yoga hoặc thiền"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Warren Buffett",
+        "title": "nhà đầu tư"
+      },
+      {
+        "name": "George Washington",
+        "title": "tổng thống đầu tiên của Hoa Kỳ"
+      },
+      {
+        "name": "Angela Merkel",
+        "title": "cựu thủ tướng Đức"
+      },
+      {
+        "name": "Natalie Portman",
+        "title": "diễn viên"
+      }
+    ]
+  },
+  {
+    "id": "ISFJ",
+    "name": "Loại người giám hộ",
+    "category": "Người bảo hộ",
+    "summary": "Một người bảo vệ rất tận tâm và ấm áp, luôn sẵn sàng bảo vệ những người mình yêu thương.",
+    "description": {
+      "traits": [
+        "Yên tĩnh, thân thiện, có trách nhiệm và có tinh thần cống hiến cao",
+        "Cam kết thực hiện nghĩa vụ, không chỉ với bản thân mà còn với người khác",
+        "Trung thành, ân cần và có khả năng ghi nhớ những chi tiết nhỏ nhất về người khác",
+        "Chú ý đến sự ổn định và an ninh, và duy trì truyền thống"
+      ],
+      "strengths": [
+        "Hỗ trợ người khác: sẵn sàng chia sẻ kiến ​​thức, kinh nghiệm để giúp đỡ người khác",
+        "Đáng tin cậy và kiên nhẫn: không chỉ hoàn thành nhiệm vụ mà còn vượt quá mong đợi",
+        "Kỹ năng quan sát tốt: chú ý đến chi tiết và có thể tìm ra những vấn đề mà người khác bỏ qua",
+        "Nhiệt tình: Tuy sống nội tâm nhưng lại rất nhiệt tình với những người thân thiết",
+        "Thực tế: Giữ đôi chân của bạn trên mặt đất và đảm bảo mọi thứ đều ổn"
+      ],
+      "weaknesses": [
+        "Quá khiêm tốn: dễ bị bỏ qua và bị người khác lấy mất công lao",
+        "Kìm nén cảm xúc: giấu cảm xúc trong lòng cho đến khi chúng bùng nổ",
+        "Quá tải: Không biết nói không, gánh quá nhiều trách nhiệm",
+        "Chống lại sự thay đổi: Không thoải mái với những tình huống và phương pháp mới"
+      ],
+      "careers": [
+        "Nha sĩ/Y tá/Bác sĩ",
+        "Giáo viên tiểu học/giáo viên mẫu giáo",
+        "Trợ lý hành chính/Thư ký",
+        "nhà thiết kế nội thất",
+        "Giám đốc dịch vụ khách hàng"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#60a5fa",
+      "secondary": [
+        "#f3f4f6",
+        "#d1d5db"
+      ],
+      "meaning": "Màu xanh nhạt tượng trưng cho sự dịu dàng, yên bình và bảo vệ, trong khi màu be tượng trưng cho sự thoải mái và ấm cúng."
+    },
+    "relationships": {
+      "compatible": [
+        "ESFP",
+        "ESTP"
+      ],
+      "challenging": [
+        "ENTP",
+        "INTJ"
+      ],
+      "advice": "Đừng sợ xung đột, nhu cầu của bạn cũng quan trọng không kém. Hãy tìm một đối tác đánh giá cao nỗ lực của bạn và sẵn sàng đáp lại."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách bày tỏ sự không hài lòng và bảo vệ quyền và lợi ích của mình",
+        "Chấp nhận những ý tưởng và thay đổi mới và chấp nhận rủi ro",
+        "Tập trung vào sự phát triển của chính bạn, không chỉ chăm sóc người khác"
+      ],
+      "tips": [
+        "Tập nói “không” và bắt đầu từ những việc nhỏ",
+        "Hãy thử một sở thích mới, chỉ dành cho chính bạn",
+        "Hãy thường xuyên suy ngẫm xem bạn có cảm thấy mình đang bị lợi dụng hay không"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Elizabeth II",
+        "title": "nữ hoàng nước Anh"
+      },
+      {
+        "name": "Beyonce",
+        "title": "ca sĩ"
+      },
+      {
+        "name": "Vin Diesel",
+        "title": "diễn viên"
+      },
+      {
+        "name": "Kate Middleton",
+        "title": "công chúa xứ Wales"
+      }
+    ]
+  },
+  {
+    "id": "ESTJ",
+    "name": "Loại tổng giám đốc",
+    "category": "Người bảo hộ",
+    "summary": "Một người quản lý giỏi là người có khả năng quản lý mọi thứ hoặc con người một cách xuất sắc.",
+    "description": {
+      "traits": [
+        "Thực dụng, quyết đoán, hướng tới kết quả, một nhà quản lý bẩm sinh",
+        "Coi trọng truyền thống, quy tắc và trật tự, đồng thời thích hệ thống phân cấp rõ ràng",
+        "Hãy thẳng thắn và trung thực, đừng tin vào những lý thuyết trừu tượng, chỉ nhìn vào sự thật",
+        "Hãy siêng năng và tin rằng nhân cách có thể được xây dựng thông qua công việc"
+      ],
+      "strengths": [
+        "Trung thực và chính trực: tuân thủ các nguyên tắc và đáng tin cậy",
+        "Kỹ năng tổ chức: Khả năng phân bổ nguồn lực và nhân sự hiệu quả",
+        "Ý chí kiên định: Không chùn bước trước khó khăn, kiên trì đến cùng",
+        "Lòng trung thành và sự kiên nhẫn: yếu tố ổn định cho nhóm và gia đình",
+        "领导力：能清晰地传达指令，带领团队前进"
+      ],
+      "weaknesses": [
+        "Cứng nhắc và bướng bỉnh: Khó thích ứng với những tình huống bất ngờ và những quan điểm khác thường",
+        "Sự tách rời cảm xúc: Vô cảm trước nhu cầu tình cảm của người khác",
+        "Khó thư giãn: Luôn làm việc và không tận hưởng cuộc sống",
+        "Giỏi dạy người khác: Thích áp đặt giá trị của mình lên người khác"
+      ],
+      "careers": [
+        "Điều hành doanh nghiệp/Tổng Giám đốc",
+        "Giám đốc dự án/Giám đốc vận hành",
+        "thẩm phán/luật sư",
+        "cảnh sát/sĩ quan",
+        "Nhân viên ngân hàng/Cố vấn tài chính"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#1e40af",
+      "secondary": [
+        "#ffffff",
+        "#4b5563"
+      ],
+      "meaning": "Màu xanh hải quân tượng trưng cho uy quyền, tính chuyên nghiệp và trật tự, trong khi màu trắng tượng trưng cho sự rõ ràng và chính trực."
+    },
+    "relationships": {
+      "compatible": [
+        "ISTP",
+        "ISFP"
+      ],
+      "challenging": [
+        "INFP",
+        "ENFP"
+      ],
+      "advice": "Cố gắng lắng nghe nhu cầu tình cảm của đối tác và không phải lúc nào cũng cố gắng giải quyết vấn đề. Hãy nhớ rằng, đôi khi sự hiểu biết và đồng hành còn quan trọng hơn việc đúng."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách linh hoạt và cởi mở với những khả năng mới",
+        "Phát triển sự đồng cảm và chú ý đến cảm xúc của người khác",
+        "Cân bằng công việc và cuộc sống và học cách thư giãn"
+      ],
+      "tips": [
+        "Trước khi đưa ra quyết định, hãy dừng lại và lắng nghe những ý kiến ​​khác nhau",
+        "Hãy thử một số hoạt động không có cấu trúc như làm nghệ thuật",
+        "Đánh giá cao hơn và ít chỉ trích cấp dưới hoặc thành viên gia đình của bạn"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "John D. Rockefeller",
+        "title": "nhà công nghiệp"
+      },
+      {
+        "name": "Sonia Sotomayor",
+        "title": "Thẩm phán Tòa án Tối cao Hoa Kỳ"
+      },
+      {
+        "name": "thẳng thắn sinatra",
+        "title": "ca sĩ"
+      },
+      {
+        "name": "Lyndon Johnson",
+        "title": "cựu tổng thống Hoa Kỳ"
+      }
+    ]
+  },
+  {
+    "id": "ESFJ",
+    "name": "kiểu cung thủ",
+    "category": "Người bảo hộ",
+    "summary": "Những người cực kỳ giàu lòng nhân ái, hòa đồng và nổi tiếng, luôn sẵn sàng giúp đỡ.",
+    "description": {
+      "traits": [
+        "Hướng ngoại, nhiệt tình và có trách nhiệm, là trung tâm của các tình huống xã hội",
+        "Rất coi trọng sự hòa hợp giữa các cá nhân và sẵn sàng hy sinh bản thân vì tập thể",
+        "Coi trọng truyền thống, lòng trung thành và thích chăm sóc người khác",
+        "Thực dụng và cụ thể, chú ý đến chi tiết trong cuộc sống hàng ngày"
+      ],
+      "strengths": [
+        "Khả năng thực hành: xử lý tốt công việc hàng ngày và công việc hậu cần",
+        "Tinh thần trách nhiệm cao: coi trọng cam kết và không bao giờ thất hứa",
+        "Trung thành và đáng tin cậy: chỗ dựa vững chắc nhất cho bạn bè và gia đình",
+        "Nhạy cảm và ấm áp: Khả năng nhận thức sâu sắc nhu cầu của người khác và đưa ra sự giúp đỡ",
+        "Bậc thầy xã hội: có thể làm cho mọi người cảm thấy thoải mái một cách dễ dàng"
+      ],
+      "weaknesses": [
+        "Phụ thuộc vào đánh giá: quan tâm quá nhiều đến ý kiến ​​và địa vị xã hội của người khác",
+        "Không linh hoạt: chỉ trích những hành vi và quan điểm độc đáo",
+        "Sự hy sinh bản thân: Có xu hướng bỏ bê bản thân để làm hài lòng người khác",
+        "Tránh xung đột: che đậy những vấn đề thực tế vì sự hài hòa bề ngoài"
+      ],
+      "careers": [
+        "Giáo viên Tiểu học/Giáo dục Đặc biệt",
+        "Y tá/Chăm sóc sức khỏe",
+        "Hành chính/Quan hệ công chúng",
+        "nhân viên xã hội",
+        "Quản lý dịch vụ ăn uống/khách sạn"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#ec4899",
+      "secondary": [
+        "#fef3c7",
+        "#6b7280"
+      ],
+      "meaning": "Màu hồng tượng trưng cho sự quan tâm, ấm áp và tình yêu, màu be tượng trưng cho hòa bình và thoải mái"
+    },
+    "relationships": {
+      "compatible": [
+        "ISFP",
+        "ISTP"
+      ],
+      "challenging": [
+        "INTJ",
+        "INTP"
+      ],
+      "advice": "Đừng luôn nhận mọi trách nhiệm về mình. Học cách thể hiện nhu cầu của bản thân trong các mối quan hệ thay vì chỉ đáp ứng nhu cầu của người khác."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách suy nghĩ độc lập và không mù quáng làm theo những đánh giá của xã hội",
+        "Thiết lập ranh giới cá nhân và học cách nói không",
+        "Chấp nhận rằng xung đột là một phần của mối quan hệ và không tránh né các vấn đề"
+      ],
+      "tips": [
+        "Dành thời gian mỗi ngày để ở một mình và chú ý đến cảm xúc bên trong của bạn",
+        "Trước khi giúp đỡ người khác, hãy chắc chắn rằng bạn có năng lượng dự trữ",
+        "Cố gắng chấp nhận những quan điểm và lối sống khác nhau"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "taylor swift",
+        "title": "ca sĩ"
+      },
+      {
+        "name": "Bill Clinton",
+        "title": "cựu tổng thống Hoa Kỳ"
+      },
+      {
+        "name": "jennifer lopez",
+        "title": "ca sĩ/diễn viên"
+      },
+      {
+        "name": "Steve Harvey",
+        "title": "chủ nhà"
+      }
+    ]
+  },
+  {
+    "id": "ISTP",
+    "name": "Kiểu người sành sỏi",
+    "category": "Nhà thám hiểm",
+    "summary": "Nhà thực nghiệm táo bạo và thực tế, thành thạo trong việc sử dụng các loại công cụ.",
+    "description": {
+      "traits": [
+        "Bình tĩnh, lý trí và tò mò, anh ấy là một nghệ nhân và nhà sản xuất bẩm sinh",
+        "Thích tìm hiểu cách mọi thứ hoạt động thông qua trải nghiệm thực tế",
+        "Linh hoạt và dễ thích nghi, sống trong hiện tại, thích phiêu lưu và phấn khích",
+        "Không nhiều lời nhưng rất mạnh mẽ trong hành động"
+      ],
+      "strengths": [
+        "Lạc quan và tràn đầy sức sống: tràn đầy năng lượng và ít lo lắng",
+        "Sáng tạo: giỏi biến lý thuyết thành ứng dụng thực tế",
+        "Xử lý khủng hoảng: có thể giữ bình tĩnh trước áp lực và giải quyết vấn đề nhanh chóng",
+        "Bình thường và hợp lý: tư duy linh hoạt, có khả năng thích ứng với những thay đổi khác nhau",
+        "- Khả năng thực hành: sử dụng thành thạo các công cụ và thành thạo công nghệ"
+      ],
+      "weaknesses": [
+        "Bướng bỉnh: Một khi đã quyết định thì khó thay đổi",
+        "Tắt cảm xúc: khó hiểu và thể hiện cảm xúc",
+        "Dễ chán: cần sự kích thích và mới lạ liên tục",
+        "Khó cam kết: Không thích bị ràng buộc bởi những kế hoạch dài hạn"
+      ],
+      "careers": [
+        "Kỹ sư cơ khí/Kỹ thuật viên",
+        "phi công/tay đua",
+        "Pháp y/Thám tử",
+        "nhà phát triển phần mềm",
+        "bác sĩ cấp cứu/lính cứu hỏa"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#4b5563",
+      "secondary": [
+        "#ef4444",
+        "#000000"
+      ],
+      "meaning": "Màu xám tượng trưng cho sự thực tế và điềm tĩnh, trong khi màu đỏ tượng trưng cho niềm đam mê và hành động tiềm ẩn."
+    },
+    "relationships": {
+      "compatible": [
+        "ESFJ",
+        "ESTJ"
+      ],
+      "challenging": [
+        "ENFJ",
+        "INFJ"
+      ],
+      "advice": "Đối tác của bạn cần cảm giác an toàn, vì vậy hãy cố gắng bày tỏ nhiều hơn về kế hoạch và cảm xúc của bạn. Đừng coi trọng sự độc lập hơn mối quan hệ. Sự phụ thuộc thích hợp cũng là một loại niềm tin."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách lập kế hoạch dài hạn, không chỉ tập trung vào mục tiêu trước mắt",
+        "Trau dồi kỹ năng thể hiện cảm xúc và xây dựng các kết nối sâu sắc",
+        "Xem xét tác động của hành vi của bạn đối với người khác và giảm bớt sự liều lĩnh"
+      ],
+      "tips": [
+        "Viết nhật ký và sắp xếp cảm xúc của bạn",
+        "Hãy xem xét cảm xúc của ít nhất hai người trước khi đưa ra quyết định",
+        "Chuẩn bị một món quà bất ngờ cho người quan trọng"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Michael Jordan",
+        "title": "cầu thủ bóng rổ"
+      },
+      {
+        "name": "tom du thuyền",
+        "title": "diễn viên"
+      },
+      {
+        "name": "Clint Eastwood",
+        "title": "Đạo diễn/Diễn viên"
+      },
+      {
+        "name": "Putin",
+        "title": "tổng thống Nga"
+      }
+    ]
+  },
+  {
+    "id": "ISFP",
+    "name": "kiểu thám hiểm",
+    "category": "Nhà thám hiểm",
+    "summary": "Người nghệ sĩ linh hoạt và duyên dáng, luôn sẵn sàng khám phá và trải nghiệm những điều mới mẻ.",
+    "description": {
+      "traits": [
+        "Trầm tính, nhạy cảm, thân thiện, có khiếu thẩm mỹ cực cao",
+        "Sống trong hiện tại và tận hưởng từng khoảnh khắc của cuộc sống",
+        "Có tư duy cởi mở và không thích kiểm soát người khác hoặc bị kiểm soát",
+        "Thể hiện cảm xúc bằng hành động hơn là lời nói"
+      ],
+      "strengths": [
+        "Rất hấp dẫn: ấm áp, thư giãn và thoải mái",
+        "Nhạy cảm và tỉ mỉ: có thể cảm nhận sâu sắc cảm xúc của người khác",
+        "Trí tưởng tượng phong phú: có năng khiếu sáng tạo nghệ thuật",
+        "Đam mê: cống hiến hết mình cho những điều mà bạn quan tâm",
+        "Tò mò: sẵn sàng khám phá những lĩnh vực chưa biết"
+      ],
+      "weaknesses": [
+        "Cực kỳ độc lập: khó nắm bắt và không thích bị ràng buộc",
+        "Không thể đoán trước: tâm trạng thất thường, hành vi thất thường",
+        "Dễ bị căng thẳng: dễ bị suy sụp khi đối mặt với xung đột và chỉ trích",
+        "Thiếu kế hoạch: Không giỏi lập kế hoạch dài hạn và quản lý tài chính"
+      ],
+      "careers": [
+        "nhà thiết kế thời trang/nghệ sĩ",
+        "nhạc sĩ/nhiếp ảnh gia",
+        "cố vấn tâm lý",
+        "Bác sĩ thú y / Huấn luyện viên động vật",
+        "Đầu bếp/Người làm vườn"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#84cc16",
+      "secondary": [
+        "#f472b6",
+        "#fef08a"
+      ],
+      "meaning": "Màu xanh cỏ tượng trưng cho thiên nhiên và sức sống, màu hồng tượng trưng cho sự dịu dàng và cảm giác nghệ thuật"
+    },
+    "relationships": {
+      "compatible": [
+        "ESFJ",
+        "ESTJ"
+      ],
+      "challenging": [
+        "ENTJ",
+        "INTJ"
+      ],
+      "advice": "Sẵn sàng chia sẻ thế giới nội tâm của bạn và để người ấy bước vào cuộc sống của bạn. Học cách đối mặt với xung đột thay vì trốn tránh chúng. Communication is the key to solving problems."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách lập kế hoạch và thực hiện chúng để cải thiện tính tự giác",
+        "Tăng cường khả năng chịu đựng căng thẳng và học cách quản lý cảm xúc",
+        "Cải thiện khả năng tư duy logic và hỗ trợ ra quyết định"
+      ],
+      "tips": [
+        "Học hỏi kiến ​​thức quản lý tài chính và lập kế hoạch cho tương lai",
+        "Khi bạn cảm thấy căng thẳng, hãy thử viết nó ra để phân tích lý do.",
+        "Tham gia một số khóa đào tạo tư duy logic"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "michael jackson",
+        "title": "ca sĩ"
+      },
+      {
+        "name": "Kevin Costner",
+        "title": "diễn viên"
+      },
+      {
+        "name": "Avril Lavigne",
+        "title": "ca sĩ"
+      },
+      {
+        "name": "Brad Pitt",
+        "title": "diễn viên"
+      }
+    ]
+  },
+  {
+    "id": "ESTP",
+    "name": "Doanh nhân",
+    "category": "Nhà thám hiểm",
+    "summary": "Những người thông minh, năng động và nhạy bén, thực sự thích cuộc sống bên bờ vực.",
+    "description": {
+      "traits": [
+        "Hướng ngoại, thực dụng, táo bạo và là một nhà thám hiểm bẩm sinh",
+        "Thích trở thành trung tâm của sự chú ý và giỏi gây ảnh hưởng đến người khác thông qua hành động",
+        "Sống trong hiện tại, ghét những lý thuyết trừu tượng và thích giải quyết những vấn đề thực tế",
+        "Khả năng quan sát nhạy bén và có thể nhanh chóng nắm bắt được động lực của người khác"
+      ],
+      "strengths": [
+        "Táo bạo và trực tiếp: dám chấp nhận rủi ro và không bao giờ ngại thử thách",
+        "Hợp lý và thiết thực: tập trung vào kết quả, cực kỳ hiệu quả",
+        "Sáng suốt mạnh mẽ: có thể nhìn thấu những lời nói dối và nhận biết con người rất chính xác",
+        "Kỹ năng xã hội: Hài hước và quyến rũ",
+        "Năng động: không biết mệt mỏi, luôn tràn đầy năng lượng"
+      ],
+      "weaknesses": [
+        "Thiếu kiên nhẫn: bốc đồng và liều lĩnh",
+        "Ngỗ ngược: Thích phá luật và có thể gặp rắc rối",
+        "Phớt lờ cảm xúc: Đôi khi tỏ ra lạnh lùng và không quan tâm đến cảm xúc của người khác",
+        "Thiếu kế hoạch: chỉ nhìn vào hiện tại và thiếu tầm nhìn dài hạn"
+      ],
+      "careers": [
+        "Doanh nhân/Giám đốc bán hàng",
+        "Nhà môi giới chứng khoán/Nhà giao dịch",
+        "người phản ứng đầu tiên/lính cứu hỏa",
+        "Vận động viên/huấn luyện viên chuyên nghiệp",
+        "Người giải trí/Người dẫn chương trình"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#dc2626",
+      "secondary": [
+        "#f59e0b",
+        "#000000"
+      ],
+      "meaning": "Màu đỏ tượng trưng cho niềm đam mê, hành động và phiêu lưu, màu vàng tượng trưng cho thành công và sức sống"
+    },
+    "relationships": {
+      "compatible": [
+        "ISFJ",
+        "ISTJ"
+      ],
+      "challenging": [
+        "INFJ",
+        "INTJ"
+      ],
+      "advice": "Bạn không chỉ cần theo đuổi niềm đam mê trong một mối quan hệ mà còn cần học cách cam kết và lập kế hoạch cho tương lai. Hãy chú ý nhiều hơn đến thế giới nội tâm của đối tác và học cách giao tiếp sâu sắc."
+    },
+    "development": {
+      "growthPath": [
+        "Học cách suy nghĩ trước khi hành động và cân nhắc hậu quả lâu dài của hành động của bạn",
+        "Phát triển tính kiên nhẫn và kiên trì hoàn thành nhiệm vụ bạn bắt đầu",
+        "Tập trung vào các khái niệm trừu tượng và cải thiện tư duy chiến lược"
+      ],
+      "tips": [
+        "Đặt mục tiêu dài hạn và chia chúng thành các kế hoạch ngắn hạn để thực hiện",
+        "Buộc bản thân phải bình tĩnh suy nghĩ trong vài phút trước khi hành động bốc đồng.",
+        "Hãy thử đọc vài cuốn sách triết học để mở rộng chiều sâu tư duy của bạn"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Donald Trump",
+        "title": "cựu tổng thống Hoa Kỳ"
+      },
+      {
+        "name": "Madonna",
+        "title": "ca sĩ"
+      },
+      {
+        "name": "Hemingway",
+        "title": "nhà văn"
+      },
+      {
+        "name": "Jack Nicholson",
+        "title": "diễn viên"
+      }
+    ]
+  },
+  {
+    "id": "ESFP",
+    "name": "kiểu người biểu diễn",
+    "category": "Nhà thám hiểm",
+    "summary": "Những người biểu diễn tự nhiên, năng động và nhiệt tình, sống xung quanh họ không bao giờ nhàm chán.",
+    "description": {
+      "traits": [
+        "Hướng ngoại, lạc quan và nhiệt tình, anh là linh hồn của bữa tiệc",
+        "Yêu cuộc sống và theo đuổi thú vui vật chất và trải nghiệm giác quan",
+        "Thích tương tác với mọi người và giỏi động viên, an ủi người khác",
+        "Sống tự phát và không thích bị ràng buộc bởi các kế hoạch và quy tắc"
+      ],
+      "strengths": [
+        "Táo bạo và tự tin: không bao giờ sợ sân khấu, hãy tận hưởng sân khấu",
+        "Độc đáo: thẩm mỹ độc đáo và phong cách thời trang",
+        "Quan sát: giỏi quan sát từ ngữ và màu sắc, chú ý đến chi tiết",
+        "Kỹ năng giao tiếp: Có thể hòa hợp nhanh chóng với bất kỳ ai",
+        "Chủ nghĩa thực dụng: Dù thích chơi đùa nhưng tôi cũng chú ý đến kết quả thực tế."
+      ],
+      "weaknesses": [
+        "Dễ chán nản: Khó tập trung vào cùng một việc trong thời gian dài",
+        "Tình cảm: Dễ bị ảnh hưởng bởi môi trường, tâm trạng thất thường nhiều",
+        "Tránh xung đột: Bỏ qua thực tế để tránh các vấn đề",
+        "Thiếu kế hoạch: Nếu hôm nay uống rượu, hôm nay bạn sẽ say và chẳng lo lắng gì về ngày mai."
+      ],
+      "careers": [
+        "Diễn viên/Ca sĩ/Người giải trí",
+        "Giám đốc lập kế hoạch sự kiện/quan hệ công chúng",
+        "Đại diện bán hàng/Hướng dẫn viên du lịch",
+        "Nhà thiết kế thời trang/stylist",
+        "giáo viên mầm non"
+      ]
+    },
+    "luckyColors": {
+      "primary": "#f59e0b",
+      "secondary": [
+        "#fbbf24",
+        "#c084fc"
+      ],
+      "meaning": "Màu vàng tượng trưng cho sự lấp lánh, sự chú ý và thành công, màu cam tượng trưng cho sức sống và hạnh phúc"
+    },
+    "relationships": {
+      "compatible": [
+        "ISFJ",
+        "ISTJ"
+      ],
+      "challenging": [
+        "INTJ",
+        "INFJ"
+      ],
+      "advice": "Trong khi tận hưởng hiện tại, bạn cũng nên lập kế hoạch cho tương lai. Mang lại chiều sâu hơn cho mối quan hệ của bạn, không chỉ là niềm vui."
+    },
+    "development": {
+      "growthPath": [
+        "Phát triển tính kỷ luật tự giác và vượt qua thói quen trì hoãn",
+        "Học cách đối mặt với khó khăn và xung đột mà không trốn thoát",
+        "Hãy suy nghĩ về tác động lâu dài của hành vi của bạn và lập kế hoạch"
+      ],
+      "tips": [
+        "Sử dụng lịch để quản lý thời gian và đảm bảo các nhiệm vụ quan trọng được hoàn thành đúng thời hạn",
+        "Hãy thử thiền hoặc thở sâu để làm dịu những cảm xúc dao động",
+        "Đặt mục tiêu đòi hỏi nỗ lực lâu dài để đạt được"
+      ]
+    },
+    "famousPeople": [
+      {
+        "name": "Marilyn Monroe",
+        "title": "diễn viên"
+      },
+      {
+        "name": "Adele",
+        "title": "ca sĩ"
+      },
+      {
+        "name": "Jamie Oliver",
+        "title": "đầu bếp nổi tiếng"
+      },
+      {
+        "name": "Elton John",
+        "title": "ca sĩ"
+      }
+    ]
+  }
+]

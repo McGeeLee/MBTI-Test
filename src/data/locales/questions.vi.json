@@ -1,0 +1,5163 @@
+{
+  "meta": {
+    "quick": {
+      "title": "Bản nhanh",
+      "duration": "Khoảng 5 phút",
+      "description": "Đánh giá nhanh xu hướng tính cách cốt lõi, phù hợp khi bạn có ít thời gian."
+    },
+    "standard": {
+      "title": "Bản tiêu chuẩn",
+      "duration": "Khoảng 15 phút",
+      "description": "Phiên bản cân bằng giữa độ sâu và thời gian, phù hợp với phần lớn người dùng."
+    },
+    "full": {
+      "title": "Bản đầy đủ",
+      "duration": "Khoảng 30 phút",
+      "description": "Phân tích sâu và chi tiết hơn, phù hợp khi bạn muốn có góc nhìn toàn diện."
+    }
+  },
+  "questions": {
+    "quick": [
+      {
+        "id": 1,
+        "text": "Bạn thường cư xử như thế nào tại các cuộc tụ họp xã hội?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chủ động giới thiệu bản thân với người lạ và kết bạn mới",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Đợi người khác đến nói chuyện với bạn hoặc chỉ trò chuyện với những người bạn biết",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "Khi bạn cảm thấy vui hay buồn, phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chia sẻ nó với bạn bè ngay lập tức và biểu hiện sẽ rõ ràng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Ẩn sâu trong lòng, bề ngoài không thấy nhiều thay đổi",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "Bạn thích loại tiệc nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bữa tiệc lớn sôi động, càng đông người càng tốt",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Một buổi tụ tập nhỏ chỉ có vài người bạn thân",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Khi phải đối mặt với một nhiệm vụ mới, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy bắt đầu thực hiện trước và suy nghĩ về nó trong khi thực hiện",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Hãy suy nghĩ kỹ các bước trước khi hành động",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Bạn thường làm gì khi cuộc tranh luận trở nên sôi nổi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Người ồn ào nhất và hào hứng nhất",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Người lặng lẽ lắng nghe và thỉnh thoảng xen vào một lời",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "Bạn có chú ý đến mọi thứ hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chi tiết cụ thể và thành phần thực tế",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Mô hình tổng thể và ý nghĩa cơ bản",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "Bạn có nghĩ rằng bạn có xu hướng nhiều hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy xuống trái đất và chú ý đến thực tế",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Không kiềm chế và giàu trí tưởng tượng",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Bạn có thích học không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Các kỹ năng thực tế có thể sử dụng được ngay (ví dụ: nấu ăn, sửa xe)",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Kiến thức lý thuyết có thể nâng cao nhận thức (như tâm lý học, kinh tế)",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "text": "Bạn cần chắc chắn điều gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có kinh nghiệm cá nhân hoặc có bằng chứng thuyết phục",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Có ý nghĩa về mặt logic hoặc phù hợp với nguồn gốc lý thuyết",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tuân theo truyền thống và phong tục và duy trì sự ổn định",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Phá vỡ thói quen và theo đuổi sự mới lạ và thay đổi",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "text": "Bạn coi trọng điều gì hơn khi đưa ra quyết định?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Logic hợp lý và phân tích rõ ràng ưu và nhược điểm",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tuân thủ các giá trị và quan tâm đến cảm xúc của người khác",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "text": "Khi giải quyết xung đột, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy hợp lý và trình bày sự thật",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Nói về cảm xúc và đưa ra khuôn mặt",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "text": "Trong các cuộc thảo luận nhóm, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đặt câu hỏi và tìm kiếm sơ hở",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tìm kiếm sự đồng thuận và thúc đẩy sự hòa hợp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "text": "Khi đánh giá một bộ phim, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phân tích ưu điểm, nhược điểm và chỉ ra những hạn chế của nó",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tận hưởng những cảm giác nó mang lại và nhìn thấy những mặt tốt đẹp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "text": "Theo bạn, người lãnh đạo nên làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cứng rắn, quyết đoán và răn đe",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Ôn hòa, dân chủ và dễ gần",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "text": "Môi trường sống điển hình của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tổ chức tốt, mọi thứ đều có vị trí của nó",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sắp xếp ngẫu nhiên, trật tự trong hỗn loạn",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "text": "Còn bạn trong năm tới thì sao?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có mục tiêu và kế hoạch rõ ràng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Hãy thực hiện từng bước một và để tự nhiên diễn ra",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "text": "Khi phải đối mặt với thời hạn, bạn có thường xuyên làm vậy không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bắt đầu sớm và kết thúc sớm",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Trì hoãn nó cho đến giây phút cuối cùng và bùng nổ dưới áp lực",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "text": "Bạn thích loại lịch trình nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nó đã được đặt đầy đủ và cảm thấy rất thỏa mãn.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Để lại nhiều khoảng trắng, sẵn sàng chèn các sắp xếp mới",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "text": "Làm thế nào để bạn giải quyết những vấn đề phức tạp?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chia nó thành các bước nhỏ và đánh bại từng bước một.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Bắt đầu từ tổng thể và tìm kiếm sự đột phá",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "text": "Bạn sẽ làm gì khi cần liên lạc với một người lạ?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gọi hoặc nhắn tin trực tiếp, không áp lực",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Cảm thấy do dự và cần phải xây dựng lại tinh thần",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "text": "Bạn thường giải thích mọi việc cho người khác như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Kết hợp với cử chỉ và nét mặt phong phú",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Giọng điệu mượt mà và ít ngôn ngữ cơ thể hơn",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "text": "Khi mô tả một cái gì đó, bạn có xu hướng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Liệt kê các sự kiện, số liệu và các bước",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Sử dụng phép ẩn dụ, so sánh và khái quát hóa",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "text": "Bạn coi trọng điều gì hơn khi giải quyết vấn đề?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Giải pháp thiết thực, ít rủi ro",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Giải pháp mới, độc đáo và sáng tạo",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "text": "Bạn làm gì khi bạn bè mắc lỗi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trực tiếp chỉ ra lỗi sai và giúp anh ta sửa nó",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Hãy xoa dịu cảm xúc của bạn trước tiên và nhắc nhở chúng một cách khéo léo",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "text": "Phản ứng đầu tiên của bạn khi nhìn thấy một người ăn xin là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nghĩ xem tại sao anh ta không làm việc, liệu anh ta có phải là kẻ nói dối không?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tôi cảm thấy tiếc cho anh ấy và muốn cho anh ấy một ít tiền",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "text": "Bạn làm gì trước khi đi du lịch?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lập danh sách và đóng gói gọn gàng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ cần lấy một ít quần áo, lấy những thứ cần thiết và đi",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "text": "Cuối tuần, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sắp xếp trước các hoạt động",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Ngủ cho đến khi bạn thức dậy một cách tự nhiên và làm bất cứ điều gì bạn muốn.",
+            "value": "P"
+          }
+        ]
+      }
+    ],
+    "standard": [
+      {
+        "id": 1,
+        "text": "Bạn thường cư xử như thế nào tại các cuộc tụ họp xã hội?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chủ động giới thiệu bản thân với người lạ và kết bạn mới",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Đợi người khác đến nói chuyện với bạn hoặc chỉ trò chuyện với những người bạn biết",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "Bạn sẽ làm gì khi cần liên lạc với một người lạ?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gọi hoặc nhắn tin trực tiếp, không áp lực",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Cảm thấy do dự và cần phải xây dựng lại tinh thần",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "Bạn thường làm gì khi xếp hàng chờ đợi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy chủ động trò chuyện với những người xung quanh để giết thời gian",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chơi điện thoại hay ngơ ngác, hãy im lặng",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Khi đến một môi trường mới (trường mới, công ty mới), bạn sẽ làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Làm quen với những người xung quanh bạn một cách nhanh chóng và làm quen với nhau",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Giữ thái độ thấp và từ từ quan sát những người xung quanh bạn",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Khi bạn cảm thấy vui hay buồn, phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chia sẻ nó với bạn bè ngay lập tức và biểu hiện sẽ rõ ràng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Ẩn sâu trong lòng, bề ngoài không thấy nhiều thay đổi",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "Bạn thường giải thích mọi việc cho người khác như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Kết hợp với cử chỉ và nét mặt phong phú",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Giọng điệu mượt mà và ít ngôn ngữ cơ thể hơn",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "Bạn nghĩ mình là người như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trong suốt, cảm xúc, giận dữ, buồn vui đều được viết rõ trên khuôn mặt",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Nó sâu sắc đến mức người khác khó có thể đoán được suy nghĩ của bạn.",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Bạn sẽ làm gì nếu điều gì đó không công bằng xảy ra?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lập tức lớn tiếng phản đối và bày tỏ sự bất bình",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Bình tĩnh quan sát và tìm thời điểm thích hợp để giải quyết vấn đề",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "text": "Bạn thích loại tiệc nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bữa tiệc lớn sôi động, càng đông người càng tốt",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Một buổi tụ tập nhỏ chỉ có vài người bạn thân",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "text": "Trong Khoảnh khắc hoặc trên mạng xã hội, bạn có xu hướng trở thành ai?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tương tác thường xuyên và có lượng bạn bè/fan lớn",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ theo dõi bạn thân và ít tương tác",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "text": "Cuối tuần lý tưởng của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đi chơi cùng nhóm bạn để hát và ăn tối cùng nhau",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Đọc sách, xem phim ở nhà hoặc dành thời gian một mình với bạn đời",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "text": "Bạn có coi trọng bạn bè của mình hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Số lượng, càng nhiều bạn bè, hành trình càng dễ dàng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chất lượng, chỉ cần có người bạn tri kỷ trong cuộc sống là đủ",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "text": "Khi phải đối mặt với một nhiệm vụ mới, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy bắt đầu thực hiện trước và suy nghĩ về nó trong khi thực hiện",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Hãy suy nghĩ kỹ các bước trước khi hành động",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "text": "Bạn thích điều gì hơn khi học điều gì đó mới trong một lớp học hoặc hội nghị?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Học thông qua thảo luận và thực hành",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Học bằng cách đọc, nghe và phản ánh",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "text": "Phản ứng đầu tiên của bạn khi gặp vấn đề là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy thử nhiều giải pháp khác nhau ngay lập tức",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Dừng lại và phân tích gốc rễ của vấn đề",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "text": "Thói quen nói chuyện của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Suy nghĩ và nói cùng một lúc, nói nhanh hơn",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Suy nghĩ kỹ trước khi nói, nói chậm",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "text": "Bạn thường làm gì khi cuộc tranh luận trở nên sôi nổi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Người ồn ào nhất và hào hứng nhất",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Người lặng lẽ lắng nghe và thỉnh thoảng xen vào một lời",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "text": "Những chủ đề nào bạn thường quan tâm?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nói không ngừng, mong lây bệnh cho người khác",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Click cho đến khi xong, hoặc chỉ cảm thấy phấn khích trong lòng",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "text": "Ấn tượng đầu tiên mà người khác có về bạn thường là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Năng động và vui vẻ",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Im lặng, cư xử tốt hoặc xa cách",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "text": "Bạn có muốn như vậy không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tâm điểm của sân khấu, tận hưởng tiếng vỗ tay",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Người anh hùng ở hậu trường âm thầm đóng góp",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "text": "Bạn có chú ý đến mọi thứ hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chi tiết cụ thể và thành phần thực tế",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Mô hình tổng thể và ý nghĩa cơ bản",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "text": "Khi mô tả một cái gì đó, bạn có xu hướng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Liệt kê các sự kiện, số liệu và các bước",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Sử dụng phép ẩn dụ, so sánh và khái quát hóa",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "text": "Bạn có ghi nhớ tốt hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thông tin cụ thể như tên, địa điểm, ngày tháng, v.v.",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Các khái niệm trừu tượng như lý thuyết, ý kiến, kết nối, v.v.",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "text": "Đối với \"Apple\", điều đầu tiên bạn nghĩ đến là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "đỏ, tròn, thơm, ngọt",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Newton,quyến rũ,sức khỏe,công ty công nghệ",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "text": "Bạn có nghĩ rằng bạn có xu hướng nhiều hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy xuống trái đất và chú ý đến thực tế",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Không kiềm chế và giàu trí tưởng tượng",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "text": "Bạn coi trọng điều gì hơn khi giải quyết vấn đề?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Giải pháp thiết thực, ít rủi ro",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Giải pháp mới, độc đáo và sáng tạo",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "text": "Thái độ của bạn đối với tương lai là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sống trong hiện tại và tận hưởng mỗi ngày",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Hướng tới tương lai, luôn nghĩ “nếu như…”",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "text": "Bạn thích loại nội dung công việc nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Duy trì hệ thống hiện có để đảm bảo sự ổn định",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Thiết kế một hệ thống mới từ đầu",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "text": "Bạn có thích học không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Các kỹ năng thực tế có thể sử dụng được ngay (ví dụ: nấu ăn, sửa xe)",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Kiến thức lý thuyết có thể nâng cao nhận thức (như tâm lý học, kinh tế)",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "text": "Bạn chú ý đến điều gì hơn khi đọc hướng dẫn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Các bước vận hành và biện pháp phòng ngừa",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Nguyên lý làm việc và khái niệm thiết kế",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "text": "Bạn nghĩ một ý tưởng tốt phải là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có thể đưa vào thực tế và có giá trị ứng dụng",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Sâu sắc và có thể giải thích hiện tượng",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "text": "Bạn thích cái nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "công cụ sản xuất",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "bản thiết kế",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "text": "Bạn cần chắc chắn điều gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có kinh nghiệm cá nhân hoặc có bằng chứng thuyết phục",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Có ý nghĩa về mặt logic hoặc phù hợp với nguồn gốc lý thuyết",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "text": "Bạn có thích tin vào điều đó hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cựu chiến binh giàu kinh nghiệm",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Các chuyên gia đã tìm hiểu rất nhiều về năm chiếc xe",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "text": "Khi học phần mềm mới, bạn làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bắt đầu với bản dùng thử và lỗi cũng như khám phá các chức năng",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Hãy xem hướng dẫn trước và hiểu logic trước khi tiếp tục.",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "text": "Bạn nghĩ sự thật đến từ đâu?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Kiểm tra thực hành",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "suy nghĩ hợp lý",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tuân theo truyền thống và phong tục và duy trì sự ổn định",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Phá vỡ thói quen và theo đuổi sự mới lạ và thay đổi",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "text": "Bạn thích điều gì khi nói đến việc ăn mặc?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phong cách cổ điển, đàng hoàng và hào phóng",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Phong cách thiết kế, cá tính",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "text": "Quy trình làm việc điển hình của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tuân thủ nghiêm ngặt các quy định đã được thiết lập",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Luôn tìm cách tối ưu hóa hoặc thay đổi nó",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "text": "Bạn thích đánh giá nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bạn là người ổn định và đáng tin cậy",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "bạn là một người khác",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "text": "Bạn coi trọng điều gì hơn khi đưa ra quyết định?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Logic hợp lý và phân tích rõ ràng ưu và nhược điểm",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tuân thủ các giá trị và quan tâm đến cảm xúc của người khác",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "text": "Bạn làm gì khi bạn bè mắc lỗi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trực tiếp chỉ ra lỗi sai và giúp anh ta sửa nó",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Hãy xoa dịu cảm xúc của bạn trước tiên và nhắc nhở chúng một cách khéo léo",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "text": "Bạn nghĩ thế nào là công bằng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đối xử bình đẳng với mọi người và hành động theo quy tắc",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Phân tích tình huống cụ thể và xem xét yếu tố con người",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "text": "Trong cuộc tranh luận, bạn chú ý đến điều gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lập luận của ai đầy đủ hơn và logic chặt chẽ hơn?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Quan điểm của ai nhân văn và cảm động hơn?",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "text": "Khi giải quyết xung đột, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy hợp lý và trình bày sự thật",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Nói về cảm xúc và đưa ra khuôn mặt",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "text": "Phản ứng đầu tiên của bạn khi nhìn thấy một người ăn xin là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nghĩ xem tại sao anh ta không làm việc, liệu anh ta có phải là kẻ nói dối không?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tôi cảm thấy tiếc cho anh ấy và muốn cho anh ấy một ít tiền",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "text": "Bạn nghĩ từ thiện nên là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Vận hành hiệu quả để đảm bảo nguồn vốn được sử dụng hiệu quả",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Đầy yêu thương, giúp đỡ mọi người khi cần",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "text": "Bạn thích điều gì khi giáo dục trẻ em?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Yêu cầu nghiêm ngặt, thưởng phạt rõ ràng",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Hướng dẫn nhẹ nhàng và bao dung khi mắc lỗi",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "text": "Trong các cuộc thảo luận nhóm, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đặt câu hỏi và tìm kiếm sơ hở",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tìm kiếm sự đồng thuận và thúc đẩy sự hòa hợp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "text": "Bạn làm gì khi người khác đưa ra quan điểm?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy nghĩ đến ý kiến ​​phản đối trước tiên",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tìm điểm đồng ý trước",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "text": "Bạn thích cái nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Khám phá sự thật thông qua tranh luận",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Duy trì mối quan hệ thông qua thỏa hiệp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "text": "Bạn nghĩ thế nào về “sự hòa hợp”?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nếu nó dựa trên sự giả dối, đừng làm điều đó",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Rất quan trọng, đáng để thỏa hiệp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "text": "Khi đánh giá một bộ phim, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phân tích ưu điểm, nhược điểm và chỉ ra những hạn chế của nó",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tận hưởng những cảm giác nó mang lại và nhìn thấy những mặt tốt đẹp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "text": "Đối với chính bạn, bạn có thường xuyên như vậy không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Yêu cầu nghiêm ngặt và phản ánh thường xuyên",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Chấp nhận bản thân, kể cả những khuyết điểm của bạn",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "text": "Đối với người khác, bạn có thường xuyên không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tầm nhìn nhạy bén, dễ nhìn ra lỗi của người khác",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Bao dung và rộng lượng, dễ dàng tìm thấy điểm sáng của người khác",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "text": "Bạn làm gì khi mọi việc không như ý muốn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Điều tra trách nhiệm và phân tích nguyên nhân",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Chấp nhận thực tế và tìm giải pháp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "text": "Theo bạn, người lãnh đạo nên làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cứng rắn, quyết đoán và răn đe",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Ôn hòa, dân chủ và dễ gần",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "text": "Trong các cuộc đàm phán, phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bám sát điểm mấu chốt và không bao giờ nhượng bộ",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tìm kiếm một tình huống đôi bên cùng có lợi và đưa ra những nhượng bộ phù hợp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "text": "Bạn thích cái nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nói bằng sức mạnh",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Đổi sự chân thành lấy sự chân thành",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "text": "Bạn sẽ làm gì khi cần nói không với ai đó?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Từ chối trực tiếp và không hy vọng",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Từ chối một cách lịch sự vì sợ làm tổn thương tình cảm",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "text": "Môi trường sống điển hình của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tổ chức tốt, mọi thứ đều có vị trí của nó",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sắp xếp ngẫu nhiên, trật tự trong hỗn loạn",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 62,
+        "text": "Bạn làm gì trước khi đi du lịch?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lập danh sách và đóng gói gọn gàng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ cần lấy một ít quần áo, lấy những thứ cần thiết và đi",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "text": "Bạn thích cách làm việc nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Từng bước thiết lập các quy trình và hệ thống",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Phản ứng linh hoạt và thích ứng với hoàn cảnh",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 64,
+        "text": "Bạn quen với điều gì khi nói đến máy tính để bàn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sắp xếp thành các thư mục",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Trải rộng khắp màn hình hoặc xếp tất cả vào một thư mục",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "text": "Còn bạn trong năm tới thì sao?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có mục tiêu và kế hoạch rõ ràng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Hãy thực hiện từng bước một và để tự nhiên diễn ra",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "text": "Cuối tuần, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sắp xếp trước các hoạt động",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Ngủ cho đến khi bạn thức dậy một cách tự nhiên và làm bất cứ điều gì bạn muốn.",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 67,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "kết quả chắc chắn",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "chưa biết bất ngờ",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 68,
+        "text": "Trong dự án, bạn chú ý đến điều gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Các mốc quan trọng và thời hạn",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Những khám phá và trải nghiệm trong quá trình",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "text": "Khi phải đối mặt với thời hạn, bạn có thường xuyên làm vậy không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bắt đầu sớm và kết thúc sớm",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Trì hoãn nó cho đến giây phút cuối cùng và bùng nổ dưới áp lực",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chạy với tốc độ ổn định và duy trì nhịp độ",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chạy ở tốc độ khác nhau, xen kẽ chạy nước rút và nghỉ ngơi",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "text": "Khi được giao nhiệm vụ, bạn sẽ làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Làm xong trước rồi mới chơi, nó sẽ khiến bạn cảm thấy thoải mái",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Vui vẻ trước, làm sau",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "text": "Bạn nghĩ gì về áp lực?",
+        "options": [
+          {
+            "label": "A",
+            "text": "có hại, cố gắng tránh nó",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Đó là động lực và có thể kích thích tiềm năng",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "text": "Bạn thích loại lịch trình nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nó đã được đặt đầy đủ và cảm thấy rất thỏa mãn.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Để lại nhiều khoảng trắng, sẵn sàng chèn các sắp xếp mới",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "text": "Nếu một người bạn bất ngờ mời bạn đi ăn tối, bạn sẽ làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nếu nó không có trong kế hoạch, nó có thể bị từ chối",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Rất vui, đồng ý ngay",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "text": "Bạn coi thế nào là \"thường lệ\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có thể nâng cao hiệu quả và tiết kiệm năng lượng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sự nhàm chán giết chết sự sáng tạo",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "text": "Bạn có quen với nó hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "dự trữ",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ cần đi theo dòng chảy",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "text": "Làm thế nào để bạn giải quyết những vấn đề phức tạp?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chia nó thành các bước nhỏ và đánh bại từng bước một.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Bắt đầu từ tổng thể và tìm kiếm sự đột phá",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "bài phát biểu đã chuẩn bị sẵn",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "ứng biến",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "text": "Bạn có xu hướng làm gì khi học các kỹ năng mới?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nghiên cứu một cách có hệ thống và đặt nền tảng vững chắc",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Học gì khi gặp vấn đề, tính thực dụng",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "text": "Bạn nghĩ hiệu quả đến từ đâu?",
+        "options": [
+          {
+            "label": "A",
+            "text": "quy trình chuẩn hóa",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "cảm hứng bùng nổ",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "text": "Bạn mô tả vai trò của mình trong xã hội như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Người khởi xướng, thích tổ chức các sự kiện và chủ đề",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Những người tham gia sẵn sàng hợp tác hơn với sự sắp xếp của người khác",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "text": "Bạn thường làm gì trước mặt những người bạn tốt?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trò chuyện không ngừng, chia sẻ những chuyện vụn vặt trong cuộc sống",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chủ yếu lắng nghe và thỉnh thoảng bày tỏ ý kiến",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "text": "Bạn sẽ cảm thấy thế nào ở nơi đông người?",
+        "options": [
+          {
+            "label": "A",
+            "text": "hào hứng, tràn đầy năng lượng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Mệt mỏi và muốn trốn thoát càng sớm càng tốt",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "text": "Bạn thích loại phim nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phim tài liệu, phim hành động, phim đời sống",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Phim khoa học viễn tưởng, phim hồi hộp, phim hại não",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "text": "Bạn nghĩ gì về những ý tưởng hay ho?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tôi cảm thấy nó không thực tế và lãng phí thời gian.",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Tôi thấy nó thú vị và muốn suy nghĩ sâu sắc về nó",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "text": "Bạn thích điều gì ở nơi làm việc?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Xử lý công việc giao dịch cụ thể",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Tiến hành lập kế hoạch chiến lược và thiết kế khái niệm",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phân tích vấn đề và tìm giải pháp tối ưu",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Thấu hiểu lòng người và thiết lập mối quan hệ hài hòa",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "text": "Bạn coi trọng điều gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Điểm mấu chốt của nguyên tắc",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Lòng trắc ẩn",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "text": "Bạn thích dành thời gian với ai hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Người thông minh nhưng hơi gai góc",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Người bình thường nhưng dễ tính",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "text": "Bạn nghĩ gì về trật tự?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Làm cho mọi người cảm thấy thoải mái và kiểm soát",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Khiến bạn cảm thấy chán nản và gò bó",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "text": "Bạn sẽ làm gì nếu kế hoạch của bạn bị gián đoạn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cảm thấy cáu kỉnh và lo lắng để trở lại đúng hướng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Không sao đâu, tôi chỉ muốn trải nghiệm những thay đổi mới",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "text": "Khi ôn thi phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tôi thường tích lũy",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Bất ngờ trước kỳ thi",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "text": "Trong công việc bạn có thích thú không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cố định trạm làm việc và thời gian",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Hệ thống làm việc linh hoạt, tự do lựa chọn địa điểm",
+            "value": "P"
+          }
+        ]
+      }
+    ],
+    "full": [
+      {
+        "id": 1,
+        "text": "Bạn thường cư xử như thế nào tại các cuộc tụ họp xã hội?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chủ động giới thiệu bản thân với người lạ và kết bạn mới",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Đợi người khác đến nói chuyện với bạn hoặc chỉ trò chuyện với những người bạn biết",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "Bạn sẽ làm gì khi cần liên lạc với một người lạ?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gọi hoặc nhắn tin trực tiếp, không áp lực",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Cảm thấy do dự và cần phải xây dựng lại tinh thần",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "Bạn thường làm gì khi xếp hàng chờ đợi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy chủ động trò chuyện với những người xung quanh để giết thời gian",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chơi điện thoại hay ngơ ngác, hãy im lặng",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Khi đến một môi trường mới (trường mới, công ty mới), bạn sẽ làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Làm quen với những người xung quanh bạn một cách nhanh chóng và làm quen với nhau",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Giữ thái độ thấp và từ từ quan sát những người xung quanh bạn",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Bạn mô tả vai trò của mình trong xã hội như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Người khởi xướng, thích tổ chức các sự kiện và chủ đề",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Những người tham gia sẵn sàng hợp tác hơn với sự sắp xếp của người khác",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "Bạn sẽ làm gì khi gặp lại một người bạn đã lâu không gặp?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chào một cách nồng nhiệt và to rồi bước tới",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Hãy mỉm cười và đợi người khác nhìn thấy bạn",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "Bạn làm gì khi gặp phải điểm lạnh trong cuộc họp nhóm?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy chủ động lên tiếng để phá vỡ sự im lặng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chờ người khác phá vỡ sự im lặng",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Bạn thích phong cách xã hội nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy mở rộng mạng lưới và gặp gỡ mọi loại người",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Lựa chọn cẩn thận và chỉ có tình bạn sâu sắc với một vài người",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "text": "Trong một bữa tiệc tối, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Làm sống động bầu không khí và chăm sóc cảm xúc của mọi người",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Ăn lặng lẽ và thỉnh thoảng tham gia vào cuộc trò chuyện",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "text": "Bạn sẽ làm gì nếu một người bạn mời bạn đến một bữa tiệc toàn người lạ?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tôi vui vẻ đến đó và thấy nó rất thú vị.",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Kiếm cớ để trốn tránh hoặc yêu cầu dẫn người quen đi cùng",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "text": "Khi bạn cảm thấy vui hay buồn, phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chia sẻ nó với bạn bè ngay lập tức và biểu hiện sẽ rõ ràng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Ẩn sâu trong lòng, bề ngoài không thấy nhiều thay đổi",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "text": "Bạn thường giải thích mọi việc cho người khác như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Kết hợp với cử chỉ và nét mặt phong phú",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Giọng điệu mượt mà và ít ngôn ngữ cơ thể hơn",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "text": "Bạn nghĩ mình là người như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trong suốt, cảm xúc, giận dữ, buồn vui đều được viết rõ trên khuôn mặt",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Nó sâu sắc đến mức người khác khó có thể đoán được suy nghĩ của bạn.",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "text": "Bạn sẽ làm gì nếu điều gì đó không công bằng xảy ra?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lập tức lớn tiếng phản đối và bày tỏ sự bất bình",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Bình tĩnh quan sát và tìm thời điểm thích hợp để giải quyết vấn đề",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "text": "Bạn thường làm gì trước mặt những người bạn tốt?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trò chuyện không ngừng, chia sẻ những chuyện vụn vặt trong cuộc sống",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chủ yếu lắng nghe và thỉnh thoảng bày tỏ ý kiến",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "text": "Khi bạn đồng ý hơn với quan điểm của ai đó, phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Gật đầu trực tiếp hoặc đồng ý lớn tiếng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Tôi âm thầm đồng ý trong lòng mà không nhất thiết phải thể hiện ra ngoài.",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "text": "Bạn cảm thấy thoải mái hơn khi xử lý cảm xúc bằng cách nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sẽ tốt hơn nếu để nó ra và nói ra.",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Tiêu hóa một mình và giải tỏa tâm trí của bạn",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "text": "Người khác thường miêu tả bạn như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nhiệt tình và năng động",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Bình tĩnh và kiềm chế, ổn định về mặt cảm xúc",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "text": "Bạn thường phản ứng thế nào khi nhận được một món quà bất ngờ?",
+        "options": [
+          {
+            "label": "A",
+            "text": "La hét, cười đùa và tỏ ra rất hào hứng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Cảm ơn bằng một nụ cười, cảm thấy xúc động nhưng lại kiềm chế",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "text": "Bạn có dễ dàng cho người khác biết quyền riêng tư của mình không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Dễ dàng hơn, tôi cảm thấy mình chẳng có gì phải giấu",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Nó rất khó khăn. Chúng tôi rất coi trọng việc bảo vệ quyền riêng tư cá nhân.",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "text": "Bạn thích loại tiệc nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bữa tiệc lớn sôi động, càng đông người càng tốt",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Một buổi tụ tập nhỏ chỉ có vài người bạn thân",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "text": "Trong Khoảnh khắc hoặc trên mạng xã hội, bạn có xu hướng trở thành ai?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tương tác thường xuyên và có lượng bạn bè/fan lớn",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ theo dõi bạn thân và ít tương tác",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "text": "Cuối tuần lý tưởng của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đi chơi cùng nhóm bạn để hát và ăn tối cùng nhau",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Đọc sách, xem phim ở nhà hoặc dành thời gian một mình với bạn đời",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "text": "Bạn có coi trọng bạn bè của mình hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Số lượng, càng nhiều bạn bè, hành trình càng dễ dàng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chất lượng, chỉ cần có người bạn tri kỷ trong cuộc sống là đủ",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "text": "Bạn sẽ cảm thấy thế nào ở nơi đông người?",
+        "options": [
+          {
+            "label": "A",
+            "text": "hào hứng, tràn đầy năng lượng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Mệt mỏi và muốn trốn thoát càng sớm càng tốt",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "text": "Bạn giỏi hơn phương pháp giao tiếp nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phát biểu hoặc dẫn chương trình trước đám đông",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "cuộc trò chuyện sâu sắc từng người một",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "text": "Bạn thường thuộc nhóm nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Là thành viên tích cực của nhiều vòng kết nối",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ thuộc về một hoặc hai vòng tròn nhỏ cốt lõi",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "text": "Bạn muốn làm gì nếu bạn cần đi du lịch trong một thời gian dài?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sống cùng đồng nghiệp, chúng ta có thể trò chuyện vào ban đêm",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Có một căn phòng riêng và tận hưởng sự cô độc",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "text": "Bạn cảm thấy thế nào về sự cô đơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Không chịu nổi, luôn tìm người đi cùng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Tận hưởng sự cô độc là thời gian để nạp lại năng lượng cho bản thân",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "text": "Bạn thích hoạt động xây dựng nhóm nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trò chơi phá băng quy mô lớn dành cho mọi người tham gia",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Thảo luận nhóm chuyên sâu theo nhóm",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "text": "Khi phải đối mặt với một nhiệm vụ mới, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy bắt đầu thực hiện trước và suy nghĩ về nó trong khi thực hiện",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Hãy suy nghĩ kỹ các bước trước khi hành động",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "text": "Bạn thích điều gì hơn khi học điều gì đó mới trong một lớp học hoặc hội nghị?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Học thông qua thảo luận và thực hành",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Học bằng cách đọc, nghe và phản ánh",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "text": "Phản ứng đầu tiên của bạn khi gặp vấn đề là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy thử nhiều giải pháp khác nhau ngay lập tức",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Dừng lại và phân tích gốc rễ của vấn đề",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "text": "Thói quen nói chuyện của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Suy nghĩ và nói cùng một lúc, nói nhanh hơn",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Suy nghĩ kỹ trước khi nói, nói chậm",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "text": "Bạn thích trạng thái công việc nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bận rộn và viên mãn, chuyển đổi giữa thăng trầm của công việc",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Tập trung sâu sắc và giải quyết một việc trong thời gian dài",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "text": "Bạn làm gì khi người khác đưa ra đề xuất?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy thử ngay và xem hiệu quả",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Mô phỏng tính khả thi trong tâm trí của bạn",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "text": "Bạn nghĩ cách tốt nhất để nghỉ ngơi là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đi tập thể dục, đi mua sắm, làm điều gì đó cụ thể",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Ngồi yên, thiền, choáng váng",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "text": "Khi giải quyết mâu thuẫn, bạn làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tích cực can thiệp để giải quyết vấn đề",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Lùi lại một bước và xem tình hình diễn ra",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "text": "Bạn ngưỡng mộ người nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Là người mạnh mẽ trong hành động và kiên quyết",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Người sâu sắc, biết suy nghĩ",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "text": "Để được hướng dẫn, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đừng nhìn nhiều, hãy thử xem",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Đọc kỹ trước khi bắt đầu thao tác",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "text": "Bạn thường làm gì khi cuộc tranh luận trở nên sôi nổi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Người ồn ào nhất và hào hứng nhất",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Người lặng lẽ lắng nghe và thỉnh thoảng xen vào một lời",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "text": "Những chủ đề nào bạn thường quan tâm?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nói không ngừng, mong lây bệnh cho người khác",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Click cho đến khi xong, hoặc chỉ cảm thấy phấn khích trong lòng",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "text": "Ấn tượng đầu tiên mà người khác có về bạn thường là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Năng động và vui vẻ",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Im lặng, cư xử tốt hoặc xa cách",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "text": "Bạn có muốn như vậy không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tâm điểm của sân khấu, tận hưởng tiếng vỗ tay",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Người anh hùng ở hậu trường âm thầm đóng góp",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "text": "Bạn sẽ làm gì khi giới thiệu điều gì đó cho người khác?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tôi đang cố gắng hết sức để được an toàn và mong đối phương sẽ chấp nhận ngay.",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Đưa ra lời giới thiệu khách quan và để đối phương tự quyết định",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "text": "Tiếng cười thông thường của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tiếng cười sảng khoái, rất dễ lây lan",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Một nụ cười tinh tế, tương đối kiềm chế",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "text": "Bạn thích bầu không khí nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đầy đam mê, cạnh tranh và thử thách",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Bình yên, tĩnh lặng và ấm áp",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "text": "Bạn làm gì khi có tin vui?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Ước gì tôi có thể dùng cái loa lớn để phát sóng",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ nói với những người thân thiết nhất",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "text": "Trong một đội, bạn thường chơi gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cổ vũ, nâng cao tinh thần",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Cố vấn quân sự, bình tĩnh phân tích",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "text": "Bạn nghĩ cuộc sống nên như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sôi động và đầy bất ngờ",
+            "value": "E"
+          },
+          {
+            "label": "B",
+            "text": "Dòng nước chảy chậm rãi, êm đềm và lặng lẽ",
+            "value": "I"
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "text": "Bạn có chú ý đến mọi thứ hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chi tiết cụ thể và thành phần thực tế",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Mô hình tổng thể và ý nghĩa cơ bản",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "text": "Khi mô tả một cái gì đó, bạn có xu hướng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Liệt kê các sự kiện, số liệu và các bước",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Sử dụng phép ẩn dụ, so sánh và khái quát hóa",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "text": "Bạn có ghi nhớ tốt hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thông tin cụ thể như tên, địa điểm, ngày tháng, v.v.",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Các khái niệm trừu tượng như lý thuyết, ý kiến, kết nối, v.v.",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "text": "Đối với \"Apple\", điều đầu tiên bạn nghĩ đến là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "đỏ, tròn, thơm, ngọt",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Newton,quyến rũ,sức khỏe,công ty công nghệ",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "text": "Bạn thích loại phim nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phim tài liệu, phim hành động, phim đời sống",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Phim khoa học viễn tưởng, phim hồi hộp, phim hại não",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "text": "Bạn có quan tâm nhiều hơn khi lắng nghe câu chuyện của người khác?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tính xác thực và chi tiết của câu chuyện",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Đạo đức và nguồn cảm hứng đằng sau câu chuyện",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "text": "Bạn nghĩ điều gì là đúng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thế giới vật chất hữu hình và hữu hình",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Tâm trí, Tinh thần và Khả năng Tương lai",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "text": "Bạn có thích thảo luận với mọi người hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tin tức và tin đồn cụ thể gần đây",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Các chủ đề lớn như triết học, cuộc sống và vũ trụ",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "text": "Bạn chú ý điều gì hơn khi học lịch sử?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trận chiến, thời đại và nhân vật cụ thể",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Quy luật và xu hướng phát triển lịch sử",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "text": "Bạn có tin tưởng hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sự thật được tận mắt chứng kiến",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "trực giác và cảm hứng",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "text": "Bạn có nghĩ rằng bạn có xu hướng nhiều hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy xuống trái đất và chú ý đến thực tế",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Không kiềm chế và giàu trí tưởng tượng",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 62,
+        "text": "Bạn coi trọng điều gì hơn khi giải quyết vấn đề?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Giải pháp thiết thực, ít rủi ro",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Giải pháp mới, độc đáo và sáng tạo",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "text": "Thái độ của bạn đối với tương lai là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sống trong hiện tại và tận hưởng mỗi ngày",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Hướng tới tương lai, luôn nghĩ “nếu như…”",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 64,
+        "text": "Bạn thích loại nội dung công việc nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Duy trì hệ thống hiện có để đảm bảo sự ổn định",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Thiết kế một hệ thống mới từ đầu",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "text": "Bạn nghĩ gì về những ý tưởng hay ho?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tôi cảm thấy nó không thực tế và lãng phí thời gian.",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Tôi thấy nó thú vị và muốn suy nghĩ sâu sắc về nó",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "text": "Bạn ngưỡng mộ người nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Người thực dụng, đáng tin cậy và có năng lực",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Một người có tầm nhìn, tài năng và khí chất",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 67,
+        "text": "Bạn chú ý điều gì hơn khi trang trí ngôi nhà của mình?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tính thực tế, độ bền và giá trị đồng tiền",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Thiết kế, phong cách và bầu không khí",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 68,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thực hiện kế hoạch đã lập",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Hình thành một tầm nhìn mới",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "text": "Bạn coi \"lẽ thường\" là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Rất quan trọng, nền tảng của cuộc sống",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Đôi khi chính những xiềng xích cản trở sự đổi mới",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "text": "Nếu được cho một số tiền, bạn sẽ làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tiết kiệm hoặc mua bất động sản và các đồ vật vật chất khác",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Đầu tư vào kinh doanh hoặc du lịch vòng quanh thế giới",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "text": "Bạn có thích học không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Các kỹ năng thực tế có thể sử dụng được ngay (ví dụ: nấu ăn, sửa xe)",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Kiến thức lý thuyết có thể nâng cao nhận thức (như tâm lý học, kinh tế)",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "text": "Bạn chú ý đến điều gì hơn khi đọc hướng dẫn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Các bước vận hành và biện pháp phòng ngừa",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Nguyên lý làm việc và khái niệm thiết kế",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "text": "Bạn nghĩ một ý tưởng tốt phải là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có thể đưa vào thực tế và có giá trị ứng dụng",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Sâu sắc và có thể giải thích hiện tượng",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "text": "Bạn thích cái nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "công cụ sản xuất",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "bản thiết kế",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "text": "Bạn thích điều gì ở nơi làm việc?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Xử lý công việc giao dịch cụ thể",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Tiến hành lập kế hoạch chiến lược và thiết kế khái niệm",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "text": "Bạn quan tâm đến điều gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "công dụng cụ thể của sự vật",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "nguyên tắc xây dựng sự vật",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thực hành",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Hãy sử dụng bộ não của bạn để suy nghĩ",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "text": "Khi thảo luận các vấn đề, bạn có xu hướng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thảo luận vấn đề và giải quyết vấn đề trước mắt",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Rút ra suy luận từ một trường hợp và thảo luận các vấn đề thiết yếu",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "text": "Bạn nghĩ mục đích của giáo dục là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phát triển kỹ năng sinh tồn",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Khai sáng trí tuệ",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "text": "Bạn thích loại sách nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hướng dẫn thực hành và sách tham khảo",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Chuyên khảo lý luận, thơ văn xuôi",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "text": "Bạn cần chắc chắn điều gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có kinh nghiệm cá nhân hoặc có bằng chứng thuyết phục",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Có ý nghĩa về mặt logic hoặc phù hợp với nguồn gốc lý thuyết",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "text": "Bạn có thích tin vào điều đó hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cựu chiến binh giàu kinh nghiệm",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Các chuyên gia đã tìm hiểu rất nhiều về năm chiếc xe",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "text": "Khi học phần mềm mới, bạn làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bắt đầu với bản dùng thử và lỗi cũng như khám phá các chức năng",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Hãy xem hướng dẫn trước và hiểu logic trước khi tiếp tục.",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "text": "Bạn nghĩ sự thật đến từ đâu?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Kiểm tra thực hành",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "suy nghĩ hợp lý",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "text": "Bạn sẽ làm gì khi gặp lãnh thổ không xác định?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tìm lời khuyên từ người đã từng trải qua",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Tham khảo sách và thông tin liên quan",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "text": "Bạn thích phương pháp giảng dạy nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lớp học thực nghiệm, dã ngoại",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Bài giảng và hội thảo lý thuyết",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "text": "Bạn thường đưa ra quyết định dựa trên điều gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "kinh nghiệm và bài học trong quá khứ",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Các mô hình dự báo cho tương lai",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "text": "Bạn nghĩ gì về những trải nghiệm truyền thống?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đáng được tôn trọng và tham khảo",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Có thể đã lỗi thời và cần được xem xét nghiêm túc",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "bắt chước và cải tiến",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "đạo hàm và khấu trừ",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "text": "Bạn nghĩ \"cảm giác ruột\" là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "tích lũy kinh nghiệm",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "cảm hứng lóe sáng",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tuân theo truyền thống và phong tục và duy trì sự ổn định",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Phá vỡ thói quen và theo đuổi sự mới lạ và thay đổi",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "text": "Bạn thích điều gì khi nói đến việc ăn mặc?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phong cách cổ điển, đàng hoàng và hào phóng",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Phong cách thiết kế, cá tính",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "text": "Quy trình làm việc điển hình của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tuân thủ nghiêm ngặt các quy định đã được thiết lập",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Luôn tìm cách tối ưu hóa hoặc thay đổi nó",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 94,
+        "text": "Bạn thích đánh giá nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bạn là người ổn định và đáng tin cậy",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "bạn là một người khác",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "text": "Trong những ngày nghỉ lễ phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đón năm mới theo phong tục truyền thống",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Muốn làm điều gì đó mới mẻ và không tuân theo hình thức",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "text": "Bạn nghĩ các quy tắc là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đó là phương tiện cần thiết để duy trì trật tự",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Đó là sự hạn chế về tự do",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 97,
+        "text": "Bạn có ủng hộ nhiều hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Duy trì lợi ích và sự ổn định",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Cải cách, đổi mới, dù có rủi ro",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 98,
+        "text": "Bạn đề cập đến điều gì khi đưa ra quyết định?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Điều mà hầu hết mọi người làm",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Suy nghĩ độc đáo của riêng bạn",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "text": "Bạn thích phong cách nghệ thuật nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "chủ nghĩa hiện thực, chủ nghĩa cổ điển",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Trừu tượng, siêu thực",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "text": "Bạn nghĩ thành công là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đạt được sự công nhận và địa vị xã hội",
+            "value": "S"
+          },
+          {
+            "label": "B",
+            "text": "Nhận ra giá trị duy nhất của bạn",
+            "value": "N"
+          }
+        ]
+      },
+      {
+        "id": 101,
+        "text": "Bạn coi trọng điều gì hơn khi đưa ra quyết định?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Logic hợp lý và phân tích rõ ràng ưu và nhược điểm",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tuân thủ các giá trị và quan tâm đến cảm xúc của người khác",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "text": "Bạn làm gì khi bạn bè mắc lỗi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trực tiếp chỉ ra lỗi sai và giúp anh ta sửa nó",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Hãy xoa dịu cảm xúc của bạn trước tiên và nhắc nhở chúng một cách khéo léo",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "text": "Bạn nghĩ thế nào là công bằng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đối xử bình đẳng với mọi người và hành động theo quy tắc",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Phân tích tình huống cụ thể và xem xét yếu tố con người",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "text": "Trong cuộc tranh luận, bạn chú ý đến điều gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lập luận của ai đầy đủ hơn và logic chặt chẽ hơn?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Quan điểm của ai nhân văn và cảm động hơn?",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 105,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phân tích vấn đề và tìm giải pháp tối ưu",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Thấu hiểu lòng người và thiết lập mối quan hệ hài hòa",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 106,
+        "text": "Nếu phải sa thải nhân viên, bạn sẽ làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Dựa trên đánh giá hiệu suất, giữ chân những người có năng lực tốt",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Xem xét khó khăn của gia đình nhân viên và cố gắng giữ chân những người cần làm việc",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 107,
+        "text": "Bạn nghĩ cái nào quan trọng hơn, sự thật hay cảm xúc?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sự thật, sự thật có giá trị hơn lời nói",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Cảm xúc và trái tim con người đều được làm bằng xương bằng thịt",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 108,
+        "text": "Nguyên tắc làm việc của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Không phù hợp với mọi người",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "hướng tới con người",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 109,
+        "text": "Khi đánh giá một người, bạn coi trọng điều gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "khả năng và thành tích của anh ấy",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tư cách đạo đức và cách đối xử của anh ấy với người khác",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 110,
+        "text": "Bạn muốn được đánh giá là gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "một người thông minh và có năng lực",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Một người tốt bụng và dễ gần",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 111,
+        "text": "Khi giải quyết xung đột, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy hợp lý và trình bày sự thật",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Nói về cảm xúc và đưa ra khuôn mặt",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 112,
+        "text": "Phản ứng đầu tiên của bạn khi nhìn thấy một người ăn xin là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nghĩ xem tại sao anh ta không làm việc, liệu anh ta có phải là kẻ nói dối không?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tôi cảm thấy tiếc cho anh ấy và muốn cho anh ấy một ít tiền",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 113,
+        "text": "Bạn nghĩ từ thiện nên là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Vận hành hiệu quả để đảm bảo nguồn vốn được sử dụng hiệu quả",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Đầy yêu thương, giúp đỡ mọi người khi cần",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 114,
+        "text": "Bạn thích điều gì khi giáo dục trẻ em?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Yêu cầu nghiêm ngặt, thưởng phạt rõ ràng",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Hướng dẫn nhẹ nhàng và bao dung khi mắc lỗi",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 115,
+        "text": "Bạn coi trọng điều gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Điểm mấu chốt của nguyên tắc",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Lòng trắc ẩn",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 116,
+        "text": "Bạn làm gì khi ai đó phàn nàn với bạn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Giúp anh ta phân tích lý do và đưa ra giải pháp",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Ở bên cạnh anh ấy để chia buồn và hỗ trợ tinh thần cho anh ấy.",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 117,
+        "text": "Theo bạn, luật có nên như vậy không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Trừng phạt tội phạm nghiêm khắc và đề cao công lý",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Cho tội phạm một cơ hội để phục hồi và thể hiện tính nhân văn",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 118,
+        "text": "Khi đưa ra quyết định, bạn phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Giữ bình tĩnh và khách quan và không bị ảnh hưởng bởi cảm xúc",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Lắng nghe tiếng gọi bên trong của bạn và tuân theo cảm xúc của bạn",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 119,
+        "text": "Bạn thích kiểu lãnh đạo nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Công việc chính thức được thực hiện với những phần thưởng và hình phạt rõ ràng",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Nhân đạo, quan tâm đến cấp dưới",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 120,
+        "text": "Bạn có nghĩ thế giới cần nhiều hơn thế không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "suy nghĩ hợp lý",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "tình yêu và sự quan tâm",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 121,
+        "text": "Trong các cuộc thảo luận nhóm, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đặt câu hỏi và tìm kiếm sơ hở",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tìm kiếm sự đồng thuận và thúc đẩy sự hòa hợp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 122,
+        "text": "Bạn làm gì khi người khác đưa ra quan điểm?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy nghĩ đến ý kiến ​​phản đối trước tiên",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tìm điểm đồng ý trước",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 123,
+        "text": "Bạn thích cái nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Khám phá sự thật thông qua tranh luận",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Duy trì mối quan hệ thông qua thỏa hiệp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 124,
+        "text": "Bạn nghĩ thế nào về “sự hòa hợp”?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nếu nó dựa trên sự giả dối, đừng làm điều đó",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Rất quan trọng, đáng để thỏa hiệp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 125,
+        "text": "Bạn thích dành thời gian với ai hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Người thông minh nhưng hơi gai góc",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Người bình thường nhưng dễ tính",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 126,
+        "text": "Khi mua sắm, bạn làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "So sánh mua sắm và kén chọn về khuyết điểm",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tôi nghĩ mọi chuyện gần như ổn thôi, tôi không muốn làm phiền bạn",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 127,
+        "text": "Bạn nghĩ gì về sự hoài nghi?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đó là động lực cho sự tiến bộ",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Sẽ hủy hoại niềm tin",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 128,
+        "text": "Bạn làm gì khi không đồng ý với người khác?",
+        "options": [
+          {
+            "label": "A",
+            "text": "nói thẳng ra",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "giữ im lặng hoặc bày tỏ một cách khéo léo",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 129,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "tư duy phản biện",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "đồng cảm",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 130,
+        "text": "Bạn nghĩ một đội tốt nên như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Khuyến khích sự va chạm giữa các ý tưởng, ngay cả khi có xung đột",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Đoàn kết như một gia đình",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 131,
+        "text": "Khi đánh giá một bộ phim, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Phân tích ưu điểm, nhược điểm và chỉ ra những hạn chế của nó",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tận hưởng những cảm giác nó mang lại và nhìn thấy những mặt tốt đẹp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 132,
+        "text": "Đối với chính bạn, bạn có thường xuyên như vậy không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Yêu cầu nghiêm ngặt và phản ánh thường xuyên",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Chấp nhận bản thân, kể cả những khuyết điểm của bạn",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 133,
+        "text": "Đối với người khác, bạn có thường xuyên không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tầm nhìn nhạy bén, dễ nhìn ra lỗi của người khác",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Bao dung và rộng lượng, dễ dàng tìm thấy điểm sáng của người khác",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 134,
+        "text": "Bạn làm gì khi mọi việc không như ý muốn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Điều tra trách nhiệm và phân tích nguyên nhân",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Chấp nhận thực tế và tìm giải pháp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 135,
+        "text": "Bạn nghĩ gì về những lời chỉ trích?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Là chất dinh dưỡng cần thiết cho sự phát triển",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Sẽ làm tổn hại đến sự tự tin của mọi người",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 136,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "sửa lỗi",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "giá trị khẳng định",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 137,
+        "text": "Bạn coi trọng điều gì hơn trong giao tiếp giữa các cá nhân?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đối phương có xuất sắc không?",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Đối phương có chân thành không?",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 138,
+        "text": "Bạn nghĩ sự hài lòng đến từ đâu?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tiếp tục vượt qua và trở nên tốt hơn",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Hãy hài lòng và hạnh phúc, trân trọng khoảnh khắc hiện tại",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 139,
+        "text": "Bạn làm gì khi người khác mắc một lỗi nhỏ?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy chỉ ra để lần sau không tái phạm",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Giả vờ như không nhìn thấy để tránh xấu hổ",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 140,
+        "text": "Thái độ của bạn đối với cuộc sống là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tiếp tục cải thiện",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Thật hiếm khi bị nhầm lẫn",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 141,
+        "text": "Theo bạn, người lãnh đạo nên làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cứng rắn, quyết đoán và răn đe",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Ôn hòa, dân chủ và dễ gần",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 142,
+        "text": "Trong các cuộc đàm phán, phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bám sát điểm mấu chốt và không bao giờ nhượng bộ",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tìm kiếm một tình huống đôi bên cùng có lợi và đưa ra những nhượng bộ phù hợp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 143,
+        "text": "Bạn thích cái nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nói bằng sức mạnh",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Đổi sự chân thành lấy sự chân thành",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 144,
+        "text": "Bạn sẽ làm gì khi cần nói không với ai đó?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Từ chối trực tiếp và không hy vọng",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Từ chối một cách lịch sự vì sợ làm tổn thương tình cảm",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 145,
+        "text": "Bạn nghĩ gì về sự cạnh tranh?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đó là quy luật sinh tồn tự nhiên của kẻ mạnh nhất.",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Thật là tàn nhẫn, tôi hy vọng chúng ta có thể hợp tác",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "text": "Bạn có đánh giá cao nó nhiều hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "ý chí sắt đá",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "dịu dàng như nước",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 147,
+        "text": "Để đạt được mục tiêu của mình, bạn có sẵn lòng không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "hy sinh một số mối quan hệ",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Hy sinh một số hiệu quả hoặc lợi ích",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "text": "Bạn nghĩ \"mạnh\" nghĩa là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "điều khiển",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Sức chịu đựng",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 149,
+        "text": "Bạn làm gì khi đối mặt với căng thẳng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đối mặt với khó khăn và trở nên can đảm hơn sau mỗi lần thất bại.",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Tìm kiếm sự hỗ trợ và tập hợp lại với nhau để sưởi ấm",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 150,
+        "text": "Bạn thích phong cách nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cứng rắn, ngắn gọn và lạnh lùng",
+            "value": "T"
+          },
+          {
+            "label": "B",
+            "text": "Mềm mại, ấm áp, phức tạp",
+            "value": "F"
+          }
+        ]
+      },
+      {
+        "id": 151,
+        "text": "Môi trường sống điển hình của bạn là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tổ chức tốt, mọi thứ đều có vị trí của nó",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sắp xếp ngẫu nhiên, trật tự trong hỗn loạn",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 152,
+        "text": "Bạn làm gì trước khi đi du lịch?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lập danh sách và đóng gói gọn gàng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ cần lấy một ít quần áo, lấy những thứ cần thiết và đi",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 153,
+        "text": "Bạn thích cách làm việc nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Từng bước thiết lập các quy trình và hệ thống",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Phản ứng linh hoạt và thích ứng với hoàn cảnh",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 154,
+        "text": "Bạn quen với điều gì khi nói đến máy tính để bàn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sắp xếp thành các thư mục",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Trải rộng khắp màn hình hoặc xếp tất cả vào một thư mục",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 155,
+        "text": "Bạn nghĩ gì về trật tự?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Làm cho mọi người cảm thấy thoải mái và kiểm soát",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Khiến bạn cảm thấy chán nản và gò bó",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 156,
+        "text": "Khi nấu ăn phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chuẩn bị đầy đủ nguyên liệu và làm theo các bước",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Hãy xem, nếm thử và điều chỉnh sau",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 157,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tổ chức và tổng hợp",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "hiệp hội khác nhau",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 158,
+        "text": "Bạn thích loại kế hoạch nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chi tiết và kỹ lưỡng, chính xác đến từng phút",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ có một hướng chung",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 159,
+        "text": "Bạn nghĩ \"bình thường\" nghĩa là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lười biếng, vô trách nhiệm",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "tự do và thoải mái",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 160,
+        "text": "Bạn sẽ làm gì nếu không thể tìm thấy thứ gì đó?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thật điên rồ, tôi phải tìm nó",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Không sao đâu, dù sao sớm hay muộn nó cũng sẽ xuất hiện thôi",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 161,
+        "text": "Còn bạn trong năm tới thì sao?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có mục tiêu và kế hoạch rõ ràng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Hãy thực hiện từng bước một và để tự nhiên diễn ra",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 162,
+        "text": "Cuối tuần, bạn thường làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sắp xếp trước các hoạt động",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Ngủ cho đến khi bạn thức dậy một cách tự nhiên và làm bất cứ điều gì bạn muốn.",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 163,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "kết quả chắc chắn",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "chưa biết bất ngờ",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 164,
+        "text": "Trong dự án, bạn chú ý đến điều gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Các mốc quan trọng và thời hạn",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Những khám phá và trải nghiệm trong quá trình",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 165,
+        "text": "Bạn sẽ làm gì nếu kế hoạch của bạn bị gián đoạn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cảm thấy cáu kỉnh và lo lắng để trở lại đúng hướng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Không sao đâu, tôi chỉ muốn trải nghiệm những thay đổi mới",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 166,
+        "text": "Bạn nghĩ cuộc sống nên như thế nào?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đó là một bản thiết kế",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Đó là một cuộc phiêu lưu chưa biết",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 167,
+        "text": "Khi bạn mua một cái gì đó?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đi thẳng vào mục tiêu, mua và đi",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Tôi thích mua sắm và tôi mua những gì tôi thích khi nhìn thấy nó.",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 168,
+        "text": "Bạn thích cái nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lên kế hoạch sớm và chuẩn bị cho ngày mưa",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sống trong hiện tại và tận hưởng chính mình",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 169,
+        "text": "Còn cam kết thì sao?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Hãy thật thận trọng và làm những gì bạn nói bạn sẽ làm",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Nó phụ thuộc vào tình hình. Nếu điều kiện thay đổi, nó có thể được thay đổi.",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 170,
+        "text": "Bạn có cảm thấy \"ổn định\" không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "trấn an",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Khiến bạn cảm thấy bị nhốt",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 171,
+        "text": "Khi phải đối mặt với thời hạn, bạn có thường xuyên làm vậy không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Bắt đầu sớm và kết thúc sớm",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Trì hoãn nó cho đến giây phút cuối cùng và bùng nổ dưới áp lực",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 172,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chạy với tốc độ ổn định và duy trì nhịp độ",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chạy ở tốc độ khác nhau, xen kẽ chạy nước rút và nghỉ ngơi",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 173,
+        "text": "Khi được giao nhiệm vụ, bạn sẽ làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Làm xong trước rồi mới chơi, nó sẽ khiến bạn cảm thấy thoải mái",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Vui vẻ trước, làm sau",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 174,
+        "text": "Bạn nghĩ gì về áp lực?",
+        "options": [
+          {
+            "label": "A",
+            "text": "có hại, cố gắng tránh nó",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Đó là động lực và có thể kích thích tiềm năng",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 175,
+        "text": "Khi ôn thi phải không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Tôi thường tích lũy",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Bất ngờ trước kỳ thi",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 176,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "chiến tranh kéo dài",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Blitzkrieg",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 177,
+        "text": "Bạn sẽ làm gì nếu nhiệm vụ được hoàn thành trước thời hạn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Kiểm tra và cải thiện hoặc thực hiện nhiệm vụ tiếp theo",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Thư giãn và ăn mừng, hoặc không làm gì cả",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 178,
+        "text": "Bạn có cảm thấy “chậm trễ” không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Đó là một thói quen xấu, chúng ta cần thay đổi nó",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Đó là một lối sống, nó vô hại",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 179,
+        "text": "Trạng thái thường ngày của bạn tại nơi làm việc là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Thăng tiến suôn sẻ",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "thăng trầm",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 180,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "nhiều thời gian",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Thời gian thật eo hẹp",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 181,
+        "text": "Bạn thích loại lịch trình nào hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nó đã được đặt đầy đủ và cảm thấy rất thỏa mãn.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Để lại nhiều khoảng trắng, sẵn sàng chèn các sắp xếp mới",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 182,
+        "text": "Nếu một người bạn bất ngờ mời bạn đi ăn tối, bạn sẽ làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nếu nó không có trong kế hoạch, nó có thể bị từ chối",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Rất vui, đồng ý ngay",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 183,
+        "text": "Bạn coi thế nào là \"thường lệ\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Có thể nâng cao hiệu quả và tiết kiệm năng lượng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Sự nhàm chán giết chết sự sáng tạo",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 184,
+        "text": "Bạn có quen với nó hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "dự trữ",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ cần đi theo dòng chảy",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 185,
+        "text": "Trong công việc bạn có thích thú không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Cố định trạm làm việc và thời gian",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Hệ thống làm việc linh hoạt, tự do lựa chọn địa điểm",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 186,
+        "text": "Bạn có cảm thấy muốn làm điều tương tự mỗi ngày không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Rất an toàn",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "sẽ phát điên",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 187,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "từng bước một",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "làm bất cứ điều gì bạn muốn",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 188,
+        "text": "Đối với trường hợp khẩn cấp, bạn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "được coi là sự can thiệp",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "được coi là cơ hội",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 189,
+        "text": "Bạn nghĩ tự do là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "tự do trong khuôn khổ quy định",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "tự do phá vỡ các quy tắc",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 190,
+        "text": "Bạn có giống một người hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "người giám hộ",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "nhà thám hiểm",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 191,
+        "text": "Làm thế nào để bạn giải quyết những vấn đề phức tạp?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Chia nó thành các bước nhỏ và đánh bại từng bước một.",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Bắt đầu từ tổng thể và tìm kiếm sự đột phá",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 192,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "bài phát biểu đã chuẩn bị sẵn",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "ứng biến",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 193,
+        "text": "Bạn có xu hướng làm gì khi học các kỹ năng mới?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Nghiên cứu một cách có hệ thống và đặt nền tảng vững chắc",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Học gì khi gặp vấn đề, tính thực dụng",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 194,
+        "text": "Bạn nghĩ hiệu quả đến từ đâu?",
+        "options": [
+          {
+            "label": "A",
+            "text": "quy trình chuẩn hóa",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "cảm hứng bùng nổ",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 195,
+        "text": "Khi đóng gói hành lý, bạn làm gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Lập danh sách, kiểm tra",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Ăn mặc theo cảm xúc",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 196,
+        "text": "Bạn có giỏi hơn không?",
+        "options": [
+          {
+            "label": "A",
+            "text": "thực hiện",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "sự căng thẳng",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 197,
+        "text": "Bạn nghĩ gì về \"quy trình\"?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Rất quan trọng để đảm bảo chất lượng",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Rất cồng kềnh, không những chậm mà còn cứng nhắc",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 198,
+        "text": "Bạn làm gì khi gặp khủng hoảng?",
+        "options": [
+          {
+            "label": "A",
+            "text": "kế hoạch khởi nghiệp",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Vứt bỏ các thủ đoạn trong nháy mắt",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 199,
+        "text": "Bạn thích cái gì hơn?",
+        "options": [
+          {
+            "label": "A",
+            "text": "từng bước một",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Vươn tới bầu trời trong một bước",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "id": 200,
+        "text": "Bạn nghĩ kế hoạch tốt nhất là gì?",
+        "options": [
+          {
+            "label": "A",
+            "text": "đầy đủ",
+            "value": "J"
+          },
+          {
+            "label": "B",
+            "text": "Chỉ có một hướng chung",
+            "value": "P"
+          }
+        ]
+      }
+    ]
+  }
+}

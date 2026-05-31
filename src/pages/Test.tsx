@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Layout } from '../components/Layout';
+import { useLocale } from '../context/LocaleContext';
 import { TestEngine } from '../lib/TestEngine';
 import { LocalStorageManager } from '../lib/LocalStorageManager';
-import { Question } from '../types';
+import { Question, VersionId } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Keyboard } from 'lucide-react';
 
 export const Test: React.FC = () => {
   const { version } = useParams<{ version: string }>();
   const navigate = useNavigate();
+  const { locale } = useLocale();
   const [engine, setEngine] = useState<TestEngine | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [progress, setProgress] = useState(0);
@@ -20,21 +22,21 @@ export const Test: React.FC = () => {
 
   useEffect(() => {
     if (version && ['quick', 'standard', 'full'].includes(version)) {
-      const newEngine = new TestEngine(version as 'quick' | 'standard' | 'full');
-      
-      // Check for resume flag
+      const resolvedVersion = version as VersionId;
+      const newEngine = new TestEngine(resolvedVersion, locale);
+
       const searchParams = new URLSearchParams(window.location.search);
       if (searchParams.get('resume') === 'true') {
         newEngine.loadProgress();
       }
-      
+
       setEngine(newEngine);
       updateState(newEngine);
       setTotalQuestions(newEngine.getQuestions().length);
     } else {
       navigate('/');
     }
-  }, [version, navigate]);
+  }, [locale, version, navigate]);
 
   const updateState = (eng: TestEngine) => {
     setCurrentQuestion(eng.getCurrentQuestion());
@@ -42,12 +44,12 @@ export const Test: React.FC = () => {
     const q = eng.getCurrentQuestion();
     if (q) {
       const idx = eng.getQuestions().findIndex(item => item.id === q.id);
-      
+
       setPage(([prevPage]) => {
         const newDirection = idx > prevPage ? 1 : idx < prevPage ? -1 : 0;
         return [idx, newDirection];
       });
-      
+
       setPrevAnswer(eng.getAnswer(q.id));
       setSelectedOption(null);
     }
@@ -58,10 +60,9 @@ export const Test: React.FC = () => {
 
     const idx = engine.getQuestions().findIndex(q => q.id === questionId);
     if (idx === -1) return;
-    
+
     engine.answerQuestion(idx, choice);
 
-    // Only auto-advance if we are still on the same question
     const currentQ = engine.getCurrentQuestion();
     if (currentQ && currentQ.id === questionId) {
       if (engine.isComplete() && idx === totalQuestions - 1) {
@@ -69,15 +70,17 @@ export const Test: React.FC = () => {
           const result = engine.calculateScores();
           LocalStorageManager.addTestResult(result);
           LocalStorageManager.clearCurrentTest(engine.getVersion());
-          navigate(`/result/${result.resultType}`, { replace: true });
+          navigate(`/result/${result.resultType}?resultId=${encodeURIComponent(result.id)}`, {
+            replace: true,
+            state: { resultId: result.id },
+          });
         } catch (error) {
           console.error('Error calculating result:', error);
-          alert('计算结果时出现错误，请稍后重试');
+          alert('è®¡ç®—ç»“æžœæ—¶å‡ºçŽ°é”™è¯¯ï¼Œè¯·ç¨åŽé‡è¯•');
         }
       } else {
         const moved = engine.nextQuestion();
         if (!moved && !engine.isComplete()) {
-          // Find first unanswered question
           const questions = engine.getQuestions();
           const firstUnanswered = questions.findIndex(q => !engine.getAnswer(q.id));
           if (firstUnanswered !== -1) {
@@ -87,7 +90,6 @@ export const Test: React.FC = () => {
         updateState(engine);
       }
     } else {
-      // Just update state (progress, answers) without moving
       updateState(engine);
     }
   }, [engine, totalQuestions, navigate]);
@@ -110,12 +112,9 @@ export const Test: React.FC = () => {
   }, [engine]);
 
   const handleNext = useCallback(() => {
-    if (engine) {
-      // Only allow next if already answered (for reviewing) or an option is selected (though UI handles auto-advance)
-      if (prevAnswer) {
-          engine.nextQuestion();
-          updateState(engine);
-      }
+    if (engine && prevAnswer) {
+      engine.nextQuestion();
+      updateState(engine);
     }
   }, [engine, prevAnswer]);
 
@@ -133,8 +132,8 @@ export const Test: React.FC = () => {
   }, [handleOptionSelect, handlePrev, handleNext, selectedOption]);
 
   const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+    enter: (currentDirection: number) => ({
+      x: currentDirection > 0 ? 1000 : -1000,
       opacity: 0,
       scale: 0.95
     }),
@@ -144,9 +143,9 @@ export const Test: React.FC = () => {
       opacity: 1,
       scale: 1
     },
-    exit: (direction: number) => ({
+    exit: (currentDirection: number) => ({
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      x: currentDirection < 0 ? 1000 : -1000,
       opacity: 0,
       scale: 0.95
     })
@@ -156,24 +155,20 @@ export const Test: React.FC = () => {
 
   return (
     <Layout>
-      {/* Background Blobs */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 clay-swatch-slushie rounded-full blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 clay-swatch-ube rounded-full blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-32 left-1/3 w-96 h-96 clay-swatch-lemon rounded-full blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="max-w-3xl mx-auto py-8 md:py-12 px-4">
         <div className="mb-8">
-          <div className="flex justify-between text-sm font-medium text-gray-600 mb-2">
-            <span>进度 {progress}%</span>
+          <div className="mb-3 flex justify-between text-sm font-medium clay-muted">
+            <span>è¿›åº¦ {progress}%</span>
             <span>{page + 1} / {totalQuestions}</span>
           </div>
-          <div className="w-full bg-white/50 backdrop-blur-sm rounded-full h-3 p-0.5 shadow-inner border border-white/20">
-            <div 
-              className="bg-gradient-to-r from-blue-500 to-indigo-600 h-2 rounded-full transition-all duration-500 ease-out shadow-sm" 
-              style={{ width: `${progress}%` }}
-            ></div>
+          <div className="h-3 w-full rounded-full border border-[var(--clay-border)] bg-white p-0.5 shadow-[var(--clay-shadow)]">
+            <div className="h-2 rounded-full clay-swatch-matcha border border-black/10 transition-all duration-500 ease-out" style={{ width: `${progress}%` }} />
           </div>
         </div>
 
@@ -186,17 +181,19 @@ export const Test: React.FC = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
+              x: { type: 'spring', stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 }
             }}
-            className="glass-card rounded-3xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center relative overflow-hidden"
+            className="glass-card rounded-[2rem] p-8 md:p-12 min-h-[400px] flex flex-col justify-center relative overflow-hidden"
           >
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"></div>
-            <div className="absolute top-6 right-6 text-gray-400/80">
-               <span className="text-xs font-mono border border-gray-200/50 bg-white/30 rounded px-2 py-1">#{currentQuestion.id}</span>
+            <div className="absolute top-0 left-0 h-2 w-full clay-swatch-slushie"></div>
+            <div className="absolute top-6 right-6">
+              <span className="rounded-full border border-[var(--clay-border)] bg-white px-3 py-1 text-xs font-mono text-[var(--clay-muted)] shadow-[var(--clay-shadow)]">
+                #{currentQuestion.id}
+              </span>
             </div>
-            
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-12 text-center leading-relaxed drop-shadow-sm">
+
+            <h2 className="mb-12 text-center text-2xl md:text-3xl font-black text-[var(--clay-text)] leading-relaxed">
               {currentQuestion.text}
             </h2>
 
@@ -204,54 +201,43 @@ export const Test: React.FC = () => {
               {currentQuestion.options.map((option) => {
                 const isSelected = selectedOption === option.label || (!selectedOption && prevAnswer === option.label);
                 const isOtherSelected = (selectedOption && selectedOption !== option.label) || (!selectedOption && prevAnswer && prevAnswer !== option.label);
-                
-                // Determine color based on option (A/B) for consistent theming
-                // Usually A is related to E/S/T/J and B to I/N/F/P, or vice versa depending on question.
-                // We'll stick to a neutral but interactive color scheme.
-                
+
                 return (
                   <motion.button
                     key={option.label}
                     onClick={() => handleOptionSelect(option.label as 'A' | 'B')}
-                    whileHover={!selectedOption ? { scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.9)" } : {}}
-                    whileTap={!selectedOption ? { scale: 0.98 } : {}}
-                    animate={isSelected ? { 
-                      scale: 1.02, 
-                      borderColor: '#4f46e5', 
-                      backgroundColor: 'rgba(238, 242, 255, 0.9)',
-                      boxShadow: '0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05)'
-                    } : { 
+                    whileHover={!selectedOption ? { scale: 1.01 } : {}}
+                    whileTap={!selectedOption ? { scale: 0.985 } : {}}
+                    animate={isSelected ? {
+                      scale: 1.02,
+                      borderColor: '#000000',
+                      backgroundColor: 'rgba(193, 176, 255, 0.32)',
+                      boxShadow: 'rgb(0,0,0) -7px 7px'
+                    } : {
                       opacity: isOtherSelected ? 0.6 : 1,
-                      scale: isOtherSelected ? 0.98 : 1,
-                      backgroundColor: 'rgba(255, 255, 255, 0.6)'
+                      scale: isOtherSelected ? 0.985 : 1,
+                      backgroundColor: 'rgba(255,255,255,0.92)'
                     }}
                     transition={{ duration: 0.2 }}
-                    className={`group relative flex items-center p-5 md:p-6 border-2 rounded-2xl transition-all text-left w-full backdrop-blur-sm
-                      ${isSelected 
-                        ? 'border-indigo-500 ring-2 ring-indigo-200/50' 
-                        : 'border-white/50 hover:border-indigo-300 shadow-sm hover:shadow-md'
-                      }`}
+                    className={`group relative flex w-full items-center rounded-[1.5rem] border-2 p-5 text-left transition-all md:p-6 ${
+                      isSelected
+                        ? 'border-black'
+                        : 'border-[var(--clay-border)] shadow-[var(--clay-shadow)] hover:-translate-y-1 hover:-rotate-1 hover:shadow-[var(--clay-shadow-hard)]'
+                    }`}
                   >
-                    <div className={`flex-shrink-0 w-12 h-12 rounded-xl font-bold text-lg flex items-center justify-center transition-all mr-5 shadow-sm
-                      ${isSelected 
-                        ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-indigo-200' 
-                        : 'bg-white text-gray-500 group-hover:bg-indigo-500 group-hover:text-white'
+                    <div
+                      className={`mr-5 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-black text-lg font-bold transition-all ${
+                        isSelected
+                          ? 'clay-swatch-ube text-[var(--clay-text)]'
+                          : 'bg-white text-[var(--clay-muted)] group-hover:bg-[var(--clay-lemon)] group-hover:text-[var(--clay-text)]'
                       }`}
                     >
                       {option.label}
                     </div>
-                    <span className={`text-lg font-medium transition-colors flex-1
-                      ${isSelected 
-                        ? 'text-indigo-900' 
-                        : 'text-gray-700 group-hover:text-gray-900'
-                      }`}
-                    >
-                      {option.text}
-                    </span>
-                    <span className={`absolute right-4 text-xs font-mono hidden md:block transition-colors
-                      ${isSelected 
-                        ? 'text-indigo-400' 
-                        : 'text-gray-300 group-hover:text-indigo-300'
+                    <span className="flex-1 text-lg font-medium text-[var(--clay-text)]">{option.text}</span>
+                    <span
+                      className={`absolute right-4 hidden text-xs font-mono transition-colors md:block ${
+                        isSelected ? 'text-[var(--clay-muted)]' : 'text-[#b8b1a4] group-hover:text-[var(--clay-muted)]'
                       }`}
                     >
                       [{option.label === 'A' ? 'A / 1' : 'B / 2'}]
@@ -263,38 +249,40 @@ export const Test: React.FC = () => {
           </motion.div>
         </AnimatePresence>
 
-        <div className="mt-8 flex justify-between items-center text-gray-600">
-          <button 
+        <div className="mt-8 flex items-center justify-between text-[var(--clay-muted)]">
+          <button
             onClick={handlePrev}
             disabled={page === 0}
-            className={`flex items-center space-x-2 px-6 py-4 rounded-xl transition-all ${
-              page === 0 
-                ? 'opacity-40 cursor-not-allowed' 
-                : 'hover:bg-white/80 hover:shadow-sm active:scale-95 bg-white/40 backdrop-blur-sm'
+            className={`flex items-center space-x-2 rounded-full border px-6 py-4 transition-all ${
+              page === 0
+                ? 'cursor-not-allowed opacity-40'
+                : 'border-[var(--clay-border)] bg-white shadow-[var(--clay-shadow)] hover:-translate-y-1 hover:-rotate-3 hover:shadow-[var(--clay-shadow-hard)] active:scale-95'
             }`}
           >
             <ArrowLeft size={18} />
-            <span className="font-medium">上一题</span>
+            <span className="font-medium">ä¸Šä¸€é¢˜</span>
           </button>
-          
-          <div className="hidden md:flex items-center space-x-3 text-xs text-gray-500 bg-white/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/40 shadow-sm">
-            <span className="flex items-center font-medium text-indigo-600"><Keyboard size={14} className="mr-1.5"/> 快捷键</span>
-            <span className="bg-white/60 px-2 py-0.5 rounded border border-white/50">1 / A</span>
-            <span className="bg-white/60 px-2 py-0.5 rounded border border-white/50">2 / B</span>
-            <span className="bg-white/60 px-2 py-0.5 rounded border border-white/50">←</span>
-            <span className="bg-white/60 px-2 py-0.5 rounded border border-white/50">→</span>
+
+          <div className="hidden items-center space-x-3 rounded-full border border-[var(--clay-border)] bg-white px-4 py-2 text-xs clay-muted shadow-[var(--clay-shadow)] md:flex">
+            <span className="flex items-center font-medium text-[var(--clay-text)]">
+              <Keyboard size={14} className="mr-1.5" /> å¿«æ·é”®
+            </span>
+            <span className="rounded border border-[var(--clay-border)] bg-[var(--clay-bg)] px-2 py-0.5">1 / A</span>
+            <span className="rounded border border-[var(--clay-border)] bg-[var(--clay-bg)] px-2 py-0.5">2 / B</span>
+            <span className="rounded border border-[var(--clay-border)] bg-[var(--clay-bg)] px-2 py-0.5">â†</span>
+            <span className="rounded border border-[var(--clay-border)] bg-[var(--clay-bg)] px-2 py-0.5">â†’</span>
           </div>
 
-          <button 
+          <button
             onClick={handleNext}
             disabled={!prevAnswer || page === totalQuestions - 1}
-            className={`flex items-center space-x-2 px-6 py-4 rounded-xl transition-all ${
-              !prevAnswer || page === totalQuestions - 1 
-                ? 'opacity-40 cursor-not-allowed' 
-                : 'hover:bg-white/80 hover:shadow-sm active:scale-95 bg-white/40 backdrop-blur-sm'
+            className={`flex items-center space-x-2 rounded-full border px-6 py-4 transition-all ${
+              !prevAnswer || page === totalQuestions - 1
+                ? 'cursor-not-allowed opacity-40'
+                : 'border-black clay-swatch-lemon text-[var(--clay-text)] shadow-[var(--clay-shadow)] hover:-translate-y-1 hover:-rotate-3 hover:shadow-[var(--clay-shadow-hard)] active:scale-95'
             }`}
           >
-            <span className="font-medium">下一题</span>
+            <span className="font-medium">ä¸‹ä¸€é¢˜</span>
             <ArrowRight size={18} />
           </button>
         </div>

@@ -1,36 +1,92 @@
 import React from 'react';
+
 import { Layout } from '../components/Layout';
+import { useLocale, supportedLocales } from '../context/LocaleContext';
+import { getLanguageName, getStrings } from '../i18n/strings';
 
 export const About: React.FC = () => {
+  const { locale, setLocale } = useLocale();
+  const strings = getStrings(locale);
+
   return (
     <Layout>
-      <div className="max-w-3xl mx-auto space-y-8 text-gray-700">
-        <h1 className="text-3xl font-bold text-gray-900">关于 MBTI</h1>
-        
-        <div className="prose prose-blue max-w-none">
-          <p>
-            MBTI（Myers-Briggs Type Indicator）是一种迫选型、自我报告式的性格评估工具，
-            用以衡量和描述人们在获取信息、做出决策、对待生活等方面的心理活动规律和性格类型。
-          </p>
+      <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
+        <section className="rounded-[2.5rem] border border-[var(--clay-border)] bg-[rgba(255,253,248,0.88)] px-8 py-10 shadow-[var(--clay-shadow)] md:px-10">
+          <span className="clay-kicker">Settings</span>
+          <h1 className="mt-4 text-4xl font-black tracking-[-0.05em] text-[var(--clay-text)] md:text-6xl">
+            {strings.aboutTitle}
+          </h1>
+          <p className="mt-4 max-w-3xl text-lg leading-8 clay-muted">{strings.aboutSubtitle}</p>
+        </section>
 
-          <p>
-            本应用为非官方自测工具，基于公开的类型理论做题目与计分实现；结果仅供自我探索与参考，不能替代专业测评与心理咨询。
-          </p>
-          
-          <h2 className="text-xl font-bold text-gray-900 mt-6 mb-3">四个维度</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li><strong>外向 (E) vs 内向 (I)</strong>：能量来源。你是从与人交往中获取能量，还是通过独处恢复精力？</li>
-            <li><strong>感觉 (S) vs 直觉 (N)</strong>：信息获取。你更关注具体的事实和细节，还是更关注抽象的概念和可能性？</li>
-            <li><strong>思考 (T) vs 情感 (F)</strong>：决策方式。你做决定时更看重逻辑和客观分析，还是更看重价值观和他人感受？</li>
-            <li><strong>判断 (J) vs 知觉 (P)</strong>：生活方式。你喜欢有计划、有条理的生活，还是喜欢灵活、随性的生活？</li>
-          </ul>
-          
-          <h2 className="text-xl font-bold text-gray-900 mt-6 mb-3">16种人格类型</h2>
-          <p>
-            通过这四个维度的组合，MBTI将人分为16种不同的人格类型。每种类型都有其独特的优势、盲点和发展潜力。
-            了解自己的人格类型，可以帮助我们更好地认识自己，发挥长处，改善人际关系，并找到适合自己的职业发展方向。
-          </p>
-        </div>
+        <section className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+          <div className="glass-card rounded-[2rem] p-8">
+            <span className="clay-kicker">Language</span>
+            <h2 className="mt-4 text-3xl font-black text-[var(--clay-text)]">
+              {strings.settingsLanguageTitle}
+            </h2>
+            <p className="mt-3 max-w-2xl leading-7 clay-muted">
+              {strings.settingsLanguageSubtitle}
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {supportedLocales.map((item) => {
+                const isActive = item === locale;
+                return (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => setLocale(item)}
+                    className={`rounded-full border px-5 py-3 text-sm font-black uppercase tracking-[0.12em] transition-all ${
+                      isActive
+                        ? 'border-black clay-swatch-matcha text-[var(--clay-text)] shadow-[var(--clay-shadow)]'
+                        : 'border-[var(--clay-border)] bg-white text-[var(--clay-muted)] shadow-[var(--clay-shadow)] hover:-translate-y-1 hover:-rotate-2 hover:text-[var(--clay-text)] hover:shadow-[var(--clay-shadow-hard)]'
+                    }`}
+                  >
+                    {getLanguageName(item)}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="clay-shell rounded-[2rem] p-8">
+            <span className="clay-kicker">Active</span>
+            <h2 className="mt-4 text-3xl font-black text-[var(--clay-text)]">
+              {getLanguageName(locale)}
+            </h2>
+            <p className="mt-4 leading-7 clay-muted">
+              The selected language now drives the test bank, result details, and type library.
+            </p>
+          </div>
+        </section>
+
+        <section className="glass-card rounded-[2rem] p-8">
+          <span className="clay-kicker">MBTI Basics</span>
+          <h2 className="mt-4 text-3xl font-black text-[var(--clay-text)]">
+            {strings.aboutAxesTitle}
+          </h2>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {strings.aboutAxes.map((axis) => (
+              <article
+                key={axis.title}
+                className="rounded-[1.75rem] border border-[var(--clay-border)] bg-white p-6 shadow-[var(--clay-shadow)]"
+              >
+                <h3 className="text-lg font-black text-[var(--clay-text)]">{axis.title}</h3>
+                <p className="mt-3 leading-7 clay-muted">{axis.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="clay-shell rounded-[2rem] p-8">
+          <span className="clay-kicker">Notes</span>
+          <h2 className="mt-4 text-3xl font-black text-[var(--clay-text)]">
+            {strings.aboutUsageTitle}
+          </h2>
+          <p className="mt-4 max-w-3xl leading-8 clay-muted">{strings.aboutUsageBody}</p>
+        </section>
       </div>
     </Layout>
   );
