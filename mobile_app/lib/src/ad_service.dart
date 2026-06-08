@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -63,8 +64,62 @@ class RewardedUnlockService {
 
   Future<void> initialize() async {
     if (!isSupportedPlatform) return;
+
+    // 1. Ask for App Tracking Transparency (iOS only) before initializing ads
+    //    so the SDK knows whether it may use the IDFA. No-op on Android.
+    await _requestTrackingAuthorization();
+
+    // 2. Gather UMP (GDPR/EEA) consent. Ads may still be served with
+    //    non-personalized fallback if consent is unavailable.
+    await _gatherConsent();
+
+    // 3. Initialize the Mobile Ads SDK and warm up the first ad.
     await MobileAds.instance.initialize();
     unawaited(preload());
+  }
+
+  Future<void> _requestTrackingAuthorization() async {
+    if (kIsWeb || !Platform.isIOS) return;
+    try {
+      final status = await AppTrackingTransparency.trackingAuthorizationStatus;
+      if (status == TrackingStatus.notDetermined) {
+        await AppTrackingTransparency.requestTrackingAuthorization();
+      }
+    } catch (_) {
+      // ATT is best-effort; never block ad init if the prompt fails.
+    }
+  }
+
+  Future<void> _gatherConsent() async {
+    final completer = Completer<void>();
+    ConsentInformation.instance.requestConsentInfoUpdate(
+      ConsentRequestParameters(),
+      () async {
+        try {
+          final isFormAvailable = await ConsentInformation.instance
+              .isConsentFormAvailable();
+          if (isFormAvailable) {
+            await _loadAndShowConsentFormIfRequired();
+          }
+        } finally {
+          if (!completer.isCompleted) completer.complete();
+        }
+      },
+      (error) {
+        // On failure, proceed without consent (SDK serves non-personalized).
+        if (!completer.isCompleted) completer.complete();
+      },
+    );
+    return completer.future;
+  }
+
+  Future<void> _loadAndShowConsentFormIfRequired() {
+    final completer = Completer<void>();
+    ConsentForm.loadAndShowConsentFormIfRequired((error) {
+      // Whether or not the form was shown, continue: errors are non-fatal.
+      if (!completer.isCompleted) completer.complete();
+    });
+    return completer.future;
   }
 
   Future<void> preload() {

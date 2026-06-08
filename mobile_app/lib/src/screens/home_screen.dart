@@ -72,6 +72,7 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 16),
                 child: _VersionCard(
                   meta: repository.versionMeta(version),
+                  questionCount: repository.questionsFor(version).length,
                   progress: storage.progressFor(version),
                   accessState: accessState,
                   onTap: () => _openTest(context, version),
@@ -200,7 +201,10 @@ class HomeScreen extends StatelessWidget {
     onDataChanged();
   }
 
-  Future<bool> _ensureTestAccess(BuildContext context, VersionId version) async {
+  Future<bool> _ensureTestAccess(
+    BuildContext context,
+    VersionId version,
+  ) async {
     final accessKind = storage.testAccess.nextAccessKind;
     if (accessKind != TestAccessKind.locked) {
       await storage.claimNextTestAccess();
@@ -439,12 +443,14 @@ class _LatestResultCard extends StatelessWidget {
 class _VersionCard extends StatelessWidget {
   const _VersionCard({
     required this.meta,
+    required this.questionCount,
     required this.progress,
     required this.accessState,
     required this.onTap,
   });
 
   final VersionMeta meta;
+  final int questionCount;
   final SavedProgress? progress;
   final TestAccessState accessState;
   final VoidCallback onTap;
@@ -453,11 +459,6 @@ class _VersionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final strings = AppScope.of(context).strings;
     final gradient = gradientForVersion(meta.id);
-    final questionCount = switch (meta.id) {
-      VersionId.quick => 28,
-      VersionId.standard => 93,
-      VersionId.full => 200,
-    };
     final recommended = meta.id == VersionId.standard;
 
     return SectionCard(
@@ -478,7 +479,11 @@ class _VersionCard extends StatelessWidget {
                   gradient: gradient,
                   borderRadius: BorderRadius.circular(22),
                 ),
-                child: Icon(iconForVersion(meta.id), color: Colors.white, size: 32),
+                child: Icon(
+                  iconForVersion(meta.id),
+                  color: Colors.white,
+                  size: 32,
+                ),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -490,9 +495,8 @@ class _VersionCard extends StatelessWidget {
                         Expanded(
                           child: Text(
                             meta.title,
-                            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.w900,
-                            ),
+                            style: Theme.of(context).textTheme.titleLarge
+                                ?.copyWith(fontWeight: FontWeight.w900),
                           ),
                         ),
                         if (recommended)
@@ -617,25 +621,19 @@ class _AccessStatusCard extends StatelessWidget {
         strings.freeTrialReadyLabel,
         strings.freeTrialReadyBody,
         Icons.auto_awesome_rounded,
-        const LinearGradient(
-          colors: [Color(0xFFFFC14D), Color(0xFFFF8A5B)],
-        ),
+        const LinearGradient(colors: [Color(0xFFFFC14D), Color(0xFFFF8A5B)]),
       ),
       TestAccessKind.rewardedCredit => (
         strings.rewardedCreditsLabel(accessState.rewardedCredits),
         strings.rewardedCreditsReadyBody(accessState.rewardedCredits),
         Icons.verified_rounded,
-        const LinearGradient(
-          colors: [Color(0xFF35C98E), Color(0xFF36C6F4)],
-        ),
+        const LinearGradient(colors: [Color(0xFF35C98E), Color(0xFF36C6F4)]),
       ),
       TestAccessKind.locked => (
         strings.adRequiredLabel,
         strings.adRequiredHomeBody,
         Icons.smart_display_rounded,
-        const LinearGradient(
-          colors: [Color(0xFF6D5EF8), Color(0xFF9F6BFF)],
-        ),
+        const LinearGradient(colors: [Color(0xFF6D5EF8), Color(0xFF9F6BFF)]),
       ),
     };
 
@@ -665,9 +663,9 @@ class _AccessStatusCard extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   title,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.w900,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900),
                 ),
                 const SizedBox(height: 6),
                 Text(
@@ -739,10 +737,7 @@ class _RewardedUnlockSheetState extends State<_RewardedUnlockSheet> {
               const SizedBox(height: 8),
               Text(
                 strings.adRequiredBody(widget.versionTitle.toLowerCase()),
-                style: const TextStyle(
-                  color: AppColors.textMuted,
-                  height: 1.5,
-                ),
+                style: const TextStyle(color: AppColors.textMuted, height: 1.5),
               ),
               if (_message != null) ...[
                 const SizedBox(height: 14),

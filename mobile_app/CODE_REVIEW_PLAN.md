@@ -55,6 +55,9 @@
 | V4 | Chưa có cấu hình R8/shrink cho release | `build.gradle.kts` thiếu `isMinifyEnabled`/`isShrinkResources` | Cân nhắc bật minify + giữ rule cho ads | ✅ Done — bật `isMinifyEnabled`+`isShrinkResources`, thêm `proguard-rules.pro` (giữ ads + dontwarn Play Core). Verify build release APK thành công (56MB) |
 | V5 | Chưa có test cho logic cốt lõi | Thư mục `test/` chưa được rà | Thêm unit test cho `test_engine.dart` (scoring), `storage.dart` | ✅ Done — test cũ đang **fail** (path_provider trong unit test); thêm DI `overrideDirectory` cho `AppStorage`; viết 12 test (scoring/threshold/X, progress persist/resume, access logic). **12/12 pass** |
 | V6 | `webview_flutter` xuất hiện trong lock cũ nhưng không thấy import | `pubspec.lock` (trước khi sửa) liệt kê webview như direct | Xác minh có thực sự cần không; nếu không, bỏ | ✅ Done — không có import trong code; là transitive của `google_mobile_ads`, không cần khai báo direct |
+| V7 | **ATT khai báo nhưng không gọi API** (iOS) | `Info.plist` có `NSUserTrackingUsageDescription` nhưng grep code: không có `requestTrackingAuthorization` → prompt không bao giờ hiện | Thêm `app_tracking_transparency`, gọi ATT trước khi init ads | ✅ Done — `ad_service.initialize()` gọi `_requestTrackingAuthorization()` (no-op trên Android), verify chạy emulator không crash |
+| V8 | **Thiếu UMP/GDPR consent** cho AdMob | Code chưa khởi tạo `ConsentInformation`/`ConsentForm` | Thêm UMP consent flow trong init | ✅ Done — `_gatherConsent()` + `loadAndShowConsentFormIfRequired`; log `UserMessagingPlatform` xác nhận chạy thật trên emulator |
+| V9 | **Số câu hỏi hardcode** trong `_VersionCard` (28/93/200) | `home_screen.dart` switch cứng theo version | Lấy động từ repository | ✅ Done — truyền `repository.questionsFor(version).length`; đã kiểm chứng JSON khớp 28/93/200 |
 
 ---
 
