@@ -36,14 +36,6 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-
-        // AdMob application id injected into the manifest.
-        // Defaults to Google's official test app id for local/dev builds;
-        // override for production via gradle property, e.g.:
-        //   flutter build appbundle --release -Padmob.appId=ca-app-pub-XXXX~YYYY
-        val admobAppId = (project.findProperty("admob.appId") as String?)
-            ?: "ca-app-pub-3940256099942544~3347511713"
-        manifestPlaceholders["admobAppId"] = admobAppId
     }
 
     signingConfigs {

@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import 'ad_service.dart';
 import 'app_strings.dart';
 import 'models.dart';
 import 'repository.dart';
@@ -46,16 +44,34 @@ class _MbtiAppState extends State<MbtiApp> {
   @override
   Widget build(BuildContext context) {
     final strings = AppStrings.of(_locale);
-    final baseTextTheme = GoogleFonts.beVietnamProTextTheme();
-    final colorScheme = ColorScheme.fromSeed(
-      seedColor: AppColors.primary,
-      brightness: Brightness.light,
-    ).copyWith(
-      primary: AppColors.primary,
-      secondary: AppColors.secondary,
-      surface: AppColors.panel,
-      onSurface: AppColors.ink,
-    );
+    const fontFamily = 'BeVietnamPro';
+    TextStyle font({
+      double? fontSize,
+      double? height,
+      FontWeight? fontWeight,
+      Color? color,
+      double? letterSpacing,
+    }) {
+      return TextStyle(
+        fontFamily: fontFamily,
+        fontSize: fontSize,
+        height: height,
+        fontWeight: fontWeight,
+        color: color,
+        letterSpacing: letterSpacing,
+      );
+    }
+
+    final colorScheme =
+        ColorScheme.fromSeed(
+          seedColor: AppColors.primary,
+          brightness: Brightness.light,
+        ).copyWith(
+          primary: AppColors.primary,
+          secondary: AppColors.secondary,
+          surface: AppColors.panel,
+          onSurface: AppColors.ink,
+        );
 
     return AppScope(
       locale: _locale,
@@ -76,52 +92,49 @@ class _MbtiAppState extends State<MbtiApp> {
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: colorScheme,
+          fontFamily: fontFamily,
           scaffoldBackgroundColor: AppColors.cream,
-          textTheme: baseTextTheme.copyWith(
-            headlineLarge: GoogleFonts.beVietnamPro(
+          textTheme: TextTheme(
+            headlineLarge: font(
               fontSize: 34,
               height: 1.05,
               fontWeight: FontWeight.w900,
               color: AppColors.ink,
               letterSpacing: -0.6,
             ),
-            headlineMedium: GoogleFonts.beVietnamPro(
+            headlineMedium: font(
               fontSize: 28,
               height: 1.15,
               fontWeight: FontWeight.w900,
               color: AppColors.ink,
               letterSpacing: -0.4,
             ),
-            headlineSmall: GoogleFonts.beVietnamPro(
+            headlineSmall: font(
               fontSize: 24,
               height: 1.2,
               fontWeight: FontWeight.w900,
               color: AppColors.ink,
               letterSpacing: -0.3,
             ),
-            titleLarge: GoogleFonts.beVietnamPro(
+            titleLarge: font(
               fontSize: 20,
               height: 1.25,
               fontWeight: FontWeight.w800,
               color: AppColors.ink,
             ),
-            titleMedium: GoogleFonts.beVietnamPro(
+            titleMedium: font(
               fontSize: 16,
               height: 1.25,
               fontWeight: FontWeight.w700,
               color: AppColors.ink,
             ),
-            bodyLarge: GoogleFonts.beVietnamPro(
-              fontSize: 16,
-              height: 1.55,
-              color: AppColors.ink,
-            ),
-            bodyMedium: GoogleFonts.beVietnamPro(
+            bodyLarge: font(fontSize: 16, height: 1.55, color: AppColors.ink),
+            bodyMedium: font(
               fontSize: 14,
               height: 1.55,
               color: AppColors.textMuted,
             ),
-            labelLarge: GoogleFonts.beVietnamPro(
+            labelLarge: font(
               fontSize: 14,
               height: 1.2,
               fontWeight: FontWeight.w700,
@@ -133,7 +146,7 @@ class _MbtiAppState extends State<MbtiApp> {
             foregroundColor: AppColors.ink,
             elevation: 0,
             scrolledUnderElevation: 0,
-            titleTextStyle: GoogleFonts.beVietnamPro(
+            titleTextStyle: font(
               fontSize: 18,
               fontWeight: FontWeight.w800,
               color: AppColors.ink,
@@ -148,7 +161,7 @@ class _MbtiAppState extends State<MbtiApp> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(22),
               ),
-              textStyle: GoogleFonts.beVietnamPro(fontWeight: FontWeight.w800),
+              textStyle: font(fontWeight: FontWeight.w800),
             ),
           ),
           outlinedButtonTheme: OutlinedButtonThemeData(
@@ -159,14 +172,14 @@ class _MbtiAppState extends State<MbtiApp> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(22),
               ),
-              textStyle: GoogleFonts.beVietnamPro(fontWeight: FontWeight.w800),
+              textStyle: font(fontWeight: FontWeight.w800),
             ),
           ),
           navigationBarTheme: NavigationBarThemeData(
             backgroundColor: Colors.white.withValues(alpha: 0.96),
             indicatorColor: AppColors.primary.withValues(alpha: 0.12),
             labelTextStyle: WidgetStateProperty.resolveWith(
-              (states) => GoogleFonts.beVietnamPro(
+              (states) => font(
                 fontWeight: states.contains(WidgetState.selected)
                     ? FontWeight.w800
                     : FontWeight.w600,
@@ -392,20 +405,6 @@ class HomeShell extends StatefulWidget {
 
 class _HomeShellState extends State<HomeShell> {
   int _currentIndex = 0;
-  late final RewardedUnlockService _rewardedUnlockService;
-
-  @override
-  void initState() {
-    super.initState();
-    _rewardedUnlockService = RewardedUnlockService();
-    unawaited(_rewardedUnlockService.initialize());
-  }
-
-  @override
-  void dispose() {
-    _rewardedUnlockService.dispose();
-    super.dispose();
-  }
 
   void _refresh() {
     setState(() {});
@@ -418,7 +417,6 @@ class _HomeShellState extends State<HomeShell> {
       HomeScreen(
         repository: widget.repository,
         storage: widget.storage,
-        rewardedUnlockService: _rewardedUnlockService,
         onDataChanged: _refresh,
       ),
       LibraryScreen(repository: widget.repository),

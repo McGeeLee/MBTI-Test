@@ -8,39 +8,39 @@ import 'package:mobile_app/src/test_engine.dart';
 
 /// Builds the 4 canonical single-axis questions (one per MBTI dimension).
 List<QuestionModel> _axisQuestions() => const [
-      QuestionModel(
-        id: 1,
-        text: 'Q1',
-        options: [
-          OptionModel(label: 'A', text: 'A1', value: 'E'),
-          OptionModel(label: 'B', text: 'B1', value: 'I'),
-        ],
-      ),
-      QuestionModel(
-        id: 2,
-        text: 'Q2',
-        options: [
-          OptionModel(label: 'A', text: 'A2', value: 'S'),
-          OptionModel(label: 'B', text: 'B2', value: 'N'),
-        ],
-      ),
-      QuestionModel(
-        id: 3,
-        text: 'Q3',
-        options: [
-          OptionModel(label: 'A', text: 'A3', value: 'T'),
-          OptionModel(label: 'B', text: 'B3', value: 'F'),
-        ],
-      ),
-      QuestionModel(
-        id: 4,
-        text: 'Q4',
-        options: [
-          OptionModel(label: 'A', text: 'A4', value: 'J'),
-          OptionModel(label: 'B', text: 'B4', value: 'P'),
-        ],
-      ),
-    ];
+  QuestionModel(
+    id: 1,
+    text: 'Q1',
+    options: [
+      OptionModel(label: 'A', text: 'A1', value: 'E'),
+      OptionModel(label: 'B', text: 'B1', value: 'I'),
+    ],
+  ),
+  QuestionModel(
+    id: 2,
+    text: 'Q2',
+    options: [
+      OptionModel(label: 'A', text: 'A2', value: 'S'),
+      OptionModel(label: 'B', text: 'B2', value: 'N'),
+    ],
+  ),
+  QuestionModel(
+    id: 3,
+    text: 'Q3',
+    options: [
+      OptionModel(label: 'A', text: 'A3', value: 'T'),
+      OptionModel(label: 'B', text: 'B3', value: 'F'),
+    ],
+  ),
+  QuestionModel(
+    id: 4,
+    text: 'Q4',
+    options: [
+      OptionModel(label: 'A', text: 'A4', value: 'J'),
+      OptionModel(label: 'B', text: 'B4', value: 'P'),
+    ],
+  ),
+];
 
 /// Builds [count] questions that all score toward [value] on choice 'A'.
 List<QuestionModel> _repeatedQuestions(String value, int count) {
@@ -196,8 +196,11 @@ void main() {
       for (var i = 0; i < 10; i++) {
         await engine.next();
       }
-      expect(engine.currentIndex, engine.totalQuestions - 1,
-          reason: 'cannot go past last');
+      expect(
+        engine.currentIndex,
+        engine.totalQuestions - 1,
+        reason: 'cannot go past last',
+      );
     });
 
     test('progress persists and can be resumed', () async {
@@ -226,36 +229,21 @@ void main() {
   });
 
   group('AppStorage', () {
-    test('claimNextTestAccess consumes free trial then rewarded credits',
-        () async {
-      expect(storage.testAccess.nextAccessKind, TestAccessKind.freeTrial);
-
-      await storage.claimNextTestAccess();
-      expect(storage.testAccess.freeTrialUsed, isTrue);
-      expect(storage.testAccess.nextAccessKind, TestAccessKind.locked);
-
-      await storage.grantRewardedTestCredit(2);
-      expect(storage.testAccess.nextAccessKind, TestAccessKind.rewardedCredit);
-
-      await storage.claimNextTestAccess();
-      expect(storage.testAccess.rewardedCredits, 1);
-    });
-
-    test('claiming when locked throws', () async {
-      await storage.claimNextTestAccess(); // use free trial
-      expect(
-        () => storage.claimNextTestAccess(),
-        throwsStateError,
-      );
-    });
-
     test('history add, delete and clear', () async {
       final result = TestResultModel(
         id: 'r1',
         timestamp: 1,
         version: VersionId.quick,
         scores: const TestScores(
-            e: 1, i: 0, s: 0, n: 0, t: 0, f: 0, j: 0, p: 0),
+          e: 1,
+          i: 0,
+          s: 0,
+          n: 0,
+          t: 0,
+          f: 0,
+          j: 0,
+          p: 0,
+        ),
         resultType: 'ESTJ',
         dimensions: const {'EI': 'E', 'SN': 'S', 'TF': 'T', 'JP': 'J'},
       );

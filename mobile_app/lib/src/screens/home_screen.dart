@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../ad_service.dart';
 import '../app.dart';
 import '../app_strings.dart';
-import '../monetization_strings.dart';
 import '../models.dart';
 import '../repository.dart';
 import '../storage.dart';
@@ -17,20 +15,17 @@ class HomeScreen extends StatelessWidget {
     super.key,
     required this.repository,
     required this.storage,
-    required this.rewardedUnlockService,
     required this.onDataChanged,
   });
 
   final MbtiRepository repository;
   final AppStorage storage;
-  final RewardedUnlockService rewardedUnlockService;
   final VoidCallback onDataChanged;
 
   @override
   Widget build(BuildContext context) {
     final strings = AppScope.of(context).strings;
     final versions = VersionId.values;
-    final accessState = storage.testAccess;
     final latestResult = storage.state.testHistory.isNotEmpty
         ? storage.state.testHistory.first
         : null;
@@ -65,8 +60,6 @@ class HomeScreen extends StatelessWidget {
               subtitle: strings.homeSectionSubtitle,
             ),
             const SizedBox(height: 16),
-            _AccessStatusCard(accessState: accessState),
-            const SizedBox(height: 16),
             ...versions.map(
               (version) => Padding(
                 padding: const EdgeInsets.only(bottom: 16),
@@ -74,7 +67,6 @@ class HomeScreen extends StatelessWidget {
                   meta: repository.versionMeta(version),
                   questionCount: repository.questionsFor(version).length,
                   progress: storage.progressFor(version),
-                  accessState: accessState,
                   onTap: () => _openTest(context, version),
                 ),
               ),
@@ -162,12 +154,6 @@ class HomeScreen extends StatelessWidget {
       }
     }
 
-    if (selectedProgress == null) {
-      if (!context.mounted) return;
-      final canStart = await _ensureTestAccess(context, version);
-      if (!canStart) return;
-    }
-
     final engine = TestEngine(
       version: version,
       questions: repository.questionsFor(version),
@@ -199,36 +185,6 @@ class HomeScreen extends StatelessWidget {
     );
 
     onDataChanged();
-  }
-
-  Future<bool> _ensureTestAccess(
-    BuildContext context,
-    VersionId version,
-  ) async {
-    final accessKind = storage.testAccess.nextAccessKind;
-    if (accessKind != TestAccessKind.locked) {
-      await storage.claimNextTestAccess();
-      onDataChanged();
-      return true;
-    }
-
-    final unlocked = await showModalBottomSheet<bool>(
-      context: context,
-      showDragHandle: true,
-      backgroundColor: Colors.transparent,
-      isScrollControlled: true,
-      builder: (_) => _RewardedUnlockSheet(
-        storage: storage,
-        rewardedUnlockService: rewardedUnlockService,
-        versionTitle: repository.versionMeta(version).title,
-      ),
-    );
-
-    if (unlocked == true) {
-      onDataChanged();
-      return true;
-    }
-    return false;
   }
 }
 
@@ -445,14 +401,12 @@ class _VersionCard extends StatelessWidget {
     required this.meta,
     required this.questionCount,
     required this.progress,
-    required this.accessState,
     required this.onTap,
   });
 
   final VersionMeta meta;
   final int questionCount;
   final SavedProgress? progress;
-  final TestAccessState accessState;
   final VoidCallback onTap;
 
   @override
@@ -527,7 +481,7 @@ class _VersionCard extends StatelessWidget {
                         ),
                         _MetaPill(
                           icon: Icons.quiz_outlined,
-                          label: '$questionCount',
+                          label: strings.questionCountLabel(questionCount),
                         ),
                         if (progress != null)
                           _MetaPill(
@@ -535,43 +489,21 @@ class _VersionCard extends StatelessWidget {
                             label:
                                 '${progress!.currentIndex + 1}/$questionCount',
                           ),
-                        if (progress == null)
-                          _MetaPill(
-                            icon: _accessIcon(accessState),
-                            label: _accessLabel(strings, accessState),
-                          ),
                       ],
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(width: 8),
+              const Icon(
+                Icons.chevron_right_rounded,
+                color: AppColors.textMuted,
               ),
             ],
           ),
         ),
       ),
     );
-  }
-
-  IconData _accessIcon(TestAccessState accessState) {
-    switch (accessState.nextAccessKind) {
-      case TestAccessKind.freeTrial:
-        return Icons.auto_awesome_rounded;
-      case TestAccessKind.rewardedCredit:
-        return Icons.play_circle_fill_rounded;
-      case TestAccessKind.locked:
-        return Icons.smart_display_rounded;
-    }
-  }
-
-  String _accessLabel(AppStrings strings, TestAccessState accessState) {
-    switch (accessState.nextAccessKind) {
-      case TestAccessKind.freeTrial:
-        return strings.freeTrialReadyLabel;
-      case TestAccessKind.rewardedCredit:
-        return strings.rewardedCreditsLabel(accessState.rewardedCredits);
-      case TestAccessKind.locked:
-        return strings.watchAdToStartLabel;
-    }
   }
 }
 
@@ -605,230 +537,5 @@ class _MetaPill extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class _AccessStatusCard extends StatelessWidget {
-  const _AccessStatusCard({required this.accessState});
-
-  final TestAccessState accessState;
-
-  @override
-  Widget build(BuildContext context) {
-    final strings = AppScope.of(context).strings;
-    final (title, body, icon, gradient) = switch (accessState.nextAccessKind) {
-      TestAccessKind.freeTrial => (
-        strings.freeTrialReadyLabel,
-        strings.freeTrialReadyBody,
-        Icons.auto_awesome_rounded,
-        const LinearGradient(colors: [Color(0xFFFFC14D), Color(0xFFFF8A5B)]),
-      ),
-      TestAccessKind.rewardedCredit => (
-        strings.rewardedCreditsLabel(accessState.rewardedCredits),
-        strings.rewardedCreditsReadyBody(accessState.rewardedCredits),
-        Icons.verified_rounded,
-        const LinearGradient(colors: [Color(0xFF35C98E), Color(0xFF36C6F4)]),
-      ),
-      TestAccessKind.locked => (
-        strings.adRequiredLabel,
-        strings.adRequiredHomeBody,
-        Icons.smart_display_rounded,
-        const LinearGradient(colors: [Color(0xFF6D5EF8), Color(0xFF9F6BFF)]),
-      ),
-    };
-
-    return SectionCard(
-      borderRadius: 30,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 52,
-            height: 52,
-            decoration: BoxDecoration(
-              gradient: gradient,
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: Icon(icon, color: Colors.white),
-          ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                BrandPill(
-                  label: strings.testAccessTitle.toUpperCase(),
-                  icon: Icons.lock_open_rounded,
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  title,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  body,
-                  style: const TextStyle(
-                    color: AppColors.textMuted,
-                    height: 1.45,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _RewardedUnlockSheet extends StatefulWidget {
-  const _RewardedUnlockSheet({
-    required this.storage,
-    required this.rewardedUnlockService,
-    required this.versionTitle,
-  });
-
-  final AppStorage storage;
-  final RewardedUnlockService rewardedUnlockService;
-  final String versionTitle;
-
-  @override
-  State<_RewardedUnlockSheet> createState() => _RewardedUnlockSheetState();
-}
-
-class _RewardedUnlockSheetState extends State<_RewardedUnlockSheet> {
-  bool _working = false;
-  String? _message;
-
-  @override
-  Widget build(BuildContext context) {
-    final strings = AppScope.of(context).strings;
-    final cancelLabel = MaterialLocalizations.of(context).cancelButtonLabel;
-
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 8, 12, 12),
-        child: SectionCard(
-          borderRadius: 32,
-          padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              BrandPill(
-                label: strings.adRequiredLabel.toUpperCase(),
-                icon: Icons.smart_display_rounded,
-                gradient: const LinearGradient(
-                  colors: [Color(0x226D5EF8), Color(0x18FF8A5B)],
-                ),
-              ),
-              const SizedBox(height: 14),
-              Text(
-                strings.adRequiredLabel,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w900,
-                  color: AppColors.ink,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                strings.adRequiredBody(widget.versionTitle.toLowerCase()),
-                style: const TextStyle(color: AppColors.textMuted, height: 1.5),
-              ),
-              if (_message != null) ...[
-                const SizedBox(height: 14),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 12,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.panelSoft,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: AppColors.border),
-                  ),
-                  child: Text(
-                    _message!,
-                    style: const TextStyle(
-                      color: AppColors.ink,
-                      height: 1.45,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ],
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed: _working
-                          ? null
-                          : () => Navigator.of(context).pop(false),
-                      child: Text(cancelLabel),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: FilledButton.icon(
-                      onPressed: _working ? null : _watchAd,
-                      icon: _working
-                          ? const SizedBox(
-                              width: 18,
-                              height: 18,
-                              child: CircularProgressIndicator(strokeWidth: 2),
-                            )
-                          : const Icon(Icons.play_circle_fill_rounded),
-                      label: Text(
-                        _working ? strings.loadingAd : strings.watchRewardedAd,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Future<void> _watchAd() async {
-    final strings = AppScope.of(context).strings;
-    setState(() {
-      _working = true;
-      _message = null;
-    });
-
-    await widget.rewardedUnlockService.preload();
-    final result = await widget.rewardedUnlockService.showUnlockAd();
-
-    switch (result) {
-      case RewardedUnlockResult.rewarded:
-        await widget.storage.grantRewardedTestCredit();
-        await widget.storage.claimNextTestAccess();
-        if (!mounted) return;
-        Navigator.of(context).pop(true);
-        return;
-      case RewardedUnlockResult.dismissed:
-        _message = strings.rewardedAccessDismissed;
-        break;
-      case RewardedUnlockResult.unavailable:
-        _message = strings.rewardedAccessUnavailable;
-        break;
-      case RewardedUnlockResult.failed:
-        _message = strings.rewardedAccessFailed;
-        break;
-    }
-
-    if (!mounted) return;
-    setState(() {
-      _working = false;
-    });
   }
 }

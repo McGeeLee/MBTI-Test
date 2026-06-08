@@ -58,8 +58,6 @@ String versionIdToString(VersionId value) {
 
 enum VersionId { quick, standard, full }
 
-enum TestAccessKind { freeTrial, rewardedCredit, locked }
-
 class VersionMeta {
   const VersionMeta({
     required this.id,
@@ -325,53 +323,6 @@ class SavedProgress {
       currentIndex: json['currentIndex'] as int,
       startTime: json['startTime'] as int,
       lastUpdate: json['lastUpdate'] as int,
-    );
-  }
-}
-
-class TestAccessState {
-  const TestAccessState({
-    this.freeTrialUsed = false,
-    this.rewardedCredits = 0,
-  });
-
-  final bool freeTrialUsed;
-  final int rewardedCredits;
-
-  bool get hasFreeTrialAvailable => !freeTrialUsed;
-  bool get hasRewardedCredit => rewardedCredits > 0;
-
-  TestAccessKind get nextAccessKind {
-    if (!freeTrialUsed) {
-      return TestAccessKind.freeTrial;
-    }
-    if (rewardedCredits > 0) {
-      return TestAccessKind.rewardedCredit;
-    }
-    return TestAccessKind.locked;
-  }
-
-  TestAccessState copyWith({
-    bool? freeTrialUsed,
-    int? rewardedCredits,
-  }) {
-    return TestAccessState(
-      freeTrialUsed: freeTrialUsed ?? this.freeTrialUsed,
-      rewardedCredits: rewardedCredits ?? this.rewardedCredits,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'freeTrialUsed': freeTrialUsed,
-      'rewardedCredits': rewardedCredits,
-    };
-  }
-
-  factory TestAccessState.fromJson(Map<String, dynamic> json) {
-    return TestAccessState(
-      freeTrialUsed: json['freeTrialUsed'] as bool? ?? false,
-      rewardedCredits: json['rewardedCredits'] as int? ?? 0,
     );
   }
 }

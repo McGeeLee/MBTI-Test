@@ -7,7 +7,7 @@ import 'models.dart';
 
 class AppStorage {
   AppStorage({Directory? overrideDirectory})
-      : _overrideDirectory = overrideDirectory;
+    : _overrideDirectory = overrideDirectory;
 
   static const _fileName = 'mbti_mobile_app_data.json';
 
@@ -20,7 +20,6 @@ class AppStorage {
   late final File _file;
 
   AppStorageState get state => _state;
-  TestAccessState get testAccess => state.testAccess;
 
   Future<void> load() async {
     final dir = await _resolveStorageDir();
@@ -95,38 +94,6 @@ class AppStorage {
     _state = state.copyWith(testHistory: <TestResultModel>[]);
     await _save();
   }
-
-  Future<TestAccessKind> claimNextTestAccess() async {
-    final nextAccess = testAccess.nextAccessKind;
-    switch (nextAccess) {
-      case TestAccessKind.freeTrial:
-        _state = state.copyWith(
-          testAccess: testAccess.copyWith(freeTrialUsed: true),
-        );
-        break;
-      case TestAccessKind.rewardedCredit:
-        _state = state.copyWith(
-          testAccess: testAccess.copyWith(
-            rewardedCredits: testAccess.rewardedCredits - 1,
-          ),
-        );
-        break;
-      case TestAccessKind.locked:
-        throw StateError('No trial or rewarded credit available.');
-    }
-    await _save();
-    return nextAccess;
-  }
-
-  Future<void> grantRewardedTestCredit([int credits = 1]) async {
-    if (credits <= 0) return;
-    _state = state.copyWith(
-      testAccess: testAccess.copyWith(
-        rewardedCredits: testAccess.rewardedCredits + credits,
-      ),
-    );
-    await _save();
-  }
 }
 
 class AppStorageState {
@@ -134,25 +101,21 @@ class AppStorageState {
     this.locale = AppLocale.vi,
     this.savedTests = const {},
     this.testHistory = const [],
-    this.testAccess = const TestAccessState(),
   });
 
   final AppLocale locale;
   final Map<VersionId, SavedProgress> savedTests;
   final List<TestResultModel> testHistory;
-  final TestAccessState testAccess;
 
   AppStorageState copyWith({
     AppLocale? locale,
     Map<VersionId, SavedProgress>? savedTests,
     List<TestResultModel>? testHistory,
-    TestAccessState? testAccess,
   }) {
     return AppStorageState(
       locale: locale ?? this.locale,
       savedTests: savedTests ?? this.savedTests,
       testHistory: testHistory ?? this.testHistory,
-      testAccess: testAccess ?? this.testAccess,
     );
   }
 
@@ -164,7 +127,6 @@ class AppStorageState {
           versionIdToString(entry.key): entry.value.toJson(),
       },
       'testHistory': testHistory.map((item) => item.toJson()).toList(),
-      'testAccess': testAccess.toJson(),
     };
   }
 
@@ -183,9 +145,6 @@ class AppStorageState {
       testHistory: historyJson
           .map((item) => TestResultModel.fromJson(item as Map<String, dynamic>))
           .toList(),
-      testAccess: TestAccessState.fromJson(
-        json['testAccess'] as Map<String, dynamic>? ?? <String, dynamic>{},
-      ),
     );
   }
 }

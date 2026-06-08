@@ -6,11 +6,6 @@
 -keep class io.flutter.**  { *; }
 -keep class io.flutter.plugins.**  { *; }
 
-# Google Mobile Ads (AdMob)
--keep class com.google.android.gms.ads.** { *; }
--keep class com.google.ads.** { *; }
--dontwarn com.google.android.gms.ads.**
-
 # Keep annotations and generics used by reflection-based libraries
 -keepattributes *Annotation*
 -keepattributes Signature
