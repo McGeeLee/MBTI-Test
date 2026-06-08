@@ -208,7 +208,7 @@ class _HeroCard extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(22, 24, 22, 22),
+          padding: const EdgeInsets.fromLTRB(20, 18, 20, 18),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -220,44 +220,38 @@ class _HeroCard extends StatelessWidget {
                   colors: [Color(0x30FFFFFF), Color(0x18FFFFFF)],
                 ),
               ),
-              const SizedBox(height: 18),
+              const SizedBox(height: 14),
               Text(
                 strings.heroTitle,
                 style: const TextStyle(
-                  fontSize: 30,
-                  height: 1.08,
+                  fontSize: 22,
+                  height: 1.15,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 12),
-              Text(
-                strings.heroBody,
-                style: const TextStyle(
-                  fontSize: 15,
-                  height: 1.55,
-                  color: Color(0xECFFFFFF),
-                ),
-              ),
-              const SizedBox(height: 20),
-              Column(
+              const SizedBox(height: 16),
+              Row(
                 children: [
-                  _HeroStat(
-                    label: strings.statOneTitle,
-                    value: strings.statOneBody,
-                    icon: Icons.category_rounded,
+                  Expanded(
+                    child: _HeroStat(
+                      label: strings.statOneTitle,
+                      icon: Icons.category_rounded,
+                    ),
                   ),
-                  const SizedBox(height: 10),
-                  _HeroStat(
-                    label: strings.statTwoTitle,
-                    value: strings.statTwoBody,
-                    icon: Icons.layers_rounded,
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: _HeroStat(
+                      label: strings.statTwoTitle,
+                      icon: Icons.layers_rounded,
+                    ),
                   ),
-                  const SizedBox(height: 10),
-                  _HeroStat(
-                    label: strings.statThreeTitle,
-                    value: strings.statThreeBody,
-                    icon: Icons.favorite_rounded,
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: _HeroStat(
+                      label: strings.statThreeTitle,
+                      icon: Icons.favorite_rounded,
+                    ),
                   ),
                 ],
               ),
@@ -270,51 +264,34 @@ class _HeroCard extends StatelessWidget {
 }
 
 class _HeroStat extends StatelessWidget {
-  const _HeroStat({
-    required this.label,
-    required this.value,
-    required this.icon,
-  });
+  const _HeroStat({required this.label, required this.icon});
 
   final String label;
-  final String value;
   final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.16),
-        borderRadius: BorderRadius.circular(22),
+        borderRadius: BorderRadius.circular(16),
         border: Border.all(color: Colors.white.withValues(alpha: 0.22)),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Icon(icon, color: Colors.white, size: 18),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(
-                  label,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
+          Icon(icon, color: Colors.white, size: 18),
+          const SizedBox(height: 6),
           Text(
-            value,
+            label,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: const TextStyle(
-              fontSize: 13,
-              height: 1.45,
-              color: Color(0xE0FFFFFF),
+              fontSize: 11,
+              height: 1.2,
+              fontWeight: FontWeight.w800,
+              color: Colors.white,
             ),
           ),
         ],
@@ -413,7 +390,6 @@ class _VersionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final strings = AppScope.of(context).strings;
     final gradient = gradientForVersion(meta.id);
-    final recommended = meta.id == VersionId.standard;
 
     return SectionCard(
       borderRadius: 30,
@@ -427,40 +403,28 @@ class _VersionCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: 62,
-                height: 62,
+                width: 48,
+                height: 48,
                 decoration: BoxDecoration(
                   gradient: gradient,
-                  borderRadius: BorderRadius.circular(22),
+                  borderRadius: BorderRadius.circular(16),
                 ),
                 child: Icon(
                   iconForVersion(meta.id),
                   color: Colors.white,
-                  size: 32,
+                  size: 24,
                 ),
               ),
-              const SizedBox(width: 16),
+              const SizedBox(width: 14),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            meta.title,
-                            style: Theme.of(context).textTheme.titleLarge
-                                ?.copyWith(fontWeight: FontWeight.w900),
-                          ),
-                        ),
-                        if (recommended)
-                          BrandPill(
-                            label: strings.standardVersion.toUpperCase(),
-                            gradient: const LinearGradient(
-                              colors: [Color(0x226D5EF8), Color(0x1836C6F4)],
-                            ),
-                          ),
-                      ],
+                    Text(
+                      meta.title,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                     const SizedBox(height: 8),
                     Text(
