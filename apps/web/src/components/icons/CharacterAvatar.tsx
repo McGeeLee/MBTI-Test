@@ -157,11 +157,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M50 60 L 35 75 L 50 90 L 65 75 Z" fill="white" />
              <path d="M50 75 L 50 95" stroke={c.primary} strokeWidth="3" />
 
+             {/* Hair behind the face */}
+             <path d="M30 40 C 30 25 70 25 70 40 L 70 50 L 30 50 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="42" r="19" fill={c.skin} />
-             
-             {/* Hair: Slicked back */}
-             <path d="M30 40 C 30 25 70 25 70 40 L 70 50 L 30 50 Z" fill={c.hair} />
 
              {/* Eyebrows: Angry/Determine */}
              <line x1="38" y1="38" x2="45" y2="40" stroke={c.hair} strokeWidth="2" />
@@ -201,11 +201,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M25 70 L 15 100 L 85 100 L 75 70 C 70 55 30 55 25 70" fill={c.clothing} />
              <path d="M50 55 L 50 100" stroke={c.accent} strokeWidth="1" />
 
+             {/* Long hair sits behind the face */}
+             <path d="M30 40 C 30 20 70 20 70 40 L 75 80 L 25 80 L 30 40 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="42" r="18" fill={c.skin} />
-
-             {/* Hair: Long straight gentle */}
-             <path d="M30 40 C 30 20 70 20 70 40 L 75 80 L 25 80 L 30 40 Z" fill={c.hair} />
              
              {/* Prop: Glowing Orb */}
              <circle cx="75" cy="75" r="6" fill="white" className="animate-pulse" />
@@ -219,11 +219,12 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              {/* Clothing: Tunic */}
              <path d="M30 75 L 20 100 L 80 100 L 70 75 C 65 60 35 60 30 75" fill={c.accent} />
              
+             {/* Wavy hair sits behind the face */}
+             <path d="M28 45 C 25 25 75 25 72 45 C 75 60 80 80 70 85 C 60 70 40 70 30 85 C 20 80 25 60 28 45 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
 
-             {/* Hair: Wavy with flowers */}
-             <path d="M28 45 C 25 25 75 25 72 45 C 75 60 80 80 70 85 C 60 70 40 70 30 85 C 20 80 25 60 28 45 Z" fill={c.hair} />
              {/* Flowers */}
              <circle cx="35" cy="35" r="3" fill="#f472b6" />
              <circle cx="65" cy="35" r="3" fill="#f472b6" />
@@ -240,11 +241,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M25 75 L 20 100 L 80 100 L 75 75 C 70 60 30 60 25 75" fill={c.clothing} />
              <path d="M30 75 L 50 90 L 70 75" fill="none" stroke={c.accent} strokeWidth="2" />
 
+             {/* Flowing hair sits behind the face */}
+             <path d="M30 40 C 25 25 75 25 70 40 L 75 70 L 25 70 L 30 40 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="42" r="18" fill={c.skin} />
-
-             {/* Hair: Flowing back */}
-             <path d="M30 40 C 25 25 75 25 70 40 L 75 70 L 25 70 L 30 40 Z" fill={c.hair} />
 
              {/* Prop: Sword Hilt / Torch */}
              <rect x="70" y="60" width="4" height="30" fill="#9ca3af" />
@@ -260,11 +261,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <circle cx="40" cy="85" r="3" fill="white" opacity="0.5" />
              <circle cx="60" cy="90" r="3" fill="white" opacity="0.5" />
 
+             {/* Short hair sits behind the face */}
+             <path d="M25 45 C 20 20 80 20 75 45 L 75 60 L 25 60 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
-
-             {/* Hair: Messy Short */}
-             <path d="M25 45 C 20 20 80 20 75 45 L 75 60 L 25 60 Z" fill={c.hair} />
              
              {/* Prop: Balloon */}
              <line x1="75" y1="70" x2="75" y2="90" stroke="#333" strokeWidth="1" />
@@ -282,11 +283,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M50 65 L 50 100" stroke="#94a3b8" strokeWidth="1" />
              <path d="M48 65 L 50 85 L 52 65 Z" fill={c.clothing} />
 
+             {/* Neat hair sits behind the face */}
+             <path d="M30 35 C 30 20 70 20 70 35 L 70 50 L 30 50 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="42" r="19" fill={c.skin} />
-
-             {/* Hair: Short neat */}
-             <path d="M30 35 C 30 20 70 20 70 35 L 70 50 L 30 50 Z" fill={c.hair} />
 
              {/* Glasses */}
              <rect x="38" y="40" width="10" height="6" rx="1" stroke="#333" strokeWidth="1" fill="none" />
@@ -309,12 +310,12 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <rect x="48" y="82" width="4" height="6" fill="#ef4444" /> {/* Cross */}
              <rect x="47" y="83" width="6" height="4" fill="#ef4444" />
 
-             {/* Head */}
-             <circle cx="50" cy="42" r="18" fill={c.skin} />
-
-             {/* Hair: Bun */}
+             {/* Bun and hair sit behind the face */}
              <circle cx="50" cy="25" r="8" fill={c.hair} />
              <path d="M30 35 C 30 20 70 20 70 35 L 70 55 L 30 55 Z" fill={c.hair} />
+
+             {/* Head */}
+             <circle cx="50" cy="42" r="18" fill={c.skin} />
           </>
         );
 
@@ -325,11 +326,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M20 75 L 20 100 L 80 100 L 80 75 C 80 60 20 60 20 75" fill={c.clothing} />
              <path d="M50 60 L 40 70 L 50 80 L 60 70 Z" fill="white" />
 
+             {/* Short hair sits behind the face */}
+             <path d="M30 40 C 30 25 70 25 70 40 L 70 45 L 30 45 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="42" r="19" fill={c.skin} />
-
-             {/* Hair: Very short/Receding */}
-             <path d="M30 40 C 30 25 70 25 70 40 L 70 45 L 30 45 Z" fill={c.hair} />
 
              {/* Prop: Gavel */}
              <rect x="70" y="60" width="20" height="10" fill="#78350f" transform="rotate(-15 70 60)" />
@@ -344,11 +345,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M30 75 L 20 100 L 80 100 L 70 75 C 65 60 35 60 30 75" fill={c.primary} />
              <path d="M35 75 L 65 75 L 60 100 L 40 100 Z" fill="white" opacity="0.3" />
 
+             {/* Bob sits behind the face */}
+             <path d="M25 40 C 25 20 75 20 75 40 L 80 65 L 20 65 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
-
-             {/* Hair: Styled Bob */}
-             <path d="M25 40 C 25 20 75 20 75 40 L 80 65 L 20 65 Z" fill={c.hair} />
 
              {/* Prop: Cake/Tray */}
              <rect x="65" y="75" width="20" height="2" fill="#94a3b8" />
@@ -365,11 +366,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M35 75 L 35 100" stroke="#78350f" strokeWidth="2" />
              <path d="M65 75 L 65 100" stroke="#78350f" strokeWidth="2" />
 
+             {/* Cap/hair sits behind the face */}
+             <path d="M25 40 C 25 25 75 25 75 40 L 75 55 L 25 55 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="45" r="19" fill={c.skin} />
-
-             {/* Hair: Cap backwards? or just messy */}
-             <path d="M25 40 C 25 25 75 25 75 40 L 75 55 L 25 55 Z" fill={c.hair} />
              
              {/* Goggles on head */}
              <rect x="35" y="30" width="12" height="8" rx="2" fill="#3b82f6" stroke="#1e293b" strokeWidth="2" />
@@ -392,11 +393,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <circle cx="50" cy="90" r="3" fill="#3b82f6" />
              <circle cx="60" cy="85" r="2" fill="#eab308" />
 
+             {/* Long hair sits behind the face */}
+             <path d="M25 45 C 20 60 30 80 25 90 L 75 90 C 70 80 80 60 75 45 C 75 30 25 30 25 45" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
-
-             {/* Hair: Long Artsy */}
-             <path d="M25 45 C 20 60 30 80 25 90 L 75 90 C 70 80 80 60 75 45 C 75 30 25 30 25 45" fill={c.hair} />
 
              {/* Prop: Palette */}
              <ellipse cx="75" cy="75" rx="10" ry="8" fill="#d97706" />
@@ -414,11 +415,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M50 60 L 50 100" stroke="#374151" strokeWidth="1" />
              <path d="M50 60 L 40 70 L 50 80 L 60 70 Z" fill="white" />
 
+             {/* Spiky hair sits behind the face */}
+             <path d="M25 45 L 30 25 L 40 40 L 50 20 L 60 40 L 70 25 L 75 45 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="45" r="19" fill={c.skin} />
-
-             {/* Hair: Spiky */}
-             <path d="M25 45 L 30 25 L 40 40 L 50 20 L 60 40 L 70 25 L 75 45 Z" fill={c.hair} />
 
              {/* Sunglasses */}
              <path d="M35 45 L 48 45 L 48 52 C 48 55 35 55 35 52 Z" fill="black" />
@@ -435,11 +436,11 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M40 80 L 42 85 L 38 85 Z" fill="white" /> {/* Star shape hint */}
              <path d="M60 90 L 62 95 L 58 95 Z" fill="white" />
 
+             {/* Voluminous hair sits behind the face */}
+             <path d="M25 45 C 15 30 85 30 75 45 L 80 70 C 80 80 20 80 20 70 Z" fill={c.hair} />
+
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
-
-             {/* Hair: Voluminous */}
-             <path d="M25 45 C 15 30 85 30 75 45 L 80 70 C 80 80 20 80 20 70 Z" fill={c.hair} />
 
              {/* Prop: Microphone */}
              <line x1="75" y1="65" x2="75" y2="80" stroke="#333" strokeWidth="3" />
