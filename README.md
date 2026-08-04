@@ -11,7 +11,7 @@
 *   **计分算法**：基于四个维度（E/I、S/N、T/F、J/P）进行计分与类型归类，并对“接近中间型（X）”的维度做标记，便于提示与后续扩展。
 *   **本地化存储**：测试进度自动保存到浏览器本地存储，随时中断继续。
 *   **响应式设计**：完美适配桌面和移动端设备。
-*   **绿色便携**：内置便携式 Node.js 运行时，无需安装依赖即可运行。
+*   **便捷启动**：Windows 启动脚本可在首次运行时自动下载 Node.js 运行时并安装依赖。
 
 ## 重要说明
 
@@ -34,7 +34,7 @@
 
 1.  安装依赖：
     ```bash
-    npm install
+    npm ci
     ```
 
 2.  启动开发服务器：
@@ -42,19 +42,14 @@
     npm run dev
     ```
 
-3.  运行测试：
+3.  执行完整验证：
     ```bash
-    npm run test
-    # 或使用便携运行时
-    .\node_runtime\node-v20.11.0-win-x64\npx.cmd vitest run
+    npm run verify
     ```
 
-## 代码结构优化 (2025-01-27)
+## 移动端
 
-*   **性能优化**：`TestEngine` 引入 `Map` 数据结构，将查询复杂度从 O(N) 降低至 O(1)。
-*   **代码清理**：移除冗余的 SVG 资源和未使用的 Hooks。
-*   **单元测试**：集成 Vitest 测试框架，覆盖核心计分引擎逻辑，确保准确性。
-*   **文件清理**：清理了 npm 缓存日志和临时文件。
+Flutter 应用位于 `mobile_app/`。调试 APK、桌面可执行文件、日志和其他构建产物不会提交到源码仓库；需要安装包时请自行构建或从 GitHub Releases 下载。
 
 ## 目录结构
 
@@ -62,3 +57,4 @@
 *   `src/lib/`: 核心逻辑 (TestEngine, LocalStorageManager)
 *   `src/pages/`: 页面组件
 *   `src/components/`: 通用组件 (Layout, Icons)
+*   `mobile_app/`: Flutter 移动端源码与测试
