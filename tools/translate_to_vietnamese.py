@@ -5,11 +5,13 @@ from typing import Any
 
 import httpx
 
+from sync_mobile_data import sync_assets
+
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIR = ROOT / "src" / "data"
-TARGET_DIR = ROOT / "mobile_app" / "assets" / "data"
-CACHE_FILE = ROOT / "tools" / "translation_cache_vi.json"
+SOURCE_DIR = ROOT / "shared" / "data" / "source"
+TARGET_DIR = ROOT / "shared" / "data" / "locales"
+CACHE_FILE = ROOT / "tools" / "cache" / "translation_cache_vi.json"
 
 SKIP_KEYS = {
     "id",
@@ -236,11 +238,11 @@ async def main() -> None:
         questions = await build_questions(ctx)
         personality_types = await build_types(ctx)
 
-    (TARGET_DIR / "questions_vi.json").write_text(
+    (TARGET_DIR / "questions.vi.json").write_text(
         json.dumps(questions, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    (TARGET_DIR / "types_vi.json").write_text(
+    (TARGET_DIR / "types.vi.json").write_text(
         json.dumps(personality_types, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
@@ -249,6 +251,8 @@ async def main() -> None:
             json.dumps(ctx.failures, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
+
+    sync_assets()
 
 
 if __name__ == "__main__":

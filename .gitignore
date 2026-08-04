@@ -1,9 +1,8 @@
-# Dependencies and portable runtime
+# Dependencies
 node_modules/
-node_runtime/
 
 # Build and test output
-dist/
+apps/web/dist/
 build/
 coverage/
 *.log
@@ -12,20 +11,19 @@ coverage/
 *.exe
 
 # Flutter generated files
-mobile_app/.dart_tool/
-mobile_app/.flutter-plugins
-mobile_app/.flutter-plugins-dependencies
-mobile_app/.packages
-mobile_app/build/
-mobile_app/android/.gradle/
-mobile_app/android/local.properties
-mobile_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
-mobile_app/ios/Pods/
-mobile_app/ios/Flutter/Generated.xcconfig
-mobile_app/ios/Flutter/flutter_export_environment.sh
-mobile_app/ios/Runner/GeneratedPluginRegistrant.*
-mobile_app/macos/Pods/
-mobile_app/**/ephemeral/
+apps/mobile/.dart_tool/
+apps/mobile/.flutter-plugins
+apps/mobile/.flutter-plugins-dependencies
+apps/mobile/.packages
+apps/mobile/build/
+apps/mobile/android/.gradle/
+apps/mobile/android/local.properties
+apps/mobile/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+apps/mobile/ios/Pods/
+apps/mobile/ios/Flutter/Generated.xcconfig
+apps/mobile/ios/Flutter/flutter_export_environment.sh
+apps/mobile/ios/Runner/GeneratedPluginRegistrant.*
+apps/mobile/**/ephemeral/
 
 # Deployment, editors, and operating systems
 .vercel/

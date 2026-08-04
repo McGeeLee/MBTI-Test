@@ -6,15 +6,18 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+from sync_mobile_data import sync_assets
+
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIR = ROOT / "src" / "data"
-TARGET_DIR = ROOT / "mobile_app" / "assets" / "data"
+SOURCE_DIR = ROOT / "shared" / "data" / "source"
+TARGET_DIR = ROOT / "shared" / "data" / "locales"
 TOOLS_DIR = ROOT / "tools"
+CACHE_DIR = TOOLS_DIR / "cache"
 
 LOCALES = ("en", "ko", "ja", "zh")
 CACHE_FILES = {
-    locale: TOOLS_DIR / f"translation_cache_{locale}.json" for locale in LOCALES
+    locale: CACHE_DIR / f"translation_cache_{locale}.json" for locale in LOCALES
 }
 FAILURE_FILES = {
     locale: TOOLS_DIR / f"translation_failures_{locale}.json" for locale in LOCALES
@@ -333,19 +336,21 @@ def main() -> None:
         if locale == "zh":
             questions_bundle = build_questions_bundle(source_questions, locale, {})
             types_bundle = build_types(source_types, locale, {})
-            save_json(TARGET_DIR / f"questions_{locale}.json", questions_bundle)
-            save_json(TARGET_DIR / f"types_{locale}.json", types_bundle)
+            save_json(TARGET_DIR / f"questions.{locale}.json", questions_bundle)
+            save_json(TARGET_DIR / f"types.{locale}.json", types_bundle)
             continue
 
         cache, failures = translate_strings(strings, locale)
         questions_bundle = build_questions_bundle(source_questions, locale, cache)
         types_bundle = build_types(source_types, locale, cache)
 
-        save_json(TARGET_DIR / f"questions_{locale}.json", questions_bundle)
-        save_json(TARGET_DIR / f"types_{locale}.json", types_bundle)
+        save_json(TARGET_DIR / f"questions.{locale}.json", questions_bundle)
+        save_json(TARGET_DIR / f"types.{locale}.json", types_bundle)
 
         if failures:
             save_json(FAILURE_FILES[locale], failures)
+
+    sync_assets()
 
 
 if __name__ == "__main__":

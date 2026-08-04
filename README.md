@@ -1,60 +1,88 @@
-# MBTI 性格测试应用
+# MBTI Master
 
-基于 React + TypeScript + Vite 构建的现代化 MBTI 性格测试应用。
+一个离线优先、支持五种语言的 MBTI 性格测试项目，包含 React Web 应用和 Flutter 移动应用。
 
-## 功能特性
+> 本项目是用于学习与自我探索的非官方工具，不属于 MBTI® 官方量表，结果不能代替专业评估。
 
-*   **三种测试模式**：
-    *   快速版（28题）：快速评估，适合时间有限的用户。
-    *   标准版（93题）：平衡深度与时间，适合大多数用户。
-    *   完整版（200题）：题量更大，提供更细致的四维偏好分析。
-*   **计分算法**：基于四个维度（E/I、S/N、T/F、J/P）进行计分与类型归类，并对“接近中间型（X）”的维度做标记，便于提示与后续扩展。
-*   **本地化存储**：测试进度自动保存到浏览器本地存储，随时中断继续。
-*   **响应式设计**：完美适配桌面和移动端设备。
-*   **便捷启动**：Windows 启动脚本可在首次运行时自动下载 Node.js 运行时并安装依赖。
+## 来源与改造
 
-## 重要说明
+本仓库基于 [mrdee0428-star/MBTI-Test](https://github.com/mrdee0428-star/MBTI-Test) 整理和二次开发，保留原始 Git 提交历史以明确来源。本版本主要完成目录重构、依赖与安全清理、共享题库规范化、响应式布局修复，以及 Web 与 Flutter 测试完善。
 
-本项目为学习与自我探索用途的非官方性格测评工具，不属于 MBTI® 官方量表与报告体系；结果仅供参考。
+## 功能
 
-## 技术栈
+- 快速版（28 题）、标准版（93 题）和完整版（200 题）
+- 简体中文、英语、日语、韩语和越南语
+- 本地保存测试进度与历史记录
+- E/I、S/N、T/F、J/P 四维结果分析
+- Web、Android 和 iOS 共用同一套规范化题库
+- 无广告、无需登录、没有服务端数据上传
 
-*   **Frontend**: React 18, TypeScript, Tailwind CSS, Framer Motion
-*   **Build Tool**: Vite
-*   **Testing**: Vitest
-*   **Visualization**: Chart.js
+## 项目结构
 
-## 快速开始
+```text
+apps/
+├── web/                 React + TypeScript + Vite
+└── mobile/              Flutter（Android + iOS）
+shared/data/
+├── source/              中文原始题库与人格资料
+└── locales/             五语言规范数据
+tools/                   数据同步、翻译和品牌资源脚本
+docs/                    设计与题库参考资料
+```
 
-### Windows 用户（推荐）
+Flutter 资产目录中的 JSON 是 `shared/data/locales/` 的构建副本。修改规范数据后运行 `npm run sync:data`，`npm run verify` 会检查两份数据是否一致。
 
-直接双击根目录下的 `启动程序.bat` 即可运行。程序会自动检测环境并启动。
+## Web 开发
 
-### 开发者
+要求 Node.js 20.19 或更高版本。
 
-1.  安装依赖：
-    ```bash
-    npm ci
-    ```
+```bash
+npm ci
+npm run dev
+```
 
-2.  启动开发服务器：
-    ```bash
-    npm run dev
-    ```
+完整验证：
 
-3.  执行完整验证：
-    ```bash
-    npm run verify
-    ```
+```bash
+npm run verify
+```
 
-## 移动端
+该命令会检查共享数据、TypeScript、ESLint、单元测试和生产构建。
 
-Flutter 应用位于 `mobile_app/`。调试 APK、桌面可执行文件、日志和其他构建产物不会提交到源码仓库；需要安装包时请自行构建或从 GitHub Releases 下载。
+## Flutter 开发
 
-## 目录结构
+```bash
+cd apps/mobile
+flutter pub get
+flutter test
+flutter run
+```
 
-*   `src/data/`: 题库 (questions.json) 和性格类型数据 (types.json)
-*   `src/lib/`: 核心逻辑 (TestEngine, LocalStorageManager)
-*   `src/pages/`: 页面组件
-*   `src/components/`: 通用组件 (Layout, Icons)
-*   `mobile_app/`: Flutter 移动端源码与测试
+生成 Android 安装包：
+
+```bash
+cd apps/mobile
+flutter build apk --release
+```
+
+签名文件、APK、AAB、日志和其他构建产物不会提交到源码仓库。
+
+## 数据维护
+
+同步规范数据到 Flutter：
+
+```bash
+npm run sync:data
+```
+
+翻译生成脚本位于 `tools/`。这些脚本只有在开发者主动运行时才会访问 Google Translate；应用本身不会上传题目或用户测试结果。
+
+## 安全说明
+
+- 不包含动态代码执行、远程命令或后台上传逻辑
+- Web 数据保存在浏览器 `localStorage`
+- 移动端数据保存在应用支持目录
+- 生产构建不包含第三方推广徽标或隐藏 Source Map
+- 请通过源码构建安装包，不要从源码目录运行来历不明的 EXE/APK
+
+详细的审计范围、外部连接点与依赖例外见 [docs/security.md](docs/security.md)。
