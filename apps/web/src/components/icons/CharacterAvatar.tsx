@@ -197,15 +197,24 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
       case 'INFJ': // Advocate: Wise, robes, staff/orb
         return (
           <>
+             {/* Long hair sits behind both the face and clothing */}
+             <path
+               d="M30 43 Q 30 21 50 20 Q 70 21 70 43 L 73 76 Q 70 84 63 78 L 37 78 Q 30 84 27 76 Z"
+               fill={c.hair}
+             />
+
              {/* Clothing: Robes */}
              <path d="M25 70 L 15 100 L 85 100 L 75 70 C 70 55 30 55 25 70" fill={c.clothing} />
              <path d="M50 55 L 50 100" stroke={c.accent} strokeWidth="1" />
 
-             {/* Long hair sits behind the face */}
-             <path d="M30 40 C 30 20 70 20 70 40 L 75 80 L 25 80 L 30 40 Z" fill={c.hair} />
-
              {/* Head */}
-             <circle cx="50" cy="42" r="18" fill={c.skin} />
+             <circle cx="50" cy="44" r="18" fill={c.skin} />
+
+             {/* Calm side-parted hairline */}
+             <path
+               d="M31 39 Q 34 23 49 23 Q 63 23 69 38 Q 60 34 53 36 Q 43 31 31 39 Z"
+               fill={c.hair}
+             />
              
              {/* Prop: Glowing Orb */}
              <circle cx="75" cy="75" r="6" fill="white" className="animate-pulse" />
@@ -216,18 +225,27 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
       case 'INFP': // Mediator: Flower crown, flowy
         return (
           <>
+             {/* Wavy hair sits behind both the face and clothing */}
+             <path
+               d="M28 43 Q 29 25 50 24 Q 71 25 72 43 L 75 70 Q 74 82 65 76 Q 59 83 50 77 Q 41 83 35 76 Q 26 82 25 70 Z"
+               fill={c.hair}
+             />
+
              {/* Clothing: Tunic */}
              <path d="M30 75 L 20 100 L 80 100 L 70 75 C 65 60 35 60 30 75" fill={c.accent} />
-             
-             {/* Wavy hair sits behind the face */}
-             <path d="M28 45 C 25 25 75 25 72 45 C 75 60 80 80 70 85 C 60 70 40 70 30 85 C 20 80 25 60 28 45 Z" fill={c.hair} />
 
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
 
+             {/* Soft center-parted fringe */}
+             <path
+               d="M29 39 Q 33 27 49 27 Q 66 26 71 38 Q 61 34 53 37 Q 43 32 29 39 Z"
+               fill={c.hair}
+             />
+
              {/* Flowers */}
-             <circle cx="35" cy="35" r="3" fill="#f472b6" />
-             <circle cx="65" cy="35" r="3" fill="#f472b6" />
+             <circle cx="35" cy="34" r="3" fill="#f472b6" />
+             <circle cx="65" cy="34" r="3" fill="#f472b6" />
 
              {/* Prop: Butterfly (simplified) */}
              <path d="M75 65 L 80 60 L 85 65 L 80 70 Z" fill="#fcd34d" />
@@ -237,15 +255,24 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
       case 'ENFJ': // Protagonist: Sword/Heart, Heroic
         return (
           <>
+             {/* Flowing hair sits behind both the face and clothing */}
+             <path
+               d="M30 42 Q 31 23 50 22 Q 69 23 70 42 L 72 61 Q 66 66 61 58 L 39 58 Q 34 66 28 61 Z"
+               fill={c.hair}
+             />
+
              {/* Clothing: Armor-like/Heroic */}
              <path d="M25 75 L 20 100 L 80 100 L 75 75 C 70 60 30 60 25 75" fill={c.clothing} />
              <path d="M30 75 L 50 90 L 70 75" fill="none" stroke={c.accent} strokeWidth="2" />
 
-             {/* Flowing hair sits behind the face */}
-             <path d="M30 40 C 25 25 75 25 70 40 L 75 70 L 25 70 L 30 40 Z" fill={c.hair} />
-
              {/* Head */}
-             <circle cx="50" cy="42" r="18" fill={c.skin} />
+             <circle cx="50" cy="44" r="18" fill={c.skin} />
+
+             {/* Heroic swept fringe */}
+             <path
+               d="M31 39 Q 35 23 49 23 Q 63 23 69 38 Q 59 33 52 36 Q 42 32 31 39 Z"
+               fill={c.hair}
+             />
 
              {/* Prop: Sword Hilt / Torch */}
              <rect x="70" y="60" width="4" height="30" fill="#9ca3af" />
@@ -256,16 +283,25 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
       case 'ENFP': // Campaigner: Fun hat/hair, balloons
         return (
           <>
+             {/* Rounded bob sits behind both the face and clothing */}
+             <path
+               d="M28 42 Q 29 25 50 24 Q 71 25 72 42 L 74 62 Q 71 69 65 64 Q 58 70 50 64 Q 42 70 35 64 Q 29 69 26 62 Z"
+               fill={c.hair}
+             />
+
              {/* Clothing: Colorful */}
              <path d="M30 75 L 20 100 L 80 100 L 70 75 C 65 60 35 60 30 75" fill={c.primary} />
              <circle cx="40" cy="85" r="3" fill="white" opacity="0.5" />
              <circle cx="60" cy="90" r="3" fill="white" opacity="0.5" />
 
-             {/* Short hair sits behind the face */}
-             <path d="M25 45 C 20 20 80 20 75 45 L 75 60 L 25 60 Z" fill={c.hair} />
-
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
+
+             {/* Playful front wave */}
+             <path
+               d="M29 39 Q 33 27 48 27 Q 62 25 71 38 Q 61 34 54 37 Q 44 32 29 39 Z"
+               fill={c.hair}
+             />
              
              {/* Prop: Balloon */}
              <line x1="75" y1="70" x2="75" y2="90" stroke="#333" strokeWidth="1" />
@@ -366,17 +402,23 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M35 75 L 35 100" stroke="#78350f" strokeWidth="2" />
              <path d="M65 75 L 65 100" stroke="#78350f" strokeWidth="2" />
 
-             {/* Cap/hair sits behind the face */}
-             <path d="M25 40 C 25 25 75 25 75 40 L 75 55 L 25 55 Z" fill={c.hair} />
+             {/* Rounded cap and short hair frame the face */}
+             <path
+               d="M30 43 C 30 27 70 27 70 43 L 68 56 Q 64 61 60 57 L 40 57 Q 36 61 32 56 Z"
+               fill={c.hair}
+             />
 
              {/* Head */}
              <circle cx="50" cy="45" r="19" fill={c.skin} />
-             
-             {/* Goggles on head */}
-             <rect x="35" y="30" width="12" height="8" rx="2" fill="#3b82f6" stroke="#1e293b" strokeWidth="2" />
-             <rect x="53" y="30" width="12" height="8" rx="2" fill="#3b82f6" stroke="#1e293b" strokeWidth="2" />
-             <line x1="25" y1="34" x2="35" y2="34" stroke="#1e293b" strokeWidth="2" />
-             <line x1="65" y1="34" x2="75" y2="34" stroke="#1e293b" strokeWidth="2" />
+
+             {/* Mechanic cap */}
+             <path d="M31 36 Q 35 24 50 24 Q 65 24 69 36 Z" fill={c.secondary} />
+             <path d="M28 36 Q 49 32 72 36" stroke={c.hair} strokeWidth="3" strokeLinecap="round" />
+
+             {/* Goggles rest on the cap instead of across the face */}
+             <rect x="36" y="27" width="11" height="7" rx="2" fill="#60a5fa" stroke="#1e293b" strokeWidth="1.5" />
+             <rect x="53" y="27" width="11" height="7" rx="2" fill="#60a5fa" stroke="#1e293b" strokeWidth="1.5" />
+             <line x1="47" y1="30.5" x2="53" y2="30.5" stroke="#1e293b" strokeWidth="1.5" />
 
              {/* Prop: Wrench */}
              <path d="M75 70 L 85 80" stroke="#94a3b8" strokeWidth="4" />
@@ -387,17 +429,25 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
       case 'ISFP': // Adventurer: Beret, palette
         return (
           <>
+             {/* Soft hair silhouette sits behind both the face and clothing */}
+             <path
+               d="M29 43 C 27 27 73 27 71 43 L 75 72 Q 72 84 64 78 Q 58 84 50 78 Q 42 84 36 78 Q 28 84 25 72 Z"
+               fill={c.hair}
+             />
+
              {/* Clothing: Paint splattered shirt */}
              <path d="M30 75 L 20 100 L 80 100 L 70 75 C 65 60 35 60 30 75" fill={c.light} />
              <circle cx="40" cy="80" r="2" fill="#ef4444" />
              <circle cx="50" cy="90" r="3" fill="#3b82f6" />
              <circle cx="60" cy="85" r="2" fill="#eab308" />
 
-             {/* Long hair sits behind the face */}
-             <path d="M25 45 C 20 60 30 80 25 90 L 75 90 C 70 80 80 60 75 45 C 75 30 25 30 25 45" fill={c.hair} />
-
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
+
+             {/* Centered artist beret */}
+             <path d="M31 35 Q 34 23 50 23 Q 66 23 69 35 Z" fill={c.secondary} />
+             <path d="M32 35 Q 50 32 68 35" stroke={c.hair} strokeWidth="2" strokeLinecap="round" />
+             <circle cx="50" cy="22" r="2.5" fill={c.secondary} />
 
              {/* Prop: Palette */}
              <ellipse cx="75" cy="75" rx="10" ry="8" fill="#d97706" />
@@ -415,32 +465,47 @@ export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({ type, size = 1
              <path d="M50 60 L 50 100" stroke="#374151" strokeWidth="1" />
              <path d="M50 60 L 40 70 L 50 80 L 60 70 Z" fill="white" />
 
-             {/* Spiky hair sits behind the face */}
-             <path d="M25 45 L 30 25 L 40 40 L 50 20 L 60 40 L 70 25 L 75 45 Z" fill={c.hair} />
+             {/* Short hair sits behind the face */}
+             <path
+               d="M30 43 C 30 23 70 23 70 43 L 68 54 Q 64 58 60 54 L 40 54 Q 36 58 32 54 Z"
+               fill={c.hair}
+             />
 
              {/* Head */}
              <circle cx="50" cy="45" r="19" fill={c.skin} />
 
+             {/* Tousled fringe, shaped to avoid the old horn-like silhouette */}
+             <path
+               d="M31 40 Q 34 24 43 24 L 48 18 L 52 24 L 57 21 L 62 24 Q 68 24 70 39 Q 60 34 52 37 Q 42 33 31 40 Z"
+               fill={c.hair}
+             />
+
              {/* Sunglasses */}
-             <path d="M35 45 L 48 45 L 48 52 C 48 55 35 55 35 52 Z" fill="black" />
-             <path d="M52 45 L 65 45 L 65 52 C 65 55 52 55 52 52 Z" fill="black" />
-             <line x1="48" y1="46" x2="52" y2="46" stroke="black" strokeWidth="1" />
+             <path d="M35 43 L 48 43 L 48 49 C 48 52 35 52 35 49 Z" fill="#111827" />
+             <path d="M52 43 L 65 43 L 65 49 C 65 52 52 52 52 49 Z" fill="#111827" />
+             <line x1="48" y1="44" x2="52" y2="44" stroke="#111827" strokeWidth="1.5" />
           </>
         );
 
       case 'ESFP': // Entertainer: Mic, star
         return (
           <>
+             {/* Rounded curls sit behind both the face and clothing */}
+             <path
+               d="M27 44 C 24 27 76 27 73 44 L 78 67 Q 77 77 68 74 Q 63 82 57 76 Q 50 83 43 76 Q 37 82 32 74 Q 23 77 22 67 Z"
+               fill={c.hair}
+             />
+
              {/* Clothing: Sparkly */}
              <path d="M30 75 L 20 100 L 80 100 L 70 75 C 65 60 35 60 30 75" fill={c.primary} />
              <path d="M40 80 L 42 85 L 38 85 Z" fill="white" /> {/* Star shape hint */}
              <path d="M60 90 L 62 95 L 58 95 Z" fill="white" />
 
-             {/* Voluminous hair sits behind the face */}
-             <path d="M25 45 C 15 30 85 30 75 45 L 80 70 C 80 80 20 80 20 70 Z" fill={c.hair} />
-
              {/* Head */}
              <circle cx="50" cy="45" r="18" fill={c.skin} />
+
+             {/* Soft front wave */}
+             <path d="M30 38 Q 34 26 50 26 Q 66 26 70 38 Q 61 33 52 36 Q 42 32 30 38 Z" fill={c.hair} />
 
              {/* Prop: Microphone */}
              <line x1="75" y1="65" x2="75" y2="80" stroke="#333" strokeWidth="3" />

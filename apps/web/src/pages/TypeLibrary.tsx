@@ -77,7 +77,7 @@ export const TypeLibrary: React.FC = () => {
                 </span>
               </motion.div>
 
-              <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {groupTypes.map((type, index) => (
                   <motion.div
                     key={type.id}
@@ -90,22 +90,23 @@ export const TypeLibrary: React.FC = () => {
                   >
                     <Link
                       to={`/type/${type.id}`}
-                      className="flex h-full min-h-[31rem] flex-col overflow-hidden rounded-[2rem] border border-[var(--clay-border)] bg-white shadow-[var(--clay-shadow)] transition-all hover:-rotate-1 hover:shadow-[var(--clay-shadow-hard)]"
+                      className="flex h-full min-h-[28rem] flex-col overflow-hidden rounded-[2rem] border border-[var(--clay-border)] bg-white shadow-[var(--clay-shadow)] transition-all hover:-rotate-1 hover:shadow-[var(--clay-shadow-hard)] lg:min-h-[29rem] xl:min-h-[31rem]"
                     >
                       <div className={`h-3 w-full shrink-0 ${group.tone}`}></div>
-                      <div className="flex flex-1 flex-col p-6 text-center">
-                        <div className="mb-6 flex h-44 shrink-0 items-center justify-center rounded-[1.5rem] border border-[var(--clay-border)] bg-[var(--clay-bg)] px-4 py-5">
-                          <TypeIcon type={type.id} size={120} className="mx-auto" />
+                      <div className="flex flex-1 flex-col p-5 text-center xl:p-6">
+                        <div className="mb-5 flex h-40 shrink-0 items-center justify-center rounded-[1.5rem] border border-[var(--clay-border)] bg-[var(--clay-bg)] px-4 py-4 xl:mb-6 xl:h-44 xl:py-5">
+                          <TypeIcon type={type.id} size={132} className="mx-auto" />
                         </div>
                         <h3 className="text-3xl font-black tracking-[-0.05em] text-[var(--clay-text)]">
                           {type.id}
                         </h3>
-                        <h4 className="mt-1 flex min-h-14 items-start justify-center text-lg font-bold leading-7 clay-muted">
+                        <h4 className="mt-1 flex min-h-10 items-center justify-center text-lg font-bold leading-7 clay-muted">
                           {type.name}
                         </h4>
-                        <p className="mt-3 line-clamp-3 min-h-[4.5rem] flex-1 text-sm leading-6 clay-muted">
+                        <p className="mt-2 line-clamp-3 min-h-[4.5rem] text-sm leading-6 clay-muted">
                           {type.summary}
                         </p>
+                        <div className="flex-1" aria-hidden="true"></div>
                       </div>
                       <div className="shrink-0 border-t border-[var(--clay-border)] bg-[var(--clay-bg)] px-6 py-4 text-center text-xs font-black uppercase tracking-[0.18em] text-[var(--clay-text)]">
                         Open profile

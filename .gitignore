@@ -10,6 +10,11 @@ coverage/
 *.aab
 *.exe
 
+# Python
+__pycache__/
+*.pyc
+.venv/
+
 # Flutter generated files
 apps/mobile/.dart_tool/
 apps/mobile/.flutter-plugins
