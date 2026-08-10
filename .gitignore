@@ -31,7 +31,7 @@ apps/mobile/ios/Runner/GeneratedPluginRegistrant.*
 apps/mobile/**/ephemeral/
 
 # Deployment, editors, and operating systems
-.vercel/
+.wrangler/
 .idea/
 .vscode/
 *.iml

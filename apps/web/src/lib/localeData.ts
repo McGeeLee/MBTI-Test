@@ -1,14 +1,4 @@
-import questionsEn from '../../../../shared/data/locales/questions.en.json';
-import questionsJa from '../../../../shared/data/locales/questions.ja.json';
-import questionsKo from '../../../../shared/data/locales/questions.ko.json';
-import questionsVi from '../../../../shared/data/locales/questions.vi.json';
-import questionsZh from '../../../../shared/data/locales/questions.zh.json';
-import typesEn from '../../../../shared/data/locales/types.en.json';
-import typesJa from '../../../../shared/data/locales/types.ja.json';
-import typesKo from '../../../../shared/data/locales/types.ko.json';
-import typesVi from '../../../../shared/data/locales/types.vi.json';
-import typesZh from '../../../../shared/data/locales/types.zh.json';
-import {
+import type {
   LocalizedQuestionMetaMap,
   LocalizedQuestionSource,
   PersonalityType,
@@ -18,21 +8,49 @@ import {
 
 export const supportedLocales = ['vi', 'en', 'ko', 'ja', 'zh'] as const;
 
-const questionSources: Record<SupportedLocale, LocalizedQuestionSource> = {
-  vi: questionsVi as LocalizedQuestionSource,
-  en: questionsEn as LocalizedQuestionSource,
-  ko: questionsKo as LocalizedQuestionSource,
-  ja: questionsJa as LocalizedQuestionSource,
-  zh: questionsZh as LocalizedQuestionSource,
+interface LocaleBundle {
+  questions: LocalizedQuestionSource;
+  types: PersonalityType[];
+}
+
+type JsonModule<T> = { default: T };
+
+const localeLoaders: Record<SupportedLocale, () => Promise<LocaleBundle>> = {
+  vi: () => loadBundle(
+    import('../../../../shared/data/locales/questions.vi.json'),
+    import('../../../../shared/data/locales/types.vi.json'),
+  ),
+  en: () => loadBundle(
+    import('../../../../shared/data/locales/questions.en.json'),
+    import('../../../../shared/data/locales/types.en.json'),
+  ),
+  ko: () => loadBundle(
+    import('../../../../shared/data/locales/questions.ko.json'),
+    import('../../../../shared/data/locales/types.ko.json'),
+  ),
+  ja: () => loadBundle(
+    import('../../../../shared/data/locales/questions.ja.json'),
+    import('../../../../shared/data/locales/types.ja.json'),
+  ),
+  zh: () => loadBundle(
+    import('../../../../shared/data/locales/questions.zh.json'),
+    import('../../../../shared/data/locales/types.zh.json'),
+  ),
 };
 
-const typeSources: Record<SupportedLocale, PersonalityType[]> = {
-  vi: typesVi as PersonalityType[],
-  en: typesEn as PersonalityType[],
-  ko: typesKo as PersonalityType[],
-  ja: typesJa as PersonalityType[],
-  zh: typesZh as PersonalityType[],
-};
+const localeCache = new Map<SupportedLocale, LocaleBundle>();
+const pendingLoads = new Map<SupportedLocale, Promise<LocaleBundle>>();
+
+async function loadBundle(
+  questionsPromise: Promise<JsonModule<unknown>>,
+  typesPromise: Promise<JsonModule<unknown>>,
+): Promise<LocaleBundle> {
+  const [questions, types] = await Promise.all([questionsPromise, typesPromise]);
+  return {
+    questions: questions.default as LocalizedQuestionSource,
+    types: types.default as PersonalityType[],
+  };
+}
 
 export function normalizeLocale(input: unknown): SupportedLocale {
   if (typeof input !== 'string') {
@@ -49,16 +67,48 @@ export function normalizeLocale(input: unknown): SupportedLocale {
     : 'zh';
 }
 
+export function isLocaleDataLoaded(locale: SupportedLocale): boolean {
+  return localeCache.has(normalizeLocale(locale));
+}
+
+export async function loadLocaleData(locale: SupportedLocale): Promise<void> {
+  const normalized = normalizeLocale(locale);
+  if (localeCache.has(normalized)) {
+    return;
+  }
+
+  let pending = pendingLoads.get(normalized);
+  if (!pending) {
+    pending = localeLoaders[normalized]();
+    pendingLoads.set(normalized, pending);
+  }
+
+  try {
+    localeCache.set(normalized, await pending);
+  } finally {
+    pendingLoads.delete(normalized);
+  }
+}
+
+function getLocaleBundle(locale: SupportedLocale): LocaleBundle {
+  const normalized = normalizeLocale(locale);
+  const bundle = localeCache.get(normalized);
+  if (!bundle) {
+    throw new Error(`Locale data for "${normalized}" has not been loaded.`);
+  }
+  return bundle;
+}
+
 export function getLocalizedQuestions(locale: SupportedLocale): QuestionBank {
-  return questionSources[normalizeLocale(locale)].questions;
+  return getLocaleBundle(locale).questions.questions;
 }
 
 export function getLocalizedQuestionMeta(locale: SupportedLocale): LocalizedQuestionMetaMap {
-  return questionSources[normalizeLocale(locale)].meta;
+  return getLocaleBundle(locale).questions.meta;
 }
 
 export function getLocalizedTypes(locale: SupportedLocale): PersonalityType[] {
-  return typeSources[normalizeLocale(locale)];
+  return getLocaleBundle(locale).types;
 }
 
 export function getLocalizedType(

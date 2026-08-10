@@ -1,10 +1,16 @@
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 
 import {
   getLocalizedQuestions,
   getLocalizedTypes,
+  loadLocaleData,
   normalizeLocale,
+  supportedLocales,
 } from './localeData';
+
+beforeAll(async () => {
+  await Promise.all(supportedLocales.map(loadLocaleData));
+});
 
 describe('localeData', () => {
   it('loads localized question banks for every supported locale', () => {

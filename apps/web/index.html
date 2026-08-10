@@ -1,21 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Trae Project</title>
-    <script type="module">
-      if (import.meta.hot?.on) {
-        import.meta.hot.on('vite:error', (error) => {
-          if (error.err) {
-            console.error(
-              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
-            )
-          }
-        })
-      }
-    </script>
+    <meta name="theme-color" content="#faf9f7" />
+    <meta
+      name="description"
+      content="支持简体中文、英语、日语、韩语和越南语的离线优先 MBTI 性格测试。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MBTI Master" />
+    <meta
+      property="og:description"
+      content="快速版、标准版和完整版五语 MBTI 性格测试，进度与结果仅保存在本地。"
+    />
+    <meta name="twitter:card" content="summary" />
+    <title>MBTI Master｜五语人格测试</title>
   </head>
   <body>
     <div id="root"></div>

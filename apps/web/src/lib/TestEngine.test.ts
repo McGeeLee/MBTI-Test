@@ -1,7 +1,11 @@
 
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeAll, beforeEach } from 'vitest';
 import { TestEngine } from './TestEngine';
-import { getLocalizedTypes } from './localeData';
+import { getLocalizedTypes, loadLocaleData, supportedLocales } from './localeData';
+
+beforeAll(async () => {
+  await Promise.all(supportedLocales.map(loadLocaleData));
+});
 
 // Mock localStorage
 const localStorageMock = (() => {
@@ -20,7 +24,7 @@ const localStorageMock = (() => {
   };
 })();
 
-Object.defineProperty(global, 'localStorage', {
+Object.defineProperty(globalThis, 'localStorage', {
   value: localStorageMock,
   writable: true
 });

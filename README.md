@@ -34,7 +34,7 @@ Flutter 资产目录中的 JSON 是 `shared/data/locales/` 的构建副本。修
 
 ## Web 开发
 
-要求 Node.js 20.19 或更高版本。
+要求 Node.js 26.7.0（仓库中的 `.node-version` 会固定 Cloudflare Pages 和本地版本）。
 
 ```bash
 npm ci
@@ -48,6 +48,22 @@ npm run verify
 ```
 
 该命令会检查共享数据、TypeScript、ESLint、单元测试和生产构建。
+
+## Cloudflare Pages 部署
+
+Web 应用已按 Cloudflare Pages 的 Git 集成方式配置。Pages 项目使用以下构建参数：
+
+| 设置 | 值 |
+| --- | --- |
+| 生产分支 | `main` |
+| 根目录 | `/`（仓库根目录） |
+| 构建命令 | `npm run build` |
+| 构建输出目录 | `apps/web/dist` |
+| 构建系统 | v3 |
+
+Vite 会将 `apps/web/public/_headers` 复制到构建产物，供 Pages 添加安全响应头并长期缓存带哈希的静态资源。项目没有生成顶层 `404.html`，因此 Pages 会按其 SPA 默认行为把深层路由交给 React Router。
+
+推送到 `main` 后会自动发布生产版本；其他分支和仓库内 Pull Request 会生成独立预览部署。
 
 ## Flutter 开发
 
