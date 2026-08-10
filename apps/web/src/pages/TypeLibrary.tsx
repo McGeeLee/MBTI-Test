@@ -36,7 +36,7 @@ export const TypeLibrary: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="clay-kicker"
           >
-            Type atlas
+            {strings.typeLibraryKicker}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -109,7 +109,7 @@ export const TypeLibrary: React.FC = () => {
                         <div className="flex-1" aria-hidden="true"></div>
                       </div>
                       <div className="shrink-0 border-t border-[var(--clay-border)] bg-[var(--clay-bg)] px-6 py-4 text-center text-xs font-black uppercase tracking-[0.18em] text-[var(--clay-text)]">
-                        Open profile
+                        {strings.typeLibraryOpenProfile}
                       </div>
                     </Link>
                   </motion.div>

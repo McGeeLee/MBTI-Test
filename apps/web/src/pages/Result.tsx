@@ -16,6 +16,7 @@ import { BookOpen, RefreshCw, Share2 } from 'lucide-react';
 import { Layout } from '../components/Layout';
 import { TypeIcon } from '../components/icons/TypeIcons';
 import { useLocale } from '../context/LocaleContext';
+import { getStrings } from '../i18n/strings';
 import { LocalStorageManager } from '../lib/LocalStorageManager';
 import { getLocalizedType } from '../lib/localeData';
 import { resolveResultFromHistory } from '../lib/resultLookup';
@@ -28,6 +29,7 @@ export const Result: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { locale } = useLocale();
+  const strings = getStrings(locale).result;
   const [shareState, setShareState] = useState<'idle' | 'copied' | 'unsupported' | 'error'>('idle');
   const typeData = type ? getLocalizedType(locale, type) : null;
   const result = React.useMemo(() => {
@@ -85,14 +87,14 @@ export const Result: React.FC = () => {
   }
 
   const themeColor = typeData.luckyColors?.primary || '#2563eb';
-  const categoryName = typeData.category || 'MBTI Personality';
+  const categoryName = typeData.category || strings.fallbackCategory;
   const dimensionRows = buildDimensionRows(result);
 
   const chartData = {
-    labels: ['Extraversion', 'Sensing', 'Thinking', 'Judging', 'Introversion', 'Intuition', 'Feeling', 'Perceiving'],
+    labels: strings.chartLabels,
     datasets: [
       {
-        label: 'Dimension scores',
+        label: strings.chartDataset,
         data: result
           ? [
               result.scores.E,
@@ -196,7 +198,7 @@ export const Result: React.FC = () => {
                   className="mr-3 h-7 w-2 rounded-full"
                   style={{ backgroundColor: themeColor }}
                 ></span>
-                Score radar
+                {strings.scoreRadar}
               </h3>
               <div className="relative mx-auto aspect-square w-full max-w-md">
                 <Radar data={chartData} options={chartOptions} />
@@ -210,7 +212,7 @@ export const Result: React.FC = () => {
               className="flex flex-col justify-center space-y-6"
             >
               <div className="rounded-[2rem] border border-[var(--clay-border)] bg-white p-6 shadow-[var(--clay-shadow)]">
-                <h3 className="font-black text-[var(--clay-text)]">Dimension verdict</h3>
+                <h3 className="font-black text-[var(--clay-text)]">{strings.dimensionVerdict}</h3>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {dimensionRows.map(({ label, value }) => (
                     <div
@@ -229,7 +231,7 @@ export const Result: React.FC = () => {
               <div className="rounded-[2rem] border border-[var(--clay-border)] bg-white p-6 shadow-[var(--clay-shadow)]">
                 <h3 className="mb-4 flex items-center font-black text-[var(--clay-text)]">
                   <BookOpen size={20} className="mr-2" style={{ color: themeColor }} />
-                  Core traits
+                  {strings.coreTraits}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {typeData.description.traits.map((trait, index) => (
@@ -250,7 +252,7 @@ export const Result: React.FC = () => {
                       className="mr-2 h-2.5 w-2.5 rounded-full"
                       style={{ backgroundColor: themeColor }}
                     ></span>
-                    Notable people
+                    {strings.notablePeople}
                   </h3>
                   <div className="flex items-center gap-4">
                     {typeData.famousPeople.slice(0, 3).map((person, index) => (
@@ -274,28 +276,27 @@ export const Result: React.FC = () => {
                   className="col-span-2 flex items-center justify-center rounded-full border border-black px-5 py-4 text-sm font-black uppercase tracking-[0.14em] text-[var(--clay-text)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:-rotate-2 hover:shadow-[var(--clay-shadow-hard)]"
                   style={{ backgroundColor: themeColor }}
                 >
-                  Open full profile
+                  {strings.openFullProfile}
                 </Link>
                 <button
                   className="clay-button clay-button-secondary !w-full !justify-center !px-4 !py-3"
                   onClick={() => navigate('/')}
                 >
-                  <RefreshCw size={18} className="mr-1" /> Retake
+                  <RefreshCw size={18} className="mr-1" /> {strings.retake}
                 </button>
                 <button
                   type="button"
                   onClick={handleShare}
                   className="clay-button clay-button-ghost !w-full !justify-center !px-4 !py-3"
                 >
-                  <Share2 size={18} className="mr-1" /> Share
+                  <Share2 size={18} className="mr-1" /> {strings.share}
                 </button>
               </div>
               {shareState !== 'idle' && (
                 <p className="text-sm clay-muted">
-                  {shareState === 'copied' && 'Share link copied to clipboard.'}
-                  {shareState === 'unsupported' &&
-                    'Sharing is unavailable here. Copy the URL from your browser bar.'}
-                  {shareState === 'error' && 'Could not share this result. Please try again.'}
+                  {shareState === 'copied' && strings.shareCopied}
+                  {shareState === 'unsupported' && strings.shareUnsupported}
+                  {shareState === 'error' && strings.shareError}
                 </p>
               )}
             </motion.div>

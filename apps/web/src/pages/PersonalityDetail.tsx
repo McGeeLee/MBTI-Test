@@ -13,6 +13,7 @@ import {
 import { Layout } from '../components/Layout';
 import { TypeIcon } from '../components/icons/TypeIcons';
 import { useLocale } from '../context/LocaleContext';
+import { getStrings } from '../i18n/strings';
 import { getLocalizedType } from '../lib/localeData';
 import { buildLuckyColorPalette } from '../lib/typePresentation';
 
@@ -35,6 +36,7 @@ export const PersonalityDetail: React.FC = () => {
   const { typeId } = useParams<{ typeId: string }>();
   const navigate = useNavigate();
   const { locale } = useLocale();
+  const strings = getStrings(locale).typeDetail;
   const typeData = typeId ? getLocalizedType(locale, typeId) : null;
 
   if (!typeData) {
@@ -59,7 +61,7 @@ export const PersonalityDetail: React.FC = () => {
           <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/50 shadow-sm transition-colors group-hover:bg-blue-100">
             <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-0.5" />
           </div>
-          <span className="font-medium">Back to library</span>
+          <span className="font-medium">{strings.backToLibrary}</span>
         </button>
 
         <div className="glass-card relative flex flex-col items-center overflow-hidden rounded-3xl border border-white/60 p-8 shadow-lg md:flex-row md:p-12">
@@ -74,7 +76,7 @@ export const PersonalityDetail: React.FC = () => {
           </div>
           <div className="relative z-10 text-center md:text-left">
             <div className="mb-5 inline-block rounded-full border border-blue-100 bg-blue-50/80 px-4 py-1.5 text-sm font-bold text-blue-700 shadow-sm backdrop-blur-sm">
-              {typeData.category || 'MBTI Type'}
+              {typeData.category || strings.fallbackCategory}
             </div>
             <h1 className="mb-3 text-5xl font-extrabold tracking-tight text-gray-900 md:text-6xl">
               {typeData.id}
@@ -86,7 +88,7 @@ export const PersonalityDetail: React.FC = () => {
 
         <div className="grid gap-6 md:grid-cols-2 md:gap-8">
           <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md">
-            <SectionTitle icon={Star} title="Core traits" />
+            <SectionTitle icon={Star} title={strings.coreTraits} />
             <div className="flex flex-wrap gap-2.5">
               {typeData.description.traits.map((trait, index) => (
                 <span
@@ -100,14 +102,14 @@ export const PersonalityDetail: React.FC = () => {
           </div>
 
           <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md">
-            <SectionTitle icon={Palette} title="Lucky colors" />
+            <SectionTitle icon={Palette} title={strings.luckyColors} />
             <div className="mb-4 flex items-center space-x-5">
               <div
                 className="h-20 w-20 rotate-3 rounded-2xl border-4 border-white shadow-lg transition-transform hover:rotate-6"
                 style={{ backgroundColor: typeData.luckyColors.primary }}
               ></div>
               <div>
-                <span className="block text-lg font-bold text-gray-900">Primary color</span>
+                <span className="block text-lg font-bold text-gray-900">{strings.primaryColor}</span>
                 <span className="rounded border border-gray-100 bg-white/50 px-2 py-0.5 text-sm font-mono text-gray-500">
                   {typeData.luckyColors.primary}
                 </span>
@@ -133,7 +135,7 @@ export const PersonalityDetail: React.FC = () => {
           </div>
 
           <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-2">
-            <SectionTitle icon={Briefcase} title="Career directions" />
+            <SectionTitle icon={Briefcase} title={strings.careerDirections} />
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
               {typeData.description.careers.map((career, index) => (
                 <div
@@ -148,7 +150,7 @@ export const PersonalityDetail: React.FC = () => {
           </div>
 
           <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md">
-            <SectionTitle icon={TrendingUp} title="Strengths" />
+            <SectionTitle icon={TrendingUp} title={strings.strengths} />
             <ul className="space-y-3">
               {typeData.description.strengths.map((item, index) => (
                 <li
@@ -163,7 +165,7 @@ export const PersonalityDetail: React.FC = () => {
           </div>
 
           <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md">
-            <SectionTitle icon={AlertCircle} title="Blind spots" />
+            <SectionTitle icon={AlertCircle} title={strings.blindSpots} />
             <ul className="space-y-3">
               {typeData.description.weaknesses.map((item, index) => (
                 <li
@@ -178,12 +180,12 @@ export const PersonalityDetail: React.FC = () => {
           </div>
 
           <div className="glass-panel rounded-2xl border border-white/50 p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-2">
-            <SectionTitle icon={Heart} title="Relationships" />
+            <SectionTitle icon={Heart} title={strings.relationships} />
             <div className="grid gap-8 md:grid-cols-2">
               <div>
                 <h4 className="mb-3 flex items-center font-bold text-gray-900">
                   <span className="mr-2 h-5 w-1.5 rounded-full bg-pink-500"></span>
-                  Best matches
+                  {strings.bestMatches}
                 </h4>
                 <div className="mb-6 flex flex-wrap gap-3">
                   {typeData.relationships.compatible.map((relatedType) => (
@@ -200,7 +202,7 @@ export const PersonalityDetail: React.FC = () => {
               <div>
                 <h4 className="mb-3 flex items-center font-bold text-gray-900">
                   <span className="mr-2 h-5 w-1.5 rounded-full bg-purple-500"></span>
-                  Getting along
+                  {strings.gettingAlong}
                 </h4>
                 <p className="rounded-2xl border border-white/60 bg-white/60 p-5 leading-relaxed text-gray-600 shadow-inner">
                   {typeData.relationships.advice}
@@ -210,7 +212,7 @@ export const PersonalityDetail: React.FC = () => {
             <div className="mt-8">
               <h4 className="mb-3 flex items-center font-bold text-gray-900">
                 <span className="mr-2 h-5 w-1.5 rounded-full bg-amber-500"></span>
-                Potential friction
+                {strings.potentialFriction}
               </h4>
               <div className="flex flex-wrap gap-3">
                 {typeData.relationships.challenging.map((relatedType) => (
@@ -231,7 +233,7 @@ export const PersonalityDetail: React.FC = () => {
               <div className="mr-3 rounded-xl bg-green-100/50 p-2.5 shadow-sm">
                 <TrendingUp size={20} className="text-green-600" />
               </div>
-              Growth guide
+              {strings.growthGuide}
             </h3>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-emerald-50 p-6">
@@ -239,7 +241,7 @@ export const PersonalityDetail: React.FC = () => {
                   <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-green-200 text-xs">
                     1
                   </span>
-                  Growth path
+                  {strings.growthPath}
                 </h4>
                 <ul className="space-y-3">
                   {typeData.development.growthPath.map((path, index) => (
@@ -255,7 +257,7 @@ export const PersonalityDetail: React.FC = () => {
                   <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-blue-200 text-xs">
                     2
                   </span>
-                  Practical tips
+                  {strings.practicalTips}
                 </h4>
                 <ul className="space-y-3">
                   {typeData.development.tips.map((tip, index) => (
@@ -274,7 +276,7 @@ export const PersonalityDetail: React.FC = () => {
               <div className="mr-3 rounded-xl bg-purple-100/50 p-2.5 shadow-sm">
                 <Star size={20} className="text-purple-600" />
               </div>
-              Notable people with this type
+              {strings.notablePeople}
             </h3>
             <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
               {typeData.famousPeople?.map((person, index) => (

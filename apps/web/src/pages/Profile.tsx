@@ -5,23 +5,27 @@ import { Calendar, ChevronRight, Clock, Trash2, X } from 'lucide-react';
 
 import { Layout } from '../components/Layout';
 import { TypeIcon } from '../components/icons/TypeIcons';
+import { useLocale } from '../context/LocaleContext';
+import { getIntlLocale, getStrings } from '../i18n/strings';
 import { LocalStorageManager } from '../lib/LocalStorageManager';
 import { TestResult } from '../types';
 
 export const Profile: React.FC = () => {
+  const { locale } = useLocale();
+  const strings = getStrings(locale).profile;
   const [history, setHistory] = useState<TestResult[]>(
     () => LocalStorageManager.load().testHistory,
   );
 
   const clearAllHistory = () => {
-    if (confirm('Clear all saved test history? This cannot be undone.')) {
+    if (confirm(strings.clearConfirm)) {
       LocalStorageManager.clearHistory();
       setHistory([]);
     }
   };
 
   const deleteRecord = (id: string) => {
-    if (confirm('Delete this saved result?')) {
+    if (confirm(strings.deleteConfirm)) {
       LocalStorageManager.deleteTestResult(id);
       setHistory((previous) => previous.filter((item) => item.id !== id));
     }
@@ -37,9 +41,9 @@ export const Profile: React.FC = () => {
 
       <div className="mx-auto max-w-4xl space-y-8 px-4 py-8">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
-          <span className="clay-kicker">Memory</span>
+          <span className="clay-kicker">{strings.kicker}</span>
           <h1 className="mt-4 text-4xl font-black tracking-[-0.05em] text-[var(--clay-text)]">
-            Saved results
+            {strings.title}
           </h1>
         </motion.div>
 
@@ -54,7 +58,7 @@ export const Profile: React.FC = () => {
               <div className="mr-3 flex h-11 w-11 items-center justify-center rounded-2xl border border-black clay-swatch-lemon shadow-[var(--clay-shadow)]">
                 <Clock size={20} />
               </div>
-              Test history
+              {strings.history}
             </h2>
             {history.length > 0 && (
               <button
@@ -62,7 +66,7 @@ export const Profile: React.FC = () => {
                 className="inline-flex items-center rounded-full border border-black px-4 py-2 text-sm font-black uppercase tracking-[0.12em] text-[var(--clay-text)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:-rotate-2 hover:shadow-[var(--clay-shadow-hard)]"
                 style={{ backgroundColor: 'var(--clay-pomegranate)' }}
               >
-                <Trash2 size={14} className="mr-2" /> Clear history
+                <Trash2 size={14} className="mr-2" /> {strings.clearHistory}
               </button>
             )}
           </div>
@@ -72,9 +76,9 @@ export const Profile: React.FC = () => {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-[var(--clay-border)] bg-[var(--clay-bg)] text-[var(--clay-muted)]">
                 <Clock size={32} />
               </div>
-              <p className="mb-6 clay-muted">No saved results yet.</p>
+              <p className="mb-6 clay-muted">{strings.empty}</p>
               <Link to="/" className="clay-button clay-button-primary">
-                Start your first test
+                {strings.startFirstTest}
               </Link>
             </div>
           ) : (
@@ -100,12 +104,12 @@ export const Profile: React.FC = () => {
                               {item.resultType}
                             </span>
                             <span className="rounded-full border border-[var(--clay-border)] bg-[var(--clay-bg)] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-[0.16em] clay-muted">
-                              {item.version}
+                              {strings.versionLabels[item.version]}
                             </span>
                           </div>
                           <div className="flex items-center text-xs clay-muted">
                             <Calendar size={12} className="mr-1" />
-                            {new Date(item.timestamp).toLocaleString()}
+                            {new Date(item.timestamp).toLocaleString(getIntlLocale(locale))}
                           </div>
                         </div>
                       </div>
@@ -116,12 +120,13 @@ export const Profile: React.FC = () => {
                           className="inline-flex items-center rounded-full border border-black px-4 py-2 text-sm font-black uppercase tracking-[0.12em] text-[var(--clay-text)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:-rotate-2 hover:shadow-[var(--clay-shadow-hard)]"
                           style={{ backgroundColor: 'var(--clay-matcha)' }}
                         >
-                          View details <ChevronRight size={14} className="ml-1" />
+                          {strings.viewDetails} <ChevronRight size={14} className="ml-1" />
                         </Link>
                         <button
                           onClick={() => deleteRecord(item.id)}
                           className="rounded-full border border-[var(--clay-border)] bg-white p-2 text-[var(--clay-muted)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:shadow-[var(--clay-shadow-hard)] hover:text-[var(--clay-text)]"
-                          title="Delete result"
+                          title={strings.deleteResult}
+                          aria-label={strings.deleteResult}
                         >
                           <X size={18} />
                         </button>

@@ -1,8 +1,9 @@
 import React from 'react';
+import { Check } from 'lucide-react';
 
 import { Layout } from '../components/Layout';
 import { useLocale, supportedLocales } from '../context/LocaleContext';
-import { getLanguageName, getStrings } from '../i18n/strings';
+import { getLanguageName, getLanguageShortName, getStrings } from '../i18n/strings';
 
 export const About: React.FC = () => {
   const { locale, setLocale } = useLocale();
@@ -12,7 +13,7 @@ export const About: React.FC = () => {
     <Layout>
       <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
         <section className="rounded-[2.5rem] border border-[var(--clay-border)] bg-[rgba(255,253,248,0.88)] px-8 py-10 shadow-[var(--clay-shadow)] md:px-10">
-          <span className="clay-kicker">Settings</span>
+          <span className="clay-kicker">{strings.aboutLabels.settings}</span>
           <h1 className="mt-4 text-4xl font-black tracking-[-0.05em] text-[var(--clay-text)] md:text-6xl">
             {strings.aboutTitle}
           </h1>
@@ -21,7 +22,7 @@ export const About: React.FC = () => {
 
         <section className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <div className="glass-card rounded-[2rem] p-8">
-            <span className="clay-kicker">Language</span>
+            <span className="clay-kicker">{strings.aboutLabels.language}</span>
             <h2 className="mt-4 text-3xl font-black text-[var(--clay-text)]">
               {strings.settingsLanguageTitle}
             </h2>
@@ -29,7 +30,7 @@ export const About: React.FC = () => {
               {strings.settingsLanguageSubtitle}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {supportedLocales.map((item) => {
                 const isActive = item === locale;
                 return (
@@ -37,13 +38,20 @@ export const About: React.FC = () => {
                     key={item}
                     type="button"
                     onClick={() => setLocale(item)}
-                    className={`rounded-full border px-5 py-3 text-sm font-black uppercase tracking-[0.12em] transition-all ${
+                    aria-pressed={isActive}
+                    className={`flex min-h-16 items-center justify-between rounded-2xl border px-4 py-3 text-left transition-all ${
                       isActive
                         ? 'border-black clay-swatch-matcha text-[var(--clay-text)] shadow-[var(--clay-shadow)]'
                         : 'border-[var(--clay-border)] bg-white text-[var(--clay-muted)] shadow-[var(--clay-shadow)] hover:-translate-y-1 hover:-rotate-2 hover:text-[var(--clay-text)] hover:shadow-[var(--clay-shadow-hard)]'
                     }`}
                   >
-                    {getLanguageName(item)}
+                    <span className="flex items-center gap-3">
+                      <span className="flex h-9 min-w-9 items-center justify-center rounded-xl border border-black/15 bg-white/70 text-xs font-black tracking-[0.08em]">
+                        {getLanguageShortName(item)}
+                      </span>
+                      <span className="font-black">{getLanguageName(item)}</span>
+                    </span>
+                    {isActive && <Check size={19} aria-hidden="true" />}
                   </button>
                 );
               })}
@@ -51,18 +59,18 @@ export const About: React.FC = () => {
           </div>
 
           <div className="clay-shell rounded-[2rem] p-8">
-            <span className="clay-kicker">Active</span>
+            <span className="clay-kicker">{strings.aboutLabels.active}</span>
             <h2 className="mt-4 text-3xl font-black text-[var(--clay-text)]">
               {getLanguageName(locale)}
             </h2>
             <p className="mt-4 leading-7 clay-muted">
-              The selected language now drives the test bank, result details, and type library.
+              {strings.aboutLabels.activeDescription}
             </p>
           </div>
         </section>
 
         <section className="glass-card rounded-[2rem] p-8">
-          <span className="clay-kicker">MBTI Basics</span>
+          <span className="clay-kicker">{strings.aboutLabels.basics}</span>
           <h2 className="mt-4 text-3xl font-black text-[var(--clay-text)]">
             {strings.aboutAxesTitle}
           </h2>
@@ -81,7 +89,7 @@ export const About: React.FC = () => {
         </section>
 
         <section className="clay-shell rounded-[2rem] p-8">
-          <span className="clay-kicker">Notes</span>
+          <span className="clay-kicker">{strings.aboutLabels.notes}</span>
           <h2 className="mt-4 text-3xl font-black text-[var(--clay-text)]">
             {strings.aboutUsageTitle}
           </h2>

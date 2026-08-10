@@ -12,9 +12,9 @@ import { getLocalizedQuestionMeta } from '../lib/localeData';
 import { VersionId } from '../types';
 
 const versionBase = [
-  { id: 'quick', questions: 28, icon: Zap, swatch: 'clay-swatch-lemon', accent: 'text-[var(--clay-text)]', tag: 'Fast' },
-  { id: 'standard', questions: 93, icon: CheckCircle2, swatch: 'clay-swatch-slushie', accent: 'text-[var(--clay-blueberry)]', tag: 'Recommended' },
-  { id: 'full', questions: 200, icon: ListChecks, swatch: 'clay-swatch-ube', accent: 'text-[var(--clay-ube-deep)]', tag: 'Deep dive' },
+  { id: 'quick', questions: 28, icon: Zap, swatch: 'clay-swatch-lemon', accent: 'text-[var(--clay-text)]' },
+  { id: 'standard', questions: 93, icon: CheckCircle2, swatch: 'clay-swatch-slushie', accent: 'text-[var(--clay-blueberry)]' },
+  { id: 'full', questions: 200, icon: ListChecks, swatch: 'clay-swatch-ube', accent: 'text-[var(--clay-ube-deep)]' },
 ] as const;
 
 const archetypeGroups = [
@@ -62,6 +62,7 @@ export const Home: React.FC = () => {
     title: questionMeta[item.id].title,
     time: questionMeta[item.id].duration,
     desc: questionMeta[item.id].description,
+    tag: strings.home.versionTags[item.id],
   }));
 
   const containerVariants = {
@@ -89,41 +90,39 @@ export const Home: React.FC = () => {
 
           <div className="relative z-10 grid gap-10 xl:grid-cols-[minmax(0,1.15fr)_420px] xl:items-center">
             <motion.div variants={itemVariants} className="space-y-6">
-              <span className="clay-kicker">Clay Edition</span>
+              <span className="clay-kicker">{strings.home.edition}</span>
               <div className="space-y-4">
-                <h1 className="clay-display text-5xl text-[var(--clay-text)] md:text-7xl">
-                  Decode your
-                  <br />
-                  personality pattern
+                <h1 className="clay-display max-w-4xl text-5xl text-[var(--clay-text)] md:text-7xl">
+                  {strings.home.title}
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 clay-muted">
-                  Run a fast snapshot or a deeper pass, then compare the 16 MBTI types in the language you prefer.
+                  {strings.home.subtitle}
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
                 <button onClick={() => handleVersionClick('standard')} className="clay-button clay-button-primary">
-                  Start the test
+                  {strings.home.startTest}
                 </button>
                 <button onClick={() => navigate('/types')} className="clay-button clay-button-secondary">
-                  Browse types
+                  {strings.home.browseTypes}
                 </button>
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <span className="clay-chip text-sm clay-muted">16 personalities</span>
-                <span className="clay-chip text-sm clay-muted">5 languages</span>
-                <span className="clay-chip text-sm clay-muted">saved history</span>
+                <span className="clay-chip text-sm clay-muted">{strings.home.personalityCount}</span>
+                <span className="clay-chip text-sm clay-muted">{strings.home.languageCount}</span>
+                <span className="clay-chip text-sm clay-muted">{strings.home.savedHistory}</span>
               </div>
             </motion.div>
 
             <motion.div variants={itemVariants} className="rounded-[2rem] border border-[var(--clay-border)] bg-white p-6 shadow-[var(--clay-shadow)]">
               <div className="flex items-center justify-between gap-4">
                 <span className="clay-kicker bg-[var(--clay-matcha)] text-[var(--clay-text)]">
-                  MBTI MASTER
+                  {strings.home.masterLabel}
                 </span>
                 <span className="text-xs font-bold uppercase tracking-[0.18em] clay-muted">
-                  Four families
+                  {strings.home.familyCount}
                 </span>
               </div>
 
@@ -151,13 +150,13 @@ export const Home: React.FC = () => {
               <div className="mt-6 rounded-[1.75rem] border border-[var(--clay-border)] bg-[var(--clay-bg)] p-5 shadow-[var(--clay-shadow)]">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <p className="text-sm font-bold uppercase tracking-[0.18em] clay-muted">Standard path</p>
+                    <p className="text-sm font-bold uppercase tracking-[0.12em] clay-muted">{strings.home.standardPath}</p>
                     <h2 className="mt-2 text-2xl font-black text-[var(--clay-text)]">
                       {questionMeta.standard.title}
                     </h2>
                   </div>
                   <button onClick={() => handleVersionClick('standard')} className="clay-button clay-button-ghost !px-5 !py-3 text-sm">
-                    Start
+                    {strings.home.start}
                   </button>
                 </div>
               </div>
@@ -168,13 +167,13 @@ export const Home: React.FC = () => {
         <section className="space-y-6">
           <motion.div variants={itemVariants} className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
-              <span className="clay-kicker">Choose your path</span>
+              <span className="clay-kicker">{strings.home.choosePath}</span>
               <h2 className="mt-4 text-4xl font-black text-[var(--clay-text)]">
-                Pick the test depth that fits today
+                {strings.home.chooseTitle}
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 clay-muted">
-              Each version uses the same scoring model, but changes how much evidence the result gets before it resolves.
+              {strings.home.chooseDescription}
             </p>
           </motion.div>
 
@@ -215,7 +214,7 @@ export const Home: React.FC = () => {
                   }}
                   className="clay-button clay-button-secondary mt-6 w-full justify-center"
                 >
-                  Start test
+                  {strings.home.startTest}
                 </button>
               </motion.div>
             ))}
@@ -224,12 +223,12 @@ export const Home: React.FC = () => {
 
         <section className="grid items-start gap-6 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           <motion.div variants={itemVariants} className="clay-shell rounded-[2.5rem] p-8 md:p-10">
-            <span className="clay-kicker">16 archetypes</span>
+            <span className="clay-kicker">{strings.home.archetypesKicker}</span>
             <h2 className="mt-4 text-4xl font-black text-[var(--clay-text)]">
-              Four groups, sixteen signatures
+              {strings.home.archetypesTitle}
             </h2>
             <p className="mt-4 max-w-2xl text-lg leading-8 clay-muted">
-              The type library now follows your selected language, so you can compare the full set without switching apps.
+              {strings.home.archetypesDescription}
             </p>
 
             <div className="mt-8 grid gap-4">
@@ -254,7 +253,7 @@ export const Home: React.FC = () => {
             </div>
 
             <button onClick={() => navigate('/types')} className="clay-button clay-button-ghost mt-8">
-              Open the library
+              {strings.home.openLibrary}
             </button>
           </motion.div>
 
@@ -299,24 +298,24 @@ export const Home: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.2em] clay-muted">
-                    Resume session
+                    {strings.home.resumeKicker}
                   </p>
                   <h3 className="text-2xl font-black text-[var(--clay-text)]">
-                    Continue {questionMeta[resumeDialog.version].title}
+                    {strings.home.resumeTitle} {questionMeta[resumeDialog.version].title}
                   </h3>
                 </div>
               </div>
 
               <p className="mt-6 text-base leading-7 clay-muted">
-                There is unfinished progress saved for this test version. You can continue where you left off or restart from question one.
+                {strings.home.resumeDescription}
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <button onClick={handleRestart} className="clay-button clay-button-secondary w-full justify-center">
-                  Restart
+                  {strings.home.restart}
                 </button>
                 <button onClick={handleResume} className="clay-button clay-button-primary w-full justify-center">
-                  Resume
+                  {strings.home.resume}
                 </button>
               </div>
             </motion.div>

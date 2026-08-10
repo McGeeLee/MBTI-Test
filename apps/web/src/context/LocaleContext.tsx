@@ -3,6 +3,7 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 
 import { SupportedLocale } from '../types';
 import { LocalStorageManager } from '../lib/LocalStorageManager';
+import { getIntlLocale, getStrings } from '../i18n/strings';
 import {
   isLocaleDataLoaded,
   loadLocaleData,
@@ -33,14 +34,15 @@ export const LocaleProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         setLoadError(false);
         setLocaleState(normalized);
         LocalStorageManager.saveLanguage(normalized);
-        document.documentElement.lang = normalized;
+        document.documentElement.lang = getIntlLocale(normalized);
       },
     }),
     [locale],
   );
 
   React.useEffect(() => {
-    document.documentElement.lang = locale;
+    document.documentElement.lang = getIntlLocale(locale);
+    document.title = getStrings(locale).common.pageTitle;
   }, [locale]);
 
   React.useEffect(() => {
@@ -60,21 +62,25 @@ export const LocaleProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   return (
     <LocaleContext.Provider value={value}>
-      {loadedLocale === locale ? children : <LocaleLoadingState hasError={loadError} />}
+      {loadedLocale === locale ? children : <LocaleLoadingState hasError={loadError} locale={locale} />}
     </LocaleContext.Provider>
   );
 };
 
-const LocaleLoadingState: React.FC<{ hasError: boolean }> = ({ hasError }) => (
-  <main className="flex min-h-screen items-center justify-center bg-[var(--clay-bg)] px-6 text-center">
-    <div aria-live="polite" className="clay-shell max-w-md p-8">
-      <div className="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-4 border-[var(--clay-border)] border-t-[var(--clay-blueberry)]" />
-      <p className="font-semibold text-[var(--clay-text)]">
-        {hasError ? 'Unable to load language data. Please refresh and try again.' : 'Loading language data…'}
-      </p>
-    </div>
-  </main>
-);
+const LocaleLoadingState: React.FC<{ hasError: boolean; locale: SupportedLocale }> = ({ hasError, locale }) => {
+  const strings = getStrings(locale).common;
+
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-[var(--clay-bg)] px-6 text-center">
+      <div aria-live="polite" className="clay-shell max-w-md p-8">
+        <div className="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-4 border-[var(--clay-border)] border-t-[var(--clay-blueberry)]" />
+        <p className="font-semibold text-[var(--clay-text)]">
+          {hasError ? strings.languageLoadError : strings.loadingLanguage}
+        </p>
+      </div>
+    </main>
+  );
+};
 
 export function useLocale(): LocaleContextValue {
   const context = useContext(LocaleContext);

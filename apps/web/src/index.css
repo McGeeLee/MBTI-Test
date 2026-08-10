@@ -32,6 +32,22 @@
   font-feature-settings: "ss03" 1, "ss10" 1, "ss11" 1, "ss12" 1;
 }
 
+html[lang^="zh"] {
+  font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+html[lang^="ja"] {
+  font-family: "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", "Segoe UI", sans-serif;
+}
+
+html[lang^="ko"] {
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Segoe UI", sans-serif;
+}
+
+html[lang^="vi"] {
+  font-family: "Avenir Next", "Segoe UI", "Noto Sans", Arial, sans-serif;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -43,6 +59,13 @@ body {
     radial-gradient(circle at bottom left, rgba(193, 176, 255, 0.16), transparent 22%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(250, 249, 247, 0.98));
   color: var(--clay-text);
+}
+
+h1,
+h2,
+h3 {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 #root {
@@ -227,6 +250,24 @@ body {
   letter-spacing: -0.05em;
   line-height: 0.95;
   font-feature-settings: "ss01" 1, "ss03" 1, "ss10" 1, "ss11" 1, "ss12" 1;
+}
+
+html[lang^="zh"] .clay-display,
+html[lang^="ja"] .clay-display,
+html[lang^="ko"] .clay-display {
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+html[lang^="vi"] .clay-display {
+  letter-spacing: -0.04em;
+  line-height: 1.04;
+}
+
+html[lang^="zh"] .clay-kicker,
+html[lang^="ja"] .clay-kicker,
+html[lang^="ko"] .clay-kicker {
+  letter-spacing: 0.04em;
 }
 
 .clay-muted {

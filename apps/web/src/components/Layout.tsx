@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Home, Menu, User, X } from 'lucide-react';
+import { BookOpen, Home, Languages, Menu, User, X } from 'lucide-react';
+
+import { useLocale } from '../context/LocaleContext';
+import { getLanguageName, getLanguageShortName, getStrings } from '../i18n/strings';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
+  const { locale } = useLocale();
+  const strings = getStrings(locale);
+  const nav = strings.navigation;
   const [mobileMenuPath, setMobileMenuPath] = React.useState<string | null>(null);
   const mobileOpen = mobileMenuPath === location.pathname;
 
@@ -21,7 +27,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-[var(--clay-muted)]">
-                Personality Lab
+                {nav.brandEyebrow}
               </span>
               <span className="text-xl font-extrabold uppercase tracking-[0.08em] text-[var(--clay-text)]">
                 MBTI Master
@@ -29,16 +35,29 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
           </Link>
 
-          <nav className="hidden items-center space-x-4 md:flex">
-            <NavLink to="/" icon={Home} label="Home" isActive={location.pathname === '/'} />
-            <NavLink to="/types" icon={BookOpen} label="Types" isActive={location.pathname === '/types'} />
-            <NavLink to="/profile" icon={User} label="Profile" isActive={location.pathname === '/profile'} />
+          <nav className="hidden items-center gap-1 md:flex lg:gap-3" aria-label={nav.home}>
+            <NavLink to="/" icon={Home} label={nav.home} isActive={location.pathname === '/'} />
+            <NavLink to="/types" icon={BookOpen} label={nav.types} isActive={location.pathname.startsWith('/type')} />
+            <NavLink to="/profile" icon={User} label={nav.profile} isActive={location.pathname === '/profile'} />
+            <Link
+              to="/about"
+              aria-label={`${nav.language}: ${getLanguageName(locale)}`}
+              title={`${nav.language}: ${getLanguageName(locale)}`}
+              className={`flex h-11 min-w-11 items-center justify-center gap-2 rounded-full border px-3 font-black transition-all ${
+                location.pathname === '/about'
+                  ? 'border-black bg-[var(--clay-lemon)] text-[var(--clay-text)] shadow-[var(--clay-shadow)]'
+                  : 'border-[var(--clay-border)] bg-white text-[var(--clay-muted)] hover:-translate-y-1 hover:shadow-[var(--clay-shadow-hard)]'
+              }`}
+            >
+              <Languages size={18} />
+              <span className="text-xs tracking-[0.08em]">{getLanguageShortName(locale)}</span>
+            </Link>
           </nav>
 
           <div className="flex items-center md:hidden">
             <button
               type="button"
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-label={mobileOpen ? nav.closeMenu : nav.openMenu}
               className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--clay-border)] bg-white text-[var(--clay-text)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:-rotate-3 hover:shadow-[var(--clay-shadow-hard)]"
               onClick={() => setMobileMenuPath(mobileOpen ? null : location.pathname)}
             >
@@ -54,22 +73,29 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <MobileNavLink
                   to="/"
                   icon={Home}
-                  label="Home"
+                  label={nav.home}
                   isActive={location.pathname === '/'}
                   onClick={() => setMobileMenuPath(null)}
                 />
                 <MobileNavLink
                   to="/types"
                   icon={BookOpen}
-                  label="Types"
-                  isActive={location.pathname === '/types'}
+                  label={nav.types}
+                  isActive={location.pathname.startsWith('/type')}
                   onClick={() => setMobileMenuPath(null)}
                 />
                 <MobileNavLink
                   to="/profile"
                   icon={User}
-                  label="Profile"
+                  label={nav.profile}
                   isActive={location.pathname === '/profile'}
+                  onClick={() => setMobileMenuPath(null)}
+                />
+                <MobileNavLink
+                  to="/about"
+                  icon={Languages}
+                  label={`${nav.language} · ${getLanguageName(locale)}`}
+                  isActive={location.pathname === '/about'}
                   onClick={() => setMobileMenuPath(null)}
                 />
               </div>
@@ -87,22 +113,22 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <div className="flex flex-col items-center justify-between gap-5 md:flex-row">
             <div className="text-center md:text-left">
               <span className="text-lg font-bold text-[var(--clay-text)]">MBTI Master</span>
-              <p className="mt-1 text-sm clay-muted">Know yourself. Spot the pattern.</p>
+              <p className="mt-1 text-sm clay-muted">{nav.tagline}</p>
             </div>
             <div className="flex space-x-6 text-sm clay-muted">
               <Link to="/about" className="transition-colors hover:text-[var(--clay-text)]">
-                Language
+                {nav.language}
               </Link>
               <Link to="/types" className="transition-colors hover:text-[var(--clay-text)]">
-                Types
+                {nav.types}
               </Link>
               <Link to="/privacy" className="transition-colors hover:text-[var(--clay-text)]">
-                Privacy
+                {nav.privacy}
               </Link>
             </div>
           </div>
           <div className="mt-8 text-center text-xs clay-muted">
-            © {new Date().getFullYear()} MBTI Master. Based on Jungian Psychology.
+            © {new Date().getFullYear()} MBTI Master. {nav.copyright}
           </div>
         </div>
       </footer>
@@ -123,6 +149,7 @@ const NavLink = ({
 }) => (
   <Link
     to={to}
+    aria-label={label}
     className={`flex items-center space-x-1.5 rounded-full border px-4 py-2.5 transition-all duration-200 ${
       isActive
         ? 'border-black bg-[var(--clay-matcha)] font-semibold text-[var(--clay-text)] shadow-[var(--clay-shadow)]'
@@ -130,7 +157,7 @@ const NavLink = ({
     }`}
   >
     <Icon size={18} strokeWidth={isActive ? 2.5 : 2} />
-    <span>{label}</span>
+    <span className="hidden lg:inline">{label}</span>
   </Link>
 );
 
