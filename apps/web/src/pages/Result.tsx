@@ -273,6 +273,7 @@ export const Result: React.FC = () => {
               <div className="grid grid-cols-2 gap-4">
                 <Link
                   to={`/type/${typeData.id}`}
+                  viewTransition
                   className="col-span-2 flex items-center justify-center rounded-full border border-black px-5 py-4 text-sm font-black uppercase tracking-[0.14em] text-[var(--clay-text)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:-rotate-2 hover:shadow-[var(--clay-shadow-hard)]"
                   style={{ backgroundColor: themeColor }}
                 >
@@ -280,7 +281,7 @@ export const Result: React.FC = () => {
                 </Link>
                 <button
                   className="clay-button clay-button-secondary !w-full !justify-center !px-4 !py-3"
-                  onClick={() => navigate('/')}
+                  onClick={() => navigate('/', { viewTransition: true })}
                 >
                   <RefreshCw size={18} className="mr-1" /> {strings.retake}
                 </button>

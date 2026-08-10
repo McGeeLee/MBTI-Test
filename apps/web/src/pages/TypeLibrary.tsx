@@ -90,6 +90,7 @@ export const TypeLibrary: React.FC = () => {
                   >
                     <Link
                       to={`/type/${type.id}`}
+                      viewTransition
                       className="flex h-full min-h-[28rem] flex-col overflow-hidden rounded-[2rem] border border-[var(--clay-border)] bg-white shadow-[var(--clay-shadow)] transition-all hover:-rotate-1 hover:shadow-[var(--clay-shadow-hard)] lg:min-h-[29rem] xl:min-h-[31rem]"
                     >
                       <div className={`h-3 w-full shrink-0 ${group.tone}`}></div>

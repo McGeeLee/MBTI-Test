@@ -71,7 +71,7 @@ const LocaleLoadingState: React.FC<{ hasError: boolean; locale: SupportedLocale 
   const strings = getStrings(locale).common;
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[var(--clay-bg)] px-6 text-center">
+    <main className="site-root flex items-center justify-center bg-[var(--clay-bg)] px-6 text-center">
       <div aria-live="polite" className="clay-shell max-w-md p-8">
         <div className="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-4 border-[var(--clay-border)] border-t-[var(--clay-blueberry)]" />
         <p className="font-semibold text-[var(--clay-text)]">

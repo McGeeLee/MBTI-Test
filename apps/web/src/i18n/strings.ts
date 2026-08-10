@@ -26,6 +26,7 @@ interface NavigationText {
   profile: string;
   language: string;
   privacy: string;
+  skipToContent: string;
   openMenu: string;
   closeMenu: string;
   tagline: string;
@@ -86,6 +87,8 @@ interface ProfileText {
   startFirstTest: string;
   viewDetails: string;
   deleteResult: string;
+  cancel: string;
+  confirm: string;
   versionLabels: Record<VersionId, string>;
 }
 
@@ -188,6 +191,7 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       profile: 'Kết quả đã lưu',
       language: 'Ngôn ngữ',
       privacy: 'Quyền riêng tư',
+      skipToContent: 'Chuyển đến nội dung chính',
       openMenu: 'Mở trình đơn',
       closeMenu: 'Đóng trình đơn',
       tagline: 'Hiểu mình hơn. Nhìn rõ quy luật.',
@@ -244,6 +248,8 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       startFirstTest: 'Làm bài test đầu tiên',
       viewDetails: 'Xem chi tiết',
       deleteResult: 'Xóa kết quả',
+      cancel: 'Hủy',
+      confirm: 'Xác nhận',
       versionLabels: { quick: 'Nhanh', standard: 'Tiêu chuẩn', full: 'Đầy đủ' },
     },
     privacy: {
@@ -356,6 +362,7 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       profile: 'Saved results',
       language: 'Language',
       privacy: 'Privacy',
+      skipToContent: 'Skip to main content',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
       tagline: 'Know yourself. Spot the pattern.',
@@ -412,6 +419,8 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       startFirstTest: 'Start your first test',
       viewDetails: 'View details',
       deleteResult: 'Delete result',
+      cancel: 'Cancel',
+      confirm: 'Confirm',
       versionLabels: { quick: 'Quick', standard: 'Standard', full: 'Full' },
     },
     privacy: {
@@ -523,6 +532,7 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       profile: '저장된 결과',
       language: '언어',
       privacy: '개인정보',
+      skipToContent: '본문으로 건너뛰기',
       openMenu: '메뉴 열기',
       closeMenu: '메뉴 닫기',
       tagline: '나를 알고, 패턴을 발견하세요.',
@@ -579,6 +589,8 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       startFirstTest: '첫 검사 시작하기',
       viewDetails: '상세 보기',
       deleteResult: '결과 삭제',
+      cancel: '취소',
+      confirm: '확인',
       versionLabels: { quick: '빠른 검사', standard: '표준 검사', full: '전체 검사' },
     },
     privacy: {
@@ -688,6 +700,7 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       profile: '保存した結果',
       language: '言語',
       privacy: 'プライバシー',
+      skipToContent: 'メインコンテンツへ移動',
       openMenu: 'メニューを開く',
       closeMenu: 'メニューを閉じる',
       tagline: '自分を知り、パターンを見つける。',
@@ -744,6 +757,8 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       startFirstTest: '最初の診断を始める',
       viewDetails: '詳細を見る',
       deleteResult: '結果を削除',
+      cancel: 'キャンセル',
+      confirm: '確認',
       versionLabels: { quick: 'クイック', standard: '標準', full: '完全版' },
     },
     privacy: {
@@ -853,6 +868,7 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       profile: '历史结果',
       language: '语言',
       privacy: '隐私',
+      skipToContent: '跳到主要内容',
       openMenu: '打开菜单',
       closeMenu: '关闭菜单',
       tagline: '认识自己，看见模式。',
@@ -909,6 +925,8 @@ const localeStrings: Record<SupportedLocale, LocaleStrings> = {
       startFirstTest: '开始第一次测试',
       viewDetails: '查看详情',
       deleteResult: '删除结果',
+      cancel: '取消',
+      confirm: '确认',
       versionLabels: { quick: '快速版', standard: '标准版', full: '完整版' },
     },
     privacy: {

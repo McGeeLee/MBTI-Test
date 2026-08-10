@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Calendar, ChevronRight, Clock, Trash2, X } from 'lucide-react';
 
 import { Layout } from '../components/Layout';
+import { ModalDialog } from '../components/ModalDialog';
 import { TypeIcon } from '../components/icons/TypeIcons';
 import { useLocale } from '../context/LocaleContext';
 import { getIntlLocale, getStrings } from '../i18n/strings';
@@ -16,19 +17,29 @@ export const Profile: React.FC = () => {
   const [history, setHistory] = useState<TestResult[]>(
     () => LocalStorageManager.load().testHistory,
   );
+  const [pendingAction, setPendingAction] = useState<
+    { kind: 'clear' } | { kind: 'delete'; id: string } | null
+  >(null);
 
   const clearAllHistory = () => {
-    if (confirm(strings.clearConfirm)) {
-      LocalStorageManager.clearHistory();
-      setHistory([]);
-    }
+    setPendingAction({ kind: 'clear' });
   };
 
   const deleteRecord = (id: string) => {
-    if (confirm(strings.deleteConfirm)) {
+    setPendingAction({ kind: 'delete', id });
+  };
+
+  const confirmPendingAction = () => {
+    if (pendingAction?.kind === 'clear') {
+      LocalStorageManager.clearHistory();
+      setHistory([]);
+    } else if (pendingAction?.kind === 'delete') {
+      const id = pendingAction.id;
       LocalStorageManager.deleteTestResult(id);
       setHistory((previous) => previous.filter((item) => item.id !== id));
     }
+
+    setPendingAction(null);
   };
 
   return (
@@ -77,7 +88,7 @@ export const Profile: React.FC = () => {
                 <Clock size={32} />
               </div>
               <p className="mb-6 clay-muted">{strings.empty}</p>
-              <Link to="/" className="clay-button clay-button-primary">
+              <Link to="/" viewTransition className="clay-button clay-button-primary">
                 {strings.startFirstTest}
               </Link>
             </div>
@@ -117,6 +128,7 @@ export const Profile: React.FC = () => {
                         <Link
                           to={`/result/${item.resultType}?resultId=${encodeURIComponent(item.id)}`}
                           state={{ resultId: item.id }}
+                          viewTransition
                           className="inline-flex items-center rounded-full border border-black px-4 py-2 text-sm font-black uppercase tracking-[0.12em] text-[var(--clay-text)] shadow-[var(--clay-shadow)] transition-all hover:-translate-y-1 hover:-rotate-2 hover:shadow-[var(--clay-shadow-hard)]"
                           style={{ backgroundColor: 'var(--clay-matcha)' }}
                         >
@@ -139,6 +151,37 @@ export const Profile: React.FC = () => {
           )}
         </motion.div>
       </div>
+
+      <ModalDialog
+        open={Boolean(pendingAction)}
+        onRequestClose={() => setPendingAction(null)}
+        labelledBy="history-confirmation-title"
+      >
+        <div className="w-full max-w-md rounded-[2rem] border border-[var(--clay-border)] bg-[var(--clay-paper)] p-6 shadow-[var(--clay-shadow-hard)]">
+          <h2 id="history-confirmation-title" className="text-2xl font-black text-[var(--clay-text)]">
+            {pendingAction?.kind === 'clear' ? strings.clearHistory : strings.deleteResult}
+          </h2>
+          <p className="mt-4 text-base leading-7 clay-muted">
+            {pendingAction?.kind === 'clear' ? strings.clearConfirm : strings.deleteConfirm}
+          </p>
+          <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row">
+            <button
+              type="button"
+              onClick={() => setPendingAction(null)}
+              className="clay-button clay-button-secondary w-full justify-center"
+            >
+              {strings.cancel}
+            </button>
+            <button
+              type="button"
+              onClick={confirmPendingAction}
+              className="clay-button w-full justify-center bg-[var(--clay-pomegranate)] text-[var(--clay-text)]"
+            >
+              {strings.confirm}
+            </button>
+          </div>
+        </div>
+      </ModalDialog>
     </Layout>
   );
 };

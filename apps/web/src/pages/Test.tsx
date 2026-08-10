@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { useLocale } from '../context/LocaleContext';
@@ -68,6 +68,7 @@ const TestSession: React.FC<TestSessionProps> = ({ version, locale }) => {
   const [engine] = useState(() => createTestEngine(version, locale));
   const [view, setView] = useState<TestViewState>(() => readTestView(engine, 0));
   const [selectedOption, setSelectedOption] = useState<'A' | 'B' | null>(null);
+  const answerTimerRef = useRef<number | null>(null);
   const { currentQuestion, progress, page, direction, totalQuestions, prevAnswer } = view;
 
   const updateState = useCallback((currentEngine: TestEngine) => {
@@ -91,6 +92,7 @@ const TestSession: React.FC<TestSessionProps> = ({ version, locale }) => {
           navigate(`/result/${result.resultType}?resultId=${encodeURIComponent(result.id)}`, {
             replace: true,
             state: { resultId: result.id },
+            viewTransition: true,
           });
         } catch (error) {
           console.error('Error calculating result:', error);
@@ -116,11 +118,15 @@ const TestSession: React.FC<TestSessionProps> = ({ version, locale }) => {
     if (selectedOption || !currentQuestion) return;
     setSelectedOption(choice);
     const qId = currentQuestion.id;
-    setTimeout(() => {
+    answerTimerRef.current = window.setTimeout(() => {
       handleAnswer(qId, choice);
       setSelectedOption(null);
     }, 350);
   }, [handleAnswer, selectedOption, currentQuestion]);
+
+  useEffect(() => () => {
+    if (answerTimerRef.current !== null) window.clearTimeout(answerTimerRef.current);
+  }, []);
 
   const handlePrev = useCallback(() => {
     engine.previousQuestion();
@@ -136,11 +142,33 @@ const TestSession: React.FC<TestSessionProps> = ({ version, locale }) => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedOption) return;
-      if (['a', 'A', '1'].includes(e.key)) handleOptionSelect('A');
-      if (['b', 'B', '2'].includes(e.key)) handleOptionSelect('B');
-      if (e.key === 'ArrowLeft') handlePrev();
-      if (e.key === 'ArrowRight') handleNext();
+      const target = e.target as HTMLElement | null;
+      if (
+        selectedOption ||
+        e.defaultPrevented ||
+        e.repeat ||
+        e.isComposing ||
+        e.altKey ||
+        e.ctrlKey ||
+        e.metaKey ||
+        target?.matches('input, textarea, select, [contenteditable="true"]')
+      ) {
+        return;
+      }
+
+      if (['a', 'A', '1'].includes(e.key)) {
+        e.preventDefault();
+        handleOptionSelect('A');
+      } else if (['b', 'B', '2'].includes(e.key)) {
+        e.preventDefault();
+        handleOptionSelect('B');
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrev();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleNext();
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);

@@ -29,7 +29,11 @@
   -moz-osx-font-smoothing: grayscale;
   color: var(--clay-text);
   background-color: var(--clay-bg);
+  color-scheme: light;
   font-feature-settings: "ss03" 1, "ss10" 1, "ss11" 1, "ss12" 1;
+  scroll-padding-top: calc(6rem + env(safe-area-inset-top, 0px));
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 html[lang^="zh"] {
@@ -52,6 +56,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--clay-bg);
   background-image: 
     radial-gradient(circle at top left, rgba(248, 204, 101, 0.18), transparent 24%),
@@ -59,6 +64,7 @@ body {
     radial-gradient(circle at bottom left, rgba(193, 176, 255, 0.16), transparent 22%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(250, 249, 247, 0.98));
   color: var(--clay-text);
+  -webkit-tap-highlight-color: rgba(193, 176, 255, 0.28);
 }
 
 h1,
@@ -68,8 +74,132 @@ h3 {
   text-wrap: balance;
 }
 
+p,
+li {
+  text-wrap: pretty;
+}
+
 #root {
   min-height: 100vh;
+  min-height: 100dvh;
+}
+
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+button {
+  font: inherit;
+}
+
+@supports (scrollbar-gutter: stable) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+.site-root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.site-header {
+  padding-top: env(safe-area-inset-top, 0px);
+  view-transition-name: site-header;
+}
+
+.site-header-inner {
+  height: 5rem;
+}
+
+.safe-inline {
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+}
+
+.site-main {
+  padding-top: calc(6rem + env(safe-area-inset-top, 0px));
+}
+
+.site-footer {
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  view-transition-name: site-footer;
+}
+
+.skip-link {
+  position: fixed;
+  top: calc(0.75rem + env(safe-area-inset-top, 0px));
+  left: max(0.75rem, env(safe-area-inset-left, 0px));
+  z-index: 100;
+  translate: 0 -180%;
+  border: 2px solid var(--clay-text);
+  border-radius: 999px;
+  background: var(--clay-lemon);
+  color: var(--clay-text);
+  padding: 0.7rem 1rem;
+  font-weight: 800;
+  box-shadow: var(--clay-shadow-hard);
+  transition: translate 160ms ease;
+}
+
+.skip-link:focus-visible {
+  translate: 0;
+  outline: 2px solid var(--clay-blueberry);
+  outline-offset: 2px;
+}
+
+.mobile-navigation-popover {
+  position: fixed;
+  inset: calc(5rem + env(safe-area-inset-top, 0px)) 0 0;
+  width: 100%;
+  height: calc(100dvh - 5rem - env(safe-area-inset-top, 0px));
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(19, 19, 19, 0.14);
+  color: var(--clay-text);
+  backdrop-filter: blur(2px);
+  overscroll-behavior: contain;
+}
+
+.mobile-navigation-panel {
+  border-top: 1px solid var(--clay-border);
+  border-bottom: 1px solid var(--clay-border);
+  background: rgba(255, 253, 248, 0.98);
+  box-shadow: 0 18px 40px rgba(19, 19, 19, 0.14);
+}
+
+.mobile-navigation-popover::backdrop {
+  background: transparent;
+  pointer-events: none;
+}
+
+.native-dialog {
+  width: calc(100% - 2rem);
+  max-width: 28rem;
+  max-height: calc(100dvh - 2rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  overscroll-behavior: contain;
+}
+
+.native-dialog::backdrop {
+  background: rgba(19, 19, 19, 0.38);
+  backdrop-filter: blur(5px);
+}
+
+html:has(.native-dialog[open]) {
+  overflow: hidden;
 }
 
 ::selection {
@@ -110,12 +240,6 @@ h3 {
     box-shadow 0.2s ease,
     border-color 0.2s ease,
     background-color 0.2s ease;
-}
-
-.glass-card:hover {
-  transform: translate(-3px, -3px) rotate(-0.4deg);
-  box-shadow: var(--clay-shadow-hard);
-  border-color: #bfb8aa;
 }
 
 .clay-shell {
@@ -174,11 +298,6 @@ h3 {
     color 0.18s ease;
 }
 
-.clay-button:hover {
-  transform: translate(-3px, -6px) rotate(-4deg);
-  box-shadow: var(--clay-shadow-hard);
-}
-
 .clay-button:focus-visible {
   outline: 2px solid rgb(20, 110, 245);
   outline-offset: 2px;
@@ -189,18 +308,9 @@ h3 {
   color: var(--clay-text);
 }
 
-.clay-button-primary:hover {
-  background: var(--clay-pomegranate);
-  color: white;
-}
-
 .clay-button-secondary {
   background: white;
   color: var(--clay-text);
-}
-
-.clay-button-secondary:hover {
-  background: var(--clay-slushie);
 }
 
 .clay-button-ghost {
@@ -208,9 +318,31 @@ h3 {
   color: var(--clay-text);
 }
 
-.clay-button-ghost:hover {
-  background: var(--clay-ube-deep);
-  color: white;
+@media (hover: hover) and (pointer: fine) {
+  .glass-card:hover {
+    transform: translate(-3px, -3px) rotate(-0.4deg);
+    box-shadow: var(--clay-shadow-hard);
+    border-color: #bfb8aa;
+  }
+
+  .clay-button:hover {
+    transform: translate(-3px, -6px) rotate(-4deg);
+    box-shadow: var(--clay-shadow-hard);
+  }
+
+  .clay-button-primary:hover {
+    background: var(--clay-pomegranate);
+    color: white;
+  }
+
+  .clay-button-secondary:hover {
+    background: var(--clay-slushie);
+  }
+
+  .clay-button-ghost:hover {
+    background: var(--clay-ube-deep);
+    color: white;
+  }
 }
 
 .clay-swatch-matcha {
@@ -299,4 +431,47 @@ html[lang^="ko"] .clay-kicker {
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+::view-transition-old(root) {
+  animation: browser-page-out 120ms ease-out both;
+}
+
+::view-transition-new(root) {
+  animation: browser-page-in 180ms ease-out both;
+}
+
+::view-transition-group(site-header),
+::view-transition-group(site-footer) {
+  animation-duration: 180ms;
+}
+
+@keyframes browser-page-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes browser-page-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-group(site-header),
+  ::view-transition-group(site-footer) {
+    animation: none !important;
+  }
 }

@@ -34,7 +34,7 @@ function App() {
 }
 
 const RouteLoadingState = () => (
-  <main className="flex min-h-screen items-center justify-center bg-[var(--clay-bg)]">
+  <main className="site-root flex items-center justify-center bg-[var(--clay-bg)]">
     <div className="h-10 w-10 animate-spin rounded-full border-4 border-[var(--clay-border)] border-t-[var(--clay-blueberry)]" />
   </main>
 );

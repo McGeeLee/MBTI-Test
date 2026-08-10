@@ -55,7 +55,7 @@ export const PersonalityDetail: React.FC = () => {
 
       <div className="mx-auto max-w-4xl space-y-8 px-4 py-8">
         <button
-          onClick={() => navigate('/types')}
+          onClick={() => navigate('/types', { viewTransition: true })}
           className="group flex items-center text-gray-500 transition-colors hover:text-blue-600"
         >
           <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/50 shadow-sm transition-colors group-hover:bg-blue-100">
@@ -192,6 +192,7 @@ export const PersonalityDetail: React.FC = () => {
                     <Link
                       key={relatedType}
                       to={`/type/${relatedType}`}
+                      viewTransition
                       className="rounded-full border border-pink-100 bg-pink-50 px-4 py-1.5 font-bold text-pink-700 shadow-sm transition-colors hover:bg-pink-100"
                     >
                       {relatedType}
@@ -219,6 +220,7 @@ export const PersonalityDetail: React.FC = () => {
                   <Link
                     key={relatedType}
                     to={`/type/${relatedType}`}
+                    viewTransition
                     className="rounded-full border border-amber-100 bg-amber-50 px-4 py-1.5 font-bold text-amber-700 shadow-sm transition-colors hover:bg-amber-100"
                   >
                     {relatedType}

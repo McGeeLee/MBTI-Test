@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { AlertCircle, CheckCircle2, ListChecks, Timer, Zap } from 'lucide-react';
 
 import { Layout } from '../components/Layout';
+import { ModalDialog } from '../components/ModalDialog';
 import { TypeIcon } from '../components/icons/TypeIcons';
 import { useLocale } from '../context/LocaleContext';
 import { getStrings } from '../i18n/strings';
@@ -41,19 +42,19 @@ export const Home: React.FC = () => {
       return;
     }
 
-    navigate(`/test/${versionId}`);
+    navigate(`/test/${versionId}`, { viewTransition: true });
   };
 
   const handleResume = () => {
     if (!resumeDialog.version) return;
-    navigate(`/test/${resumeDialog.version}?resume=true`);
+    navigate(`/test/${resumeDialog.version}?resume=true`, { viewTransition: true });
     setResumeDialog({ isOpen: false, version: null });
   };
 
   const handleRestart = () => {
     if (!resumeDialog.version) return;
     LocalStorageManager.clearCurrentTest(resumeDialog.version);
-    navigate(`/test/${resumeDialog.version}`);
+    navigate(`/test/${resumeDialog.version}`, { viewTransition: true });
     setResumeDialog({ isOpen: false, version: null });
   };
 
@@ -104,7 +105,7 @@ export const Home: React.FC = () => {
                 <button onClick={() => handleVersionClick('standard')} className="clay-button clay-button-primary">
                   {strings.home.startTest}
                 </button>
-                <button onClick={() => navigate('/types')} className="clay-button clay-button-secondary">
+                <button onClick={() => navigate('/types', { viewTransition: true })} className="clay-button clay-button-secondary">
                   {strings.home.browseTypes}
                 </button>
               </div>
@@ -252,7 +253,7 @@ export const Home: React.FC = () => {
               })}
             </div>
 
-            <button onClick={() => navigate('/types')} className="clay-button clay-button-ghost mt-8">
+            <button onClick={() => navigate('/types', { viewTransition: true })} className="clay-button clay-button-ghost mt-8">
               {strings.home.openLibrary}
             </button>
           </motion.div>
@@ -283,13 +284,15 @@ export const Home: React.FC = () => {
         </section>
       </motion.div>
 
-      <AnimatePresence>
-        {resumeDialog.isOpen && resumeDialog.version && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4 backdrop-blur-sm">
+      <ModalDialog
+        open={resumeDialog.isOpen && Boolean(resumeDialog.version)}
+        onRequestClose={() => setResumeDialog({ isOpen: false, version: null })}
+        labelledBy="resume-dialog-title"
+      >
+        {resumeDialog.version && (
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 12 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.96, y: 12 }}
               className="w-full max-w-md rounded-[2rem] border border-[var(--clay-border)] bg-[var(--clay-paper)] p-6 shadow-[var(--clay-shadow-hard)]"
             >
               <div className="flex items-center gap-3">
@@ -300,7 +303,7 @@ export const Home: React.FC = () => {
                   <p className="text-xs font-bold uppercase tracking-[0.2em] clay-muted">
                     {strings.home.resumeKicker}
                   </p>
-                  <h3 className="text-2xl font-black text-[var(--clay-text)]">
+                  <h3 id="resume-dialog-title" className="text-2xl font-black text-[var(--clay-text)]">
                     {strings.home.resumeTitle} {questionMeta[resumeDialog.version].title}
                   </h3>
                 </div>
@@ -311,17 +314,16 @@ export const Home: React.FC = () => {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <button onClick={handleRestart} className="clay-button clay-button-secondary w-full justify-center">
-                  {strings.home.restart}
-                </button>
-                <button onClick={handleResume} className="clay-button clay-button-primary w-full justify-center">
+                <button onClick={handleResume} className="clay-button clay-button-primary order-1 w-full justify-center sm:order-2">
                   {strings.home.resume}
+                </button>
+                <button onClick={handleRestart} className="clay-button clay-button-secondary order-2 w-full justify-center sm:order-1">
+                  {strings.home.restart}
                 </button>
               </div>
             </motion.div>
-          </div>
         )}
-      </AnimatePresence>
+      </ModalDialog>
     </Layout>
   );
 };
