@@ -84,7 +84,7 @@ export const Home: React.FC = () => {
   return (
     <Layout>
       <motion.div initial="hidden" animate="visible" variants={containerVariants} className="space-y-12 md:space-y-16">
-        <section className="relative overflow-hidden rounded-[2.5rem] border border-[var(--clay-border)] bg-[rgba(255,253,248,0.88)] px-6 py-10 shadow-[var(--clay-shadow)] md:px-10 md:py-14">
+        <section className="relative overflow-hidden rounded-[2.5rem] border border-[var(--clay-border)] bg-[var(--clay-surface)] px-6 py-10 shadow-[var(--clay-shadow)] md:px-10 md:py-14">
           <div className="clay-grid absolute inset-0 opacity-60" />
           <div className="pointer-events-none absolute -top-8 right-10 h-36 w-36 rounded-full clay-swatch-slushie blur-3xl opacity-30" />
           <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-40 rounded-full clay-swatch-ube blur-3xl opacity-25" />

@@ -30,7 +30,7 @@ export const TypeLibrary: React.FC = () => {
       </div>
 
       <div className="mx-auto max-w-7xl space-y-12 px-4 py-8">
-        <div className="rounded-[2.5rem] border border-[var(--clay-border)] bg-[rgba(255,253,248,0.86)] p-8 shadow-[var(--clay-shadow)] md:p-10">
+        <div className="rounded-[2.5rem] border border-[var(--clay-border)] bg-[var(--clay-surface)] p-8 shadow-[var(--clay-shadow)] md:p-10">
           <motion.span
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}

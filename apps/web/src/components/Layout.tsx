@@ -4,6 +4,7 @@ import { BookOpen, Home, Languages, Menu, User, X } from 'lucide-react';
 
 import { useLocale } from '../context/LocaleContext';
 import { getLanguageName, getLanguageShortName, getStrings } from '../i18n/strings';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
@@ -54,7 +55,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   return (
     <div className="site-root flex flex-col bg-transparent">
       <a href="#main-content" className="skip-link">{nav.skipToContent}</a>
-      <header className="site-header fixed left-0 right-0 top-0 z-50 border-b border-[var(--clay-border)] bg-[rgba(250,249,247,0.92)] backdrop-blur-sm transition-all duration-300">
+      <header className="site-header fixed left-0 right-0 top-0 z-50 border-b border-[var(--clay-border)] bg-[var(--clay-header)] backdrop-blur-sm transition-all duration-300">
         <div className="site-header-inner safe-inline mx-auto flex max-w-7xl items-center justify-between sm:px-6 lg:px-8">
           <Link
             to="/"
@@ -79,6 +80,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <NavLink to="/" icon={Home} label={nav.home} isActive={location.pathname === '/'} />
             <NavLink to="/types" icon={BookOpen} label={nav.types} isActive={location.pathname.startsWith('/type')} />
             <NavLink to="/profile" icon={User} label={nav.profile} isActive={location.pathname === '/profile'} />
+            <ThemeToggle locale={locale} />
             <Link
               to="/about"
               viewTransition
@@ -129,6 +131,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   isActive={location.pathname === '/'}
                   onClick={closeMobileMenu}
                 />
+                <ThemeToggle locale={locale} mobile />
                 <MobileNavLink
                   to="/types"
                   icon={BookOpen}

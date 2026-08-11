@@ -260,7 +260,7 @@ const TestSession: React.FC<TestSessionProps> = ({ version, locale }) => {
                     } : {
                       opacity: isOtherSelected ? 0.6 : 1,
                       scale: isOtherSelected ? 0.985 : 1,
-                      backgroundColor: 'rgba(255,255,255,0.92)'
+                      backgroundColor: 'var(--clay-paper)'
                     }}
                     transition={{ duration: 0.2 }}
                     className={`group relative flex w-full items-center rounded-[1.5rem] border-2 p-5 text-left transition-all md:p-6 ${

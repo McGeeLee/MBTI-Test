@@ -12,7 +12,7 @@ export const About: React.FC = () => {
   return (
     <Layout>
       <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
-        <section className="rounded-[2.5rem] border border-[var(--clay-border)] bg-[rgba(255,253,248,0.88)] px-8 py-10 shadow-[var(--clay-shadow)] md:px-10">
+        <section className="rounded-[2.5rem] border border-[var(--clay-border)] bg-[var(--clay-surface)] px-8 py-10 shadow-[var(--clay-shadow)] md:px-10">
           <span className="clay-kicker">{strings.aboutLabels.settings}</span>
           <h1 className="mt-4 text-4xl font-black tracking-[-0.05em] text-[var(--clay-text)] md:text-6xl">
             {strings.aboutTitle}

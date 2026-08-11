@@ -31,6 +31,7 @@ export const Result: React.FC = () => {
   const { locale } = useLocale();
   const strings = getStrings(locale).result;
   const [shareState, setShareState] = useState<'idle' | 'copied' | 'unsupported' | 'error'>('idle');
+  const [isDark, setIsDark] = useState(() => document.documentElement.dataset.theme === 'dark');
   const typeData = type ? getLocalizedType(locale, type) : null;
   const result = React.useMemo(() => {
     if (!type) return null;
@@ -44,6 +45,12 @@ export const Result: React.FC = () => {
       queryResultId ?? stateResultId ?? undefined,
     ) ?? null;
   }, [location.search, location.state, type]);
+
+  React.useEffect(() => {
+    const syncTheme = () => setIsDark(document.documentElement.dataset.theme === 'dark');
+    window.addEventListener('themechange', syncTheme);
+    return () => window.removeEventListener('themechange', syncTheme);
+  }, []);
 
   const handleShare = async () => {
     if (!typeData) return;
@@ -111,8 +118,8 @@ export const Result: React.FC = () => {
         borderColor: themeColor,
         borderWidth: 2,
         pointBackgroundColor: themeColor,
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
+        pointBorderColor: isDark ? '#20251f' : '#fff',
+        pointHoverBackgroundColor: isDark ? '#20251f' : '#fff',
         pointHoverBorderColor: themeColor,
       },
     ],
@@ -123,11 +130,11 @@ export const Result: React.FC = () => {
       r: {
         angleLines: {
           display: true,
-          color: 'rgba(0, 0, 0, 0.1)',
+          color: isDark ? 'rgba(243, 238, 228, 0.16)' : 'rgba(0, 0, 0, 0.1)',
         },
         suggestedMin: 0,
         grid: {
-          color: 'rgba(0, 0, 0, 0.05)',
+          color: isDark ? 'rgba(243, 238, 228, 0.09)' : 'rgba(0, 0, 0, 0.05)',
         },
         pointLabels: {
           font: {
@@ -186,7 +193,7 @@ export const Result: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="grid gap-8 bg-[rgba(255,253,248,0.78)] p-8 md:grid-cols-2 md:p-12">
+          <div className="grid gap-8 bg-[var(--clay-surface)] p-8 md:grid-cols-2 md:p-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
